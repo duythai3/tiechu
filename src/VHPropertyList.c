@@ -127,7 +127,9 @@ void vh_property_list_load(){
     IBusProperty* cn_prop = create_radio_property(__CHINESE_MODE_LABEL__, __CHINESE_MODE_VALUE__, cm == __CHINESE_MODE_2__, vh_configuration_get_chinese_mode_key());
     IBusProperty* en_prop = create_radio_property(__ENGLISH_MODE_LABEL__, __ENGLISH_MODE_VALUE__, cm == __ENGLISH_MODE_2__, vh_configuration_get_english_mode_key());
     IBusProperty* rmm_prop = create_toggle_property(__REMEMBER_MODE_LABEL__, __REMEMBER_MODE_VALUE__, rm);
-    IBusProperty* as_prop = create_toggle_property(__AUTO_SHOW_CANDIDATE_TABLE_LABEL__, __AUTO_SHOW_CANDIDATE_TABLE_VALUE__, as);
+
+    // uncomment to allow not display candidate table
+    //IBusProperty* as_prop = create_toggle_property(__AUTO_SHOW_CANDIDATE_TABLE_LABEL__, __AUTO_SHOW_CANDIDATE_TABLE_VALUE__, as);
 
 
     //
@@ -140,7 +142,9 @@ void vh_property_list_load(){
     ibus_prop_list_append(_property_list, cn_prop);
     ibus_prop_list_append(_property_list, en_prop);
     ibus_prop_list_append(_property_list, rmm_prop);
-    ibus_prop_list_append(_property_list, as_prop);
+
+    // uncomment to allow not display candidate table
+    //ibus_prop_list_append(_property_list, as_prop);
     
     //
 }
