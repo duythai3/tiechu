@@ -1,54 +1,74 @@
 A. GIỚI THIỆU
 
-ibus-viethoa là bộ gõ Tiếng Việt, Tiếng Việthoa, Tiếng Tiều, và Tiếng Trung.
+IBus-Viethoa là bộ gõ Tiếng Việt, Tiếng Việthoa, Tiếng Tiều, và Tiếng Trung.
 Bộ gõ này chạy trên Linux có bộ quản lý desktop GNOME(Chỉ mới chạy thử trên Ubuntu 20.04 và Pop OS 20.04)
 
 B. Cài đặt
 1. Lấy mã nguồn từ GitHub.com
 
-git clone https://github.com/duy-n-thai/ibus-viethoa.git
+    git clone https://github.com/duy-n-thai/ibus-viethoa.git
 
 2. Cài các thư viện để biên dich
 
-sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
+    sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
 
 3. Cầu hình trước khi biên dich
 
-cd ./ibus-viethoa
-./autogen.sh --prefix=/usr
+    cd ./ibus-viethoa
+    ./autogen.sh --prefix=/usr
 
 4. Biên dịch
 
-make
+    make
 
 5. Cài đặt
 
-sudo make install
+    sudo make install
 
-- Sau khi cài đặt xong thì phải restart ibus engine, hoặc restart computer, chạy 2 lịnh sau để restart ibus engine:
-ibus exit
-ibus-daemon &
+    - Sau khi cài đặt xong thì phải restart ibus engine, hoặc restart computer, chạy 2 lịnh sau để restart ibus engine:
+        ibus exit
+        ibus-daemon &
 
-- Thêm ibus-viethoa vào Input Source:
-+ Mở hợp thoại "Settings/Keyboard" on Pop OS, hoặc "Settings/Region & Langeuage" on Ubuntu
-+ Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
-+ Bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, chọn Vietnamese (Viethoa)
-+ Bây giờ ibus-viethoa đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
+    - Thêm IBus-Viethoa vào Input Source:
+        + Mở hợp thoại "Settings/Keyboard" on Pop OS, hoặc "Settings/Region & Langeuage" on Ubuntu
+        + Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
+        + Bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, bấm Vietnamese (Viethoa)
+        + Bây giờ IBus-Viethoa đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
 
 C. HƯỚNG DẪN SỬ DỤNG
 
-1. Đổi mode bằng chuột
+1. Đổi mode
 
-Khi bấm vào menu của ibus-viethoa
+   IBus-Viethoa có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
 
-2. Đổi mode bằng phim tắt
+   - Đổi sang mode Tiếng Việt: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+2
+   - Đổi sang mode Tiếng Việthoa: bấm và buông phim Shift, trong vòng 2 giây bấm Ctrl+3
+   - Đổi sang mode Tiếng Tiều: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+4
+   - Đổi sang mode Tiếng Trung: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+5
+   - Đổi sang mode Tiếng Anh: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+7. Hoăc bấm Escape.
 
-3. Gõ Tiếng Việt
+2. Gõ Tiếng Việt
 
-4. Gõ Tiếng Việt Hoa
+   IBus-Viethoa sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
 
-5. Gõ Tiếng Tiều
+3. Gõ Tiếng Việthoa
 
-6. Gõ Tiếng Trung
+   Sài kiểu gõ ZTelex để gõ âm Việthoa, khi đó một bảng chữ sẽ hiện lên, sài phím từ 1 đến 8 để lựa chữ. Hoặc sài phím Left hoặc Right để lựa chữ, và bấm Enter hoặc bấm chuột.
+   Sài phím Page Up và Page Down để đổi trang của bảng lựa chữ.
 
+4. Gõ Tiếng Tiều
 
+   Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
+   Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
+   Nếu muốn lựa một chữ mà không cần gõ đầy đủ phiên âm Tiếng Tiều, hay gõ ":" và số tù 1 tới 8. Ví dụ: gõ diê:3 để có được chữ 啑
+
+5. Gõ Tiếng Trung
+
+   Sài kiểu gõ LTelex đễ gõ phiên âm Pinyin Tiếng Trung:
+
+   - Sài chữ "l' để đặt dấu thanh 1
+   - Sài chữ "z" để đặt dấu thanh 2
+   - Sài chữ "x" để đặt dấu thanh 3
+   - Sài chữ "f" để đặt dấu thanh 4
+
+    Sau khi gỏ phiên âm Pinyin thì sài phím từ 1 tới 8 để lựa chữ.
