@@ -82,14 +82,12 @@ ibus_engine_viethoa_SOURCES = \
 
 ibus_engine_viethoa_CFLAGS = \
 	@IBUS_CFLAGS@ \
-	@LIBJSON_CFLAGS@ \
 	@SQLITE_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\"\
 	$(NULL)
 	
 ibus_engine_viethoa_LDFLAGS = \
 	@IBUS_LIBS@ \
-	@LIBJSON_LIBS@ \
 	@SQLITE_LIBS@ \
 	$(NULL)
 

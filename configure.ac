@@ -58,9 +58,9 @@ PKG_CHECK_MODULES(IBUS, [
 ])
 
 # check libjson-glib
-PKG_CHECK_MODULES(LIBJSON, [
-    json-glib-1.0
-])
+#PKG_CHECK_MODULES(LIBJSON, [
+#    json-glib-1.0
+#])
 
 # check sqlite
 PKG_CHECK_MODULES(SQLITE, [
@@ -68,19 +68,19 @@ PKG_CHECK_MODULES(SQLITE, [
 ])
 
 # check GTK+3.0
-PKG_CHECK_MODULES(LIBGTK3, [
-    gtk+-3.0
-])
+#PKG_CHECK_MODULES(LIBGTK3, [
+#    gtk+-3.0
+#])
 
 # Define python version
-AC_ARG_WITH(python,
-    AS_HELP_STRING([--with-python[=PATH]],
-        [Select python2 or python3]),
-    [PYTHON=$with_python], []
-)
+#AC_ARG_WITH(python,
+#    AS_HELP_STRING([--with-python[=PATH]],
+#        [Select python2 or python3]),
+#    [PYTHON=$with_python], []
+#)
 
 #check python
-AM_PATH_PYTHON([2.5])
+#AM_PATH_PYTHON([2.5])
 
 # define GETTEXT_* variables
 GETTEXT_PACKAGE="$PACKAGE_NAME"

@@ -5,7 +5,7 @@
 	<name>org.freedesktop.IBus.Viethoa</name>
 	<description>Viethoa Component</description>
 	<exec>/usr/libexec/ibus-engine-viethoa --ibus</exec>
-	<version>1.0.0.20210315</version>
+	<version>1.0.0.20210316</version>
     <author>Duy Thai &lt;ngocduy.thai@yahoo.com&gt;</author>
 	<license>GPL</license>
     <homepage>http://github.com/duy-n-thai/ibus-viethoa</homepage>
