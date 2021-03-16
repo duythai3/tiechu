@@ -83,12 +83,6 @@ static void ibus_viethoa_engine_commit_string
                                             (IBusViethoaEngine      *viethoa,
                                              const gchar            *string);
 
-
-void ibus_viethoa_engine_update      (IBusViethoaEngine      *viethoa);
-void ibus_viethoa_engine_reset (IBusViethoaEngine *viethoa);
-gboolean ibus_viethoa_engine_commit_preedit (IBusViethoaEngine *viethoa);
-gboolean select_candidate_in_page(IBusViethoaEngine *viethoa, guint index);
-
 //
 static void property_activated(IBusEngine *engine, const gchar *property_ten, guint property_trangthai);
 
@@ -186,15 +180,12 @@ ibus_viethoa_engine_destroy (IBusViethoaEngine *viethoa)
 }
 
 static void ibus_viethoa_engine_focus_out   (IBusEngine *viethoa){
-	//vh_telex_editor_clear();
-	//ibus_viethoa_engine_update((IBusViethoaEngine*)viethoa);
-	ibus_viethoa_engine_reset((IBusViethoaEngine*)viethoa);
+    vh_helper_clear_preedit((IBusViethoaEngine*)viethoa);
 }
 
 static void ibus_viethoa_engine_focus_in (IBusEngine *engine){
     vh_logger_log("Bo Go Viethoa received focus_in event");
     vh_logger_backup();
-    //vh_property_list_register((IBusViethoaEngine*)engine);
     vh_property_list_register((IBusViethoaEngine*)engine);
 }
 
@@ -228,163 +219,6 @@ static void ibus_viethoa_engine_cursor_down (IBusEngine *engine) {
 // processing when a candidate is selected using mouse
 static void ibus_viethoa_engine_candidate_clicked (IBusEngine *engine, guint index, guint button, guint state) {
 	vh_helper_commit_candidate_in_page((IBusViethoaEngine*)engine, index);
-}
-
-static void
-ibus_viethoa_engine_update_preedit (IBusViethoaEngine *viethoa)
-{
-    IBusText *text;
-    gint retval;
-
-    vh_logger_log("update preedit..\n");
-
-    gchar *utf8_str = vh_preedit_get_utf8_string();
-    //if(utf8_str != NULL){
-        guint len = vh_preedit_get_length();
-
-        text = ibus_text_new_from_static_string (utf8_str);
-
-        text->attrs = ibus_attr_list_new ();
-        
-        ibus_attr_list_append (text->attrs,
-                               ibus_attr_underline_new (IBUS_ATTR_UNDERLINE_SINGLE, 0, len));
-
-        //ibus_attr_list_append (text->attrs, ibus_attr_foreground_new (0x00ff00, 0, len));
-
-        guint cursor_pos = vh_preedit_get_cursor_pos();
-        
-        ibus_engine_update_preedit_text ((IBusEngine *)viethoa,
-                                         text,
-                                         cursor_pos,
-                                         TRUE);
-        g_free(utf8_str);
-    //}
-}
-
-/* commit preedit to client and reset preedit */
-gboolean ibus_viethoa_engine_commit_preedit (IBusViethoaEngine *viethoa)
-{
-    guint len = vh_preedit_get_length();
-    if (len == 0)
-        return FALSE;
-    
-    vh_logger_log("engine commit preedit...\n");
-
-    gchar *utf8_str = vh_preedit_get_utf8_string();
-    ibus_viethoa_engine_commit_string (viethoa, utf8_str);
-    g_free(utf8_str);
-
-    return TRUE;
-}
-
-
-static void
-ibus_viethoa_engine_commit_string (IBusViethoaEngine *viethoa,
-                                   const gchar       *string)
-{
-    IBusText *text;
-    vh_logger_log("commit string...\n");
-    text = ibus_text_new_from_static_string (string);
-    ibus_engine_commit_text ((IBusEngine *)viethoa, text);
-    ibus_viethoa_engine_reset(viethoa);
-    vh_candidate_table_hide(viethoa);
-}
-
-void ibus_viethoa_engine_reset (IBusViethoaEngine *viethoa)
-{
-    vh_logger_log("engine reset...\n");
-    if (vh_preedit_get_length() > 0) {
-    	vh_preedit_clear();
-    	ibus_engine_hide_preedit_text ((IBusEngine*)viethoa);
-    }
-    vh_candidate_table_hide(viethoa);
-}
-
-void ibus_viethoa_engine_update (IBusViethoaEngine *viethoa)
-{
-    vh_logger_log("engine update...\n");
-    ibus_viethoa_engine_update_preedit (viethoa);
-    gint current_mode = vh_configuration_get_current_mode();
-    gboolean auto_show_candidate_table = vh_configuration_get_auto_show_candidate_table();
-    if(current_mode == __VIETHOA_MODE_2__){
-        vh_viethoa_table_find();
-        if(auto_show_candidate_table){
-            vh_candidate_table_show(viethoa);
-        }else{
-            if(vh_candidate_table_showing()){
-                vh_candidate_table_update(viethoa, TRUE);
-            }
-        }
-    }
-}
-
-#define la_alpha(c) (((c) >= IBUS_a && (c) <= IBUS_z) || ((c) >= IBUS_A && (c) <= IBUS_Z))
-#define la_so(c) ((c) >= IBUS_0 && (c) <= IBUS_9)
-
-
-gboolean select_candidate_in_page_pre(IBusViethoaEngine *viethoa,guint index) {
-	vh_logger_log("Selecting candidate at index %d...", index);
-    if (!vh_candidate_table_showing()) {
-		return FALSE;
-	}
-    guint page_size = vh_candidate_table_get_page_size();
-    guint cursor_pos = vh_candidate_table_get_cursor_pos();
-	index = (cursor_pos / page_size) * page_size + index;
-
-	//
-    IBusText *candidate = vh_candidate_table_get_candidate(index);
-	if (!candidate) {
-		return FALSE;
-	}
-
-	// increase frequency of selected word
-	vh_viethoa_table_increase_frequency(candidate->text);
-
-	//
-    vh_logger_log("commit candidate...\n");
-    ibus_engine_commit_text ((IBusEngine *)viethoa, candidate);
-    ibus_viethoa_engine_reset(viethoa);
-    vh_candidate_table_hide(viethoa);
-
-    //
-	vh_logger_log("Candidate at index %d committed", index);
-
-    //
-    return TRUE;
-}
-
-gboolean select_candidate_in_page(IBusViethoaEngine *viethoa,guint index) {
-    if (!vh_candidate_table_showing()) {
-		return FALSE;
-	}
-    guint page_size = vh_candidate_table_get_page_size();
-    guint cursor_pos = vh_candidate_table_get_cursor_pos();
-	index = (cursor_pos / page_size) * page_size + index;
-
-	//
-    IBusText *candidate = vh_candidate_table_get_candidate(index);
-	if (!candidate) {
-		return FALSE;
-	}
-
-	// increase frequency of selected word
-	vh_viethoa_table_increase_frequency(candidate->text);
-
-	//i
-    ibus_engine_commit_text ((IBusEngine *)viethoa, candidate);
-
-    //
-    if (vh_preedit_get_length() > 0) {
-    	vh_preedit_clear();
-    	ibus_engine_hide_preedit_text ((IBusEngine*)viethoa);
-    }
-    vh_candidate_table_hide(viethoa);
-
-    //
-	vh_logger_log("Candidate at index %d committed", index);
-
-    //
-    return TRUE;
 }
 
 static void property_activated(IBusEngine *engine, const gchar *property_ten, guint property_trangthai){
