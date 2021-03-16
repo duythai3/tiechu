@@ -1,9 +1,52 @@
-This is a template engine for IME developers. You could start your IME engine
-from it.
+A. GIỚI THIỆU
 
-Ibus-tmpl was released under GPLV2. We wish ibus engine developers would release
-new engines under open source license too, but we do not force it. We allow
-developers start your work from ibus-tmpl and swith to other license.
+ibus-viethoa là bộ gõ Tiếng Việt, Tiếng Việthoa, Tiếng Tiều, và Tiếng Trung.
+Bộ gõ này chạy trên Linux có bộ quản lý desktop GNOME(Chỉ mới chạy thử trên Ubuntu 20.04 và Pop OS 20.04)
 
-src - engine in c language
-engine - engine in python language
+B. Cài đặt
+1. Lấy mã nguồn từ GitHub.com
+
+git clone https://github.com/duy-n-thai/ibus-viethoa.git
+
+2. Cài các thư viện để biên dich
+
+sudo apt install build-essential pkg-config libibus-1.0-dev libjson-glib-dev libsqlite3-dev libgtk-3-dev
+
+3. Cầu hình trước khi biên dich
+
+cd ./ibus-viethoa
+./autogen.sh --prefix=/usr
+
+4. Biên dịch
+
+make
+
+5. Cài đặt
+
+sudo make install
+
+- Sau khi cài đặt xong thì phải restart ibus engine, hoặc restart computer, chạy 2 lịnh sau để restart ibus engine:
+ibus exit
+ibus-daemon &
+
+- Thêm ibus-viethoa vào Input Source:
++ Mở hợp thoại Settings/Keyboard
++ Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
++ Bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, chọn Vietnamese (Viethoa)
++ Bây giờ ibus-viethoa đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
+
+C. HƯỚNG DẪN SỬ DỤNG
+
+1. Đổi mode bằng chuột
+
+2. Đổi mode bằng phim tắt
+
+3. Gõ Tiếng Việt
+
+4. Gõ Tiếng Việt Hoa
+
+5. Gõ Tiếng Tiều
+
+6. Gõ Tiếng Trung
+
+

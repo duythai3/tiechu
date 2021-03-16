@@ -1,3 +1,4 @@
 ibus-viethoa-property
 ibus-engine-viethoa
 *.bak_*
+*.o
