@@ -37,7 +37,7 @@ const gchar* get_super_key_name() {
 
 IBusProperty* create_radio_property(const gchar* lb, const gchar* vl, gboolean state, gint hotkey) {
 	const gchar* super_key_name = get_super_key_name();
-	IBusText* ibus_lb = ibus_text_new_from_printf("%s - %s+%c", lb, super_key_name, (gchar)hotkey);
+    IBusText* ibus_lb = ibus_text_new_from_printf("%s - Shift, %s+%c", lb, super_key_name, (gchar)hotkey);
 	IBusPropState prop_state = state ? PROP_STATE_CHECKED : PROP_STATE_UNCHECKED;
 	IBusProperty* prop = ibus_property_new(vl, PROP_TYPE_RADIO, ibus_lb, NULL, NULL, TRUE, TRUE, prop_state, NULL);
 	return prop;

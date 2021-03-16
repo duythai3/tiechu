@@ -40,7 +40,7 @@
 #define __TEOCHEW_MODE_LABEL__  "Mode Tiếng Tiều"
 #define __TEOCHEW_MODE_VALUE__ "teochew_mode"
 
-#define __CHINESE_MODE_LABEL__  "Mode Tiếng Hoa"
+#define __CHINESE_MODE_LABEL__  "Mode Tiếng Trung"
 #define __CHINESE_MODE_VALUE__ "chinese_mode"
 
 #define __ENGLISH_MODE_LABEL__  "Mode Tiếng Anh"

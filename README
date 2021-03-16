@@ -8,11 +8,11 @@ B. Cài đặt
 
     git clone https://github.com/duy-n-thai/ibus-viethoa.git
 
-2. Cài các thư viện để biên dich
+2. Cài các thư viện để biên dịch
 
     sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
 
-3. Cầu hình trước khi biên dich
+3. Cầu hình trước khi biên dịch
 
     cd ./ibus-viethoa
     ./autogen.sh --prefix=/usr
@@ -60,7 +60,7 @@ C. HƯỚNG DẪN SỬ DỤNG
 
 4. Gõ Tiếng Tiều
 
-   Database có tất cả các mục từ của http://mogher.com
+   Database có tất cả các chữ của http://mogher.com
 
    Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
    Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
