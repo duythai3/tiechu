@@ -53,16 +53,22 @@ C. HƯỚNG DẪN SỬ DỤNG
 
 3. Gõ Tiếng Việthoa
 
+   Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
+
    Sài kiểu gõ ZTelex để gõ âm Việthoa, khi đó một bảng chữ sẽ hiện lên, sài phím từ 1 đến 8 để lựa chữ. Hoặc sài phím Left hoặc Right để lựa chữ, và bấm Enter hoặc bấm chuột.
    Sài phím Page Up và Page Down để đổi trang của bảng lựa chữ.
 
 4. Gõ Tiếng Tiều
+
+   Database có tất cả các mục từ của http://mogher.com
 
    Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
    Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
    Nếu muốn lựa một chữ mà không cần gõ đầy đủ phiên âm Tiếng Tiều, hay gõ ":" và số tù 1 tới 8. Ví dụ: gõ diê:3 để có được chữ 啑
 
 5. Gõ Tiếng Trung
+
+   Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
 
    Sài kiểu gõ LTelex đễ gõ phiên âm Pinyin Tiếng Trung:
 
