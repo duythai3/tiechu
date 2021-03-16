@@ -30,7 +30,7 @@ ibus exit
 ibus-daemon &
 
 - Thêm ibus-viethoa vào Input Source:
-+ Mở hợp thoại Settings/Keyboard
++ Mở hợp thoại "Settings/Keyboard" on Pop OS, hoặc "Settings/Region & Langeuage" on Ubuntu
 + Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
 + Bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, chọn Vietnamese (Viethoa)
 + Bây giờ ibus-viethoa đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
