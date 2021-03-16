@@ -1,0 +1,30 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-176a7af09c6-32b303108396c867": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "viethoa.db",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"database": "/lake/project/viethoa/ibus_viethoa/csdl/viethoa.db",
+				"url": "jdbc:sqlite:/lake/project/viethoa/ibus_viethoa/csdl/viethoa.db",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
