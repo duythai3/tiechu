@@ -1,6 +1,6 @@
 A. GIỚI THIỆU
 
-IBus-Viethoa là bộ gõ Tiếng Việt, Tiếng Việthoa, Tiếng Tiều, và Tiếng Trung.
+IBus-Viethoa là bộ gõ Tiếng Việt, Tiếng Hán Việt, Tiếng Tiều, và Tiếng Trung.
 Bộ gõ này chạy trên Linux có bộ quản lý desktop GNOME(Chỉ mới chạy thử trên Ubuntu 20.04 và Pop OS 20.04)
 
 B. Cài đặt
@@ -44,7 +44,7 @@ C. HƯỚNG DẪN SỬ DỤNG
    IBus-Viethoa có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
 
    - Đổi sang mode Tiếng Việt: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+2
-   - Đổi sang mode Tiếng Việthoa: bấm và buông phim Shift, trong vòng 2 giây bấm Ctrl+3
+   - Đổi sang mode Tiếng Hán Việt: bấm và buông phim Shift, trong vòng 2 giây bấm Ctrl+3
    - Đổi sang mode Tiếng Tiều: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+4
    - Đổi sang mode Tiếng Trung: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+5
    - Đổi sang mode Tiếng Anh: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+7. Hoăc bấm Escape.
@@ -53,7 +53,7 @@ C. HƯỚNG DẪN SỬ DỤNG
 
    IBus-Viethoa sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
 
-3. Gõ Tiếng Việthoa
+3. Gõ Tiếng Hán Việt
 
    Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
 

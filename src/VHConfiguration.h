@@ -34,7 +34,7 @@
 #define __VIETNAMESE_MODE_LABEL__ "Mode Tiếng Việt"
 #define __VIETNAMESE_MODE_VALUE__ "InputMode"
 
-#define __VIETHOA_MODE_LABEL__  "Mode Tiếng Việthoa"
+#define __VIETHOA_MODE_LABEL__  "Mode Tiếng Hán Việt"
 #define __VIETHOA_MODE_VALUE__ "viethoa_mode"
 
 #define __TEOCHEW_MODE_LABEL__  "Mode Tiếng Tiều"
