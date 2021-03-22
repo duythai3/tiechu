@@ -22,7 +22,7 @@
 #include "engine.h"
 #include "VHConfiguration.h"
 #include "VHVietnameseMode.h"
-#include "VHTelexEditor.h"
+#include "VHTelexEditor2.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
 #include "VHLogger.h"
@@ -234,7 +234,7 @@ gboolean vh_vietnamese_mode_process_key_event(IBusViethoaEngine* viethoa, guint 
 
     // process letter keys
     if (is_alpha(keyval)) {
-        if(vh_telex_process(viethoa, keyval, keycode, modifiers)){
+        if(vh_telex_2_process(viethoa, keyval, keycode, modifiers)){
             vh_helper_update_preedit(viethoa);
         }else{
             vh_preedit_insert(keyval);
@@ -259,12 +259,14 @@ gboolean vh_vietnamese_mode_process_key_event(IBusViethoaEngine* viethoa, guint 
 
     //
     if (vh_helper_is_ignore_key(keyval)) {
-        return FALSE;
+        ibus_engine_forward_key_event((IBusEngine*)viethoa, keyval, keycode, modifiers);
+        return TRUE;
     }
 
     //
     if (len > 0) {
         vh_helper_commit_preedit(viethoa);
     }
-    return FALSE;
+    ibus_engine_forward_key_event((IBusEngine*)viethoa, keyval, keycode, modifiers);
+    return TRUE;
 }

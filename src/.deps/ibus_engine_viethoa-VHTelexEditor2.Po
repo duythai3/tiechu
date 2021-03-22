@@ -1,4 +1,4 @@
-ibus_engine_viethoa-VHViethoaMode.o: VHViethoaMode.c \
+ibus_engine_viethoa-VHTelexEditor2.o: VHTelexEditor2.c \
  /usr/include/stdc-predef.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
@@ -351,9 +351,8 @@ ibus_engine_viethoa-VHViethoaMode.o: VHViethoaMode.c \
  /usr/include/ibus-1.0/ibusregistry.h /usr/include/ibus-1.0/ibusemoji.h \
  /usr/include/ibus-1.0/ibusunicode.h /usr/include/ibus-1.0/ibusxevent.h \
  /usr/include/ibus-1.0/ibusaccelgroup.h /usr/include/ibus-1.0/ibustypes.h \
- /usr/include/ibus-1.0/ibuskeysyms-compat.h engine.h vhustring.h \
- VHConfiguration.h VHViethoaMode.h VHTelexEditor2.h VHPropertyList.h \
- VHCandidateTable.h VHLogger.h VHViethoaTable.h VHHelper.h VHPreedit.h
+ /usr/include/ibus-1.0/ibuskeysyms-compat.h VHLogger.h vhustring.h \
+ VHTelexEditor2.h engine.h VHVNLetters.h VHPreedit.h VHZTelexTable2.h
 
 /usr/include/stdc-predef.h:
 
@@ -1175,24 +1174,16 @@ ibus_engine_viethoa-VHViethoaMode.o: VHViethoaMode.c \
 
 /usr/include/ibus-1.0/ibuskeysyms-compat.h:
 
-engine.h:
+VHLogger.h:
 
 vhustring.h:
 
-VHConfiguration.h:
-
-VHViethoaMode.h:
-
 VHTelexEditor2.h:
 
-VHPropertyList.h:
+engine.h:
 
-VHCandidateTable.h:
-
-VHLogger.h:
-
-VHViethoaTable.h:
-
-VHHelper.h:
+VHVNLetters.h:
 
 VHPreedit.h:
+
+VHZTelexTable2.h:

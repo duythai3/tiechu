@@ -1,5 +1,5 @@
 ibus_engine_viethoa-engine.o: engine.c /usr/include/stdc-predef.h \
- VHZTelexTable.h /usr/include/glib-2.0/glib.h \
+ VHZTelexTable2.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
@@ -360,7 +360,7 @@ ibus_engine_viethoa-engine.o: engine.c /usr/include/stdc-predef.h \
 
 /usr/include/stdc-predef.h:
 
-VHZTelexTable.h:
+VHZTelexTable2.h:
 
 /usr/include/glib-2.0/glib.h:
 

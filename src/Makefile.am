@@ -29,11 +29,11 @@ ibus_engine_viethoa_SOURCES = \
 	vhutil.c \
 	vhustring.h \
 	vhustring.c \
-	VHTelexEditor.h \
-	VHTelexEditor.c \
+    VHTelexEditor2.h \
+    VHTelexEditor2.c \
 	VHVNLetters.h \
-	VHZTelexTable.h \
-	VHZTelexTable.c \
+    VHZTelexTable2.h \
+    VHZTelexTable2.c \
 	VHPropertyList.h \
 	VHPropertyList.c \
 	VHConfiguration.h \

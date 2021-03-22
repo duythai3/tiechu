@@ -352,7 +352,7 @@ ibus_engine_viethoa-VHVietnameseMode.o: VHVietnameseMode.c \
  /usr/include/ibus-1.0/ibusunicode.h /usr/include/ibus-1.0/ibusxevent.h \
  /usr/include/ibus-1.0/ibusaccelgroup.h /usr/include/ibus-1.0/ibustypes.h \
  /usr/include/ibus-1.0/ibuskeysyms-compat.h engine.h vhustring.h \
- VHConfiguration.h VHVietnameseMode.h VHTelexEditor.h VHPropertyList.h \
+ VHConfiguration.h VHVietnameseMode.h VHTelexEditor2.h VHPropertyList.h \
  VHCandidateTable.h VHLogger.h VHViethoaTable.h VHHelper.h VHPreedit.h
 
 /usr/include/stdc-predef.h:
@@ -1183,7 +1183,7 @@ VHConfiguration.h:
 
 VHVietnameseMode.h:
 
-VHTelexEditor.h:
+VHTelexEditor2.h:
 
 VHPropertyList.h:
 

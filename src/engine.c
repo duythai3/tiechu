@@ -17,7 +17,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-#include "VHZTelexTable.h"
+#include "VHZTelexTable2.h"
 #include "engine.h"
 #include "VHCandidateArray.h"
 #include "VHLogger.h"
@@ -131,7 +131,7 @@ void initialize(){
     vh_property_list_load();
 
 	// initialize telex-related objects
-    vh_z_telex_table_init();
+    vh_z_telex_table_2_init();
     vh_ltelex_table_init();
     vh_etelex_table_init();
     vh_preedit_init();
@@ -151,7 +151,7 @@ void uninitialize(){
     
 	//telex
 	vh_preedit_destroy();
-    vh_z_telex_table_destroy();
+    vh_z_telex_table_2_destroy();
     vh_ltelex_table_destroy();
     vh_etelex_table_destroy();
 

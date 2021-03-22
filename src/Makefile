@@ -130,8 +130,8 @@ am_ibus_engine_viethoa_OBJECTS = ibus_engine_viethoa-main.$(OBJEXT) \
 	ibus_engine_viethoa-engine.$(OBJEXT) \
 	ibus_engine_viethoa-vhutil.$(OBJEXT) \
 	ibus_engine_viethoa-vhustring.$(OBJEXT) \
-	ibus_engine_viethoa-VHTelexEditor.$(OBJEXT) \
-	ibus_engine_viethoa-VHZTelexTable.$(OBJEXT) \
+	ibus_engine_viethoa-VHTelexEditor2.$(OBJEXT) \
+	ibus_engine_viethoa-VHZTelexTable2.$(OBJEXT) \
 	ibus_engine_viethoa-VHPropertyList.$(OBJEXT) \
 	ibus_engine_viethoa-VHConfiguration.$(OBJEXT) \
 	ibus_engine_viethoa-VHLogger.$(OBJEXT) \
@@ -196,14 +196,14 @@ am__depfiles_remade =  \
 	./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po \
+	./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po \
+	./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-engine.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-main.Po \
 	./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po \
@@ -439,11 +439,11 @@ ibus_engine_viethoa_SOURCES = \
 	vhutil.c \
 	vhustring.h \
 	vhustring.c \
-	VHTelexEditor.h \
-	VHTelexEditor.c \
+    VHTelexEditor2.h \
+    VHTelexEditor2.c \
 	VHVNLetters.h \
-	VHZTelexTable.h \
-	VHZTelexTable.c \
+    VHZTelexTable2.h \
+    VHZTelexTable2.c \
 	VHPropertyList.h \
 	VHPropertyList.c \
 	VHConfiguration.h \
@@ -625,14 +625,14 @@ include ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po # am--include-marker
-include ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po # am--include-marker
+include ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po # am--include-marker
-include ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po # am--include-marker
+include ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-engine.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-main.Po # am--include-marker
 include ./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po # am--include-marker
@@ -721,33 +721,33 @@ ibus_engine_viethoa-vhustring.obj: vhustring.c
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
 
-ibus_engine_viethoa-VHTelexEditor.o: VHTelexEditor.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Tpo -c -o ibus_engine_viethoa-VHTelexEditor.o `test -f 'VHTelexEditor.c' || echo '$(srcdir)/'`VHTelexEditor.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po
-#	$(AM_V_CC)source='VHTelexEditor.c' object='ibus_engine_viethoa-VHTelexEditor.o' libtool=no \
+ibus_engine_viethoa-VHTelexEditor2.o: VHTelexEditor2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor2.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo -c -o ibus_engine_viethoa-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
+#	$(AM_V_CC)source='VHTelexEditor2.c' object='ibus_engine_viethoa-VHTelexEditor2.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor.o `test -f 'VHTelexEditor.c' || echo '$(srcdir)/'`VHTelexEditor.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
 
-ibus_engine_viethoa-VHTelexEditor.obj: VHTelexEditor.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Tpo -c -o ibus_engine_viethoa-VHTelexEditor.obj `if test -f 'VHTelexEditor.c'; then $(CYGPATH_W) 'VHTelexEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po
-#	$(AM_V_CC)source='VHTelexEditor.c' object='ibus_engine_viethoa-VHTelexEditor.obj' libtool=no \
+ibus_engine_viethoa-VHTelexEditor2.obj: VHTelexEditor2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor2.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo -c -o ibus_engine_viethoa-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
+#	$(AM_V_CC)source='VHTelexEditor2.c' object='ibus_engine_viethoa-VHTelexEditor2.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor.obj `if test -f 'VHTelexEditor.c'; then $(CYGPATH_W) 'VHTelexEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
 
-ibus_engine_viethoa-VHZTelexTable.o: VHZTelexTable.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Tpo -c -o ibus_engine_viethoa-VHZTelexTable.o `test -f 'VHZTelexTable.c' || echo '$(srcdir)/'`VHZTelexTable.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po
-#	$(AM_V_CC)source='VHZTelexTable.c' object='ibus_engine_viethoa-VHZTelexTable.o' libtool=no \
+ibus_engine_viethoa-VHZTelexTable2.o: VHZTelexTable2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable2.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo -c -o ibus_engine_viethoa-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
+#	$(AM_V_CC)source='VHZTelexTable2.c' object='ibus_engine_viethoa-VHZTelexTable2.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable.o `test -f 'VHZTelexTable.c' || echo '$(srcdir)/'`VHZTelexTable.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
 
-ibus_engine_viethoa-VHZTelexTable.obj: VHZTelexTable.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Tpo -c -o ibus_engine_viethoa-VHZTelexTable.obj `if test -f 'VHZTelexTable.c'; then $(CYGPATH_W) 'VHZTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po
-#	$(AM_V_CC)source='VHZTelexTable.c' object='ibus_engine_viethoa-VHZTelexTable.obj' libtool=no \
+ibus_engine_viethoa-VHZTelexTable2.obj: VHZTelexTable2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable2.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo -c -o ibus_engine_viethoa-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
+#	$(AM_V_CC)source='VHZTelexTable2.c' object='ibus_engine_viethoa-VHZTelexTable2.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable.obj `if test -f 'VHZTelexTable.c'; then $(CYGPATH_W) 'VHZTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
 
 ibus_engine_viethoa-VHPropertyList.o: VHPropertyList.c
 	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPropertyList.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Tpo -c -o ibus_engine_viethoa-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
@@ -1229,14 +1229,14 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po
+	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po
+	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-engine.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-main.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po
@@ -1302,14 +1302,14 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor.Po
+	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable.Po
+	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-engine.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-main.Po
 	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po
