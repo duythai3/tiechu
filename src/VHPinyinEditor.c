@@ -241,6 +241,9 @@ static gchar* calc_ascii_clutter(gint keyval, glong* clutter_len, glong* start_p
 	//
 	for(index = begin_index; index < preedit_len; index++){
 	   gunichar ch = vh_preedit_get_char(index);
+       if (len > 18) {
+            return NULL;
+       }
 	   if(is_cn_vowel(ch)){
 			if(status == 0){
 				status = 1;
