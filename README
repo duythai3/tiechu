@@ -18,7 +18,7 @@ B. Cài đặt
 
     sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
 
-3. Cầu hình trước khi biên dịch
+3. Cấu hình trước khi biên dịch
 
     cd ./ibus-viethoa
     ./autogen.sh --prefix=/usr
