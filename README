@@ -14,7 +14,7 @@ B. Cài đặt
 
     git clone https://github.com/duy-n-thai/ibus-viethoa.git
 
-2. Cài các thư viện để biên dịch
+2. Cài đặt các thư viện để biên dịch
 
     sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
 
