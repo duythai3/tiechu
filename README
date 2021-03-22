@@ -59,6 +59,8 @@ C. HƯỚNG DẪN SỬ DỤNG
 
    IBus-Viethoa sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
 
+   Để sửa chữ trong khi gõ hãy bấm phím Ctrl, sau đó là phím Left hoặc Right để di chuyển cursor.
+
 3. Gõ Tiếng Hán Việt
 
    Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
