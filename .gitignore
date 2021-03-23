@@ -3,3 +3,5 @@ ibus-engine-viethoa
 *.bak_*
 *.o
 autom4te.cache
+*.tgz
+*-pak
