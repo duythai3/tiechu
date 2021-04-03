@@ -46,7 +46,7 @@ static struct _PINYIN_CN_CLUTTER _clutters[] = {
     {"ex", "ě"},
     {"ef", "è"},
 
-    {"ii", "ī"},
+    {"il", "ī"},
     {"iz", "í"},
     {"ix", "ǐ"},
     {"if", "ì"},
