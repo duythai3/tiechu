@@ -106,8 +106,8 @@ ibus_viethoa_engine_class_init (IBusViethoaEngineClass *klass)
     engine_class->property_activate = property_activated;
 
 	//
-	engine_class->page_up = ibus_viethoa_engine_page_up;
-	engine_class->page_down = ibus_viethoa_engine_page_down;
+    engine_class->page_up = ibus_viethoa_engine_page_up;
+    engine_class->page_down = ibus_viethoa_engine_page_down;
 
 	//
 	//engine_class->cursor_up = ibus_viethoa_engine_cursor_up;

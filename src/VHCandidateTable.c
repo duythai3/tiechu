@@ -183,13 +183,13 @@ guint vh_candidate_table_get_page_size(){
 
 gboolean vh_candidate_table_page_down(IBusViethoaEngine *viethoa) {
     if (!_candidate_table) {
-		return FALSE;
-	}
+        return FALSE;
+    }
 
 	//
     ibus_lookup_table_page_down(_candidate_table);
     ibus_engine_update_lookup_table((IBusEngine*)viethoa, _candidate_table, TRUE);
-	return TRUE;
+    return TRUE;
 }
 
 gboolean vh_candidate_table_page_up(IBusViethoaEngine *viethoa) {
