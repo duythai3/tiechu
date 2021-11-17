@@ -2,7 +2,7 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* always defined to indicate that i18n is enabled */
-#define ENABLE_NLS 1
+/* #undef ENABLE_NLS */
 
 /* Define to the read-only architecture-independent data directory. */
 #define GETTEXT_PACKAGE "ibus-viethoa"
@@ -19,7 +19,7 @@
 /* #undef HAVE_CFPREFERENCESCOPYAPPVALUE */
 
 /* Define to 1 if you have the `dcgettext' function. */
-#define HAVE_DCGETTEXT 1
+/* #undef HAVE_DCGETTEXT */
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
@@ -73,7 +73,7 @@
 #define PACKAGE_NAME "ibus-viethoa"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "ibus-viethoa 1.0.0.20210316"
+#define PACKAGE_STRING "ibus-viethoa 1.0.0.20211116"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "ibus-viethoa"
@@ -82,7 +82,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0.20210316"
+#define PACKAGE_VERSION "1.0.0.20211116"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -110,7 +110,7 @@
 
 
 /* Version number of package */
-#define VERSION "1.0.0.20210316"
+#define VERSION "1.0.0.20211116"
 
 /* Define to 1 if on MINIX. */
 /* #undef _MINIX */
