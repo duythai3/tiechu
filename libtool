@@ -50,7 +50,7 @@ build_libtool_libs=yes
 pic_mode=default
 
 # Whether or not to optimize for fast installation.
-fast_install=yes
+fast_install=needless
 
 # Shared archive member basename,for filename based shared library versioning on AIX.
 shared_archive_member_spec=
@@ -90,7 +90,7 @@ EGREP="/usr/bin/grep -E"
 FGREP="/usr/bin/grep -F"
 
 # A BSD- or MS-compatible name lister.
-NM="/home/linuxbrew/.linuxbrew/bin/nm -B"
+NM="/usr/bin/nm -B"
 
 # Whether we need soft or hard links.
 LN_S="ln -s"
@@ -135,7 +135,7 @@ file_magic_glob=""
 want_nocaseglob="no"
 
 # DLL creation program.
-DLLTOOL="dlltool"
+DLLTOOL="false"
 
 # Command to associate shared and link libraries.
 sharedlib_from_linklib_cmd="printf %s\\n"
@@ -249,7 +249,7 @@ runpath_var=LD_RUN_PATH
 shlibpath_var=LD_LIBRARY_PATH
 
 # Is shlibpath searched before the hard-coded library search path?
-shlibpath_overrides_runpath=no
+shlibpath_overrides_runpath=yes
 
 # Format of library name prefix.
 libname_spec="lib\$name"
@@ -304,7 +304,7 @@ striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/home/linuxbrew/.linuxbrew/bin/ld -m elf_x86_64"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -11882,7 +11882,7 @@ build_old_libs=`case $build_libtool_libs in yes) echo no;; *) echo yes;; esac`
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
 # The linker used to build libraries.
-LD="/home/linuxbrew/.linuxbrew/bin/ld -m elf_x86_64"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # How to create reloadable object files.
 reload_flag=" -r"
