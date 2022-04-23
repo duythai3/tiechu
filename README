@@ -2,7 +2,7 @@ A. GIỚI THIỆU
 
 Abacus v1.1
 
-Abacus là bộ gõ Tiếng Việt, Tiếng Hán Việt, Tiếng Tiều, và Tiếng Trung.
+Abacus là bộ gõ Tiếng Việt, Tiếng Tiều, Tiếng Hán Việt, và Tiếng Trung.
 Bộ gõ này chạy trên Linux có bộ quản lý desktop GNOME(Chỉ mới chạy thử trên Ubuntu 20.04 và Pop OS 20.04)
 
 Changes in v1.1:
@@ -45,8 +45,6 @@ B. Cài đặt
 
 C. HƯỚNG DẪN SỬ DỤNG
 
-1. Đổi mode
-
    Abacus có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
 
    - Đổi sang mode Tiếng Việt: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+2
@@ -55,28 +53,30 @@ C. HƯỚNG DẪN SỬ DỤNG
    - Đổi sang mode Tiếng Trung: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+5
    - Đổi sang mode Tiếng Anh: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+7. Hoăc bấm Escape.
 
-2. Gõ Tiếng Việt
+1. Gõ Tiếng Việt
 
    Abacus sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
 
    Để sửa chữ trong khi gõ hãy bấm phím Ctrl, sau đó là phím Left hoặc Right để di chuyển cursor.
 
-3. Gõ Tiếng Hán Việt
+2. Gõ Tiếng Tiều
+
+      Database có tất cả các chữ của https://mogher.com
+
+      Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
+      Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
+      Nếu muốn lựa một chữ mà không cần gõ đầy đủ phiên âm Tiếng Tiều, hay gõ ":" và số tù 1 tới 8. Ví dụ: gõ ziu:3 để có được chữ 州
+
+
+3 Gõ Tiếng Hán Việt
 
    Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
 
    Sài kiểu gõ ZTelex để gõ âm Việthoa, khi đó một bảng chữ sẽ hiện lên, sài phím từ 1 đến 8 để lựa chữ. Hoặc sài phím Left hoặc Right để lựa chữ, và bấm Enter hoặc bấm chuột.
    Sài phím Page Up và Page Down để đổi trang của bảng lựa chữ.
 
-4. Gõ Tiếng Tiều
 
-   Database có tất cả các chữ của https://mogher.com
-
-   Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
-   Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
-   Nếu muốn lựa một chữ mà không cần gõ đầy đủ phiên âm Tiếng Tiều, hay gõ ":" và số tù 1 tới 8. Ví dụ: gõ ziu:3 để có được chữ 州
-
-5. Gõ Tiếng Trung
+4. Gõ Tiếng Trung
 
    Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
 
