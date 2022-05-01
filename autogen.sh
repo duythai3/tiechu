@@ -3,7 +3,7 @@ set -e
 set -x
 
 autopoint
-libtoolize --automake --copy
+libtoolize --automake --copy -force
 aclocal -I m4
 autoheader
 automake --add-missing --copy
