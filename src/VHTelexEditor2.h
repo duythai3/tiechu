@@ -23,6 +23,6 @@
 #include "vhustring.h"
 #include "engine.h"
 
-gboolean vh_telex_2_process(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers);
+gboolean vh_telex_2_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers);
 
 #endif

@@ -23,7 +23,7 @@
 #include "vhustring.h"
 #include "engine.h"
 
-gboolean vh_pinyin_editor_process(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers);
+gboolean vh_pinyin_editor_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers);
 gboolean vh_pinyin_editor_is_signal_letter(guint keyval);
 
 #endif

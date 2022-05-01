@@ -24,21 +24,20 @@
 
 #include "vhustring.h"
 
-typedef struct _IBusViethoaEngine IBusViethoaEngine;
-typedef struct _IBusViethoaEngineClass IBusViethoaEngineClass;
+typedef struct _IBusAbacusEngine IBusAbacusEngine;
+typedef struct _IBusAbacusEngineClass IBusAbacusEngineClass;
 
-struct _IBusViethoaEngine {
+struct _IBusAbacusEngine {
 	IBusEngine parent;
 };
 
-struct _IBusViethoaEngineClass {
+struct _IBusAbacusEngineClass {
 	IBusEngineClass parent;
 };
 
-#define IBUS_TYPE_VIETHOA_ENGINE	\
-	(ibus_viethoa_engine_get_type ())
+#define IBUS_TYPE_ABACUS_ENGINE (ibus_abacus_engine_get_type())
 
-GType   ibus_viethoa_engine_get_type    (void);
+GType ibus_abacus_engine_get_type(void);
 
 void initialize();
 void uninitialize();

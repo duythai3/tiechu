@@ -479,7 +479,7 @@ static gboolean process_telex(guint keyval){
 }
 
 /////////////////////////
-gboolean vh_telex_2_process(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers){
+gboolean vh_telex_2_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers){
     guint len = vh_preedit_get_text_len();
 
     if(len > 0){

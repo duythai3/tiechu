@@ -23,7 +23,7 @@
 #include "vhustring.h"
 #include "engine.h"
 
-gboolean vh_teochew_editor_process(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers);
+gboolean vh_teochew_editor_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers);
 gboolean vh_teochew_editor_is_signal_letter(guint keyval);
 gboolean vh_teochew_editor_is_preedit_containing_tone();
 

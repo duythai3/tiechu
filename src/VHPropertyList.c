@@ -75,7 +75,7 @@ void update_state(IBusProperty* prop, gboolean state) {
 	ibus_property_set_state(prop, state ? PROP_STATE_CHECKED:PROP_STATE_UNCHECKED);
 }
 
-void vh_property_list_update_symbol(IBusViethoaEngine* viethoa) {
+void vh_property_list_update_symbol(IBusAbacusEngine* viethoa) {
 	IBusProperty* prop = ibus_prop_list_get(_property_list, 0);
 	update_symbol(prop);
 	ibus_engine_update_property((IBusEngine*)viethoa, prop);
@@ -149,7 +149,7 @@ void vh_property_list_load(){
     //
 }
 
-void vh_property_list_register(IBusViethoaEngine* viethoa){
+void vh_property_list_register(IBusAbacusEngine* viethoa){
 	//
     if (!_property_list) {
     	vh_logger_error("Property list is null");
@@ -160,7 +160,7 @@ void vh_property_list_register(IBusViethoaEngine* viethoa){
 	ibus_engine_register_properties((IBusEngine*)viethoa, _property_list);
 }
 
-void vh_property_list_update(IBusViethoaEngine* viethoa){
+void vh_property_list_update(IBusAbacusEngine* viethoa){
     IBusProperty *prop;
     IBusEngine *engine = (IBusEngine*)viethoa;
    

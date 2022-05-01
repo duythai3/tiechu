@@ -365,7 +365,7 @@ static gboolean process_pinyin(guint keyval){
 }
 
 /////////////////////////
-gboolean vh_pinyin_editor_process(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers){
+gboolean vh_pinyin_editor_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers){
     guint len = vh_preedit_get_text_len();
     //vh_logger_log("preedit len: %d", len);
     if(len > 0){

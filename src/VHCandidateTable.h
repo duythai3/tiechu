@@ -30,13 +30,13 @@ gboolean vh_candidate_table_init();
 void vh_candidate_table_destroy();
 
 // show the lookup table
-void vh_candidate_table_show(IBusViethoaEngine *viethoa);
+void vh_candidate_table_show(IBusAbacusEngine *viethoa);
 
 // update the lookup table
-void vh_candidate_table_update(IBusViethoaEngine *viethoa, gboolean thayduoc);
+void vh_candidate_table_update(IBusAbacusEngine *viethoa, gboolean thayduoc);
 
 // hide the lookup table
-void vh_candidate_table_hide(IBusViethoaEngine *viethoa);
+void vh_candidate_table_hide(IBusAbacusEngine *viethoa);
 
 // check if the lookup table is showing
 gboolean vh_candidate_table_showing();
@@ -53,11 +53,11 @@ gboolean vh_candidate_table_page_up();
 
 guint vh_candidate_table_get_cursor_pos();
 
-gboolean vh_candidate_table_cursor_up(IBusViethoaEngine *viethoa);
+gboolean vh_candidate_table_cursor_up(IBusAbacusEngine *viethoa);
 
-gboolean vh_candidate_table_cursor_down(IBusViethoaEngine *viethoa);
+gboolean vh_candidate_table_cursor_down(IBusAbacusEngine *viethoa);
 
-void vh_candidate_table_set_command_text(IBusViethoaEngine* viethoa, const gchar* text);
+void vh_candidate_table_set_command_text(IBusAbacusEngine* viethoa, const gchar* text);
 
 gboolean vh_candidate_table_is_command_mode();
 

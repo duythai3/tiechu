@@ -30,7 +30,7 @@
 #include "VHHelper.h"
 #include "VHPreedit.h"
 
-gboolean vh_viethoa_mode_process_key_event(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_viethoa_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
 
     // don't process release key events
     if (vh_helper_is_event_released(modifiers)) {

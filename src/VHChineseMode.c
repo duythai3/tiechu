@@ -31,7 +31,7 @@
 #include "VHHelper.h"
 
 
-gboolean vh_chinese_mode_process_key_event_0(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
     // don't process release key events
     if (vh_helper_is_event_released(modifiers)) {
         return FALSE;
@@ -200,7 +200,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusViethoaEngine* viethoa, guint k
 	//
 }
 
-gboolean vh_chinese_mode_process_key_event(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_chinese_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
 
     // don't process release key events
     if (vh_helper_is_event_released(modifiers)) {

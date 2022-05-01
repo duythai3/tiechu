@@ -140,7 +140,7 @@ static void check_modifiers(guint modifiers) {
     }
 }
 
-gboolean vh_vietnamese_mode_process_key_event(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_vietnamese_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
 
     //check_modifiers(modifiers);
     vh_logger_log("key_event: keyval=%d, keycode=%d, modifiers=%d", keyval, keycode, modifiers);

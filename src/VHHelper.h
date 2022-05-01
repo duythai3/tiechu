@@ -30,17 +30,17 @@
 // is teochew tone digit
 #define is_teochew_tone_digit(c) ((c) >= IBUS_1 && (c) <= IBUS_8)
 
-void vh_helper_clear_preedit(IBusViethoaEngine* viethoa);
+void vh_helper_clear_preedit(IBusAbacusEngine* viethoa);
 
-void vh_helper_commit_preedit(IBusViethoaEngine* viethoa);
+void vh_helper_commit_preedit(IBusAbacusEngine* viethoa);
 
-void vh_helper_update_preedit(IBusViethoaEngine* viethoa);
+void vh_helper_update_preedit(IBusAbacusEngine* viethoa);
 
-gboolean vh_helper_commit_candidate_in_page(IBusViethoaEngine *viethoa,guint index);
+gboolean vh_helper_commit_candidate_in_page(IBusAbacusEngine *viethoa, guint index);
 
-gboolean vh_helper_commit_current_candidate(IBusViethoaEngine *viethoa);
+gboolean vh_helper_commit_current_candidate(IBusAbacusEngine *viethoa);
 
-gboolean vh_helper_process_escape(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers);
+gboolean vh_helper_process_escape(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers);
 
 gboolean vh_helper_is_control_pressed(guint modifiers);
 
@@ -50,7 +50,7 @@ gboolean vh_helper_is_alt_pressed(guint modifiers);
 
 gboolean vh_helper_is_escape_pressed(guint keycode);
 
-void vh_helper_hide_preedit(IBusViethoaEngine* viethoa);
+void vh_helper_hide_preedit(IBusAbacusEngine* viethoa);
 
 gboolean vh_helper_is_ignore_key(guint keyval);
 

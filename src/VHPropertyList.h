@@ -25,8 +25,8 @@
 void vh_property_list_init();
 void vh_property_list_destroy();
 void vh_property_list_load();
-void vh_property_list_register(IBusViethoaEngine* viethoa);
-void vh_property_list_update(IBusViethoaEngine* viethoa);
-void vh_property_list_update_symbol(IBusViethoaEngine* viethoa);
+void vh_property_list_register(IBusAbacusEngine* viethoa);
+void vh_property_list_update(IBusAbacusEngine* viethoa);
+void vh_property_list_update_symbol(IBusAbacusEngine* viethoa);
 
 #endif

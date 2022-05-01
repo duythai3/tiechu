@@ -32,7 +32,7 @@ static IBusLookupTable *_candidate_table = NULL;
 static gboolean _is_candidate_table_showing = FALSE;
 
 static gboolean _command_mode = FALSE;
-void vh_candidate_table_set_command_text(IBusViethoaEngine* viethoa, const gchar* text) {
+void vh_candidate_table_set_command_text(IBusAbacusEngine* viethoa, const gchar* text) {
     //
     IBusText* lb;
 
@@ -103,7 +103,7 @@ void vh_candidate_table_destroy(){
 }
 
 // show the lookup table
-void vh_candidate_table_show(IBusViethoaEngine *viethoa){
+void vh_candidate_table_show(IBusAbacusEngine *viethoa){
 	//
     if (!_candidate_table) {
 		return;
@@ -139,12 +139,12 @@ void vh_candidate_table_show(IBusViethoaEngine *viethoa){
 }
 
 // update the lookup table
-void vh_candidate_table_update(IBusViethoaEngine *viethoa, gboolean visible){
+void vh_candidate_table_update(IBusAbacusEngine *viethoa, gboolean visible){
     vh_candidate_table_show(viethoa);
 }
 
 // hide the lookup table
-void vh_candidate_table_hide(IBusViethoaEngine *viethoa){
+void vh_candidate_table_hide(IBusAbacusEngine *viethoa){
 	//
     if (!_candidate_table) {
 		return;
@@ -181,7 +181,7 @@ guint vh_candidate_table_get_page_size(){
     return ibus_lookup_table_get_page_size(_candidate_table);
 }
 
-gboolean vh_candidate_table_page_down(IBusViethoaEngine *viethoa) {
+gboolean vh_candidate_table_page_down(IBusAbacusEngine *viethoa) {
     if (!_candidate_table) {
         return FALSE;
     }
@@ -192,7 +192,7 @@ gboolean vh_candidate_table_page_down(IBusViethoaEngine *viethoa) {
     return TRUE;
 }
 
-gboolean vh_candidate_table_page_up(IBusViethoaEngine *viethoa) {
+gboolean vh_candidate_table_page_up(IBusAbacusEngine *viethoa) {
 	//
     if (!_candidate_table) {
 		return FALSE;
@@ -211,7 +211,7 @@ guint vh_candidate_table_get_cursor_pos() {
     return ibus_lookup_table_get_cursor_pos(_candidate_table);
 }
 
-gboolean vh_candidate_table_cursor_up(IBusViethoaEngine *viethoa) {
+gboolean vh_candidate_table_cursor_up(IBusAbacusEngine *viethoa) {
 	//
     if (!_candidate_table) {
 		return FALSE;
@@ -223,7 +223,7 @@ gboolean vh_candidate_table_cursor_up(IBusViethoaEngine *viethoa) {
 	return ret;
 }
 
-gboolean vh_candidate_table_cursor_down(IBusViethoaEngine *viethoa) {
+gboolean vh_candidate_table_cursor_down(IBusAbacusEngine *viethoa) {
 	//
     if (!_candidate_table) {
 		return FALSE;

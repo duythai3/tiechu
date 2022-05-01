@@ -22,6 +22,6 @@
 
 #include "engine.h"
 
-gboolean vh_viethoa_mode_process_key_event(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers);
+gboolean vh_viethoa_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers);
 
 #endif /* SRC_VHENGLISHMODE_H_ */

@@ -33,7 +33,7 @@
 #include "VHTeochewTable.h"
 
 
-void vh_helper_clear_preedit(IBusViethoaEngine* viethoa) {
+void vh_helper_clear_preedit(IBusAbacusEngine* viethoa) {
 	vh_logger_log("Clear preedit...\n");
 	vh_preedit_clear();
 	IBusText *text;
@@ -44,13 +44,13 @@ void vh_helper_clear_preedit(IBusViethoaEngine* viethoa) {
     }
 }
 
-void vh_helper_hide_preedit(IBusViethoaEngine* viethoa) {
+void vh_helper_hide_preedit(IBusAbacusEngine* viethoa) {
     // hide the preedit string on screen
     ibus_engine_hide_preedit_text ((IBusEngine*)viethoa);
     vh_candidate_table_hide(viethoa);
 }
 
-void vh_helper_commit_preedit(IBusViethoaEngine* viethoa) {
+void vh_helper_commit_preedit(IBusAbacusEngine* viethoa) {
 	// commit preedit
     gchar *utf8_preedit = vh_preedit_get_utf8_string();
     IBusText *text;
@@ -70,7 +70,7 @@ void vh_helper_commit_preedit(IBusViethoaEngine* viethoa) {
 	}
 }
 
-void vh_helper_update_preedit(IBusViethoaEngine* viethoa) {
+void vh_helper_update_preedit(IBusAbacusEngine* viethoa) {
 	// commit preedit
     gchar *utf8_preedit = vh_preedit_get_utf8_string();
     guint cursor_pos = vh_preedit_get_cursor_pos();
@@ -130,7 +130,7 @@ void vh_helper_update_preedit(IBusViethoaEngine* viethoa) {
 
 }
 
-gboolean vh_helper_commit_candidate_in_page(IBusViethoaEngine *viethoa,guint index) {
+gboolean vh_helper_commit_candidate_in_page(IBusAbacusEngine *viethoa, guint index) {
     if (!vh_candidate_table_showing()) {
 		return FALSE;
 	}
@@ -171,7 +171,7 @@ gboolean vh_helper_commit_candidate_in_page(IBusViethoaEngine *viethoa,guint ind
     return TRUE;
 }
 
-gboolean vh_helper_commit_current_candidate(IBusViethoaEngine *viethoa) {
+gboolean vh_helper_commit_current_candidate(IBusAbacusEngine *viethoa) {
     if (!vh_candidate_table_showing()) {
         return FALSE;
     }
@@ -203,7 +203,7 @@ gboolean vh_helper_commit_current_candidate(IBusViethoaEngine *viethoa) {
     return TRUE;
 }
 
-gboolean vh_helper_process_escape(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_helper_process_escape(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
     //vh_logger_log("Change to English mode using Escape key");
     vh_configuration_set_selected_mode(__ENGLISH_MODE_2__);
     vh_property_list_update(viethoa);

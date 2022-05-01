@@ -29,7 +29,7 @@
 #include "VHHelper.h"
 
 
-gboolean vh_english_mode_process_key_event(IBusViethoaEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
+gboolean vh_english_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
 	vh_logger_log("manage_mode: keyval: %d, keycode: %d, modifiers: %d", keyval, keycode, modifiers);
 	return FALSE;
 }
