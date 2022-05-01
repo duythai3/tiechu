@@ -320,12 +320,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 icons_DATA = \
-	ibus-viethoa.svg \
+	Abacus.svg \
 	$(NULL)
 
 iconsdir = $(pkgdatadir)/icons
 EXTRA_DIST = \
-	ibus-viethoa.svg \
+	Abacus.svg \
 	$(NULL)
 
 all: all-am

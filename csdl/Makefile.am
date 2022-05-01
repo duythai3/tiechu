@@ -19,11 +19,11 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 csdl_DATA = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)
 
 csdldir = $(pkgdatadir)/csdl
 
 EXTRA_DIST = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)

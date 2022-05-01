@@ -108,7 +108,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-libexec_PROGRAMS = ibus-viethoa-property$(EXEEXT)
+libexec_PROGRAMS = Abacus-property$(EXEEXT)
 subdir = property
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -124,18 +124,17 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(libexecdir)"
 PROGRAMS = $(libexec_PROGRAMS)
-am_ibus_viethoa_property_OBJECTS =  \
-	ibus_viethoa_property-main.$(OBJEXT)
-ibus_viethoa_property_OBJECTS = $(am_ibus_viethoa_property_OBJECTS)
-ibus_viethoa_property_LDADD = $(LDADD)
+am_Abacus_property_OBJECTS = Abacus_property-main.$(OBJEXT)
+Abacus_property_OBJECTS = $(am_Abacus_property_OBJECTS)
+Abacus_property_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-ibus_viethoa_property_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+Abacus_property_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(ibus_viethoa_property_CFLAGS) $(CFLAGS) \
-	$(ibus_viethoa_property_LDFLAGS) $(LDFLAGS) -o $@
+	$(Abacus_property_CFLAGS) $(CFLAGS) $(Abacus_property_LDFLAGS) \
+	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -151,7 +150,7 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/ibus_viethoa_property-main.Po
+am__depfiles_remade = ./$(DEPDIR)/Abacus_property-main.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -171,8 +170,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(ibus_viethoa_property_SOURCES)
-DIST_SOURCES = $(ibus_viethoa_property_SOURCES)
+SOURCES = $(Abacus_property_SOURCES)
+DIST_SOURCES = $(Abacus_property_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -346,17 +345,17 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-ibus_viethoa_property_SOURCES = \
+Abacus_property_SOURCES = \
 	main.c \
 	$(NULL)
 
-ibus_viethoa_property_CFLAGS = \
+Abacus_property_CFLAGS = \
 	@LIBJSON_CFLAGS@ \
 	@LIBGTK3_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-ibus_viethoa_property_LDFLAGS = \
+Abacus_property_LDFLAGS = \
 	@LIBJSON_LIBS@ \
 	@LIBGTK3_LIBS@ \
 	$(NULL)
@@ -444,9 +443,9 @@ clean-libexecPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-ibus-viethoa-property$(EXEEXT): $(ibus_viethoa_property_OBJECTS) $(ibus_viethoa_property_DEPENDENCIES) $(EXTRA_ibus_viethoa_property_DEPENDENCIES) 
-	@rm -f ibus-viethoa-property$(EXEEXT)
-	$(AM_V_CCLD)$(ibus_viethoa_property_LINK) $(ibus_viethoa_property_OBJECTS) $(ibus_viethoa_property_LDADD) $(LIBS)
+Abacus-property$(EXEEXT): $(Abacus_property_OBJECTS) $(Abacus_property_DEPENDENCIES) $(EXTRA_Abacus_property_DEPENDENCIES) 
+	@rm -f Abacus-property$(EXEEXT)
+	$(AM_V_CCLD)$(Abacus_property_LINK) $(Abacus_property_OBJECTS) $(Abacus_property_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -454,7 +453,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_viethoa_property-main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus_property-main.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -483,19 +482,19 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-ibus_viethoa_property-main.o: main.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -MT ibus_viethoa_property-main.o -MD -MP -MF $(DEPDIR)/ibus_viethoa_property-main.Tpo -c -o ibus_viethoa_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_viethoa_property-main.Tpo $(DEPDIR)/ibus_viethoa_property-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='ibus_viethoa_property-main.o' libtool=no @AMDEPBACKSLASH@
+Abacus_property-main.o: main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -MT Abacus_property-main.o -MD -MP -MF $(DEPDIR)/Abacus_property-main.Tpo -c -o Abacus_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus_property-main.Tpo $(DEPDIR)/Abacus_property-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='Abacus_property-main.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -c -o ibus_viethoa_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -c -o Abacus_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
-ibus_viethoa_property-main.obj: main.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -MT ibus_viethoa_property-main.obj -MD -MP -MF $(DEPDIR)/ibus_viethoa_property-main.Tpo -c -o ibus_viethoa_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_viethoa_property-main.Tpo $(DEPDIR)/ibus_viethoa_property-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='ibus_viethoa_property-main.obj' libtool=no @AMDEPBACKSLASH@
+Abacus_property-main.obj: main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -MT Abacus_property-main.obj -MD -MP -MF $(DEPDIR)/Abacus_property-main.Tpo -c -o Abacus_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus_property-main.Tpo $(DEPDIR)/Abacus_property-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='Abacus_property-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -c -o ibus_viethoa_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -c -o Abacus_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -631,7 +630,7 @@ clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/ibus_viethoa_property-main.Po
+		-rm -f ./$(DEPDIR)/Abacus_property-main.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -677,7 +676,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/ibus_viethoa_property-main.Po
+		-rm -f ./$(DEPDIR)/Abacus_property-main.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

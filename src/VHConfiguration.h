@@ -24,7 +24,7 @@
 
 #define __CANDIDATE_TABLE_PAGE_SIZE__ 8
 
-#define __VIETHOA_DIRECTORY__ ".viethoa"
+#define __VIETHOA_DIRECTORY__ ".Abacus"
 
 /*
 #define __CURRENT_MODE_LABEL__ "Mode hiện hành"

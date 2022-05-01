@@ -5,7 +5,7 @@
 /* #undef ENABLE_NLS */
 
 /* Define to the read-only architecture-independent data directory. */
-#define GETTEXT_PACKAGE "ibus-viethoa"
+#define GETTEXT_PACKAGE "Abacus"
 
 /* Define to 1 if you have the `bind_textdomain_codeset' function. */
 #define HAVE_BIND_TEXTDOMAIN_CODESET 1
@@ -64,25 +64,25 @@
 #define LT_OBJDIR ".libs/"
 
 /* Name of package */
-#define PACKAGE "ibus-viethoa"
+#define PACKAGE "Abacus"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "http://github.com/duy-n-thai/ibus-viethoa"
+#define PACKAGE_BUGREPORT "https://github.com/duythaiz234/Abacus"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "ibus-viethoa"
+#define PACKAGE_NAME "Abacus"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "ibus-viethoa 1.0.0.20211116"
+#define PACKAGE_STRING "Abacus 1.0.0.20220423"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "ibus-viethoa"
+#define PACKAGE_TARNAME "Abacus"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0.20211116"
+#define PACKAGE_VERSION "1.0.0.20220423"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -110,7 +110,7 @@
 
 
 /* Version number of package */
-#define VERSION "1.0.0.20211116"
+#define VERSION "1.0.0.20220423"
 
 /* Define to 1 if on MINIX. */
 /* #undef _MINIX */

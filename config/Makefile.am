@@ -19,11 +19,11 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 config_DATA = \
-	ibus_viethoa.conf \
+	Abacus.conf \
 	$(NULL)
 
 configdir = $(pkgdatadir)/config
 
 EXTRA_DIST = \
-	ibus_viethoa.conf \
+	Abacus.conf \
 	$(NULL)

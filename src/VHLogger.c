@@ -26,8 +26,8 @@
 #include "vhutil.h"
 #include "VHConfiguration.h"
 
-#define __LOGGER_FILE__ "ibus_viethoa.log"
-#define __LOGGER_FILE_2__ "ibus_viethoa_2.log"
+#define __LOGGER_FILE__ "Abacus.log"
+#define __LOGGER_FILE_2__ "Abacus_2.log"
 
 gboolean create_viethoa_directory();
 glong get_logger_file_size();

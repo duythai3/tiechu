@@ -54,31 +54,31 @@ init (void)
     bus = ibus_bus_new ();
     g_object_ref_sink (bus);
     g_signal_connect (bus, "disconnected", G_CALLBACK (ibus_disconnected_cb), NULL);
-	
+
     factory = ibus_factory_new (ibus_bus_get_connection (bus));
     g_object_ref_sink (factory);
-    ibus_factory_add_engine (factory, "viethoa", IBUS_TYPE_VIETHOA_ENGINE);
+    ibus_factory_add_engine (factory, "Abacus", IBUS_TYPE_VIETHOA_ENGINE);
 
     if (ibus) {
         vh_logger_log("inus connected: %d", 3);
-        ibus_bus_request_name (bus, "org.freedesktop.IBus.Viethoa", 0);
+        ibus_bus_request_name (bus, "org.freedesktop.IBus.Abacus", 0);
     }
     else {
         IBusComponent *component;
 
-        component = ibus_component_new ("org.freedesktop.IBus.Viethoa",
-                                        "Viethoa",
+        component = ibus_component_new ("org.freedesktop.IBus.Abacus",
+                                        "Abacus",
                                         "0.1.0",
                                         "GPL",
-                                        "Duy Thai <duynthai@yahoo.com>",
+                                        "Duy Thai<duythaiz234@gmail.com>",
                                         "http://code.google.com/p/ibus/",
                                         "",
-                                        "ibus-viethoa");
-        vh_logger_log("ibus-viethoa component created\n");
-        ibus_component_add_engine (component, ibus_engine_desc_new ("viethoa", "Viethoa", "Viethoa", "vi_VN", "GPL", "Duy Thai <duynthai@yahoo.com>", PKGDATADIR"/icons/ibus-viethoa.svg", "us"));
-        vh_logger_log("ibus-viethoa engine created\n ");
+                                        "Abacus");
+        vh_logger_log("Abacus component created\n");
+        ibus_component_add_engine (component, ibus_engine_desc_new ("Abacus", "Abacus", "Abacus", "vi_VN", "GPL", "Duy Thai <duythaiz234@gmail.com>", PKGDATADIR"/icons/Abacus.svg", "us"));
+        vh_logger_log("Abacus engine created\n ");
         ibus_bus_register_component (bus, component);
-        vh_logger_log("ibus-viethoa component registered\n");
+        vh_logger_log("Abacus component registered\n");
     }
 }
 
@@ -94,6 +94,7 @@ int main2(int argc, char **argv)
 
     return 0;
 }
+
 int main(int argc, char **argv)
 {
     GError *error = NULL;
@@ -105,11 +106,11 @@ int main(int argc, char **argv)
     //vh_boghi_ghi_thongtin("datadir: %s", LIBEXECDIR);
 
     //
-    vh_logger_log("ibus-viethoa started.\n");
-        
-    // Parse the command line 
-    context = g_option_context_new ("- ibus viethoa engine");
-    g_option_context_add_main_entries (context, entries, "ibus-viethoa");
+    vh_logger_log("Abacus started.\n");
+
+    // Parse the command line
+    context = g_option_context_new ("- ibus Abacus engine");
+    g_option_context_add_main_entries (context, entries, "Abacus");
 
     if (!g_option_context_parse (context, &argc, &argv, &error)) {
       g_print ("Option parsing failed: %s\n", error->message);
@@ -117,12 +118,12 @@ int main(int argc, char **argv)
       return (-1);
     }
 
-    // Go 
+    // Go
     init ();
     ibus_main ();
-    vh_logger_log("__ibus-viethoa stopped.\n");
+    vh_logger_log("__Abacus stopped.\n");
     uninitialize();
     // close logger channel
-    vh_logger_close(); 
+    vh_logger_close();
     return 0;
 }

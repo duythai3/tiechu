@@ -320,12 +320,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 csdl_DATA = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)
 
 csdldir = $(pkgdatadir)/csdl
 EXTRA_DIST = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)
 
 all: all-am

@@ -27,7 +27,7 @@
 #include "VHConfiguration.h"
 #include "VHLogger.h"
 
-#define __CONFIG_FILE__ "ibus_viethoa.conf"
+#define __CONFIG_FILE__ "Abacus.conf"
 
 GKeyFile* _key_file = NULL;
 gint _default_mode = 1;
@@ -50,7 +50,7 @@ gboolean __is_config_file_existing();
 // copy the original configuration file to the user configuration diectory
 gboolean __copy_config_file();
 
-// load user configuration file  
+// load user configuration file
 gboolean __load_config_file();
 
 
@@ -86,13 +86,13 @@ gboolean __copy_config_file(){
     len = g_sprintf(_buffer, "%s/%s/%s", user_dir, __VIETHOA_DIRECTORY__, __CONFIG_FILE__);
     const gchar *config_file = _buffer;
     GIOChannel *config_channel = g_io_channel_new_file(config_file, "w", NULL);
-    
+
     //
     if (!config_channel) {
 		vh_logger_error("Can't copy configuration file");
     	return FALSE;
     }
-    
+
 	// get content of original configuration file
 	gchar *config_file_content = NULL;
 	gsize content_len = 0;

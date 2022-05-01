@@ -43,7 +43,7 @@
 static void	ibus_viethoa_engine_class_init	(IBusViethoaEngineClass	*klass);
 static void	ibus_viethoa_engine_init		(IBusViethoaEngine		*viethoa);
 static void	ibus_viethoa_engine_destroy		(IBusViethoaEngine		*viethoa);
-static gboolean 
+static gboolean
 			ibus_viethoa_engine_process_key_event
                                             (IBusEngine             *engine,
                                              guint               	 keyval,
@@ -96,13 +96,13 @@ ibus_viethoa_engine_class_init (IBusViethoaEngineClass *klass)
     vh_logger_log("engine class init...\n");
 	IBusObjectClass *ibus_object_class = IBUS_OBJECT_CLASS (klass);
 	IBusEngineClass *engine_class = IBUS_ENGINE_CLASS (klass);
-	
+
 	ibus_object_class->destroy = (IBusObjectDestroyFunc) ibus_viethoa_engine_destroy;
 
     engine_class->process_key_event = ibus_viethoa_engine_process_key_event;
     engine_class->focus_out = ibus_viethoa_engine_focus_out;
     engine_class->focus_in = ibus_viethoa_engine_focus_in;
-    
+
     engine_class->property_activate = property_activated;
 
 	//
@@ -118,8 +118,8 @@ ibus_viethoa_engine_class_init (IBusViethoaEngineClass *klass)
 }
 
 void initialize(){
-    vh_logger_log("viethoa engine init...\n");
-    
+    vh_logger_log("Abacus engine init...\n");
+
     //load configuration
     vh_configuration_load();
 
@@ -138,17 +138,17 @@ void initialize(){
 
     // initialize lookup table
     vh_candidate_table_init();
-    
+
     vh_candidate_array_init();
     vh_viethoa_table_init();
 }
 
 void uninitialize(){
-    vh_logger_log("__viethoa engine destroy...\n");
+    vh_logger_log("Abacus engine destroy...\n");
 
 	// destroy property list
     vh_property_list_destroy();
-    
+
 	//telex
 	vh_preedit_destroy();
     vh_z_telex_table_2_destroy();

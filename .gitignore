@@ -1,5 +1,4 @@
-ibus-viethoa-property
-ibus-engine-viethoa
+*.Po
 *.bak_*
 *.o
 autom4te.cache

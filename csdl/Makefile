@@ -90,10 +90,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/ibus-viethoa
-pkgincludedir = $(includedir)/ibus-viethoa
-pkglibdir = $(libdir)/ibus-viethoa
-pkglibexecdir = $(libexecdir)/ibus-viethoa
+pkgdatadir = $(datadir)/Abacus
+pkgincludedir = $(includedir)/Abacus
+pkglibdir = $(libdir)/Abacus
+pkglibexecdir = $(libexecdir)/Abacus
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -172,13 +172,13 @@ DATA = $(csdl_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /tc/projects/ibus_viethoa/missing aclocal-1.16
+ACLOCAL = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} /tc/projects/ibus_viethoa/missing autoconf
-AUTOHEADER = ${SHELL} /tc/projects/ibus_viethoa/missing autoheader
-AUTOMAKE = ${SHELL} /tc/projects/ibus_viethoa/missing automake-1.16
+AUTOCONF = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing autoconf
+AUTOHEADER = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing autoheader
+AUTOMAKE = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing automake-1.16
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = NONE
@@ -204,7 +204,7 @@ ECHO_T =
 EGREP = /usr/bin/grep -E
 EXEEXT = 
 FGREP = /usr/bin/grep -F
-GETTEXT_PACKAGE = ibus-viethoa
+GETTEXT_PACKAGE = Abacus
 GMOFILES = 
 GMSGFMT = 
 GREP = /usr/bin/grep
@@ -228,7 +228,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = 
-MAKEINFO = ${SHELL} /tc/projects/ibus_viethoa/missing makeinfo
+MAKEINFO = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
@@ -240,13 +240,13 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = ibus-viethoa
-PACKAGE_BUGREPORT = http://github.com/duy-n-thai/ibus-viethoa
-PACKAGE_NAME = ibus-viethoa
-PACKAGE_STRING = ibus-viethoa 1.0.0.20211116
-PACKAGE_TARNAME = ibus-viethoa
+PACKAGE = Abacus
+PACKAGE_BUGREPORT = https://github.com/duythaiz234/Abacus
+PACKAGE_NAME = Abacus
+PACKAGE_STRING = Abacus 1.0.0.20220423
+PACKAGE_TARNAME = Abacus
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.0.0.20211116
+PACKAGE_VERSION = 1.0.0.20220423
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -263,12 +263,12 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.0.0.20211116
+VERSION = 1.0.0.20220423
 XGETTEXT = :
-abs_builddir = /tc/projects/ibus_viethoa/csdl
-abs_srcdir = /tc/projects/ibus_viethoa/csdl
-abs_top_builddir = /tc/projects/ibus_viethoa
-abs_top_srcdir = /tc/projects/ibus_viethoa
+abs_builddir = /TC/Duy/Programming/projects/Abacus/csdl
+abs_srcdir = /TC/Duy/Programming/projects/Abacus/csdl
+abs_top_builddir = /TC/Duy/Programming/projects/Abacus
+abs_top_srcdir = /TC/Duy/Programming/projects/Abacus
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -298,7 +298,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /tc/projects/ibus_viethoa/install-sh
+install_sh = ${SHELL} /TC/Duy/Programming/projects/Abacus/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -320,12 +320,12 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 csdl_DATA = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)
 
 csdldir = $(pkgdatadir)/csdl
 EXTRA_DIST = \
-	viethoa.db \
+	Abacus.db \
 	$(NULL)
 
 all: all-am

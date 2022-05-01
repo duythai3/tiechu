@@ -19,9 +19,9 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-libexec_PROGRAMS = ibus-engine-viethoa
+libexec_PROGRAMS = Abacus
 
-ibus_engine_viethoa_SOURCES = \
+Abacus_SOURCES = \
 	main.c \
 	engine.c \
 	engine.h \
@@ -80,31 +80,31 @@ ibus_engine_viethoa_SOURCES = \
     VHInterchangeMode.c \
     $(NULL)
 
-ibus_engine_viethoa_CFLAGS = \
+Abacus_CFLAGS = \
 	@IBUS_CFLAGS@ \
 	@SQLITE_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\"\
 	$(NULL)
-	
-ibus_engine_viethoa_LDFLAGS = \
+
+Abacus_LDFLAGS = \
 	@IBUS_LIBS@ \
 	@SQLITE_LIBS@ \
 	$(NULL)
 
 component_DATA = \
-	viethoa.xml \
+	Abacus.xml \
 	$(NULL)
 componentdir = @datadir@/ibus/component
 
 EXTRA_DIST = \
-	viethoa.xml.in \
+	Abacus.xml.in \
 	$(NULL)
 
 CLEANFILES = \
-	viethoa.xml \
+	Abacus.xml \
 	$(NULL)
 
-viethoa.xml: viethoa.xml.in
+Abacus.xml: Abacus.xml.in
 	$(AM_V_GEN) \
 	( \
 		libexecdir=${libexecdir}; \
@@ -113,5 +113,5 @@ viethoa.xml: viethoa.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: ibus-engine-viethoa
-	$(builddir)/ibus-engine-viethoa
+test: Abacus
+	$(builddir)/Abacus

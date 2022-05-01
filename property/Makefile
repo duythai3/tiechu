@@ -90,10 +90,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/ibus-viethoa
-pkgincludedir = $(includedir)/ibus-viethoa
-pkglibdir = $(libdir)/ibus-viethoa
-pkglibexecdir = $(libexecdir)/ibus-viethoa
+pkgdatadir = $(datadir)/Abacus
+pkgincludedir = $(includedir)/Abacus
+pkglibdir = $(libdir)/Abacus
+pkglibexecdir = $(libexecdir)/Abacus
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -108,7 +108,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
-libexec_PROGRAMS = ibus-viethoa-property$(EXEEXT)
+libexec_PROGRAMS = Abacus-property$(EXEEXT)
 subdir = property
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -124,18 +124,17 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(libexecdir)"
 PROGRAMS = $(libexec_PROGRAMS)
-am_ibus_viethoa_property_OBJECTS =  \
-	ibus_viethoa_property-main.$(OBJEXT)
-ibus_viethoa_property_OBJECTS = $(am_ibus_viethoa_property_OBJECTS)
-ibus_viethoa_property_LDADD = $(LDADD)
+am_Abacus_property_OBJECTS = Abacus_property-main.$(OBJEXT)
+Abacus_property_OBJECTS = $(am_Abacus_property_OBJECTS)
+Abacus_property_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-ibus_viethoa_property_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+Abacus_property_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(ibus_viethoa_property_CFLAGS) $(CFLAGS) \
-	$(ibus_viethoa_property_LDFLAGS) $(LDFLAGS) -o $@
+	$(Abacus_property_CFLAGS) $(CFLAGS) $(Abacus_property_LDFLAGS) \
+	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -151,7 +150,7 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/ibus_viethoa_property-main.Po
+am__depfiles_remade = ./$(DEPDIR)/Abacus_property-main.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -171,8 +170,8 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(ibus_viethoa_property_SOURCES)
-DIST_SOURCES = $(ibus_viethoa_property_SOURCES)
+SOURCES = $(Abacus_property_SOURCES)
+DIST_SOURCES = $(Abacus_property_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -199,13 +198,13 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /tc/projects/ibus_viethoa/missing aclocal-1.16
+ACLOCAL = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = ar
-AUTOCONF = ${SHELL} /tc/projects/ibus_viethoa/missing autoconf
-AUTOHEADER = ${SHELL} /tc/projects/ibus_viethoa/missing autoheader
-AUTOMAKE = ${SHELL} /tc/projects/ibus_viethoa/missing automake-1.16
+AUTOCONF = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing autoconf
+AUTOHEADER = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing autoheader
+AUTOMAKE = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing automake-1.16
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = NONE
@@ -231,7 +230,7 @@ ECHO_T =
 EGREP = /usr/bin/grep -E
 EXEEXT = 
 FGREP = /usr/bin/grep -F
-GETTEXT_PACKAGE = ibus-viethoa
+GETTEXT_PACKAGE = Abacus
 GMOFILES = 
 GMSGFMT = 
 GREP = /usr/bin/grep
@@ -255,7 +254,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = 
-MAKEINFO = ${SHELL} /tc/projects/ibus_viethoa/missing makeinfo
+MAKEINFO = ${SHELL} /TC/Duy/Programming/projects/Abacus/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
@@ -267,13 +266,13 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = ibus-viethoa
-PACKAGE_BUGREPORT = http://github.com/duy-n-thai/ibus-viethoa
-PACKAGE_NAME = ibus-viethoa
-PACKAGE_STRING = ibus-viethoa 1.0.0.20211116
-PACKAGE_TARNAME = ibus-viethoa
+PACKAGE = Abacus
+PACKAGE_BUGREPORT = https://github.com/duythaiz234/Abacus
+PACKAGE_NAME = Abacus
+PACKAGE_STRING = Abacus 1.0.0.20220423
+PACKAGE_TARNAME = Abacus
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.0.0.20211116
+PACKAGE_VERSION = 1.0.0.20220423
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -290,12 +289,12 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.0.0.20211116
+VERSION = 1.0.0.20220423
 XGETTEXT = :
-abs_builddir = /tc/projects/ibus_viethoa/property
-abs_srcdir = /tc/projects/ibus_viethoa/property
-abs_top_builddir = /tc/projects/ibus_viethoa
-abs_top_srcdir = /tc/projects/ibus_viethoa
+abs_builddir = /TC/Duy/Programming/projects/Abacus/property
+abs_srcdir = /TC/Duy/Programming/projects/Abacus/property
+abs_top_builddir = /TC/Duy/Programming/projects/Abacus
+abs_top_srcdir = /TC/Duy/Programming/projects/Abacus
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -325,7 +324,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /tc/projects/ibus_viethoa/install-sh
+install_sh = ${SHELL} /TC/Duy/Programming/projects/Abacus/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -346,17 +345,17 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-ibus_viethoa_property_SOURCES = \
+Abacus_property_SOURCES = \
 	main.c \
 	$(NULL)
 
-ibus_viethoa_property_CFLAGS = \
+Abacus_property_CFLAGS = \
 	@LIBJSON_CFLAGS@ \
 	@LIBGTK3_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-ibus_viethoa_property_LDFLAGS = \
+Abacus_property_LDFLAGS = \
 	@LIBJSON_LIBS@ \
 	@LIBGTK3_LIBS@ \
 	$(NULL)
@@ -444,9 +443,9 @@ clean-libexecPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-ibus-viethoa-property$(EXEEXT): $(ibus_viethoa_property_OBJECTS) $(ibus_viethoa_property_DEPENDENCIES) $(EXTRA_ibus_viethoa_property_DEPENDENCIES) 
-	@rm -f ibus-viethoa-property$(EXEEXT)
-	$(AM_V_CCLD)$(ibus_viethoa_property_LINK) $(ibus_viethoa_property_OBJECTS) $(ibus_viethoa_property_LDADD) $(LIBS)
+Abacus-property$(EXEEXT): $(Abacus_property_OBJECTS) $(Abacus_property_DEPENDENCIES) $(EXTRA_Abacus_property_DEPENDENCIES) 
+	@rm -f Abacus-property$(EXEEXT)
+	$(AM_V_CCLD)$(Abacus_property_LINK) $(Abacus_property_OBJECTS) $(Abacus_property_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -454,7 +453,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/ibus_viethoa_property-main.Po # am--include-marker
+include ./$(DEPDIR)/Abacus_property-main.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -483,19 +482,19 @@ am--depfiles: $(am__depfiles_remade)
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
-ibus_viethoa_property-main.o: main.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -MT ibus_viethoa_property-main.o -MD -MP -MF $(DEPDIR)/ibus_viethoa_property-main.Tpo -c -o ibus_viethoa_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_viethoa_property-main.Tpo $(DEPDIR)/ibus_viethoa_property-main.Po
-#	$(AM_V_CC)source='main.c' object='ibus_viethoa_property-main.o' libtool=no \
+Abacus_property-main.o: main.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -MT Abacus_property-main.o -MD -MP -MF $(DEPDIR)/Abacus_property-main.Tpo -c -o Abacus_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus_property-main.Tpo $(DEPDIR)/Abacus_property-main.Po
+#	$(AM_V_CC)source='main.c' object='Abacus_property-main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -c -o ibus_viethoa_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -c -o Abacus_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
-ibus_viethoa_property-main.obj: main.c
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -MT ibus_viethoa_property-main.obj -MD -MP -MF $(DEPDIR)/ibus_viethoa_property-main.Tpo -c -o ibus_viethoa_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_viethoa_property-main.Tpo $(DEPDIR)/ibus_viethoa_property-main.Po
-#	$(AM_V_CC)source='main.c' object='ibus_viethoa_property-main.obj' libtool=no \
+Abacus_property-main.obj: main.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -MT Abacus_property-main.obj -MD -MP -MF $(DEPDIR)/Abacus_property-main.Tpo -c -o Abacus_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus_property-main.Tpo $(DEPDIR)/Abacus_property-main.Po
+#	$(AM_V_CC)source='main.c' object='Abacus_property-main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_viethoa_property_CFLAGS) $(CFLAGS) -c -o ibus_viethoa_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_property_CFLAGS) $(CFLAGS) -c -o Abacus_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -631,7 +630,7 @@ clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/ibus_viethoa_property-main.Po
+		-rm -f ./$(DEPDIR)/Abacus_property-main.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -677,7 +676,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/ibus_viethoa_property-main.Po
+		-rm -f ./$(DEPDIR)/Abacus_property-main.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

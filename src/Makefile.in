@@ -109,7 +109,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-libexec_PROGRAMS = ibus-engine-viethoa$(EXEEXT)
+libexec_PROGRAMS = Abacus$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -121,49 +121,40 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = viethoa.xml.in
+CONFIG_CLEAN_FILES = Abacus.xml.in
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(componentdir)"
 PROGRAMS = $(libexec_PROGRAMS)
-am_ibus_engine_viethoa_OBJECTS = ibus_engine_viethoa-main.$(OBJEXT) \
-	ibus_engine_viethoa-engine.$(OBJEXT) \
-	ibus_engine_viethoa-vhutil.$(OBJEXT) \
-	ibus_engine_viethoa-vhustring.$(OBJEXT) \
-	ibus_engine_viethoa-VHTelexEditor2.$(OBJEXT) \
-	ibus_engine_viethoa-VHZTelexTable2.$(OBJEXT) \
-	ibus_engine_viethoa-VHPropertyList.$(OBJEXT) \
-	ibus_engine_viethoa-VHConfiguration.$(OBJEXT) \
-	ibus_engine_viethoa-VHLogger.$(OBJEXT) \
-	ibus_engine_viethoa-VHCandidateTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHViethoaTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHCandidateArray.$(OBJEXT) \
-	ibus_engine_viethoa-VHEnglishMode.$(OBJEXT) \
-	ibus_engine_viethoa-VHVietnameseMode.$(OBJEXT) \
-	ibus_engine_viethoa-VHViethoaMode.$(OBJEXT) \
-	ibus_engine_viethoa-VHTeochewMode.$(OBJEXT) \
-	ibus_engine_viethoa-VHChineseMode.$(OBJEXT) \
-	ibus_engine_viethoa-VHHelper.$(OBJEXT) \
-	ibus_engine_viethoa-VHDatabase.$(OBJEXT) \
-	ibus_engine_viethoa-VHPreedit.$(OBJEXT) \
-	ibus_engine_viethoa-VHPinyinTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHPinyinEditor.$(OBJEXT) \
-	ibus_engine_viethoa-VHChineseTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHLTelexTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHETelexTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHTeochewEditor.$(OBJEXT) \
-	ibus_engine_viethoa-VHTeochewTable.$(OBJEXT) \
-	ibus_engine_viethoa-VHInterchangeMode.$(OBJEXT)
-ibus_engine_viethoa_OBJECTS = $(am_ibus_engine_viethoa_OBJECTS)
-ibus_engine_viethoa_LDADD = $(LDADD)
+am_Abacus_OBJECTS = Abacus-main.$(OBJEXT) Abacus-engine.$(OBJEXT) \
+	Abacus-vhutil.$(OBJEXT) Abacus-vhustring.$(OBJEXT) \
+	Abacus-VHTelexEditor2.$(OBJEXT) \
+	Abacus-VHZTelexTable2.$(OBJEXT) \
+	Abacus-VHPropertyList.$(OBJEXT) \
+	Abacus-VHConfiguration.$(OBJEXT) Abacus-VHLogger.$(OBJEXT) \
+	Abacus-VHCandidateTable.$(OBJEXT) \
+	Abacus-VHViethoaTable.$(OBJEXT) \
+	Abacus-VHCandidateArray.$(OBJEXT) \
+	Abacus-VHEnglishMode.$(OBJEXT) \
+	Abacus-VHVietnameseMode.$(OBJEXT) \
+	Abacus-VHViethoaMode.$(OBJEXT) Abacus-VHTeochewMode.$(OBJEXT) \
+	Abacus-VHChineseMode.$(OBJEXT) Abacus-VHHelper.$(OBJEXT) \
+	Abacus-VHDatabase.$(OBJEXT) Abacus-VHPreedit.$(OBJEXT) \
+	Abacus-VHPinyinTable.$(OBJEXT) Abacus-VHPinyinEditor.$(OBJEXT) \
+	Abacus-VHChineseTable.$(OBJEXT) Abacus-VHLTelexTable.$(OBJEXT) \
+	Abacus-VHETelexTable.$(OBJEXT) \
+	Abacus-VHTeochewEditor.$(OBJEXT) \
+	Abacus-VHTeochewTable.$(OBJEXT) \
+	Abacus-VHInterchangeMode.$(OBJEXT)
+Abacus_OBJECTS = $(am_Abacus_OBJECTS)
+Abacus_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-ibus_engine_viethoa_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(ibus_engine_viethoa_CFLAGS) $(CFLAGS) \
-	$(ibus_engine_viethoa_LDFLAGS) $(LDFLAGS) -o $@
+Abacus_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(Abacus_CFLAGS) $(CFLAGS) \
+	$(Abacus_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -179,35 +170,32 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade =  \
-	./$(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHHelper.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHLogger.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-engine.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-main.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po \
-	./$(DEPDIR)/ibus_engine_viethoa-vhutil.Po
+am__depfiles_remade = ./$(DEPDIR)/Abacus-VHCandidateArray.Po \
+	./$(DEPDIR)/Abacus-VHCandidateTable.Po \
+	./$(DEPDIR)/Abacus-VHChineseMode.Po \
+	./$(DEPDIR)/Abacus-VHChineseTable.Po \
+	./$(DEPDIR)/Abacus-VHConfiguration.Po \
+	./$(DEPDIR)/Abacus-VHDatabase.Po \
+	./$(DEPDIR)/Abacus-VHETelexTable.Po \
+	./$(DEPDIR)/Abacus-VHEnglishMode.Po \
+	./$(DEPDIR)/Abacus-VHHelper.Po \
+	./$(DEPDIR)/Abacus-VHInterchangeMode.Po \
+	./$(DEPDIR)/Abacus-VHLTelexTable.Po \
+	./$(DEPDIR)/Abacus-VHLogger.Po \
+	./$(DEPDIR)/Abacus-VHPinyinEditor.Po \
+	./$(DEPDIR)/Abacus-VHPinyinTable.Po \
+	./$(DEPDIR)/Abacus-VHPreedit.Po \
+	./$(DEPDIR)/Abacus-VHPropertyList.Po \
+	./$(DEPDIR)/Abacus-VHTelexEditor2.Po \
+	./$(DEPDIR)/Abacus-VHTeochewEditor.Po \
+	./$(DEPDIR)/Abacus-VHTeochewMode.Po \
+	./$(DEPDIR)/Abacus-VHTeochewTable.Po \
+	./$(DEPDIR)/Abacus-VHViethoaMode.Po \
+	./$(DEPDIR)/Abacus-VHViethoaTable.Po \
+	./$(DEPDIR)/Abacus-VHVietnameseMode.Po \
+	./$(DEPDIR)/Abacus-VHZTelexTable2.Po \
+	./$(DEPDIR)/Abacus-engine.Po ./$(DEPDIR)/Abacus-main.Po \
+	./$(DEPDIR)/Abacus-vhustring.Po ./$(DEPDIR)/Abacus-vhutil.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -227,8 +215,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(ibus_engine_viethoa_SOURCES)
-DIST_SOURCES = $(ibus_engine_viethoa_SOURCES)
+SOURCES = $(Abacus_SOURCES)
+DIST_SOURCES = $(Abacus_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -281,7 +269,7 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 ETAGS = etags
 CTAGS = ctags
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/viethoa.xml.in.in \
+am__DIST_COMMON = $(srcdir)/Abacus.xml.in.in $(srcdir)/Makefile.in \
 	$(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
@@ -431,7 +419,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-ibus_engine_viethoa_SOURCES = \
+Abacus_SOURCES = \
 	main.c \
 	engine.c \
 	engine.h \
@@ -490,28 +478,28 @@ ibus_engine_viethoa_SOURCES = \
     VHInterchangeMode.c \
     $(NULL)
 
-ibus_engine_viethoa_CFLAGS = \
+Abacus_CFLAGS = \
 	@IBUS_CFLAGS@ \
 	@SQLITE_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\"\
 	$(NULL)
 
-ibus_engine_viethoa_LDFLAGS = \
+Abacus_LDFLAGS = \
 	@IBUS_LIBS@ \
 	@SQLITE_LIBS@ \
 	$(NULL)
 
 component_DATA = \
-	viethoa.xml \
+	Abacus.xml \
 	$(NULL)
 
 componentdir = @datadir@/ibus/component
 EXTRA_DIST = \
-	viethoa.xml.in \
+	Abacus.xml.in \
 	$(NULL)
 
 CLEANFILES = \
-	viethoa.xml \
+	Abacus.xml \
 	$(NULL)
 
 all: all-am
@@ -547,7 +535,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-viethoa.xml.in: $(top_builddir)/config.status $(srcdir)/viethoa.xml.in.in
+Abacus.xml.in: $(top_builddir)/config.status $(srcdir)/Abacus.xml.in.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-libexecPROGRAMS: $(libexec_PROGRAMS)
 	@$(NORMAL_INSTALL)
@@ -599,9 +587,9 @@ clean-libexecPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-ibus-engine-viethoa$(EXEEXT): $(ibus_engine_viethoa_OBJECTS) $(ibus_engine_viethoa_DEPENDENCIES) $(EXTRA_ibus_engine_viethoa_DEPENDENCIES) 
-	@rm -f ibus-engine-viethoa$(EXEEXT)
-	$(AM_V_CCLD)$(ibus_engine_viethoa_LINK) $(ibus_engine_viethoa_OBJECTS) $(ibus_engine_viethoa_LDADD) $(LIBS)
+Abacus$(EXEEXT): $(Abacus_OBJECTS) $(Abacus_DEPENDENCIES) $(EXTRA_Abacus_DEPENDENCIES) 
+	@rm -f Abacus$(EXEEXT)
+	$(AM_V_CCLD)$(Abacus_LINK) $(Abacus_OBJECTS) $(Abacus_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -609,34 +597,34 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHHelper.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHLogger.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-engine.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-main.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ibus_engine_viethoa-vhutil.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateArray.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHConfiguration.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHDatabase.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHETelexTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHEnglishMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHHelper.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHInterchangeMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHLTelexTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHLogger.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinEditor.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPreedit.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPropertyList.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTelexEditor2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewEditor.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHViethoaMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHViethoaTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHVietnameseMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHZTelexTable2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-engine.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-vhustring.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-vhutil.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -665,397 +653,397 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-ibus_engine_viethoa-main.o: main.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-main.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-main.Tpo -c -o ibus_engine_viethoa-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-main.Tpo $(DEPDIR)/ibus_engine_viethoa-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='ibus_engine_viethoa-main.o' libtool=no @AMDEPBACKSLASH@
+Abacus-main.o: main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-main.o -MD -MP -MF $(DEPDIR)/Abacus-main.Tpo -c -o Abacus-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-main.Tpo $(DEPDIR)/Abacus-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='Abacus-main.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
-ibus_engine_viethoa-main.obj: main.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-main.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-main.Tpo -c -o ibus_engine_viethoa-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-main.Tpo $(DEPDIR)/ibus_engine_viethoa-main.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='ibus_engine_viethoa-main.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-main.obj: main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-main.obj -MD -MP -MF $(DEPDIR)/Abacus-main.Tpo -c -o Abacus-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-main.Tpo $(DEPDIR)/Abacus-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='main.c' object='Abacus-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
-ibus_engine_viethoa-engine.o: engine.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-engine.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-engine.Tpo -c -o ibus_engine_viethoa-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-engine.Tpo $(DEPDIR)/ibus_engine_viethoa-engine.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='engine.c' object='ibus_engine_viethoa-engine.o' libtool=no @AMDEPBACKSLASH@
+Abacus-engine.o: engine.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-engine.o -MD -MP -MF $(DEPDIR)/Abacus-engine.Tpo -c -o Abacus-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-engine.Tpo $(DEPDIR)/Abacus-engine.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='engine.c' object='Abacus-engine.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
 
-ibus_engine_viethoa-engine.obj: engine.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-engine.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-engine.Tpo -c -o ibus_engine_viethoa-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-engine.Tpo $(DEPDIR)/ibus_engine_viethoa-engine.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='engine.c' object='ibus_engine_viethoa-engine.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-engine.obj: engine.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-engine.obj -MD -MP -MF $(DEPDIR)/Abacus-engine.Tpo -c -o Abacus-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-engine.Tpo $(DEPDIR)/Abacus-engine.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='engine.c' object='Abacus-engine.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
 
-ibus_engine_viethoa-vhutil.o: vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-vhutil.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-vhutil.Tpo -c -o ibus_engine_viethoa-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-vhutil.Tpo $(DEPDIR)/ibus_engine_viethoa-vhutil.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='ibus_engine_viethoa-vhutil.o' libtool=no @AMDEPBACKSLASH@
+Abacus-vhutil.o: vhutil.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhutil.o -MD -MP -MF $(DEPDIR)/Abacus-vhutil.Tpo -c -o Abacus-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhutil.Tpo $(DEPDIR)/Abacus-vhutil.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='Abacus-vhutil.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
 
-ibus_engine_viethoa-vhutil.obj: vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-vhutil.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-vhutil.Tpo -c -o ibus_engine_viethoa-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-vhutil.Tpo $(DEPDIR)/ibus_engine_viethoa-vhutil.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='ibus_engine_viethoa-vhutil.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-vhutil.obj: vhutil.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhutil.obj -MD -MP -MF $(DEPDIR)/Abacus-vhutil.Tpo -c -o Abacus-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhutil.Tpo $(DEPDIR)/Abacus-vhutil.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='Abacus-vhutil.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
 
-ibus_engine_viethoa-vhustring.o: vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-vhustring.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-vhustring.Tpo -c -o ibus_engine_viethoa-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-vhustring.Tpo $(DEPDIR)/ibus_engine_viethoa-vhustring.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='ibus_engine_viethoa-vhustring.o' libtool=no @AMDEPBACKSLASH@
+Abacus-vhustring.o: vhustring.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhustring.o -MD -MP -MF $(DEPDIR)/Abacus-vhustring.Tpo -c -o Abacus-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhustring.Tpo $(DEPDIR)/Abacus-vhustring.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='Abacus-vhustring.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
 
-ibus_engine_viethoa-vhustring.obj: vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-vhustring.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-vhustring.Tpo -c -o ibus_engine_viethoa-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-vhustring.Tpo $(DEPDIR)/ibus_engine_viethoa-vhustring.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='ibus_engine_viethoa-vhustring.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-vhustring.obj: vhustring.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhustring.obj -MD -MP -MF $(DEPDIR)/Abacus-vhustring.Tpo -c -o Abacus-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhustring.Tpo $(DEPDIR)/Abacus-vhustring.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='Abacus-vhustring.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
 
-ibus_engine_viethoa-VHTelexEditor2.o: VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor2.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo -c -o ibus_engine_viethoa-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='ibus_engine_viethoa-VHTelexEditor2.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTelexEditor2.o: VHTelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTelexEditor2.o -MD -MP -MF $(DEPDIR)/Abacus-VHTelexEditor2.Tpo -c -o Abacus-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTelexEditor2.Tpo $(DEPDIR)/Abacus-VHTelexEditor2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='Abacus-VHTelexEditor2.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
 
-ibus_engine_viethoa-VHTelexEditor2.obj: VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTelexEditor2.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo -c -o ibus_engine_viethoa-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='ibus_engine_viethoa-VHTelexEditor2.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTelexEditor2.obj: VHTelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTelexEditor2.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTelexEditor2.Tpo -c -o Abacus-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTelexEditor2.Tpo $(DEPDIR)/Abacus-VHTelexEditor2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='Abacus-VHTelexEditor2.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
 
-ibus_engine_viethoa-VHZTelexTable2.o: VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable2.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo -c -o ibus_engine_viethoa-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='ibus_engine_viethoa-VHZTelexTable2.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHZTelexTable2.o: VHZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHZTelexTable2.o -MD -MP -MF $(DEPDIR)/Abacus-VHZTelexTable2.Tpo -c -o Abacus-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHZTelexTable2.Tpo $(DEPDIR)/Abacus-VHZTelexTable2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='Abacus-VHZTelexTable2.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
 
-ibus_engine_viethoa-VHZTelexTable2.obj: VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHZTelexTable2.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo -c -o ibus_engine_viethoa-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Tpo $(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='ibus_engine_viethoa-VHZTelexTable2.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHZTelexTable2.obj: VHZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHZTelexTable2.obj -MD -MP -MF $(DEPDIR)/Abacus-VHZTelexTable2.Tpo -c -o Abacus-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHZTelexTable2.Tpo $(DEPDIR)/Abacus-VHZTelexTable2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='Abacus-VHZTelexTable2.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
 
-ibus_engine_viethoa-VHPropertyList.o: VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPropertyList.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Tpo -c -o ibus_engine_viethoa-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='ibus_engine_viethoa-VHPropertyList.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPropertyList.o: VHPropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPropertyList.o -MD -MP -MF $(DEPDIR)/Abacus-VHPropertyList.Tpo -c -o Abacus-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPropertyList.Tpo $(DEPDIR)/Abacus-VHPropertyList.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='Abacus-VHPropertyList.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
 
-ibus_engine_viethoa-VHPropertyList.obj: VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPropertyList.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Tpo -c -o ibus_engine_viethoa-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='ibus_engine_viethoa-VHPropertyList.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPropertyList.obj: VHPropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPropertyList.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPropertyList.Tpo -c -o Abacus-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPropertyList.Tpo $(DEPDIR)/Abacus-VHPropertyList.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='Abacus-VHPropertyList.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
 
-ibus_engine_viethoa-VHConfiguration.o: VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHConfiguration.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Tpo -c -o ibus_engine_viethoa-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Tpo $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='ibus_engine_viethoa-VHConfiguration.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHConfiguration.o: VHConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHConfiguration.o -MD -MP -MF $(DEPDIR)/Abacus-VHConfiguration.Tpo -c -o Abacus-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHConfiguration.Tpo $(DEPDIR)/Abacus-VHConfiguration.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='Abacus-VHConfiguration.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
 
-ibus_engine_viethoa-VHConfiguration.obj: VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHConfiguration.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Tpo -c -o ibus_engine_viethoa-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Tpo $(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='ibus_engine_viethoa-VHConfiguration.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHConfiguration.obj: VHConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHConfiguration.obj -MD -MP -MF $(DEPDIR)/Abacus-VHConfiguration.Tpo -c -o Abacus-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHConfiguration.Tpo $(DEPDIR)/Abacus-VHConfiguration.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='Abacus-VHConfiguration.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
 
-ibus_engine_viethoa-VHLogger.o: VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHLogger.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHLogger.Tpo -c -o ibus_engine_viethoa-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHLogger.Tpo $(DEPDIR)/ibus_engine_viethoa-VHLogger.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='ibus_engine_viethoa-VHLogger.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHLogger.o: VHLogger.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLogger.o -MD -MP -MF $(DEPDIR)/Abacus-VHLogger.Tpo -c -o Abacus-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLogger.Tpo $(DEPDIR)/Abacus-VHLogger.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='Abacus-VHLogger.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
 
-ibus_engine_viethoa-VHLogger.obj: VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHLogger.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHLogger.Tpo -c -o ibus_engine_viethoa-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHLogger.Tpo $(DEPDIR)/ibus_engine_viethoa-VHLogger.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='ibus_engine_viethoa-VHLogger.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHLogger.obj: VHLogger.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLogger.obj -MD -MP -MF $(DEPDIR)/Abacus-VHLogger.Tpo -c -o Abacus-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLogger.Tpo $(DEPDIR)/Abacus-VHLogger.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='Abacus-VHLogger.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
 
-ibus_engine_viethoa-VHCandidateTable.o: VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHCandidateTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Tpo -c -o ibus_engine_viethoa-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='ibus_engine_viethoa-VHCandidateTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHCandidateTable.o: VHCandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateTable.Tpo -c -o Abacus-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateTable.Tpo $(DEPDIR)/Abacus-VHCandidateTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='Abacus-VHCandidateTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
 
-ibus_engine_viethoa-VHCandidateTable.obj: VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHCandidateTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Tpo -c -o ibus_engine_viethoa-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='ibus_engine_viethoa-VHCandidateTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHCandidateTable.obj: VHCandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateTable.Tpo -c -o Abacus-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateTable.Tpo $(DEPDIR)/Abacus-VHCandidateTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='Abacus-VHCandidateTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
 
-ibus_engine_viethoa-VHViethoaTable.o: VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHViethoaTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Tpo -c -o ibus_engine_viethoa-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='ibus_engine_viethoa-VHViethoaTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHViethoaTable.o: VHViethoaTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaTable.Tpo -c -o Abacus-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaTable.Tpo $(DEPDIR)/Abacus-VHViethoaTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='Abacus-VHViethoaTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
 
-ibus_engine_viethoa-VHViethoaTable.obj: VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHViethoaTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Tpo -c -o ibus_engine_viethoa-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='ibus_engine_viethoa-VHViethoaTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHViethoaTable.obj: VHViethoaTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaTable.Tpo -c -o Abacus-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaTable.Tpo $(DEPDIR)/Abacus-VHViethoaTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='Abacus-VHViethoaTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
 
-ibus_engine_viethoa-VHCandidateArray.o: VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHCandidateArray.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Tpo -c -o ibus_engine_viethoa-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Tpo $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='ibus_engine_viethoa-VHCandidateArray.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHCandidateArray.o: VHCandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateArray.o -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateArray.Tpo -c -o Abacus-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateArray.Tpo $(DEPDIR)/Abacus-VHCandidateArray.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='Abacus-VHCandidateArray.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
 
-ibus_engine_viethoa-VHCandidateArray.obj: VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHCandidateArray.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Tpo -c -o ibus_engine_viethoa-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Tpo $(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='ibus_engine_viethoa-VHCandidateArray.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHCandidateArray.obj: VHCandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateArray.obj -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateArray.Tpo -c -o Abacus-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateArray.Tpo $(DEPDIR)/Abacus-VHCandidateArray.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='Abacus-VHCandidateArray.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
 
-ibus_engine_viethoa-VHEnglishMode.o: VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHEnglishMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Tpo -c -o ibus_engine_viethoa-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='ibus_engine_viethoa-VHEnglishMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHEnglishMode.o: VHEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHEnglishMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHEnglishMode.Tpo -c -o Abacus-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHEnglishMode.Tpo $(DEPDIR)/Abacus-VHEnglishMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='Abacus-VHEnglishMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
 
-ibus_engine_viethoa-VHEnglishMode.obj: VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHEnglishMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Tpo -c -o ibus_engine_viethoa-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='ibus_engine_viethoa-VHEnglishMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHEnglishMode.obj: VHEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHEnglishMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHEnglishMode.Tpo -c -o Abacus-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHEnglishMode.Tpo $(DEPDIR)/Abacus-VHEnglishMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='Abacus-VHEnglishMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
 
-ibus_engine_viethoa-VHVietnameseMode.o: VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHVietnameseMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Tpo -c -o ibus_engine_viethoa-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='ibus_engine_viethoa-VHVietnameseMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHVietnameseMode.o: VHVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHVietnameseMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHVietnameseMode.Tpo -c -o Abacus-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHVietnameseMode.Tpo $(DEPDIR)/Abacus-VHVietnameseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='Abacus-VHVietnameseMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
 
-ibus_engine_viethoa-VHVietnameseMode.obj: VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHVietnameseMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Tpo -c -o ibus_engine_viethoa-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='ibus_engine_viethoa-VHVietnameseMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHVietnameseMode.obj: VHVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHVietnameseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHVietnameseMode.Tpo -c -o Abacus-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHVietnameseMode.Tpo $(DEPDIR)/Abacus-VHVietnameseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='Abacus-VHVietnameseMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
 
-ibus_engine_viethoa-VHViethoaMode.o: VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHViethoaMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Tpo -c -o ibus_engine_viethoa-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='ibus_engine_viethoa-VHViethoaMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHViethoaMode.o: VHViethoaMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaMode.Tpo -c -o Abacus-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaMode.Tpo $(DEPDIR)/Abacus-VHViethoaMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='Abacus-VHViethoaMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
 
-ibus_engine_viethoa-VHViethoaMode.obj: VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHViethoaMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Tpo -c -o ibus_engine_viethoa-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='ibus_engine_viethoa-VHViethoaMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHViethoaMode.obj: VHViethoaMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaMode.Tpo -c -o Abacus-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaMode.Tpo $(DEPDIR)/Abacus-VHViethoaMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='Abacus-VHViethoaMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
 
-ibus_engine_viethoa-VHTeochewMode.o: VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Tpo -c -o ibus_engine_viethoa-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='ibus_engine_viethoa-VHTeochewMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewMode.o: VHTeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewMode.Tpo -c -o Abacus-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewMode.Tpo $(DEPDIR)/Abacus-VHTeochewMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='Abacus-VHTeochewMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
 
-ibus_engine_viethoa-VHTeochewMode.obj: VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Tpo -c -o ibus_engine_viethoa-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='ibus_engine_viethoa-VHTeochewMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewMode.obj: VHTeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewMode.Tpo -c -o Abacus-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewMode.Tpo $(DEPDIR)/Abacus-VHTeochewMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='Abacus-VHTeochewMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
 
-ibus_engine_viethoa-VHChineseMode.o: VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHChineseMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Tpo -c -o ibus_engine_viethoa-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='ibus_engine_viethoa-VHChineseMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHChineseMode.o: VHChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHChineseMode.Tpo -c -o Abacus-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseMode.Tpo $(DEPDIR)/Abacus-VHChineseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='Abacus-VHChineseMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
 
-ibus_engine_viethoa-VHChineseMode.obj: VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHChineseMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Tpo -c -o ibus_engine_viethoa-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='ibus_engine_viethoa-VHChineseMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHChineseMode.obj: VHChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHChineseMode.Tpo -c -o Abacus-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseMode.Tpo $(DEPDIR)/Abacus-VHChineseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='Abacus-VHChineseMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
 
-ibus_engine_viethoa-VHHelper.o: VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHHelper.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHHelper.Tpo -c -o ibus_engine_viethoa-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHHelper.Tpo $(DEPDIR)/ibus_engine_viethoa-VHHelper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='ibus_engine_viethoa-VHHelper.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHHelper.o: VHHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHHelper.o -MD -MP -MF $(DEPDIR)/Abacus-VHHelper.Tpo -c -o Abacus-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHHelper.Tpo $(DEPDIR)/Abacus-VHHelper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='Abacus-VHHelper.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
 
-ibus_engine_viethoa-VHHelper.obj: VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHHelper.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHHelper.Tpo -c -o ibus_engine_viethoa-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHHelper.Tpo $(DEPDIR)/ibus_engine_viethoa-VHHelper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='ibus_engine_viethoa-VHHelper.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHHelper.obj: VHHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHHelper.obj -MD -MP -MF $(DEPDIR)/Abacus-VHHelper.Tpo -c -o Abacus-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHHelper.Tpo $(DEPDIR)/Abacus-VHHelper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='Abacus-VHHelper.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
 
-ibus_engine_viethoa-VHDatabase.o: VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHDatabase.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Tpo -c -o ibus_engine_viethoa-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Tpo $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='ibus_engine_viethoa-VHDatabase.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHDatabase.o: VHDatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHDatabase.o -MD -MP -MF $(DEPDIR)/Abacus-VHDatabase.Tpo -c -o Abacus-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHDatabase.Tpo $(DEPDIR)/Abacus-VHDatabase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='Abacus-VHDatabase.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
 
-ibus_engine_viethoa-VHDatabase.obj: VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHDatabase.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Tpo -c -o ibus_engine_viethoa-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Tpo $(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='ibus_engine_viethoa-VHDatabase.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHDatabase.obj: VHDatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHDatabase.obj -MD -MP -MF $(DEPDIR)/Abacus-VHDatabase.Tpo -c -o Abacus-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHDatabase.Tpo $(DEPDIR)/Abacus-VHDatabase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='Abacus-VHDatabase.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
 
-ibus_engine_viethoa-VHPreedit.o: VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPreedit.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Tpo -c -o ibus_engine_viethoa-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='ibus_engine_viethoa-VHPreedit.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPreedit.o: VHPreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPreedit.o -MD -MP -MF $(DEPDIR)/Abacus-VHPreedit.Tpo -c -o Abacus-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPreedit.Tpo $(DEPDIR)/Abacus-VHPreedit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='Abacus-VHPreedit.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
 
-ibus_engine_viethoa-VHPreedit.obj: VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPreedit.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Tpo -c -o ibus_engine_viethoa-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='ibus_engine_viethoa-VHPreedit.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPreedit.obj: VHPreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPreedit.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPreedit.Tpo -c -o Abacus-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPreedit.Tpo $(DEPDIR)/Abacus-VHPreedit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='Abacus-VHPreedit.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
 
-ibus_engine_viethoa-VHPinyinTable.o: VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPinyinTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Tpo -c -o ibus_engine_viethoa-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='ibus_engine_viethoa-VHPinyinTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPinyinTable.o: VHPinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinTable.Tpo -c -o Abacus-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinTable.Tpo $(DEPDIR)/Abacus-VHPinyinTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='Abacus-VHPinyinTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
 
-ibus_engine_viethoa-VHPinyinTable.obj: VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPinyinTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Tpo -c -o ibus_engine_viethoa-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='ibus_engine_viethoa-VHPinyinTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPinyinTable.obj: VHPinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinTable.Tpo -c -o Abacus-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinTable.Tpo $(DEPDIR)/Abacus-VHPinyinTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='Abacus-VHPinyinTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
 
-ibus_engine_viethoa-VHPinyinEditor.o: VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPinyinEditor.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Tpo -c -o ibus_engine_viethoa-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='ibus_engine_viethoa-VHPinyinEditor.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPinyinEditor.o: VHPinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinEditor.o -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinEditor.Tpo -c -o Abacus-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinEditor.Tpo $(DEPDIR)/Abacus-VHPinyinEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='Abacus-VHPinyinEditor.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
 
-ibus_engine_viethoa-VHPinyinEditor.obj: VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHPinyinEditor.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Tpo -c -o ibus_engine_viethoa-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='ibus_engine_viethoa-VHPinyinEditor.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHPinyinEditor.obj: VHPinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinEditor.Tpo -c -o Abacus-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinEditor.Tpo $(DEPDIR)/Abacus-VHPinyinEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='Abacus-VHPinyinEditor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
 
-ibus_engine_viethoa-VHChineseTable.o: VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHChineseTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Tpo -c -o ibus_engine_viethoa-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='ibus_engine_viethoa-VHChineseTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHChineseTable.o: VHChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHChineseTable.Tpo -c -o Abacus-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseTable.Tpo $(DEPDIR)/Abacus-VHChineseTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='Abacus-VHChineseTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
 
-ibus_engine_viethoa-VHChineseTable.obj: VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHChineseTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Tpo -c -o ibus_engine_viethoa-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='ibus_engine_viethoa-VHChineseTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHChineseTable.obj: VHChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHChineseTable.Tpo -c -o Abacus-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseTable.Tpo $(DEPDIR)/Abacus-VHChineseTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='Abacus-VHChineseTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
 
-ibus_engine_viethoa-VHLTelexTable.o: VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHLTelexTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Tpo -c -o ibus_engine_viethoa-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='ibus_engine_viethoa-VHLTelexTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHLTelexTable.o: VHLTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLTelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHLTelexTable.Tpo -c -o Abacus-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLTelexTable.Tpo $(DEPDIR)/Abacus-VHLTelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='Abacus-VHLTelexTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
 
-ibus_engine_viethoa-VHLTelexTable.obj: VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHLTelexTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Tpo -c -o ibus_engine_viethoa-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='ibus_engine_viethoa-VHLTelexTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHLTelexTable.obj: VHLTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLTelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHLTelexTable.Tpo -c -o Abacus-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLTelexTable.Tpo $(DEPDIR)/Abacus-VHLTelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='Abacus-VHLTelexTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
 
-ibus_engine_viethoa-VHETelexTable.o: VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHETelexTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Tpo -c -o ibus_engine_viethoa-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='ibus_engine_viethoa-VHETelexTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHETelexTable.o: VHETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHETelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHETelexTable.Tpo -c -o Abacus-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHETelexTable.Tpo $(DEPDIR)/Abacus-VHETelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='Abacus-VHETelexTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
 
-ibus_engine_viethoa-VHETelexTable.obj: VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHETelexTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Tpo -c -o ibus_engine_viethoa-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='ibus_engine_viethoa-VHETelexTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHETelexTable.obj: VHETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHETelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHETelexTable.Tpo -c -o Abacus-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHETelexTable.Tpo $(DEPDIR)/Abacus-VHETelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='Abacus-VHETelexTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
 
-ibus_engine_viethoa-VHTeochewEditor.o: VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewEditor.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Tpo -c -o ibus_engine_viethoa-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='ibus_engine_viethoa-VHTeochewEditor.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewEditor.o: VHTeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewEditor.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewEditor.Tpo -c -o Abacus-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewEditor.Tpo $(DEPDIR)/Abacus-VHTeochewEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='Abacus-VHTeochewEditor.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
 
-ibus_engine_viethoa-VHTeochewEditor.obj: VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewEditor.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Tpo -c -o ibus_engine_viethoa-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='ibus_engine_viethoa-VHTeochewEditor.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewEditor.obj: VHTeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewEditor.Tpo -c -o Abacus-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewEditor.Tpo $(DEPDIR)/Abacus-VHTeochewEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='Abacus-VHTeochewEditor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
 
-ibus_engine_viethoa-VHTeochewTable.o: VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewTable.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Tpo -c -o ibus_engine_viethoa-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='ibus_engine_viethoa-VHTeochewTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewTable.o: VHTeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewTable.Tpo -c -o Abacus-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewTable.Tpo $(DEPDIR)/Abacus-VHTeochewTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='Abacus-VHTeochewTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
 
-ibus_engine_viethoa-VHTeochewTable.obj: VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHTeochewTable.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Tpo -c -o ibus_engine_viethoa-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Tpo $(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='ibus_engine_viethoa-VHTeochewTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHTeochewTable.obj: VHTeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewTable.Tpo -c -o Abacus-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewTable.Tpo $(DEPDIR)/Abacus-VHTeochewTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='Abacus-VHTeochewTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
 
-ibus_engine_viethoa-VHInterchangeMode.o: VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHInterchangeMode.o -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Tpo -c -o ibus_engine_viethoa-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='ibus_engine_viethoa-VHInterchangeMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-VHInterchangeMode.o: VHInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHInterchangeMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHInterchangeMode.Tpo -c -o Abacus-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHInterchangeMode.Tpo $(DEPDIR)/Abacus-VHInterchangeMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='Abacus-VHInterchangeMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
 
-ibus_engine_viethoa-VHInterchangeMode.obj: VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -MT ibus_engine_viethoa-VHInterchangeMode.obj -MD -MP -MF $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Tpo -c -o ibus_engine_viethoa-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Tpo $(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='ibus_engine_viethoa-VHInterchangeMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-VHInterchangeMode.obj: VHInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHInterchangeMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHInterchangeMode.Tpo -c -o Abacus-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHInterchangeMode.Tpo $(DEPDIR)/Abacus-VHInterchangeMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='Abacus-VHInterchangeMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ibus_engine_viethoa_CFLAGS) $(CFLAGS) -c -o ibus_engine_viethoa-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1213,34 +1201,34 @@ clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHHelper.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHLogger.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-engine.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-main.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhutil.Po
+		-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHLogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPropertyList.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTelexEditor2.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHViethoaMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHViethoaTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHVietnameseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHZTelexTable2.Po
+	-rm -f ./$(DEPDIR)/Abacus-engine.Po
+	-rm -f ./$(DEPDIR)/Abacus-main.Po
+	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
+	-rm -f ./$(DEPDIR)/Abacus-vhutil.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1286,34 +1274,34 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHCandidateArray.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHCandidateTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHChineseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHConfiguration.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHDatabase.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHETelexTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHEnglishMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHHelper.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHInterchangeMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHLogger.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinEditor.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPinyinTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPreedit.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTelexEditor2.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewEditor.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHTeochewTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHViethoaTable.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-VHZTelexTable2.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-engine.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-main.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhustring.Po
-	-rm -f ./$(DEPDIR)/ibus_engine_viethoa-vhutil.Po
+		-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHLogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHPropertyList.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTelexEditor2.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHTeochewTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHViethoaMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHViethoaTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHVietnameseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHZTelexTable2.Po
+	-rm -f ./$(DEPDIR)/Abacus-engine.Po
+	-rm -f ./$(DEPDIR)/Abacus-main.Po
+	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
+	-rm -f ./$(DEPDIR)/Abacus-vhutil.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -1353,7 +1341,7 @@ uninstall-am: uninstall-componentDATA uninstall-libexecPROGRAMS
 .PRECIOUS: Makefile
 
 
-viethoa.xml: viethoa.xml.in
+Abacus.xml: Abacus.xml.in
 	$(AM_V_GEN) \
 	( \
 		libexecdir=${libexecdir}; \
@@ -1362,8 +1350,8 @@ viethoa.xml: viethoa.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: ibus-engine-viethoa
-	$(builddir)/ibus-engine-viethoa
+test: Abacus
+	$(builddir)/Abacus
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -19,19 +19,19 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-libexec_PROGRAMS = ibus-viethoa-property
+libexec_PROGRAMS = Abacus-property
 
-ibus_viethoa_property_SOURCES = \
+Abacus_property_SOURCES = \
 	main.c \
 	$(NULL)
 
-ibus_viethoa_property_CFLAGS = \
+Abacus_property_CFLAGS = \
 	@LIBJSON_CFLAGS@ \
 	@LIBGTK3_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-ibus_viethoa_property_LDFLAGS = \
+Abacus_property_LDFLAGS = \
 	@LIBJSON_LIBS@ \
 	@LIBGTK3_LIBS@ \
 	$(NULL)

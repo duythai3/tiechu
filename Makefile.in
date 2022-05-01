@@ -121,7 +121,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = ibus-viethoa.spec
+CONFIG_CLEAN_FILES = Abacus.spec
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -180,11 +180,10 @@ ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
-	$(srcdir)/ibus-viethoa.spec.in ABOUT-NLS AUTHORS COPYING \
-	ChangeLog INSTALL NEWS README compile config.guess \
-	config.rpath config.sub depcomp install-sh ltmain.sh missing \
-	py-compile
+am__DIST_COMMON = $(srcdir)/Abacus.spec.in $(srcdir)/Makefile.in \
+	$(srcdir)/config.h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
+	INSTALL NEWS README compile config.guess config.rpath \
+	config.sub depcomp install-sh ltmain.sh missing py-compile
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -447,7 +446,7 @@ $(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-ibus-viethoa.spec: $(top_builddir)/config.status $(srcdir)/ibus-viethoa.spec.in
+Abacus.spec: $(top_builddir)/config.status $(srcdir)/Abacus.spec.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:

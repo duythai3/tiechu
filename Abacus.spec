@@ -1,8 +1,8 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 %define mod_path ibus-@PACKAGE_VERSION_MAJOR@.@PACKAGE_VERSION_MINOR@
-Name:       ibus-viethoa
-Version:    1.0.0.20211116
+Name:       Abacus
+Version:    1.0.0.20220423
 Release:    1%{?dist}
 Summary:    IBus template project
 License:    GPLv2+
