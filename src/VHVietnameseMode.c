@@ -20,12 +20,12 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHVietnameseMode.h"
 #include "VHTelexEditor2.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHHelper.h"
 #include "VHPreedit.h"
@@ -33,109 +33,109 @@
 static void check_modifiers(guint modifiers) {
 
     if(IBUS_SHIFT_MASK & modifiers) {
-       vh_logger_log("IBUS_SHIFT_MASK");
+        a_logger_log("IBUS_SHIFT_MASK");
     }
     if(IBUS_LOCK_MASK & modifiers) {
-       vh_logger_log("IBUS_LOCK_MASK");
+        a_logger_log("IBUS_LOCK_MASK");
 
     }
 
     if(IBUS_CONTROL_MASK & modifiers) {
-       vh_logger_log("IBUS_CONTROL_MASK");
+        a_logger_log("IBUS_CONTROL_MASK");
 
     }
 
     if(IBUS_MOD1_MASK & modifiers) {
-       vh_logger_log("IBUS_MOD1_MASK");
+        a_logger_log("IBUS_MOD1_MASK");
 
     }
 
     if(IBUS_MOD2_MASK & modifiers) {
-       vh_logger_log("IBUS_MOD2_MASK");
+        a_logger_log("IBUS_MOD2_MASK");
 
     }
 
     if(IBUS_MOD3_MASK & modifiers) {
-       vh_logger_log("IBUS_MOD3_MASK");
+        a_logger_log("IBUS_MOD3_MASK");
 
     }
 
     if(IBUS_MOD4_MASK & modifiers) {
-       vh_logger_log("IBUS_MOD4_MASK");
+        a_logger_log("IBUS_MOD4_MASK");
 
     }
 
     if(IBUS_MOD5_MASK & modifiers) {
-       vh_logger_log("IBUS_MOD5_MASK");
+        a_logger_log("IBUS_MOD5_MASK");
 
     }
 
     if(IBUS_BUTTON1_MASK & modifiers) {
-       vh_logger_log("IBUS_BUTTON1_MASK");
+        a_logger_log("IBUS_BUTTON1_MASK");
 
     }
 
     if(IBUS_BUTTON2_MASK & modifiers) {
-       vh_logger_log("IBUS_BUTTON2_MASK");
+        a_logger_log("IBUS_BUTTON2_MASK");
 
     }
 
     if(IBUS_BUTTON3_MASK & modifiers) {
-       vh_logger_log("IBUS_BUTTON3_MASK");
+        a_logger_log("IBUS_BUTTON3_MASK");
 
     }
 
     if(IBUS_BUTTON4_MASK & modifiers) {
-       vh_logger_log("IBUS_BUTTON4_MASK");
+        a_logger_log("IBUS_BUTTON4_MASK");
 
     }
 
     if(IBUS_BUTTON5_MASK & modifiers) {
-       vh_logger_log("IBUS_BUTTON5_MASK");
+        a_logger_log("IBUS_BUTTON5_MASK");
 
     }
 
 
     if(IBUS_HANDLED_MASK & modifiers) {
-       vh_logger_log("IBUS_HANDLED_MASK");
+        a_logger_log("IBUS_HANDLED_MASK");
 
     }
 
     if(IBUS_FORWARD_MASK & modifiers) {
-       vh_logger_log("IBUS_FORWARD_MASK");
+        a_logger_log("IBUS_FORWARD_MASK");
 
     }
 
     if(IBUS_IGNORED_MASK & modifiers) {
-       vh_logger_log("IBUS_IGNORED_MASK");
+        a_logger_log("IBUS_IGNORED_MASK");
 
     }
 
 
     if(IBUS_SUPER_MASK & modifiers) {
-       vh_logger_log("IBUS_SUPER_MASK");
+        a_logger_log("IBUS_SUPER_MASK");
 
     }
 
     if(IBUS_HYPER_MASK & modifiers) {
-       vh_logger_log("IBUS_HYPER_MASK");
+        a_logger_log("IBUS_HYPER_MASK");
 
     }
 
     if(IBUS_META_MASK & modifiers) {
-       vh_logger_log("IBUS_META_MASK");
+        a_logger_log("IBUS_META_MASK");
 
     }
 
 
     if(IBUS_RELEASE_MASK & modifiers) {
-       vh_logger_log("IBUS_RELEASE_MASK");
+        a_logger_log("IBUS_RELEASE_MASK");
 
     }
 
 
     if(IBUS_MODIFIER_MASK & modifiers) {
-       vh_logger_log("IBUS_MODIFIER_MASK");
+        a_logger_log("IBUS_MODIFIER_MASK");
 
     }
 }
@@ -143,7 +143,7 @@ static void check_modifiers(guint modifiers) {
 gboolean vh_vietnamese_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
 
     //check_modifiers(modifiers);
-    vh_logger_log("key_event: keyval=%d, keycode=%d, modifiers=%d", keyval, keycode, modifiers);
+    a_logger_log("key_event: keyval=%d, keycode=%d, modifiers=%d", keyval, keycode, modifiers);
 
     // don't process release key events
     if (vh_helper_is_event_released(modifiers)) {

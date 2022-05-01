@@ -17,12 +17,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-#ifndef __VHUTIL_H__
-#define __VHUTIL_H__
+#ifndef __A_UTIL_H__
+#define __A_UTIL_H__
 
 #include <glib.h>
 
-gchar * vh_util_get_us_timestamp();
+gchar * a_util_get_us_timestamp();
 
 #endif
 

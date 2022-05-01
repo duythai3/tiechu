@@ -22,49 +22,49 @@
 #include <sys/stat.h>
 #include <glib.h>
 #include <glib/gstdio.h>
-#include "VHLogger.h"
-#include "vhutil.h"
-#include "VHConfiguration.h"
+#include "ALogger.h"
+#include "AUtil.h"
+#include "AConfiguration.h"
 
 #define __LOGGER_FILE__ "Abacus.log"
 #define __LOGGER_FILE_2__ "Abacus_2.log"
 
-gboolean create_viethoa_directory();
+gboolean create_abacus_directory();
 glong get_logger_file_size();
 
-GIOChannel *_logger_channel = NULL;
+GIOChannel *logger_channel = NULL;
 
 gboolean is_log_file_opened() {
-	return _logger_channel != NULL;
+	return logger_channel!=NULL;
 }
 
 // open the log file
-gboolean vh_logger_open(){
+gboolean a_logger_open(){
 	if (is_log_file_opened()) {
 		return TRUE;
 	}
 
-	// create directory ~/.viethoa
-	if (!create_viethoa_directory()) {
+	//
+	if (!create_abacus_directory()) {
 		return FALSE;
 	}
 
 	// open the log file
 	const gchar *user_dir = g_get_home_dir();
-	gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __VIETHOA_DIRECTORY__, __LOGGER_FILE__);
-	_logger_channel = g_io_channel_new_file(logger_file, "a", NULL);
+	gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __ABACUS_DIRECTORY__, __LOGGER_FILE__);
+    logger_channel = g_io_channel_new_file(logger_file, "a", NULL);
 	g_free(logger_file);
-	if(_logger_channel == NULL){
+	if(logger_channel==NULL){
 		return FALSE;
 	}
 
 	// move log file's pointer to the end
-    g_io_channel_seek_position(_logger_channel, 0, G_SEEK_END, NULL);
+    g_io_channel_seek_position(logger_channel, 0, G_SEEK_END, NULL);
 	return TRUE;
 }
 
-// close viethoa log file
-void vh_logger_close(){
+// close abacus log file
+void a_logger_close(){
 	//
     if (!is_log_file_opened()){
     	return;
@@ -72,17 +72,17 @@ void vh_logger_close(){
 
     //
 	GError *error = NULL;
-	g_io_channel_shutdown(_logger_channel, TRUE, &error);
-	g_io_channel_unref(_logger_channel);
-	_logger_channel = NULL;
+	g_io_channel_shutdown(logger_channel, TRUE, &error);
+	g_io_channel_unref(logger_channel);
+    logger_channel = NULL;
 	if(error != NULL){
 		g_error_free(error);
 	}
 
 }
 
-// write a string to viethoa log file
-void vh_logger_write(const gchar* str){
+// write a string to abacus log file
+void a_logger_write(const gchar* str){
     // do nothing if the log file is not opened
 	if(!is_log_file_opened()){
     	return;
@@ -93,21 +93,21 @@ void vh_logger_write(const gchar* str){
 	GError *error = NULL;
 
 	// write to the file
-	g_io_channel_write_chars(_logger_channel, str, -1, &written, &error);
+	g_io_channel_write_chars(logger_channel, str, -1, &written, &error);
 	if(error != NULL){
 		g_error_free(error);
 		error = NULL;
 	}
 
 	// flush the buffer
-	g_io_channel_flush(_logger_channel, &error);
+	g_io_channel_flush(logger_channel, &error);
 	if(error != NULL){
 		g_error_free(error);
 	}
 }
 
 
-void vh_logger_log(const gchar* format_str, ...){
+void a_logger_log(const gchar* format_str, ...){
 	//
 	if (!is_log_file_opened()) {
 		return;
@@ -121,17 +121,17 @@ void vh_logger_log(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str = vh_util_get_us_timestamp();
+    gchar *timestamp_str =a_util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "info", str);
 
-    vh_logger_write(str_written);
+    a_logger_write(str_written);
 
     g_free(str);
     g_free(str_written);
     g_free(timestamp_str);
 }
 
-void vh_logger_warn(const gchar* format_str, ...){
+void a_logger_warn(const gchar* format_str, ...){
 	if (!is_log_file_opened()) {
 		return;
 	}
@@ -144,17 +144,17 @@ void vh_logger_warn(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str = vh_util_get_us_timestamp();
+    gchar *timestamp_str =a_util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "warning", str);
 
-    vh_logger_write(str_written);
+    a_logger_write(str_written);
 
     g_free(str);
     g_free(str_written);
     g_free(timestamp_str);
 }
 
-void vh_logger_error(const gchar* format_str, ...){
+void a_logger_error(const gchar* format_str, ...){
 	//
 	if (!is_log_file_opened()) {
 		return;
@@ -168,34 +168,34 @@ void vh_logger_error(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str = vh_util_get_us_timestamp();
+    gchar *timestamp_str =a_util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "error", str);
 
-    vh_logger_write(str_written);
+    a_logger_write(str_written);
 
     g_free(str);
     g_free(str_written);
     g_free(timestamp_str);
 }
 
-gboolean create_viethoa_directory(){
+gboolean create_abacus_directory(){
     const gchar *user_dir = g_get_home_dir();
-    gchar *viethoa_dir = g_strdup_printf("%s/%s", user_dir, __VIETHOA_DIRECTORY__);
+    gchar *abacus_dir = g_strdup_printf("%s/%s", user_dir, __ABACUS_DIRECTORY__);
 
     // do nothing if the .viethoa directory existed
-    if(g_file_test(viethoa_dir, G_FILE_TEST_EXISTS)){
-        g_free(viethoa_dir);
+    if(g_file_test(abacus_dir, G_FILE_TEST_EXISTS)){
+        g_free(abacus_dir);
         return TRUE;
     }
 
     //
-	if(g_mkdir(viethoa_dir, 0755) != 0) {
-        g_free(viethoa_dir);
+	if(g_mkdir(abacus_dir, 0755)!=0) {
+        g_free(abacus_dir);
 		return FALSE;
 	}
 
 	//
-	g_free(viethoa_dir);
+	g_free(abacus_dir);
 	return TRUE;
 }
 
@@ -204,7 +204,7 @@ glong get_logger_file_size(){
     GStatBuf *st = g_new(GStatBuf, 1);
     st->st_size = 0;
     const gchar *user_dir = g_get_home_dir();
-    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __VIETHOA_DIRECTORY__, __LOGGER_FILE__);
+    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __ABACUS_DIRECTORY__, __LOGGER_FILE__);
 
     // if the log file does not exist
     if(!g_file_test(logger_file, G_FILE_TEST_EXISTS)){
@@ -229,29 +229,29 @@ glong get_logger_file_size(){
 
 /**
  * 1. Close the main log file
- * 2. Rename the main log file ~/.viethoa/ibus_viethoa.log to ~/.viethoa/ibus_viethoa_2.log
+ * 2. Rename the main log file ~/.abacus/abacus.log to ~/.abacus/abacus_2.log
  * 2. Create the main log file
  */
-void vh_logger_backup(){
+void a_logger_backup(){
     // do nothing if the main log file's size is less than the limit
-	if(get_logger_file_size() < __VH_MAX_LOGGER_FILE_SIZE__) {
+	if(get_logger_file_size()<__A_MAX_LOGGER_FILE_SIZE__) {
     	return;
     }
 
 	// Close the main log file
-	vh_logger_close();
+    a_logger_close();
 
 	// Rename the main log file to the backup file's name
 	const gchar *user_dir = g_get_home_dir();
-	gchar *logger_file_2 = g_strdup_printf("%s/%s/%s", user_dir, __VIETHOA_DIRECTORY__, __LOGGER_FILE_2__);
+	gchar *logger_file_2 = g_strdup_printf("%s/%s/%s", user_dir, __ABACUS_DIRECTORY__, __LOGGER_FILE_2__);
 	if(g_file_test(logger_file_2, G_FILE_TEST_EXISTS)){
 		g_remove(logger_file_2);
 	}
-	gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __VIETHOA_DIRECTORY__, __LOGGER_FILE__);
+	gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __ABACUS_DIRECTORY__, __LOGGER_FILE__);
 	g_rename(logger_file, logger_file_2);
 	g_free(logger_file);
 	g_free(logger_file_2);
 
 	// Create the main log file
-	vh_logger_open();
+    a_logger_open();
 }

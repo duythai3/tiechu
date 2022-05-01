@@ -20,12 +20,12 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHViethoaMode.h"
 #include "VHTelexEditor2.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHHelper.h"
 #include "VHPreedit.h"

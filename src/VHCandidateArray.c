@@ -39,7 +39,7 @@
  */
 #include <glib.h>
 #include <gmodule.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 
 GPtrArray *_candidate_array = NULL;
 
@@ -52,7 +52,7 @@ void vh_candidate_array_init(){
 
 	//
 	_candidate_array = g_ptr_array_new();
-	vh_logger_log("Candidate array initialized");
+    a_logger_log("Candidate array initialized");
 }
 
 // destroy
@@ -64,7 +64,7 @@ void vh_candidate_array_destroy(){
 	//
 	g_ptr_array_unref(_candidate_array);
 	_candidate_array = NULL;
-	vh_logger_log("Candidate array destroyed");
+    a_logger_log("Candidate array destroyed");
 }
 
 // append
@@ -111,6 +111,6 @@ void vh_candidate_array_clear(){
 	//
 	guint len = _candidate_array->len;
 	g_ptr_array_remove_range(_candidate_array, 0, len);
-	vh_logger_log("Candidate list cleared");
+    a_logger_log("Candidate list cleared");
 }
 

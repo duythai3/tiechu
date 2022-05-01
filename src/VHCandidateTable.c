@@ -20,11 +20,11 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHCandidateTable.h"
 
 #include "VHCandidateArray.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 
 
@@ -72,18 +72,18 @@ gboolean vh_candidate_table_init(){
 	//
     _candidate_table = ibus_lookup_table_new(__CANDIDATE_TABLE_PAGE_SIZE__, 0, TRUE, FALSE);
     if (!_candidate_table) {
-		vh_logger_log("Creating Lookup table failed");
+        a_logger_log("Creating Lookup table failed");
 		return FALSE;
 	}
 
 	//
     ibus_lookup_table_set_orientation(_candidate_table, 0);
     guint direction = ibus_lookup_table_get_orientation(_candidate_table);
-	vh_logger_log("Lookup Table Orientation: %d", direction);
+    a_logger_log("Lookup Table Orientation: %d", direction);
     g_object_ref_sink(_candidate_table);
 
 	//
-	vh_logger_log("Lookup table created");
+    a_logger_log("Lookup table created");
 	return TRUE;
 }
 
@@ -99,7 +99,7 @@ void vh_candidate_table_destroy(){
     ibus_lookup_table_clear(_candidate_table);
     g_object_unref(_candidate_table);
     _candidate_table = NULL;
-	vh_logger_log("Lookup table destroyed");
+    a_logger_log("Lookup table destroyed");
 }
 
 // show the lookup table
@@ -118,7 +118,7 @@ void vh_candidate_table_show(IBusAbacusEngine *viethoa){
 
 	//
 	gint candidate_count = vh_candidate_array_get_size();
-	vh_logger_log("number of found candidates: %d", candidate_count);
+    a_logger_log("number of found candidates: %d", candidate_count);
 
 	//
 	if (candidate_count < 1) {

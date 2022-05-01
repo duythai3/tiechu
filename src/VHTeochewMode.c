@@ -20,11 +20,11 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHTeochewMode.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHTeochewEditor.h"
 #include "VHPreedit.h"

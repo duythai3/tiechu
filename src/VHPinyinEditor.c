@@ -19,7 +19,7 @@
  */
 #include <glib.h>
 #include <ibus.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "vhustring.h"
 #include "VHPinyinEditor.h"
 #include "VHVNLetters.h"
@@ -91,7 +91,7 @@ static void correct_letter_case(gunichar* vn_clutter, gchar* telex_clutter, guin
 //
 static gboolean is_cn_vowel(gunichar ch){
     ch = g_unichar_tolower(ch);
-    //vh_logger_log("ch=%x", (int)ch);
+    //a_logger_log("ch=%x", (int)ch);
 	switch(ch){
 		case CN_LETTER_a:
 		case CN_LETTER_a1:
@@ -174,7 +174,7 @@ static guint find_begin_index(){
 
 static gint get_open_degree(gunichar ch) {
 	gint c = (gint)ch;
-	//vh_logger_log("char code=%x, e1: %x", c, CN_LETTER_e1);
+	//a_logger_log("char code=%x, e1: %x", c, CN_LETTER_e1);
 	switch(c) {
 	case CN_LETTER_a:
 	case CN_LETTER_a1:
@@ -274,7 +274,7 @@ static gchar* calc_ascii_clutter(gint keyval, glong* clutter_len, glong* start_p
 	//
 	/*
 	gchar* p1 = g_ucs4_to_utf8(buff, len, NULL, NULL, NULL);
-	vh_logger_log("p1:%s", p1);
+	a_logger_log("p1:%s", p1);
 	g_free(p1);
 	*/
 
@@ -288,7 +288,7 @@ static gchar* calc_ascii_clutter(gint keyval, glong* clutter_len, glong* start_p
 	for(int i = 0; i < len; i++) {
 		ch = buff[i];
 		degree = get_open_degree(ch);
-		//vh_logger_log("char=%x, degree=%d", (int)ch, degree);
+		//a_logger_log("char=%x, degree=%d", (int)ch, degree);
 		if (degree < min_open_degree) {
 			min_open_degree = degree;
 			target_index = i;
@@ -321,15 +321,15 @@ static gboolean process_pinyin(guint keyval){
 
     //
     if (!vh_pinyin_editor_is_signal_letter(keyval)) {
-    	//vh_logger_log("not signal letter: %d", keyval);
+    	//a_logger_log("not signal letter: %d", keyval);
     	return FALSE;
     }
 
-    //vh_logger_log("signal letter: %d", keyval);
+    //a_logger_log("signal letter: %d", keyval);
 
     //
 	ascii_clutter =  calc_ascii_clutter(keyval, &clutter_len, &start_pos);
-	vh_logger_log("ascii clutter: %s", ascii_clutter);
+    a_logger_log("ascii clutter: %s", ascii_clutter);
 	if (!ascii_clutter) {
 		return FALSE;
 	}
@@ -338,11 +338,11 @@ static gboolean process_pinyin(guint keyval){
 	// convert pinyin clutter to lower case
 	gchar *down_asscii_clutter = g_utf8_strdown(ascii_clutter, -1);
 
-	//vh_logger_log("down ascii clutter: %s, len: %d", down_asscii_clutter, clutter_len);
+	//a_logger_log("down ascii clutter: %s, len: %d", down_asscii_clutter, clutter_len);
 
 	//
 	const gchar *pinyin_clutter = vh_ltelex_table_convert_to_pinyin(down_asscii_clutter);
-	vh_logger_log("pinyin_clutter:%s", pinyin_clutter);
+    a_logger_log("pinyin_clutter:%s", pinyin_clutter);
 	g_free(down_asscii_clutter);
 
 
@@ -367,7 +367,7 @@ static gboolean process_pinyin(guint keyval){
 /////////////////////////
 gboolean vh_pinyin_editor_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers){
     guint len = vh_preedit_get_text_len();
-    //vh_logger_log("preedit len: %d", len);
+    //a_logger_log("preedit len: %d", len);
     if(len > 0){
         return process_pinyin(keyval);
     }else{

@@ -20,11 +20,11 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHChineseMode.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHPinyinEditor.h"
 #include "VHPreedit.h"
@@ -62,7 +62,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
     switch (keyval) {
     case IBUS_space:
         if(len > 0){
-//            vh_logger_log("space pressed, commit preedit: 3");
+//            a_logger_log("space pressed, commit preedit: 3");
             vh_preedit_insert(IBUS_space);
             vh_helper_commit_preedit(viethoa);
             return TRUE;
@@ -80,7 +80,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
         }
         return FALSE;
     case IBUS_Left:
-//        vh_logger_log("left pressed");
+//        a_logger_log("left pressed");
         if (len > 0){
             if(modifiers & IBUS_CONTROL_MASK){
                 vh_preedit_move_cursor_left();
@@ -96,7 +96,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
             }
         }else return FALSE;
     case IBUS_Right:
-//        vh_logger_log("right pressed");
+//        a_logger_log("right pressed");
         if (len > 0){
             if(modifiers & IBUS_CONTROL_MASK){
                 vh_preedit_move_cursor_right();
@@ -116,7 +116,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
     case IBUS_Down:
         return FALSE;
     case IBUS_BackSpace:
-        vh_logger_log("backspace pressed");
+        a_logger_log("backspace pressed");
         if (len > 0){
             vh_preedit_delete_before_cursor();
             vh_helper_update_preedit(viethoa);
@@ -124,7 +124,7 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
         }else return FALSE;
 
     case IBUS_Delete:
-//        vh_logger_log("delete pressed");
+//        a_logger_log("delete pressed");
         if (len > 0){
             vh_preedit_delete_after_cursor();
             vh_helper_update_preedit(viethoa);
@@ -136,18 +136,18 @@ gboolean vh_chinese_mode_process_key_event_0(IBusAbacusEngine* viethoa, guint ke
     case IBUS_comma:
     case IBUS_Page_Up:
     case IBUS_KP_Page_Up:
-//    	vh_logger_log("Page Up...");
+//    	a_logger_log("Page Up...");
         if (vh_candidate_table_showing()) {
-//    		vh_logger_log("Move 1 page up...");
+//    		a_logger_log("Move 1 page up...");
             vh_candidate_table_page_up(viethoa);
     	}
     	return TRUE;
     case IBUS_period:
     case IBUS_Page_Down:
     case IBUS_KP_Page_Down:
-//    	vh_logger_log("Page Down...");
+//    	a_logger_log("Page Down...");
         if (vh_candidate_table_showing()) {
-//    		vh_logger_log("Move 1 page down...");
+//    		a_logger_log("Move 1 page down...");
             vh_candidate_table_page_down(viethoa);
     	}
     	return TRUE;

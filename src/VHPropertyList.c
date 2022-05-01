@@ -19,16 +19,16 @@
  */
 #include <glib.h>
 #include <ibus.h>
-#include "VHLogger.h"
-#include "VHConfiguration.h"
+#include "ALogger.h"
+#include "AConfiguration.h"
 #include "VHPropertyList.h"
 
 static IBusPropList *_property_list = NULL;
 
 
 const gchar* get_super_key_name() {
-	gint super_key = vh_configuration_get_super_key();
-	if (super_key == __CTRL_SUPER_KEY__) {
+	gint super_key =a_configuration_get_super_key();
+	if (super_key==__A_CTRL_SUPER_KEY__) {
 		return "Ctrl";
 	} else {
 		return "Shift";
@@ -52,19 +52,19 @@ IBusProperty* create_toggle_property(const gchar* lb, const gchar* vl, gboolean 
 
 
 void update_symbol(IBusProperty* prop) {
-    gint current_mode = vh_configuration_get_current_mode();
+    gint current_mode =a_configuration_get_current_mode();
     IBusText* sm;
     IBusPropState state = PROP_STATE_UNCHECKED;
-    if (current_mode == __VIETNAMESE_MODE_2__) {
+    if (current_mode==__A_VIETNAMESE_MODE_2__) {
     	sm = ibus_text_new_from_static_string("VN");
     	state = PROP_STATE_CHECKED;
-    } else if (current_mode == __VIETHOA_MODE_2__) {
+    } else if (current_mode==__A_HANVIET_MODE_2__) {
     	sm = ibus_text_new_from_static_string("VH");
-    } else if (current_mode == __TEOCHEW_MODE_2__) {
+    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
     	sm = ibus_text_new_from_static_string("TC");
-    } else if (current_mode == __CHINESE_MODE_2__) {
+    } else if (current_mode==__A_CHINESE_MODE_2__) {
     	sm = ibus_text_new_from_static_string("CN");
-    } else if (current_mode == __ENGLISH_MODE_2__) {
+    } else if (current_mode==__A_ENGLISH_MODE_2__) {
     	sm = ibus_text_new_from_static_string("EN");
     }
     ibus_property_set_state(prop, state);
@@ -85,7 +85,7 @@ void vh_property_list_update_symbol(IBusAbacusEngine* viethoa) {
 void vh_property_list_init(){
 	//
 	if (_property_list) {
-		vh_logger_warn("Property list initialized already");
+        a_logger_warn("Property list initialized already");
 		return;
 	}
 
@@ -97,7 +97,7 @@ void vh_property_list_init(){
 void vh_property_list_destroy(){
 	//
 	if (!_property_list) {
-		vh_logger_warn("Property list was not initialied");
+        a_logger_warn("Property list was not initialied");
 		return;
 	}
 
@@ -111,25 +111,30 @@ void vh_property_list_load(){
     IBusProperty * prop;
 
     if (!_property_list) {
-    	vh_logger_error("Property list is null");
+        a_logger_error("Property list is null");
     	return;
     }
 
     // calculate initial mode
-    gint cm = vh_configuration_get_current_mode();
-    gboolean rm = vh_configuration_get_remembering_mode();
-    gboolean as = vh_configuration_get_auto_show_candidate_table();
+    gint cm =a_configuration_get_current_mode();
+    gboolean rm =a_configuration_get_remembering_mode();
+    gboolean as =a_configuration_get_auto_show_candidate_table();
 
     //
-    IBusProperty* vn_prop = create_radio_property(__VIETNAMESE_MODE_LABEL__, __VIETNAMESE_MODE_VALUE__, cm == __VIETNAMESE_MODE_2__, vh_configuration_get_vietnamese_mode_key());
-    IBusProperty* vh_prop = create_radio_property(__VIETHOA_MODE_LABEL__, __VIETHOA_MODE_VALUE__, cm == __VIETHOA_MODE_2__, vh_configuration_get_viethoa_mode_key());
-    IBusProperty* tc_prop = create_radio_property(__TEOCHEW_MODE_LABEL__, __TEOCHEW_MODE_VALUE__, cm == __TEOCHEW_MODE_2__, vh_configuration_get_teochew_mode_key());
-    IBusProperty* cn_prop = create_radio_property(__CHINESE_MODE_LABEL__, __CHINESE_MODE_VALUE__, cm == __CHINESE_MODE_2__, vh_configuration_get_chinese_mode_key());
-    IBusProperty* en_prop = create_radio_property(__ENGLISH_MODE_LABEL__, __ENGLISH_MODE_VALUE__, cm == __ENGLISH_MODE_2__, vh_configuration_get_english_mode_key());
-    IBusProperty* rmm_prop = create_toggle_property(__REMEMBER_MODE_LABEL__, __REMEMBER_MODE_VALUE__, rm);
+    IBusProperty* vn_prop = create_radio_property(__A_VIETNAMESE_MODE_LABEL__, __A_VIETNAMESE_MODE_VALUE__, cm==__A_VIETNAMESE_MODE_2__,
+                                                  a_configuration_get_vietnamese_mode_key());
+    IBusProperty* vh_prop = create_radio_property(__A_HANVIET_MODE_LABEL__, __A_HANVIET_MODE_VALUE__, cm==__A_HANVIET_MODE_2__,
+                                                  a_configuration_get_hanviet_mode_key());
+    IBusProperty* tc_prop = create_radio_property(__A_TEOCHEW_MODE_LABEL__, __A_TEOCHEW_MODE_VALUE__, cm==__A_TEOCHEW_MODE_2__,
+                                                  a_configuration_get_teochew_mode_key());
+    IBusProperty* cn_prop = create_radio_property(__A_CHINESE_MODE_LABEL__, __A_CHINESE_MODE_VALUE__, cm==__A_CHINESE_MODE_2__,
+                                                  a_configuration_get_chinese_mode_key());
+    IBusProperty* en_prop = create_radio_property(__A_ENGLISH_MODE_LABEL__, __A_ENGLISH_MODE_VALUE__, cm==__A_ENGLISH_MODE_2__,
+                                                  a_configuration_get_english_mode_key());
+    IBusProperty* rmm_prop = create_toggle_property(__A_REMEMBER_MODE_LABEL__, __A_REMEMBER_MODE_VALUE__, rm);
 
     // uncomment to allow not display candidate table
-    //IBusProperty* as_prop = create_toggle_property(__AUTO_SHOW_CANDIDATE_TABLE_LABEL__, __AUTO_SHOW_CANDIDATE_TABLE_VALUE__, as);
+    //IBusProperty* as_prop = create_toggle_property(__A_AUTO_SHOW_CANDIDATE_TABLE_LABEL__, __A_AUTO_SHOW_CANDIDATE_TABLE_VALUE__, as);
 
 
     //
@@ -152,7 +157,7 @@ void vh_property_list_load(){
 void vh_property_list_register(IBusAbacusEngine* viethoa){
 	//
     if (!_property_list) {
-    	vh_logger_error("Property list is null");
+        a_logger_error("Property list is null");
     	return;
     }
 
@@ -165,39 +170,39 @@ void vh_property_list_update(IBusAbacusEngine* viethoa){
     IBusEngine *engine = (IBusEngine*)viethoa;
    
     if (!_property_list) {
-    	vh_logger_error("Property list is null");
+        a_logger_error("Property list is null");
     	return;
     }
 
 	//
-	gint cm = vh_configuration_get_current_mode();
+	gint cm =a_configuration_get_current_mode();
 
 	//
 	vh_property_list_update_symbol(viethoa);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 0);
-	update_state(prop, cm == __VIETNAMESE_MODE_2__);
+	update_state(prop, cm==__A_VIETNAMESE_MODE_2__);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 1);
-	update_state(prop, cm == __VIETHOA_MODE_2__);
+	update_state(prop, cm==__A_HANVIET_MODE_2__);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 2);
-	update_state(prop, cm == __TEOCHEW_MODE_2__);
+	update_state(prop, cm==__A_TEOCHEW_MODE_2__);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 3);
-	update_state(prop, cm == __CHINESE_MODE_2__);
+	update_state(prop, cm==__A_CHINESE_MODE_2__);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 4);
-	update_state(prop, cm == __ENGLISH_MODE_2__);
+	update_state(prop, cm==__A_ENGLISH_MODE_2__);
 	ibus_engine_update_property(engine, prop);
 
 }

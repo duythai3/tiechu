@@ -25,8 +25,8 @@ Abacus_SOURCES = \
 	main.c \
 	engine.c \
 	engine.h \
-	vhutil.h \
-	vhutil.c \
+	AUtil.h \
+	AUtil.c \
 	vhustring.h \
 	vhustring.c \
     VHTelexEditor2.h \
@@ -36,10 +36,10 @@ Abacus_SOURCES = \
     VHZTelexTable2.c \
 	VHPropertyList.h \
 	VHPropertyList.c \
-	VHConfiguration.h \
-	VHConfiguration.c \
-	VHLogger.h \
-	VHLogger.c \
+	AConfiguration.h \
+	AConfiguration.c \
+	ALogger.h \
+	ALogger.c \
     VHCandidateTable.h \
     VHCandidateTable.c \
 	VHViethoaTable.h \

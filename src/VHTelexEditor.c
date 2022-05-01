@@ -19,7 +19,7 @@
  */
 #include <glib.h>
 #include <ibus.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "vhustring.h"
 #include "VHTelexEditor.h"
 #include "VHVNLetters.h"

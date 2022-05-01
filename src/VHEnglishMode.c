@@ -20,16 +20,16 @@
 #include <glib.h>
 #include <ibus.h>
 #include "engine.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHEnglishMode.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHHelper.h"
 
 
 gboolean vh_english_mode_process_key_event(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
-	vh_logger_log("manage_mode: keyval: %d, keycode: %d, modifiers: %d", keyval, keycode, modifiers);
+    a_logger_log("manage_mode: keyval: %d, keycode: %d, modifiers: %d", keyval, keycode, modifiers);
 	return FALSE;
 }

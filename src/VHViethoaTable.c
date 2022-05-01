@@ -23,7 +23,7 @@
 #include "VHViethoaTable.h"
 
 #include "VHCandidateArray.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHTelexEditor.h"
 #include "VHDatabase.h"
 #include "VHPreedit.h"
@@ -118,7 +118,7 @@ static gunichar *_char_expand_table_expand(gunichar ch, guint* expand_char_len){
 gboolean vh_viethoa_table_init(){
 	//
 	_char_expand_table_init();
-	vh_logger_log("viethoa table opened");
+    a_logger_log("viethoa table opened");
 	return TRUE;
 }
 
@@ -126,7 +126,7 @@ gboolean vh_viethoa_table_init(){
 void vh_viethoa_table_destroy(){
 	//
 	_char_expand_table_destroy();
-	vh_logger_log("viethoa table destroyed");
+    a_logger_log("viethoa table destroyed");
 }
 
 gboolean vh_viethoa_table_find(){
@@ -203,7 +203,7 @@ gboolean vh_viethoa_table_find(){
    len = g_sprintf(_buff + index, " order by _frequency desc limit 72");
    index = index + len;
    _buff[index] = 0;
-   vh_logger_log(_buff);
+    a_logger_log(_buff);
 
    // clear candidate list
 	vh_candidate_array_clear();
@@ -212,7 +212,7 @@ gboolean vh_viethoa_table_find(){
 	gint ret = sqlite3_exec(cnn, _buff, _add_word, 0, &errmsg);
 	if (ret != SQLITE_OK) {
 		if (errmsg) {
-			vh_logger_error("SQLite error: %s", errmsg);
+            a_logger_error("SQLite error: %s", errmsg);
 			sqlite3_free(errmsg);
 		}
 		return FALSE;
@@ -252,11 +252,11 @@ void vh_viethoa_table_increase_frequency(const gchar *chinese_char){
 	//
     gint len = g_sprintf(_buff, "update viethoa set _frequency=_frequency+1 where _char='%s'", chinese_char);
 	_buff[len] = 0;
-	vh_logger_log(_buff);
+    a_logger_log(_buff);
 	gchar *errmsg = NULL;
 	gint ret = sqlite3_exec(cnn, _buff, _increase_frequency, 0, &errmsg);
 	if(ret != SQLITE_OK){
-		vh_logger_error("SQLite error: %s", errmsg);
+        a_logger_error("SQLite error: %s", errmsg);
 		sqlite3_free(errmsg);
 	}
 }

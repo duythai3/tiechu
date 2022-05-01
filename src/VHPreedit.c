@@ -22,7 +22,7 @@
 #include "VHVNLetters.h"
 #include <glib.h>
 #include <ibus.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 
 VHUString* _preedit = NULL;
 guint _cursor_pos = 0;
@@ -116,7 +116,7 @@ gchar *vh_preedit_get_utf8_string(){
 void vh_preedit_log() {
 	gchar* str = vh_preedit_get_utf8_string();
 	if (str) {
-		vh_logger_log("preedit: %s", str);
+        a_logger_log("preedit: %s", str);
 		g_free(str);
 	}
 }

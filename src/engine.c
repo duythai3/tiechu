@@ -21,11 +21,11 @@
 #include "VHZTelexTable2.h"
 #include "engine.h"
 #include "VHCandidateArray.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHCandidateTable.h"
 #include "VHViethoaTable.h"
 #include "VHTelexEditor.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHPropertyList.h"
 #include "VHEnglishMode.h"
 #include "VHVietnameseMode.h"
@@ -88,7 +88,7 @@ G_DEFINE_TYPE (IBusAbacusEngine, ibus_abacus_engine, IBUS_TYPE_ENGINE)
 //
 
 static void ibus_abacus_engine_class_init(IBusAbacusEngineClass *klass){
-    vh_logger_log("engine class init...\n");
+    a_logger_log("engine class init...\n");
     IBusObjectClass *ibus_object_class=IBUS_OBJECT_CLASS (klass);
     IBusEngineClass *engine_class=IBUS_ENGINE_CLASS (klass);
 
@@ -112,10 +112,10 @@ static void ibus_abacus_engine_class_init(IBusAbacusEngineClass *klass){
 }
 
 void initialize(){
-    vh_logger_log("Abacus engine init...\n");
+    a_logger_log("Abacus engine init...\n");
 
     //load configuration
-    vh_configuration_load();
+    a_configuration_load();
 
     //
     vh_database_init();
@@ -138,7 +138,7 @@ void initialize(){
 }
 
 void uninitialize(){
-    vh_logger_log("Abacus engine destroy...\n");
+    a_logger_log("Abacus engine destroy...\n");
 
     // destroy property list
     vh_property_list_destroy();
@@ -174,34 +174,34 @@ static void ibus_abacus_engine_focus_out(IBusEngine *engine){
 }
 
 static void ibus_abacus_engine_focus_in(IBusEngine *engine){
-    vh_logger_log("Abacus received focus_in event");
-    vh_logger_backup();
+    a_logger_log("Abacus received focus_in event");
+    a_logger_backup();
     vh_property_list_register((IBusAbacusEngine *) engine);
 }
 
 static void ibus_abacus_engine_page_up(IBusEngine *engine){
-    vh_logger_log("ibus_abacus_engine_page_up");
+    a_logger_log("ibus_abacus_engine_page_up");
     if(vh_candidate_table_showing()){
         vh_candidate_table_page_up((IBusAbacusEngine *) engine);
     }
 }
 
 static void ibus_abacus_engine_page_down(IBusEngine *engine){
-    vh_logger_log("ibus_abacus_engine_page_down");
+    a_logger_log("ibus_abacus_engine_page_down");
     if(vh_candidate_table_showing()){
         vh_candidate_table_page_down((IBusAbacusEngine *) engine);
     }
 }
 
 static void ibus_abacus_engine_cursor_up(IBusEngine *engine){
-    vh_logger_log("ibus_abacus_engine_cursor_up");
+    a_logger_log("ibus_abacus_engine_cursor_up");
     if(vh_candidate_table_showing()){
         vh_candidate_table_cursor_up((IBusAbacusEngine *) engine);
     }
 }
 
 static void ibus_abacus_engine_cursor_down(IBusEngine *engine){
-    vh_logger_log("ibus_abacus_engine_cursor_down");
+    a_logger_log("ibus_abacus_engine_cursor_down");
     if(vh_candidate_table_showing()){
         vh_candidate_table_cursor_down((IBusAbacusEngine *) engine);
     }
@@ -213,59 +213,59 @@ static void ibus_abacus_engine_candidate_clicked(IBusEngine *engine, guint index
 }
 
 static void property_activated(IBusEngine *engine, const gchar *property_ten, guint property_status){
-    vh_logger_log("Property %s changed to %d", property_ten, property_status);
-    if(g_strcmp0(property_ten, __VIETNAMESE_MODE_VALUE__)==0){
+    a_logger_log("Property %s changed to %d", property_ten, property_status);
+    if(g_strcmp0(property_ten, __A_VIETNAMESE_MODE_VALUE__)==0){
         if(property_status==PROP_STATE_CHECKED){
-            vh_configuration_set_selected_mode(__VIETNAMESE_MODE_2__);
+            a_configuration_set_selected_mode(__A_VIETNAMESE_MODE_2__);
             vh_property_list_update_symbol((IBusAbacusEngine *) engine);
-            vh_configuration_save();
+            a_configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __VIETHOA_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, __A_HANVIET_MODE_VALUE__)==0){
         if(property_status==PROP_STATE_CHECKED){
-            vh_configuration_set_selected_mode(__VIETHOA_MODE_2__);
+            a_configuration_set_selected_mode(__A_HANVIET_MODE_2__);
             vh_property_list_update_symbol((IBusAbacusEngine *) engine);
-            vh_configuration_save();
+            a_configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __TEOCHEW_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, __A_TEOCHEW_MODE_VALUE__)==0){
         if(property_status==PROP_STATE_CHECKED){
-            vh_configuration_set_selected_mode(__TEOCHEW_MODE_2__);
+            a_configuration_set_selected_mode(__A_TEOCHEW_MODE_2__);
             vh_property_list_update_symbol((IBusAbacusEngine *) engine);
-            vh_configuration_save();
+            a_configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __CHINESE_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, __A_CHINESE_MODE_VALUE__)==0){
         if(property_status==PROP_STATE_CHECKED){
-            vh_configuration_set_selected_mode(__CHINESE_MODE_2__);
+            a_configuration_set_selected_mode(__A_CHINESE_MODE_2__);
             vh_property_list_update_symbol((IBusAbacusEngine *) engine);
-            vh_configuration_save();
+            a_configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __ENGLISH_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, __A_ENGLISH_MODE_VALUE__)==0){
         if(property_status==PROP_STATE_CHECKED){
-            vh_configuration_set_selected_mode(__ENGLISH_MODE_2__);
+            a_configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
             vh_property_list_update_symbol((IBusAbacusEngine *) engine);
-            vh_configuration_save();
+            a_configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __REMEMBER_MODE_VALUE__)==0){
-        vh_configuration_set_remembering_mode(property_status);
-        vh_configuration_save();
-    }else if(g_strcmp0(property_ten, __AUTO_SHOW_CANDIDATE_TABLE_VALUE__)==0){
-        vh_configuration_set_auto_show_candidate_table(property_status);
-        vh_configuration_save();
+    }else if(g_strcmp0(property_ten, __A_REMEMBER_MODE_VALUE__)==0){
+        a_configuration_set_remembering_mode(property_status);
+        a_configuration_save();
+    }else if(g_strcmp0(property_ten, __A_AUTO_SHOW_CANDIDATE_TABLE_VALUE__)==0){
+        a_configuration_set_auto_show_candidate_table(property_status);
+        a_configuration_save();
     }
 }
 
 static gboolean deliver_key(IBusAbacusEngine *abacus, guint keyval, guint keycode, guint modifiers){
     //
-    gint current_mode=vh_configuration_get_current_mode();
+    gint current_mode=a_configuration_get_current_mode();
     switch(current_mode){
-        case __ENGLISH_MODE_2__:
+        case __A_ENGLISH_MODE_2__:
             return vh_english_mode_process_key_event(abacus, keyval, keycode, modifiers);
-        case __VIETNAMESE_MODE_2__:
+        case __A_VIETNAMESE_MODE_2__:
             return vh_vietnamese_mode_process_key_event(abacus, keyval, keycode, modifiers);
-        case __VIETHOA_MODE_2__:
+        case __A_HANVIET_MODE_2__:
             return vh_viethoa_mode_process_key_event(abacus, keyval, keycode, modifiers);
-        case __TEOCHEW_MODE_2__:
+        case __A_TEOCHEW_MODE_2__:
             return vh_teochew_mode_process_key_event(abacus, keyval, keycode, modifiers);
-        case __CHINESE_MODE_2__:
+        case __A_CHINESE_MODE_2__:
             return vh_chinese_mode_process_key_event(abacus, keyval, keycode, modifiers);
         default:
             return FALSE;
@@ -275,69 +275,69 @@ static gboolean deliver_key(IBusAbacusEngine *abacus, guint keyval, guint keycod
 static gboolean manage_mode(IBusAbacusEngine *abacus, guint keyval, guint keycode, guint modifiers){
 
 
-    gint current_mode=vh_configuration_get_current_mode(); //current mode
-    guint vietnamese_mode_key=(guint) vh_configuration_get_vietnamese_mode_key();
-    guint viethoa_mode_key=(guint) vh_configuration_get_viethoa_mode_key();
-    guint teochew_mode_key=(guint) vh_configuration_get_teochew_mode_key();
-    guint chinese_mode_key=(guint) vh_configuration_get_chinese_mode_key();
-    guint english_mode_key=(guint) vh_configuration_get_english_mode_key();
+    gint current_mode=a_configuration_get_current_mode(); //current mode
+    guint vietnamese_mode_key=(guint) a_configuration_get_vietnamese_mode_key();
+    guint viethoa_mode_key=(guint) a_configuration_get_hanviet_mode_key();
+    guint teochew_mode_key=(guint) a_configuration_get_teochew_mode_key();
+    guint chinese_mode_key=(guint) a_configuration_get_chinese_mode_key();
+    guint english_mode_key=(guint) a_configuration_get_english_mode_key();
 
     // vietnamese mode
     if((vh_helper_is_control_pressed(modifiers))&&(keyval==vietnamese_mode_key)){
-        if(current_mode==__VIETNAMESE_MODE_2__){
+        if(current_mode==__A_VIETNAMESE_MODE_2__){
             return TRUE;
         }
-        vh_configuration_set_selected_mode(__VIETNAMESE_MODE_2__);
+        a_configuration_set_selected_mode(__A_VIETNAMESE_MODE_2__);
         vh_property_list_update(abacus);
-        vh_configuration_save();
+        a_configuration_save();
         vh_helper_clear_preedit(abacus);
         return TRUE;
     }
 
     // Han Viet mode
     if((vh_helper_is_control_pressed(modifiers))&&(keyval==viethoa_mode_key)){
-        if(current_mode==__VIETHOA_MODE_2__){
+        if(current_mode==__A_HANVIET_MODE_2__){
             return TRUE;
         }
-        vh_configuration_set_selected_mode(__VIETHOA_MODE_2__);
+        a_configuration_set_selected_mode(__A_HANVIET_MODE_2__);
         vh_property_list_update(abacus);
-        vh_configuration_save();
+        a_configuration_save();
         vh_helper_clear_preedit(abacus);
         return TRUE;
     }
 
     // teochew mode
     if((vh_helper_is_control_pressed(modifiers))&&(keyval==teochew_mode_key)){
-        if(current_mode==__TEOCHEW_MODE_2__){
+        if(current_mode==__A_TEOCHEW_MODE_2__){
             return TRUE;
         }
-        vh_configuration_set_selected_mode(__TEOCHEW_MODE_2__);
+        a_configuration_set_selected_mode(__A_TEOCHEW_MODE_2__);
         vh_property_list_update(abacus);
-        vh_configuration_save();
+        a_configuration_save();
         vh_helper_clear_preedit(abacus);
         return TRUE;
     }
 
     // chinese mode
     if((vh_helper_is_control_pressed(modifiers))&&(keyval==chinese_mode_key)){
-        if(current_mode==__CHINESE_MODE_2__){
+        if(current_mode==__A_CHINESE_MODE_2__){
             return TRUE;
         }
-        vh_configuration_set_selected_mode(__CHINESE_MODE_2__);
+        a_configuration_set_selected_mode(__A_CHINESE_MODE_2__);
         vh_property_list_update(abacus);
-        vh_configuration_save();
+        a_configuration_save();
         vh_helper_clear_preedit(abacus);
         return TRUE;
     }
 
     // english mode
     if((vh_helper_is_control_pressed(modifiers))&&(keyval==english_mode_key)){
-        if(current_mode==__ENGLISH_MODE_2__){
+        if(current_mode==__A_ENGLISH_MODE_2__){
             return TRUE;
         }
-        vh_configuration_set_selected_mode(__ENGLISH_MODE_2__);
+        a_configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
         vh_property_list_update(abacus);
-        vh_configuration_save();
+        a_configuration_save();
         vh_helper_clear_preedit(abacus);
         return TRUE;
     }
@@ -357,7 +357,7 @@ static gboolean manage_mode(IBusAbacusEngine *abacus, guint keyval, guint keycod
     //
     if(vh_interchange_mode_is_in_interchange_mode()){
         vh_interchange_mode_turn_shift_pressed_off();
-        vh_logger_log("Leave interchange mode");
+        a_logger_log("Leave interchange mode");
     }
     return deliver_key(abacus, keyval, keycode, modifiers);
 }
@@ -381,11 +381,11 @@ static gboolean ibus_abacus_engine_process_key_event(IBusEngine *engine,guint ke
             if(!vh_interchange_mode_is_shift_pressed_on()){
                 return FALSE;
             }
-            vh_logger_log("Enter interchange mode");
+            a_logger_log("Enter interchange mode");
             vh_interchange_mode_save_begin_interchange_mode_time();
             return FALSE;
         }else{
-            vh_logger_log("Left Shift pressed");
+            a_logger_log("Left Shift pressed");
             vh_interchange_mode_turn_shift_pressed_on();
             return FALSE;
         }
@@ -393,7 +393,7 @@ static gboolean ibus_abacus_engine_process_key_event(IBusEngine *engine,guint ke
 
     //
     if(vh_interchange_mode_is_in_interchange_mode()){
-        vh_logger_log("Leave interchange mode");
+        a_logger_log("Leave interchange mode");
         vh_interchange_mode_turn_shift_pressed_off();
     }
     return deliver_key(abacus, keyval, keycode, modifiers);

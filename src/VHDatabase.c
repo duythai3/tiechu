@@ -20,7 +20,7 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include "VHDatabase.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 
 
 static sqlite3 *_connection = NULL;
@@ -36,7 +36,7 @@ gboolean vh_database_init(){
 	//
 	int ret = sqlite3_open(PKGDATADIR"/csdl/viethoa.db", &_connection);
 	if(ret != SQLITE_OK){
-		vh_logger_error("Can't open database viethoa.db: %s", sqlite3_errmsg(_connection));
+        a_logger_error("Can't open database viethoa.db: %s", sqlite3_errmsg(_connection));
 		if (_connection) {
 			sqlite3_close(_connection);
 			_connection = NULL;
@@ -45,7 +45,7 @@ gboolean vh_database_init(){
 	}
 
 	//
-	vh_logger_log("viethoa database opened");
+    a_logger_log("viethoa database opened");
 	return TRUE;
 }
 
@@ -60,7 +60,7 @@ void vh_database_destroy(){
 	//
 	sqlite3_close(_connection);
 	_connection = NULL;
-	vh_logger_log("viethoa database closed");
+    a_logger_log("viethoa database closed");
 }
 
 sqlite3* vh_database_get_connection(){

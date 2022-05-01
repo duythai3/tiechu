@@ -20,8 +20,8 @@
 
 #include <ibus.h>
 #include "engine.h"
-#include "vhutil.h"
-#include "VHLogger.h"
+#include "AUtil.h"
+#include "ALogger.h"
 
 static IBusBus *bus=NULL;
 static IBusFactory *factory=NULL;
@@ -37,13 +37,13 @@ static const GOptionEntry entries[]={
     };
 
 static void ibus_disconnected_cb(IBusBus *bus,gpointer user_data){
-    vh_logger_log("__disconnected");
+    a_logger_log("__disconnected");
     ibus_quit();
 }
 
 static void init(void){
     ibus_init();
-    vh_logger_log("ibus initialized: %d", 2);
+    a_logger_log("ibus initialized: %d", 2);
 
     //
     bus=ibus_bus_new();
@@ -56,26 +56,26 @@ static void init(void){
     ibus_factory_add_engine(factory, "Abacus", IBUS_TYPE_ABACUS_ENGINE);
 
     if(ibus){
-        vh_logger_log("inus connected: %d", 3);
+        a_logger_log("inus connected: %d", 3);
         ibus_bus_request_name(bus, "org.freedesktop.IBus.Abacus", 0);
     }else{
         IBusComponent *component;
         component=ibus_component_new("org.freedesktop.IBus.Abacus","Abacus","0.1.0","GPL","Duy Thai<duythaiz234@gmail.com>","https://tieuchau.net","","Abacus");
-        vh_logger_log("Abacus component created\n");
+        a_logger_log("Abacus component created\n");
         ibus_component_add_engine(component, ibus_engine_desc_new("Abacus", "Abacus", "Abacus", "vi_VN", "GPL","Duy Thai <duythaiz234@gmail.com>",PKGDATADIR"/icons/Abacus.svg", "us"));
-        vh_logger_log("Abacus engine created\n ");
+        a_logger_log("Abacus engine created\n ");
         ibus_bus_register_component(bus, component);
-        vh_logger_log("Abacus component registered\n");
+        a_logger_log("Abacus component registered\n");
     }
 }
 
 int main2(int argc, char **argv){
-    vh_logger_open();
-    vh_logger_log("Begin to work... %d", 1);
-    vh_logger_warn("Begin to work... %d", 1);
-    vh_logger_error("Begin to work... %d", 1);
-    vh_logger_backup();
-    vh_logger_close();
+    a_logger_open();
+    a_logger_log("Begin to work... %d", 1);
+    a_logger_warn("Begin to work... %d", 1);
+    a_logger_error("Begin to work... %d", 1);
+    a_logger_backup();
+    a_logger_close();
     g_print("work!");
 
     return 0;
@@ -86,10 +86,10 @@ int main(int argc, char **argv){
     GOptionContext *context;
 
     // open logger channel
-    vh_logger_open();
+    a_logger_open();
 
     //
-    vh_logger_log("Abacus started.\n");
+    a_logger_log("Abacus started.\n");
 
     // Parse the command line
     context=g_option_context_new("- ibus Abacus engine");
@@ -105,10 +105,10 @@ int main(int argc, char **argv){
     // Go
     init();
     ibus_main();
-    vh_logger_log("__Abacus stopped.\n");
+    a_logger_log("__Abacus stopped.\n");
     uninitialize();
 
     // close logger channel
-    vh_logger_close();
+    a_logger_close();
     return 0;
 }

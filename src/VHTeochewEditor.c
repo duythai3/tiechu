@@ -19,7 +19,7 @@
  */
 #include <glib.h>
 #include <ibus.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "vhustring.h"
 #include "VHPinyinEditor.h"
 #include "VHVNLetters.h"
@@ -54,7 +54,7 @@ static void correct_letter_case(gunichar* vn_clutter, gchar* telex_clutter, guin
 //
 static gboolean is_teochew_vowel(gunichar ch){
     ch = g_unichar_tolower(ch);
-    //vh_logger_log("ch=%x", (int)ch);
+    //a_logger_log("ch=%x", (int)ch);
 	switch(ch){
         case TC_LETTER_e:
             return TRUE;
@@ -176,15 +176,15 @@ static gboolean process_teochew(guint keyval){
 
     //
     if (!vh_teochew_editor_is_signal_letter(keyval)) {
-    	//vh_logger_log("not signal letter: %d", keyval);
+    	//a_logger_log("not signal letter: %d", keyval);
     	return FALSE;
     }
 
-    //vh_logger_log("signal letter: %d", keyval);
+    //a_logger_log("signal letter: %d", keyval);
 
     //
 	ascii_clutter =  calc_ascii_clutter(keyval, &clutter_len, &start_pos);
-	vh_logger_log("ascii clutter: %s", ascii_clutter);
+    a_logger_log("ascii clutter: %s", ascii_clutter);
 	if (!ascii_clutter) {
 		return FALSE;
 	}
@@ -193,11 +193,11 @@ static gboolean process_teochew(guint keyval){
 	// convert pinyin clutter to lower case
 	gchar *down_asscii_clutter = g_utf8_strdown(ascii_clutter, -1);
 
-	//vh_logger_log("down ascii clutter: %s, len: %d", down_asscii_clutter, clutter_len);
+	//a_logger_log("down ascii clutter: %s, len: %d", down_asscii_clutter, clutter_len);
 
 	//
     const gchar *teochew_clutter = vh_etelex_table_convert_to_pinyin(down_asscii_clutter);
-    vh_logger_log("teochew_clutter:%s", teochew_clutter);
+    a_logger_log("teochew_clutter:%s", teochew_clutter);
 	g_free(down_asscii_clutter);
 
 
@@ -222,7 +222,7 @@ static gboolean process_teochew(guint keyval){
 /////////////////////////
 gboolean vh_teochew_editor_process(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers){
     guint len = vh_preedit_get_text_len();
-    //vh_logger_log("preedit len: %d", len);
+    //a_logger_log("preedit len: %d", len);
     if(len > 0){
         return process_teochew(keyval);
     }else{

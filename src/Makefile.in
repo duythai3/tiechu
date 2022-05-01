@@ -127,11 +127,11 @@ am__installdirs = "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(componentdir)"
 PROGRAMS = $(libexec_PROGRAMS)
 am_Abacus_OBJECTS = Abacus-main.$(OBJEXT) Abacus-engine.$(OBJEXT) \
-	Abacus-vhutil.$(OBJEXT) Abacus-vhustring.$(OBJEXT) \
+	Abacus-AUtil.$(OBJEXT) Abacus-vhustring.$(OBJEXT) \
 	Abacus-VHTelexEditor2.$(OBJEXT) \
 	Abacus-VHZTelexTable2.$(OBJEXT) \
 	Abacus-VHPropertyList.$(OBJEXT) \
-	Abacus-VHConfiguration.$(OBJEXT) Abacus-VHLogger.$(OBJEXT) \
+	Abacus-AConfiguration.$(OBJEXT) Abacus-ALogger.$(OBJEXT) \
 	Abacus-VHCandidateTable.$(OBJEXT) \
 	Abacus-VHViethoaTable.$(OBJEXT) \
 	Abacus-VHCandidateArray.$(OBJEXT) \
@@ -170,18 +170,18 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/Abacus-VHCandidateArray.Po \
+am__depfiles_remade = ./$(DEPDIR)/Abacus-AConfiguration.Po \
+	./$(DEPDIR)/Abacus-ALogger.Po ./$(DEPDIR)/Abacus-AUtil.Po \
+	./$(DEPDIR)/Abacus-VHCandidateArray.Po \
 	./$(DEPDIR)/Abacus-VHCandidateTable.Po \
 	./$(DEPDIR)/Abacus-VHChineseMode.Po \
 	./$(DEPDIR)/Abacus-VHChineseTable.Po \
-	./$(DEPDIR)/Abacus-VHConfiguration.Po \
 	./$(DEPDIR)/Abacus-VHDatabase.Po \
 	./$(DEPDIR)/Abacus-VHETelexTable.Po \
 	./$(DEPDIR)/Abacus-VHEnglishMode.Po \
 	./$(DEPDIR)/Abacus-VHHelper.Po \
 	./$(DEPDIR)/Abacus-VHInterchangeMode.Po \
 	./$(DEPDIR)/Abacus-VHLTelexTable.Po \
-	./$(DEPDIR)/Abacus-VHLogger.Po \
 	./$(DEPDIR)/Abacus-VHPinyinEditor.Po \
 	./$(DEPDIR)/Abacus-VHPinyinTable.Po \
 	./$(DEPDIR)/Abacus-VHPreedit.Po \
@@ -195,7 +195,7 @@ am__depfiles_remade = ./$(DEPDIR)/Abacus-VHCandidateArray.Po \
 	./$(DEPDIR)/Abacus-VHVietnameseMode.Po \
 	./$(DEPDIR)/Abacus-VHZTelexTable2.Po \
 	./$(DEPDIR)/Abacus-engine.Po ./$(DEPDIR)/Abacus-main.Po \
-	./$(DEPDIR)/Abacus-vhustring.Po ./$(DEPDIR)/Abacus-vhutil.Po
+	./$(DEPDIR)/Abacus-vhustring.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -423,8 +423,8 @@ Abacus_SOURCES = \
 	main.c \
 	engine.c \
 	engine.h \
-	vhutil.h \
-	vhutil.c \
+	AUtil.h \
+	AUtil.c \
 	vhustring.h \
 	vhustring.c \
     VHTelexEditor2.h \
@@ -434,10 +434,10 @@ Abacus_SOURCES = \
     VHZTelexTable2.c \
 	VHPropertyList.h \
 	VHPropertyList.c \
-	VHConfiguration.h \
-	VHConfiguration.c \
-	VHLogger.h \
-	VHLogger.c \
+	AConfiguration.h \
+	AConfiguration.c \
+	ALogger.h \
+	ALogger.c \
     VHCandidateTable.h \
     VHCandidateTable.c \
 	VHViethoaTable.h \
@@ -597,18 +597,19 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AConfiguration.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ALogger.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AUtil.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateArray.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateTable.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseMode.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHConfiguration.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHDatabase.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHETelexTable.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHEnglishMode.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHHelper.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHInterchangeMode.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHLTelexTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHLogger.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinEditor.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinTable.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPreedit.Po@am__quote@ # am--include-marker
@@ -624,7 +625,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-engine.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-main.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-vhustring.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-vhutil.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -681,19 +681,19 @@ Abacus-engine.obj: engine.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
 
-Abacus-vhutil.o: vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhutil.o -MD -MP -MF $(DEPDIR)/Abacus-vhutil.Tpo -c -o Abacus-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhutil.Tpo $(DEPDIR)/Abacus-vhutil.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='Abacus-vhutil.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AUtil.o: AUtil.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AUtil.o -MD -MP -MF $(DEPDIR)/Abacus-AUtil.Tpo -c -o Abacus-AUtil.o `test -f 'AUtil.c' || echo '$(srcdir)/'`AUtil.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AUtil.Tpo $(DEPDIR)/Abacus-AUtil.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AUtil.c' object='Abacus-AUtil.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhutil.o `test -f 'vhutil.c' || echo '$(srcdir)/'`vhutil.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AUtil.o `test -f 'AUtil.c' || echo '$(srcdir)/'`AUtil.c
 
-Abacus-vhutil.obj: vhutil.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhutil.obj -MD -MP -MF $(DEPDIR)/Abacus-vhutil.Tpo -c -o Abacus-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhutil.Tpo $(DEPDIR)/Abacus-vhutil.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhutil.c' object='Abacus-vhutil.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AUtil.obj: AUtil.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AUtil.obj -MD -MP -MF $(DEPDIR)/Abacus-AUtil.Tpo -c -o Abacus-AUtil.obj `if test -f 'AUtil.c'; then $(CYGPATH_W) 'AUtil.c'; else $(CYGPATH_W) '$(srcdir)/AUtil.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AUtil.Tpo $(DEPDIR)/Abacus-AUtil.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AUtil.c' object='Abacus-AUtil.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhutil.obj `if test -f 'vhutil.c'; then $(CYGPATH_W) 'vhutil.c'; else $(CYGPATH_W) '$(srcdir)/vhutil.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AUtil.obj `if test -f 'AUtil.c'; then $(CYGPATH_W) 'AUtil.c'; else $(CYGPATH_W) '$(srcdir)/AUtil.c'; fi`
 
 Abacus-vhustring.o: vhustring.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhustring.o -MD -MP -MF $(DEPDIR)/Abacus-vhustring.Tpo -c -o Abacus-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
@@ -751,33 +751,33 @@ Abacus-VHPropertyList.obj: VHPropertyList.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
 
-Abacus-VHConfiguration.o: VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHConfiguration.o -MD -MP -MF $(DEPDIR)/Abacus-VHConfiguration.Tpo -c -o Abacus-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHConfiguration.Tpo $(DEPDIR)/Abacus-VHConfiguration.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='Abacus-VHConfiguration.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AConfiguration.o: AConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AConfiguration.o -MD -MP -MF $(DEPDIR)/Abacus-AConfiguration.Tpo -c -o Abacus-AConfiguration.o `test -f 'AConfiguration.c' || echo '$(srcdir)/'`AConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AConfiguration.Tpo $(DEPDIR)/Abacus-AConfiguration.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AConfiguration.c' object='Abacus-AConfiguration.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHConfiguration.o `test -f 'VHConfiguration.c' || echo '$(srcdir)/'`VHConfiguration.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AConfiguration.o `test -f 'AConfiguration.c' || echo '$(srcdir)/'`AConfiguration.c
 
-Abacus-VHConfiguration.obj: VHConfiguration.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHConfiguration.obj -MD -MP -MF $(DEPDIR)/Abacus-VHConfiguration.Tpo -c -o Abacus-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHConfiguration.Tpo $(DEPDIR)/Abacus-VHConfiguration.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHConfiguration.c' object='Abacus-VHConfiguration.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AConfiguration.obj: AConfiguration.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AConfiguration.obj -MD -MP -MF $(DEPDIR)/Abacus-AConfiguration.Tpo -c -o Abacus-AConfiguration.obj `if test -f 'AConfiguration.c'; then $(CYGPATH_W) 'AConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/AConfiguration.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AConfiguration.Tpo $(DEPDIR)/Abacus-AConfiguration.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AConfiguration.c' object='Abacus-AConfiguration.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHConfiguration.obj `if test -f 'VHConfiguration.c'; then $(CYGPATH_W) 'VHConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/VHConfiguration.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AConfiguration.obj `if test -f 'AConfiguration.c'; then $(CYGPATH_W) 'AConfiguration.c'; else $(CYGPATH_W) '$(srcdir)/AConfiguration.c'; fi`
 
-Abacus-VHLogger.o: VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLogger.o -MD -MP -MF $(DEPDIR)/Abacus-VHLogger.Tpo -c -o Abacus-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLogger.Tpo $(DEPDIR)/Abacus-VHLogger.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='Abacus-VHLogger.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ALogger.o: ALogger.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ALogger.o -MD -MP -MF $(DEPDIR)/Abacus-ALogger.Tpo -c -o Abacus-ALogger.o `test -f 'ALogger.c' || echo '$(srcdir)/'`ALogger.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ALogger.Tpo $(DEPDIR)/Abacus-ALogger.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ALogger.c' object='Abacus-ALogger.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLogger.o `test -f 'VHLogger.c' || echo '$(srcdir)/'`VHLogger.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ALogger.o `test -f 'ALogger.c' || echo '$(srcdir)/'`ALogger.c
 
-Abacus-VHLogger.obj: VHLogger.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLogger.obj -MD -MP -MF $(DEPDIR)/Abacus-VHLogger.Tpo -c -o Abacus-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLogger.Tpo $(DEPDIR)/Abacus-VHLogger.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLogger.c' object='Abacus-VHLogger.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ALogger.obj: ALogger.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ALogger.obj -MD -MP -MF $(DEPDIR)/Abacus-ALogger.Tpo -c -o Abacus-ALogger.obj `if test -f 'ALogger.c'; then $(CYGPATH_W) 'ALogger.c'; else $(CYGPATH_W) '$(srcdir)/ALogger.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ALogger.Tpo $(DEPDIR)/Abacus-ALogger.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ALogger.c' object='Abacus-ALogger.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLogger.obj `if test -f 'VHLogger.c'; then $(CYGPATH_W) 'VHLogger.c'; else $(CYGPATH_W) '$(srcdir)/VHLogger.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ALogger.obj `if test -f 'ALogger.c'; then $(CYGPATH_W) 'ALogger.c'; else $(CYGPATH_W) '$(srcdir)/ALogger.c'; fi`
 
 Abacus-VHCandidateTable.o: VHCandidateTable.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateTable.Tpo -c -o Abacus-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
@@ -1201,18 +1201,19 @@ clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
+		-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-ALogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-AUtil.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHConfiguration.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHLogger.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
@@ -1228,7 +1229,6 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/Abacus-engine.Po
 	-rm -f ./$(DEPDIR)/Abacus-main.Po
 	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
-	-rm -f ./$(DEPDIR)/Abacus-vhutil.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1274,18 +1274,19 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
+		-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-ALogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-AUtil.Po
+	-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHConfiguration.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHLogger.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
@@ -1301,7 +1302,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/Abacus-engine.Po
 	-rm -f ./$(DEPDIR)/Abacus-main.Po
 	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
-	-rm -f ./$(DEPDIR)/Abacus-vhutil.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

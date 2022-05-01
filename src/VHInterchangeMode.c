@@ -19,7 +19,7 @@
  */
 #include "VHInterchangeMode.h"
 #include <glib/gprintf.h>
-#include "VHLogger.h"
+#include "ALogger.h"
 //
 static gboolean _shift_pressed = FALSE;
 static gint64 _begin_interchange_mode_time = 0;
@@ -46,7 +46,7 @@ gboolean vh_interchange_mode_is_in_interchange_mode() {
     }
     gint64 current_time = g_get_real_time();
     gint64 diff = current_time - _begin_interchange_mode_time;
-    vh_logger_log("diff: %d", diff);
+    a_logger_log("diff: %d", diff);
     if (diff > __INTERCHANGE_MODE_PERIOD__) {
         return FALSE;
     }

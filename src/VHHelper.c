@@ -21,12 +21,12 @@
 #include <ibus.h>
 #include "engine.h"
 #include "VHHelper.h"
-#include "VHConfiguration.h"
+#include "AConfiguration.h"
 #include "VHViethoaMode.h"
 #include "VHTelexEditor.h"
 #include "VHPropertyList.h"
 #include "VHCandidateTable.h"
-#include "VHLogger.h"
+#include "ALogger.h"
 #include "VHViethoaTable.h"
 #include "VHPreedit.h"
 #include "VHChineseTable.h"
@@ -34,7 +34,7 @@
 
 
 void vh_helper_clear_preedit(IBusAbacusEngine* viethoa) {
-	vh_logger_log("Clear preedit...\n");
+    a_logger_log("Clear preedit...\n");
 	vh_preedit_clear();
 	IBusText *text;
 	text = ibus_text_new_from_string ("");
@@ -83,8 +83,8 @@ void vh_helper_update_preedit(IBusAbacusEngine* viethoa) {
     g_free(utf8_preedit);
 
     //
-    gint current_mode = vh_configuration_get_current_mode();
-    if(current_mode == __VIETHOA_MODE_2__){
+    gint current_mode =a_configuration_get_current_mode();
+    if(current_mode==__A_HANVIET_MODE_2__){
     	//
         if(!vh_viethoa_table_find())
         	return;
@@ -93,12 +93,12 @@ void vh_helper_update_preedit(IBusAbacusEngine* viethoa) {
         if(vh_candidate_table_showing()){
             vh_candidate_table_update(viethoa, TRUE);
 		} else {
-			gboolean auto_show_candidate_table = vh_configuration_get_auto_show_candidate_table();
+			gboolean auto_show_candidate_table =a_configuration_get_auto_show_candidate_table();
 			if(auto_show_candidate_table){
                 vh_candidate_table_show(viethoa);
 			}
 		}
-    } else if (current_mode == __CHINESE_MODE_2__) {
+    } else if (current_mode==__A_CHINESE_MODE_2__) {
         //
         if(!vh_chinese_table_find())
             return;
@@ -107,12 +107,12 @@ void vh_helper_update_preedit(IBusAbacusEngine* viethoa) {
         if(vh_candidate_table_showing()){
             vh_candidate_table_update(viethoa, TRUE);
         } else {
-            gboolean auto_show_candidate_table = vh_configuration_get_auto_show_candidate_table();
+            gboolean auto_show_candidate_table =a_configuration_get_auto_show_candidate_table();
             if(auto_show_candidate_table){
                 vh_candidate_table_show(viethoa);
             }
         }
-    } else if (current_mode == __TEOCHEW_MODE_2__) {
+    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
         //
         if(!vh_teochew_table_find())
             return;
@@ -121,7 +121,7 @@ void vh_helper_update_preedit(IBusAbacusEngine* viethoa) {
         if(vh_candidate_table_showing()){
             vh_candidate_table_update(viethoa, TRUE);
         } else {
-            gboolean auto_show_candidate_table = vh_configuration_get_auto_show_candidate_table();
+            gboolean auto_show_candidate_table =a_configuration_get_auto_show_candidate_table();
             if(auto_show_candidate_table){
                 vh_candidate_table_show(viethoa);
             }
@@ -145,12 +145,12 @@ gboolean vh_helper_commit_candidate_in_page(IBusAbacusEngine *viethoa, guint ind
 	}
 
 	// increase frequency of selected word
-    gint current_mode = vh_configuration_get_current_mode(); //current mode
-    if (current_mode == __VIETHOA_MODE_2__) {
+    gint current_mode =a_configuration_get_current_mode(); //current mode
+    if (current_mode==__A_HANVIET_MODE_2__) {
         vh_viethoa_table_increase_frequency(candidate->text);
-    } else if (current_mode == __TEOCHEW_MODE_2__) {
+    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
         vh_teochew_table_increase_frequency(candidate->text);
-    } else if (current_mode == __CHINESE_MODE_2__){
+    } else if (current_mode==__A_CHINESE_MODE_2__){
         vh_chinese_table_increase_frequency(candidate->text);
     }
 
@@ -165,7 +165,7 @@ gboolean vh_helper_commit_candidate_in_page(IBusAbacusEngine *viethoa, guint ind
     vh_candidate_table_hide(viethoa);
 
     //
-	vh_logger_log("Candidate at index %d committed", index);
+    a_logger_log("Candidate at index %d committed", index);
 
     //
     return TRUE;
@@ -197,17 +197,17 @@ gboolean vh_helper_commit_current_candidate(IBusAbacusEngine *viethoa) {
     vh_candidate_table_hide(viethoa);
 
     //
-    vh_logger_log("Current candidate committed", index);
+    a_logger_log("Current candidate committed", index);
 
     //
     return TRUE;
 }
 
 gboolean vh_helper_process_escape(IBusAbacusEngine* viethoa, guint keyval, guint keycode, guint modifiers) {
-    //vh_logger_log("Change to English mode using Escape key");
-    vh_configuration_set_selected_mode(__ENGLISH_MODE_2__);
+    //a_logger_log("Change to English mode using Escape key");
+    a_configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
     vh_property_list_update(viethoa);
-    vh_configuration_save();
+    a_configuration_save();
     //
     vh_helper_clear_preedit(viethoa);
     //
