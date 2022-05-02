@@ -1,8 +1,7 @@
-/* vim:set et ts=4 sts=4:
+/*
+ * The Abacus engine for IBus
  *
- * ibus-viethoa - The Viethoa engine for IBus
- *
- * Copyright (c) 2020-2021 Duy Thai, duybthai@yahoo.com
+ * Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -121,7 +120,7 @@ main (int argc, char **argv)
   GtkApplication *app;
   int status;
 
-  app = gtk_application_new ("org.gtk.viethoa", G_APPLICATION_FLAGS_NONE);
+  app = gtk_application_new ("org.gtk.hanviet", G_APPLICATION_FLAGS_NONE);
   g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
   status = g_application_run (G_APPLICATION (app), argc, argv);
   g_object_unref (app);

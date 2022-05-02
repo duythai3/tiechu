@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!-- was: <?xml version="1.0" encoding="utf-8"?> -->
-<!-- filename: viethoa.xml -->
+<!-- filename: Abacus.xml -->
 <component>
 	<name>org.freedesktop.IBus.Abacus</name>
 	<description>Abacus Component</description>
 	<exec>/usr/libexec/Abacus --ibus</exec>
-	<version>1.0.0.20220423</version>
+	<version>1.0.0.20220501</version>
     <author>Duy Thai &lt;duythaiz234@gmail.com&gt;</author>
 	<license>GPL</license>
-    <homepage>http://github.com/duy-n-thai/ibus-viethoa</homepage>
+    <homepage>http://github.com/duythaiz234/Abacus</homepage>
 	<textdomain>Abacus</textdomain>
 
 	<engines>

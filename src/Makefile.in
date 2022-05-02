@@ -14,11 +14,9 @@
 
 @SET_MAKE@
 
-# vim:set noet ts=4:
+# The Abacus engine for IBus
 #
-# ibus-anthy - The template engine for IBus
-#
-# Copyright (c) 2007-2011 Peng Huang <shawn.p.huang@gmail.com>
+# Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -127,25 +125,20 @@ am__installdirs = "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(componentdir)"
 PROGRAMS = $(libexec_PROGRAMS)
 am_Abacus_OBJECTS = Abacus-main.$(OBJEXT) Abacus-engine.$(OBJEXT) \
-	Abacus-AUtil.$(OBJEXT) Abacus-vhustring.$(OBJEXT) \
-	Abacus-VHTelexEditor2.$(OBJEXT) \
-	Abacus-VHZTelexTable2.$(OBJEXT) \
-	Abacus-VHPropertyList.$(OBJEXT) \
-	Abacus-AConfiguration.$(OBJEXT) Abacus-ALogger.$(OBJEXT) \
-	Abacus-VHCandidateTable.$(OBJEXT) \
-	Abacus-VHViethoaTable.$(OBJEXT) \
-	Abacus-VHCandidateArray.$(OBJEXT) \
-	Abacus-VHEnglishMode.$(OBJEXT) \
-	Abacus-VHVietnameseMode.$(OBJEXT) \
-	Abacus-VHViethoaMode.$(OBJEXT) Abacus-VHTeochewMode.$(OBJEXT) \
-	Abacus-VHChineseMode.$(OBJEXT) Abacus-VHHelper.$(OBJEXT) \
-	Abacus-VHDatabase.$(OBJEXT) Abacus-VHPreedit.$(OBJEXT) \
-	Abacus-VHPinyinTable.$(OBJEXT) Abacus-VHPinyinEditor.$(OBJEXT) \
-	Abacus-VHChineseTable.$(OBJEXT) Abacus-VHLTelexTable.$(OBJEXT) \
-	Abacus-VHETelexTable.$(OBJEXT) \
-	Abacus-VHTeochewEditor.$(OBJEXT) \
-	Abacus-VHTeochewTable.$(OBJEXT) \
-	Abacus-VHInterchangeMode.$(OBJEXT)
+	Abacus-AUtil.$(OBJEXT) Abacus-AUString.$(OBJEXT) \
+	Abacus-ATelexEditor2.$(OBJEXT) Abacus-AZTelexTable2.$(OBJEXT) \
+	Abacus-APropertyList.$(OBJEXT) Abacus-AConfiguration.$(OBJEXT) \
+	Abacus-ALogger.$(OBJEXT) Abacus-ACandidateTable.$(OBJEXT) \
+	Abacus-AHanvietTable.$(OBJEXT) \
+	Abacus-ACandidateArray.$(OBJEXT) Abacus-AEnglishMode.$(OBJEXT) \
+	Abacus-AVietnameseMode.$(OBJEXT) Abacus-AHanvietMode.$(OBJEXT) \
+	Abacus-ATeochewMode.$(OBJEXT) Abacus-AChineseMode.$(OBJEXT) \
+	Abacus-AHelper.$(OBJEXT) Abacus-ADatabase.$(OBJEXT) \
+	Abacus-APreedit.$(OBJEXT) Abacus-APinyinTable.$(OBJEXT) \
+	Abacus-APinyinEditor.$(OBJEXT) Abacus-AChineseTable.$(OBJEXT) \
+	Abacus-ALTelexTable.$(OBJEXT) Abacus-AETelexTable.$(OBJEXT) \
+	Abacus-ATeochewEditor.$(OBJEXT) Abacus-ATeochewTable.$(OBJEXT) \
+	Abacus-AInterchangeMode.$(OBJEXT)
 Abacus_OBJECTS = $(am_Abacus_OBJECTS)
 Abacus_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -170,32 +163,32 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/Abacus-AConfiguration.Po \
-	./$(DEPDIR)/Abacus-ALogger.Po ./$(DEPDIR)/Abacus-AUtil.Po \
-	./$(DEPDIR)/Abacus-VHCandidateArray.Po \
-	./$(DEPDIR)/Abacus-VHCandidateTable.Po \
-	./$(DEPDIR)/Abacus-VHChineseMode.Po \
-	./$(DEPDIR)/Abacus-VHChineseTable.Po \
-	./$(DEPDIR)/Abacus-VHDatabase.Po \
-	./$(DEPDIR)/Abacus-VHETelexTable.Po \
-	./$(DEPDIR)/Abacus-VHEnglishMode.Po \
-	./$(DEPDIR)/Abacus-VHHelper.Po \
-	./$(DEPDIR)/Abacus-VHInterchangeMode.Po \
-	./$(DEPDIR)/Abacus-VHLTelexTable.Po \
-	./$(DEPDIR)/Abacus-VHPinyinEditor.Po \
-	./$(DEPDIR)/Abacus-VHPinyinTable.Po \
-	./$(DEPDIR)/Abacus-VHPreedit.Po \
-	./$(DEPDIR)/Abacus-VHPropertyList.Po \
-	./$(DEPDIR)/Abacus-VHTelexEditor2.Po \
-	./$(DEPDIR)/Abacus-VHTeochewEditor.Po \
-	./$(DEPDIR)/Abacus-VHTeochewMode.Po \
-	./$(DEPDIR)/Abacus-VHTeochewTable.Po \
-	./$(DEPDIR)/Abacus-VHViethoaMode.Po \
-	./$(DEPDIR)/Abacus-VHViethoaTable.Po \
-	./$(DEPDIR)/Abacus-VHVietnameseMode.Po \
-	./$(DEPDIR)/Abacus-VHZTelexTable2.Po \
-	./$(DEPDIR)/Abacus-engine.Po ./$(DEPDIR)/Abacus-main.Po \
-	./$(DEPDIR)/Abacus-vhustring.Po
+am__depfiles_remade = ./$(DEPDIR)/Abacus-ACandidateArray.Po \
+	./$(DEPDIR)/Abacus-ACandidateTable.Po \
+	./$(DEPDIR)/Abacus-AChineseMode.Po \
+	./$(DEPDIR)/Abacus-AChineseTable.Po \
+	./$(DEPDIR)/Abacus-AConfiguration.Po \
+	./$(DEPDIR)/Abacus-ADatabase.Po \
+	./$(DEPDIR)/Abacus-AETelexTable.Po \
+	./$(DEPDIR)/Abacus-AEnglishMode.Po \
+	./$(DEPDIR)/Abacus-AHanvietMode.Po \
+	./$(DEPDIR)/Abacus-AHanvietTable.Po \
+	./$(DEPDIR)/Abacus-AHelper.Po \
+	./$(DEPDIR)/Abacus-AInterchangeMode.Po \
+	./$(DEPDIR)/Abacus-ALTelexTable.Po \
+	./$(DEPDIR)/Abacus-ALogger.Po \
+	./$(DEPDIR)/Abacus-APinyinEditor.Po \
+	./$(DEPDIR)/Abacus-APinyinTable.Po \
+	./$(DEPDIR)/Abacus-APreedit.Po \
+	./$(DEPDIR)/Abacus-APropertyList.Po \
+	./$(DEPDIR)/Abacus-ATelexEditor2.Po \
+	./$(DEPDIR)/Abacus-ATeochewEditor.Po \
+	./$(DEPDIR)/Abacus-ATeochewMode.Po \
+	./$(DEPDIR)/Abacus-ATeochewTable.Po \
+	./$(DEPDIR)/Abacus-AUString.Po ./$(DEPDIR)/Abacus-AUtil.Po \
+	./$(DEPDIR)/Abacus-AVietnameseMode.Po \
+	./$(DEPDIR)/Abacus-AZTelexTable2.Po \
+	./$(DEPDIR)/Abacus-engine.Po ./$(DEPDIR)/Abacus-main.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -425,57 +418,57 @@ Abacus_SOURCES = \
 	engine.h \
 	AUtil.h \
 	AUtil.c \
-	vhustring.h \
-	vhustring.c \
-    VHTelexEditor2.h \
-    VHTelexEditor2.c \
-	VHVNLetters.h \
-    VHZTelexTable2.h \
-    VHZTelexTable2.c \
-	VHPropertyList.h \
-	VHPropertyList.c \
+	AUString.h \
+	AUString.c \
+    ATelexEditor2.h \
+    ATelexEditor2.c \
+	AVNLetters.h \
+    AZTelexTable2.h \
+    AZTelexTable2.c \
+	APropertyList.h \
+	APropertyList.c \
 	AConfiguration.h \
 	AConfiguration.c \
 	ALogger.h \
 	ALogger.c \
-    VHCandidateTable.h \
-    VHCandidateTable.c \
-	VHViethoaTable.h \
-	VHViethoaTable.c \
-	VHCandidateArray.h \
-	VHCandidateArray.c \
-	VHEnglishMode.h \
-	VHEnglishMode.c \
-	VHVietnameseMode.h \
-	VHVietnameseMode.c \
-	VHViethoaMode.h \
-	VHViethoaMode.c \
-	VHTeochewMode.h \
-	VHTeochewMode.c \
-	VHChineseMode.h \
-	VHChineseMode.c \
-	VHHelper.h \
-	VHHelper.c \
-	VHDatabase.h \
-	VHDatabase.c \
-	VHPreedit.h \
-	VHPreedit.c \
-	VHPinyinTable.h \
-	VHPinyinTable.c \
-    VHPinyinEditor.c \
-	VHPinyinEditor.h \
-	VHChineseTable.h \
-	VHChineseTable.c \
-    VHLTelexTable.h \
-    VHLTelexTable.c \
-    VHETelexTable.h \
-    VHETelexTable.c \
-    VHTeochewEditor.c \
-    VHTeochewEditor.h \
-    VHTeochewTable.h \
-    VHTeochewTable.c \
-    VHInterchangeMode.h \
-    VHInterchangeMode.c \
+    ACandidateTable.h \
+    ACandidateTable.c \
+	AHanvietTable.h \
+	AHanvietTable.c \
+	ACandidateArray.h \
+	ACandidateArray.c \
+	AEnglishMode.h \
+	AEnglishMode.c \
+	AVietnameseMode.h \
+	AVietnameseMode.c \
+	AHanvietMode.h \
+	AHanvietMode.c \
+	ATeochewMode.h \
+	ATeochewMode.c \
+	AChineseMode.h \
+	AChineseMode.c \
+	AHelper.h \
+	AHelper.c \
+	ADatabase.h \
+	ADatabase.c \
+	APreedit.h \
+	APreedit.c \
+	APinyinTable.h \
+	APinyinTable.c \
+    APinyinEditor.c \
+	AHPinyinEditor.h \
+	AChineseTable.h \
+	AChineseTable.c \
+    ALTelexTable.h \
+    ALTelexTable.c \
+    AETelexTable.h \
+    AETelexTable.c \
+    ATeochewEditor.c \
+    ATeochewEditor.h \
+    ATeochewTable.h \
+    ATeochewTable.c \
+    AInterchangeMode.h \
+    AInterchangeMode.c \
     $(NULL)
 
 Abacus_CFLAGS = \
@@ -597,34 +590,34 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ACandidateArray.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ACandidateTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AChineseMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AChineseTable.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AConfiguration.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ADatabase.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AETelexTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AEnglishMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AHanvietMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AHanvietTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AHelper.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AInterchangeMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ALTelexTable.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ALogger.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-APinyinEditor.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-APinyinTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-APreedit.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-APropertyList.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ATelexEditor2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ATeochewEditor.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ATeochewMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-ATeochewTable.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AUString.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AUtil.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateArray.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHCandidateTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHChineseTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHDatabase.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHETelexTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHEnglishMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHHelper.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHInterchangeMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHLTelexTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinEditor.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPinyinTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPreedit.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHPropertyList.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTelexEditor2.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewEditor.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHTeochewTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHViethoaMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHViethoaTable.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHVietnameseMode.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-VHZTelexTable2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AVietnameseMode.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-AZTelexTable2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-engine.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-main.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Abacus-vhustring.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -695,61 +688,61 @@ Abacus-AUtil.obj: AUtil.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AUtil.obj `if test -f 'AUtil.c'; then $(CYGPATH_W) 'AUtil.c'; else $(CYGPATH_W) '$(srcdir)/AUtil.c'; fi`
 
-Abacus-vhustring.o: vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhustring.o -MD -MP -MF $(DEPDIR)/Abacus-vhustring.Tpo -c -o Abacus-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhustring.Tpo $(DEPDIR)/Abacus-vhustring.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='Abacus-vhustring.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AUString.o: AUString.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AUString.o -MD -MP -MF $(DEPDIR)/Abacus-AUString.Tpo -c -o Abacus-AUString.o `test -f 'AUString.c' || echo '$(srcdir)/'`AUString.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AUString.Tpo $(DEPDIR)/Abacus-AUString.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AUString.c' object='Abacus-AUString.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhustring.o `test -f 'vhustring.c' || echo '$(srcdir)/'`vhustring.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AUString.o `test -f 'AUString.c' || echo '$(srcdir)/'`AUString.c
 
-Abacus-vhustring.obj: vhustring.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-vhustring.obj -MD -MP -MF $(DEPDIR)/Abacus-vhustring.Tpo -c -o Abacus-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-vhustring.Tpo $(DEPDIR)/Abacus-vhustring.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='vhustring.c' object='Abacus-vhustring.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AUString.obj: AUString.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AUString.obj -MD -MP -MF $(DEPDIR)/Abacus-AUString.Tpo -c -o Abacus-AUString.obj `if test -f 'AUString.c'; then $(CYGPATH_W) 'AUString.c'; else $(CYGPATH_W) '$(srcdir)/AUString.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AUString.Tpo $(DEPDIR)/Abacus-AUString.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AUString.c' object='Abacus-AUString.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-vhustring.obj `if test -f 'vhustring.c'; then $(CYGPATH_W) 'vhustring.c'; else $(CYGPATH_W) '$(srcdir)/vhustring.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AUString.obj `if test -f 'AUString.c'; then $(CYGPATH_W) 'AUString.c'; else $(CYGPATH_W) '$(srcdir)/AUString.c'; fi`
 
-Abacus-VHTelexEditor2.o: VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTelexEditor2.o -MD -MP -MF $(DEPDIR)/Abacus-VHTelexEditor2.Tpo -c -o Abacus-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTelexEditor2.Tpo $(DEPDIR)/Abacus-VHTelexEditor2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='Abacus-VHTelexEditor2.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ATelexEditor2.o: ATelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATelexEditor2.o -MD -MP -MF $(DEPDIR)/Abacus-ATelexEditor2.Tpo -c -o Abacus-ATelexEditor2.o `test -f 'ATelexEditor2.c' || echo '$(srcdir)/'`ATelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATelexEditor2.Tpo $(DEPDIR)/Abacus-ATelexEditor2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATelexEditor2.c' object='Abacus-ATelexEditor2.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTelexEditor2.o `test -f 'VHTelexEditor2.c' || echo '$(srcdir)/'`VHTelexEditor2.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATelexEditor2.o `test -f 'ATelexEditor2.c' || echo '$(srcdir)/'`ATelexEditor2.c
 
-Abacus-VHTelexEditor2.obj: VHTelexEditor2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTelexEditor2.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTelexEditor2.Tpo -c -o Abacus-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTelexEditor2.Tpo $(DEPDIR)/Abacus-VHTelexEditor2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTelexEditor2.c' object='Abacus-VHTelexEditor2.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ATelexEditor2.obj: ATelexEditor2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATelexEditor2.obj -MD -MP -MF $(DEPDIR)/Abacus-ATelexEditor2.Tpo -c -o Abacus-ATelexEditor2.obj `if test -f 'ATelexEditor2.c'; then $(CYGPATH_W) 'ATelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/ATelexEditor2.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATelexEditor2.Tpo $(DEPDIR)/Abacus-ATelexEditor2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATelexEditor2.c' object='Abacus-ATelexEditor2.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTelexEditor2.obj `if test -f 'VHTelexEditor2.c'; then $(CYGPATH_W) 'VHTelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/VHTelexEditor2.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATelexEditor2.obj `if test -f 'ATelexEditor2.c'; then $(CYGPATH_W) 'ATelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/ATelexEditor2.c'; fi`
 
-Abacus-VHZTelexTable2.o: VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHZTelexTable2.o -MD -MP -MF $(DEPDIR)/Abacus-VHZTelexTable2.Tpo -c -o Abacus-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHZTelexTable2.Tpo $(DEPDIR)/Abacus-VHZTelexTable2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='Abacus-VHZTelexTable2.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AZTelexTable2.o: AZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AZTelexTable2.o -MD -MP -MF $(DEPDIR)/Abacus-AZTelexTable2.Tpo -c -o Abacus-AZTelexTable2.o `test -f 'AZTelexTable2.c' || echo '$(srcdir)/'`AZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AZTelexTable2.Tpo $(DEPDIR)/Abacus-AZTelexTable2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AZTelexTable2.c' object='Abacus-AZTelexTable2.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHZTelexTable2.o `test -f 'VHZTelexTable2.c' || echo '$(srcdir)/'`VHZTelexTable2.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AZTelexTable2.o `test -f 'AZTelexTable2.c' || echo '$(srcdir)/'`AZTelexTable2.c
 
-Abacus-VHZTelexTable2.obj: VHZTelexTable2.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHZTelexTable2.obj -MD -MP -MF $(DEPDIR)/Abacus-VHZTelexTable2.Tpo -c -o Abacus-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHZTelexTable2.Tpo $(DEPDIR)/Abacus-VHZTelexTable2.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHZTelexTable2.c' object='Abacus-VHZTelexTable2.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AZTelexTable2.obj: AZTelexTable2.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AZTelexTable2.obj -MD -MP -MF $(DEPDIR)/Abacus-AZTelexTable2.Tpo -c -o Abacus-AZTelexTable2.obj `if test -f 'AZTelexTable2.c'; then $(CYGPATH_W) 'AZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/AZTelexTable2.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AZTelexTable2.Tpo $(DEPDIR)/Abacus-AZTelexTable2.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AZTelexTable2.c' object='Abacus-AZTelexTable2.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHZTelexTable2.obj `if test -f 'VHZTelexTable2.c'; then $(CYGPATH_W) 'VHZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/VHZTelexTable2.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AZTelexTable2.obj `if test -f 'AZTelexTable2.c'; then $(CYGPATH_W) 'AZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/AZTelexTable2.c'; fi`
 
-Abacus-VHPropertyList.o: VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPropertyList.o -MD -MP -MF $(DEPDIR)/Abacus-VHPropertyList.Tpo -c -o Abacus-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPropertyList.Tpo $(DEPDIR)/Abacus-VHPropertyList.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='Abacus-VHPropertyList.o' libtool=no @AMDEPBACKSLASH@
+Abacus-APropertyList.o: APropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APropertyList.o -MD -MP -MF $(DEPDIR)/Abacus-APropertyList.Tpo -c -o Abacus-APropertyList.o `test -f 'APropertyList.c' || echo '$(srcdir)/'`APropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APropertyList.Tpo $(DEPDIR)/Abacus-APropertyList.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APropertyList.c' object='Abacus-APropertyList.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPropertyList.o `test -f 'VHPropertyList.c' || echo '$(srcdir)/'`VHPropertyList.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APropertyList.o `test -f 'APropertyList.c' || echo '$(srcdir)/'`APropertyList.c
 
-Abacus-VHPropertyList.obj: VHPropertyList.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPropertyList.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPropertyList.Tpo -c -o Abacus-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPropertyList.Tpo $(DEPDIR)/Abacus-VHPropertyList.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPropertyList.c' object='Abacus-VHPropertyList.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-APropertyList.obj: APropertyList.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APropertyList.obj -MD -MP -MF $(DEPDIR)/Abacus-APropertyList.Tpo -c -o Abacus-APropertyList.obj `if test -f 'APropertyList.c'; then $(CYGPATH_W) 'APropertyList.c'; else $(CYGPATH_W) '$(srcdir)/APropertyList.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APropertyList.Tpo $(DEPDIR)/Abacus-APropertyList.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APropertyList.c' object='Abacus-APropertyList.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPropertyList.obj `if test -f 'VHPropertyList.c'; then $(CYGPATH_W) 'VHPropertyList.c'; else $(CYGPATH_W) '$(srcdir)/VHPropertyList.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APropertyList.obj `if test -f 'APropertyList.c'; then $(CYGPATH_W) 'APropertyList.c'; else $(CYGPATH_W) '$(srcdir)/APropertyList.c'; fi`
 
 Abacus-AConfiguration.o: AConfiguration.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AConfiguration.o -MD -MP -MF $(DEPDIR)/Abacus-AConfiguration.Tpo -c -o Abacus-AConfiguration.o `test -f 'AConfiguration.c' || echo '$(srcdir)/'`AConfiguration.c
@@ -779,271 +772,271 @@ Abacus-ALogger.obj: ALogger.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ALogger.obj `if test -f 'ALogger.c'; then $(CYGPATH_W) 'ALogger.c'; else $(CYGPATH_W) '$(srcdir)/ALogger.c'; fi`
 
-Abacus-VHCandidateTable.o: VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateTable.Tpo -c -o Abacus-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateTable.Tpo $(DEPDIR)/Abacus-VHCandidateTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='Abacus-VHCandidateTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ACandidateTable.o: ACandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ACandidateTable.o -MD -MP -MF $(DEPDIR)/Abacus-ACandidateTable.Tpo -c -o Abacus-ACandidateTable.o `test -f 'ACandidateTable.c' || echo '$(srcdir)/'`ACandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ACandidateTable.Tpo $(DEPDIR)/Abacus-ACandidateTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ACandidateTable.c' object='Abacus-ACandidateTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateTable.o `test -f 'VHCandidateTable.c' || echo '$(srcdir)/'`VHCandidateTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ACandidateTable.o `test -f 'ACandidateTable.c' || echo '$(srcdir)/'`ACandidateTable.c
 
-Abacus-VHCandidateTable.obj: VHCandidateTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateTable.Tpo -c -o Abacus-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateTable.Tpo $(DEPDIR)/Abacus-VHCandidateTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateTable.c' object='Abacus-VHCandidateTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ACandidateTable.obj: ACandidateTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ACandidateTable.obj -MD -MP -MF $(DEPDIR)/Abacus-ACandidateTable.Tpo -c -o Abacus-ACandidateTable.obj `if test -f 'ACandidateTable.c'; then $(CYGPATH_W) 'ACandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/ACandidateTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ACandidateTable.Tpo $(DEPDIR)/Abacus-ACandidateTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ACandidateTable.c' object='Abacus-ACandidateTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateTable.obj `if test -f 'VHCandidateTable.c'; then $(CYGPATH_W) 'VHCandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ACandidateTable.obj `if test -f 'ACandidateTable.c'; then $(CYGPATH_W) 'ACandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/ACandidateTable.c'; fi`
 
-Abacus-VHViethoaTable.o: VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaTable.Tpo -c -o Abacus-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaTable.Tpo $(DEPDIR)/Abacus-VHViethoaTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='Abacus-VHViethoaTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AHanvietTable.o: AHanvietTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHanvietTable.o -MD -MP -MF $(DEPDIR)/Abacus-AHanvietTable.Tpo -c -o Abacus-AHanvietTable.o `test -f 'AHanvietTable.c' || echo '$(srcdir)/'`AHanvietTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHanvietTable.Tpo $(DEPDIR)/Abacus-AHanvietTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHanvietTable.c' object='Abacus-AHanvietTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaTable.o `test -f 'VHViethoaTable.c' || echo '$(srcdir)/'`VHViethoaTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHanvietTable.o `test -f 'AHanvietTable.c' || echo '$(srcdir)/'`AHanvietTable.c
 
-Abacus-VHViethoaTable.obj: VHViethoaTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaTable.Tpo -c -o Abacus-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaTable.Tpo $(DEPDIR)/Abacus-VHViethoaTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaTable.c' object='Abacus-VHViethoaTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AHanvietTable.obj: AHanvietTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHanvietTable.obj -MD -MP -MF $(DEPDIR)/Abacus-AHanvietTable.Tpo -c -o Abacus-AHanvietTable.obj `if test -f 'AHanvietTable.c'; then $(CYGPATH_W) 'AHanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/AHanvietTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHanvietTable.Tpo $(DEPDIR)/Abacus-AHanvietTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHanvietTable.c' object='Abacus-AHanvietTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaTable.obj `if test -f 'VHViethoaTable.c'; then $(CYGPATH_W) 'VHViethoaTable.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHanvietTable.obj `if test -f 'AHanvietTable.c'; then $(CYGPATH_W) 'AHanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/AHanvietTable.c'; fi`
 
-Abacus-VHCandidateArray.o: VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateArray.o -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateArray.Tpo -c -o Abacus-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateArray.Tpo $(DEPDIR)/Abacus-VHCandidateArray.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='Abacus-VHCandidateArray.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ACandidateArray.o: ACandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ACandidateArray.o -MD -MP -MF $(DEPDIR)/Abacus-ACandidateArray.Tpo -c -o Abacus-ACandidateArray.o `test -f 'ACandidateArray.c' || echo '$(srcdir)/'`ACandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ACandidateArray.Tpo $(DEPDIR)/Abacus-ACandidateArray.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ACandidateArray.c' object='Abacus-ACandidateArray.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateArray.o `test -f 'VHCandidateArray.c' || echo '$(srcdir)/'`VHCandidateArray.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ACandidateArray.o `test -f 'ACandidateArray.c' || echo '$(srcdir)/'`ACandidateArray.c
 
-Abacus-VHCandidateArray.obj: VHCandidateArray.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHCandidateArray.obj -MD -MP -MF $(DEPDIR)/Abacus-VHCandidateArray.Tpo -c -o Abacus-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHCandidateArray.Tpo $(DEPDIR)/Abacus-VHCandidateArray.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHCandidateArray.c' object='Abacus-VHCandidateArray.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ACandidateArray.obj: ACandidateArray.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ACandidateArray.obj -MD -MP -MF $(DEPDIR)/Abacus-ACandidateArray.Tpo -c -o Abacus-ACandidateArray.obj `if test -f 'ACandidateArray.c'; then $(CYGPATH_W) 'ACandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/ACandidateArray.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ACandidateArray.Tpo $(DEPDIR)/Abacus-ACandidateArray.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ACandidateArray.c' object='Abacus-ACandidateArray.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHCandidateArray.obj `if test -f 'VHCandidateArray.c'; then $(CYGPATH_W) 'VHCandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/VHCandidateArray.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ACandidateArray.obj `if test -f 'ACandidateArray.c'; then $(CYGPATH_W) 'ACandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/ACandidateArray.c'; fi`
 
-Abacus-VHEnglishMode.o: VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHEnglishMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHEnglishMode.Tpo -c -o Abacus-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHEnglishMode.Tpo $(DEPDIR)/Abacus-VHEnglishMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='Abacus-VHEnglishMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AEnglishMode.o: AEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AEnglishMode.o -MD -MP -MF $(DEPDIR)/Abacus-AEnglishMode.Tpo -c -o Abacus-AEnglishMode.o `test -f 'AEnglishMode.c' || echo '$(srcdir)/'`AEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AEnglishMode.Tpo $(DEPDIR)/Abacus-AEnglishMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AEnglishMode.c' object='Abacus-AEnglishMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHEnglishMode.o `test -f 'VHEnglishMode.c' || echo '$(srcdir)/'`VHEnglishMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AEnglishMode.o `test -f 'AEnglishMode.c' || echo '$(srcdir)/'`AEnglishMode.c
 
-Abacus-VHEnglishMode.obj: VHEnglishMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHEnglishMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHEnglishMode.Tpo -c -o Abacus-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHEnglishMode.Tpo $(DEPDIR)/Abacus-VHEnglishMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHEnglishMode.c' object='Abacus-VHEnglishMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AEnglishMode.obj: AEnglishMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AEnglishMode.obj -MD -MP -MF $(DEPDIR)/Abacus-AEnglishMode.Tpo -c -o Abacus-AEnglishMode.obj `if test -f 'AEnglishMode.c'; then $(CYGPATH_W) 'AEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/AEnglishMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AEnglishMode.Tpo $(DEPDIR)/Abacus-AEnglishMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AEnglishMode.c' object='Abacus-AEnglishMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHEnglishMode.obj `if test -f 'VHEnglishMode.c'; then $(CYGPATH_W) 'VHEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/VHEnglishMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AEnglishMode.obj `if test -f 'AEnglishMode.c'; then $(CYGPATH_W) 'AEnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/AEnglishMode.c'; fi`
 
-Abacus-VHVietnameseMode.o: VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHVietnameseMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHVietnameseMode.Tpo -c -o Abacus-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHVietnameseMode.Tpo $(DEPDIR)/Abacus-VHVietnameseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='Abacus-VHVietnameseMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AVietnameseMode.o: AVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AVietnameseMode.o -MD -MP -MF $(DEPDIR)/Abacus-AVietnameseMode.Tpo -c -o Abacus-AVietnameseMode.o `test -f 'AVietnameseMode.c' || echo '$(srcdir)/'`AVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AVietnameseMode.Tpo $(DEPDIR)/Abacus-AVietnameseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AVietnameseMode.c' object='Abacus-AVietnameseMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHVietnameseMode.o `test -f 'VHVietnameseMode.c' || echo '$(srcdir)/'`VHVietnameseMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AVietnameseMode.o `test -f 'AVietnameseMode.c' || echo '$(srcdir)/'`AVietnameseMode.c
 
-Abacus-VHVietnameseMode.obj: VHVietnameseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHVietnameseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHVietnameseMode.Tpo -c -o Abacus-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHVietnameseMode.Tpo $(DEPDIR)/Abacus-VHVietnameseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHVietnameseMode.c' object='Abacus-VHVietnameseMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AVietnameseMode.obj: AVietnameseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AVietnameseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-AVietnameseMode.Tpo -c -o Abacus-AVietnameseMode.obj `if test -f 'AVietnameseMode.c'; then $(CYGPATH_W) 'AVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/AVietnameseMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AVietnameseMode.Tpo $(DEPDIR)/Abacus-AVietnameseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AVietnameseMode.c' object='Abacus-AVietnameseMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHVietnameseMode.obj `if test -f 'VHVietnameseMode.c'; then $(CYGPATH_W) 'VHVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHVietnameseMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AVietnameseMode.obj `if test -f 'AVietnameseMode.c'; then $(CYGPATH_W) 'AVietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/AVietnameseMode.c'; fi`
 
-Abacus-VHViethoaMode.o: VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaMode.Tpo -c -o Abacus-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaMode.Tpo $(DEPDIR)/Abacus-VHViethoaMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='Abacus-VHViethoaMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AHanvietMode.o: AHanvietMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHanvietMode.o -MD -MP -MF $(DEPDIR)/Abacus-AHanvietMode.Tpo -c -o Abacus-AHanvietMode.o `test -f 'AHanvietMode.c' || echo '$(srcdir)/'`AHanvietMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHanvietMode.Tpo $(DEPDIR)/Abacus-AHanvietMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHanvietMode.c' object='Abacus-AHanvietMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaMode.o `test -f 'VHViethoaMode.c' || echo '$(srcdir)/'`VHViethoaMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHanvietMode.o `test -f 'AHanvietMode.c' || echo '$(srcdir)/'`AHanvietMode.c
 
-Abacus-VHViethoaMode.obj: VHViethoaMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHViethoaMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHViethoaMode.Tpo -c -o Abacus-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHViethoaMode.Tpo $(DEPDIR)/Abacus-VHViethoaMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHViethoaMode.c' object='Abacus-VHViethoaMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AHanvietMode.obj: AHanvietMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHanvietMode.obj -MD -MP -MF $(DEPDIR)/Abacus-AHanvietMode.Tpo -c -o Abacus-AHanvietMode.obj `if test -f 'AHanvietMode.c'; then $(CYGPATH_W) 'AHanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/AHanvietMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHanvietMode.Tpo $(DEPDIR)/Abacus-AHanvietMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHanvietMode.c' object='Abacus-AHanvietMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHViethoaMode.obj `if test -f 'VHViethoaMode.c'; then $(CYGPATH_W) 'VHViethoaMode.c'; else $(CYGPATH_W) '$(srcdir)/VHViethoaMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHanvietMode.obj `if test -f 'AHanvietMode.c'; then $(CYGPATH_W) 'AHanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/AHanvietMode.c'; fi`
 
-Abacus-VHTeochewMode.o: VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewMode.Tpo -c -o Abacus-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewMode.Tpo $(DEPDIR)/Abacus-VHTeochewMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='Abacus-VHTeochewMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewMode.o: ATeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewMode.o -MD -MP -MF $(DEPDIR)/Abacus-ATeochewMode.Tpo -c -o Abacus-ATeochewMode.o `test -f 'ATeochewMode.c' || echo '$(srcdir)/'`ATeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewMode.Tpo $(DEPDIR)/Abacus-ATeochewMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewMode.c' object='Abacus-ATeochewMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewMode.o `test -f 'VHTeochewMode.c' || echo '$(srcdir)/'`VHTeochewMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewMode.o `test -f 'ATeochewMode.c' || echo '$(srcdir)/'`ATeochewMode.c
 
-Abacus-VHTeochewMode.obj: VHTeochewMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewMode.Tpo -c -o Abacus-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewMode.Tpo $(DEPDIR)/Abacus-VHTeochewMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewMode.c' object='Abacus-VHTeochewMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewMode.obj: ATeochewMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewMode.obj -MD -MP -MF $(DEPDIR)/Abacus-ATeochewMode.Tpo -c -o Abacus-ATeochewMode.obj `if test -f 'ATeochewMode.c'; then $(CYGPATH_W) 'ATeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewMode.Tpo $(DEPDIR)/Abacus-ATeochewMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewMode.c' object='Abacus-ATeochewMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewMode.obj `if test -f 'VHTeochewMode.c'; then $(CYGPATH_W) 'VHTeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewMode.obj `if test -f 'ATeochewMode.c'; then $(CYGPATH_W) 'ATeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewMode.c'; fi`
 
-Abacus-VHChineseMode.o: VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHChineseMode.Tpo -c -o Abacus-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseMode.Tpo $(DEPDIR)/Abacus-VHChineseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='Abacus-VHChineseMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AChineseMode.o: AChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AChineseMode.o -MD -MP -MF $(DEPDIR)/Abacus-AChineseMode.Tpo -c -o Abacus-AChineseMode.o `test -f 'AChineseMode.c' || echo '$(srcdir)/'`AChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AChineseMode.Tpo $(DEPDIR)/Abacus-AChineseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AChineseMode.c' object='Abacus-AChineseMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseMode.o `test -f 'VHChineseMode.c' || echo '$(srcdir)/'`VHChineseMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AChineseMode.o `test -f 'AChineseMode.c' || echo '$(srcdir)/'`AChineseMode.c
 
-Abacus-VHChineseMode.obj: VHChineseMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHChineseMode.Tpo -c -o Abacus-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseMode.Tpo $(DEPDIR)/Abacus-VHChineseMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseMode.c' object='Abacus-VHChineseMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AChineseMode.obj: AChineseMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AChineseMode.obj -MD -MP -MF $(DEPDIR)/Abacus-AChineseMode.Tpo -c -o Abacus-AChineseMode.obj `if test -f 'AChineseMode.c'; then $(CYGPATH_W) 'AChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/AChineseMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AChineseMode.Tpo $(DEPDIR)/Abacus-AChineseMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AChineseMode.c' object='Abacus-AChineseMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseMode.obj `if test -f 'VHChineseMode.c'; then $(CYGPATH_W) 'VHChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AChineseMode.obj `if test -f 'AChineseMode.c'; then $(CYGPATH_W) 'AChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/AChineseMode.c'; fi`
 
-Abacus-VHHelper.o: VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHHelper.o -MD -MP -MF $(DEPDIR)/Abacus-VHHelper.Tpo -c -o Abacus-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHHelper.Tpo $(DEPDIR)/Abacus-VHHelper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='Abacus-VHHelper.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AHelper.o: AHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHelper.o -MD -MP -MF $(DEPDIR)/Abacus-AHelper.Tpo -c -o Abacus-AHelper.o `test -f 'AHelper.c' || echo '$(srcdir)/'`AHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHelper.Tpo $(DEPDIR)/Abacus-AHelper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHelper.c' object='Abacus-AHelper.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHHelper.o `test -f 'VHHelper.c' || echo '$(srcdir)/'`VHHelper.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHelper.o `test -f 'AHelper.c' || echo '$(srcdir)/'`AHelper.c
 
-Abacus-VHHelper.obj: VHHelper.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHHelper.obj -MD -MP -MF $(DEPDIR)/Abacus-VHHelper.Tpo -c -o Abacus-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHHelper.Tpo $(DEPDIR)/Abacus-VHHelper.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHHelper.c' object='Abacus-VHHelper.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AHelper.obj: AHelper.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AHelper.obj -MD -MP -MF $(DEPDIR)/Abacus-AHelper.Tpo -c -o Abacus-AHelper.obj `if test -f 'AHelper.c'; then $(CYGPATH_W) 'AHelper.c'; else $(CYGPATH_W) '$(srcdir)/AHelper.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AHelper.Tpo $(DEPDIR)/Abacus-AHelper.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AHelper.c' object='Abacus-AHelper.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHHelper.obj `if test -f 'VHHelper.c'; then $(CYGPATH_W) 'VHHelper.c'; else $(CYGPATH_W) '$(srcdir)/VHHelper.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AHelper.obj `if test -f 'AHelper.c'; then $(CYGPATH_W) 'AHelper.c'; else $(CYGPATH_W) '$(srcdir)/AHelper.c'; fi`
 
-Abacus-VHDatabase.o: VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHDatabase.o -MD -MP -MF $(DEPDIR)/Abacus-VHDatabase.Tpo -c -o Abacus-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHDatabase.Tpo $(DEPDIR)/Abacus-VHDatabase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='Abacus-VHDatabase.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ADatabase.o: ADatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ADatabase.o -MD -MP -MF $(DEPDIR)/Abacus-ADatabase.Tpo -c -o Abacus-ADatabase.o `test -f 'ADatabase.c' || echo '$(srcdir)/'`ADatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ADatabase.Tpo $(DEPDIR)/Abacus-ADatabase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ADatabase.c' object='Abacus-ADatabase.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHDatabase.o `test -f 'VHDatabase.c' || echo '$(srcdir)/'`VHDatabase.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ADatabase.o `test -f 'ADatabase.c' || echo '$(srcdir)/'`ADatabase.c
 
-Abacus-VHDatabase.obj: VHDatabase.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHDatabase.obj -MD -MP -MF $(DEPDIR)/Abacus-VHDatabase.Tpo -c -o Abacus-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHDatabase.Tpo $(DEPDIR)/Abacus-VHDatabase.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHDatabase.c' object='Abacus-VHDatabase.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ADatabase.obj: ADatabase.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ADatabase.obj -MD -MP -MF $(DEPDIR)/Abacus-ADatabase.Tpo -c -o Abacus-ADatabase.obj `if test -f 'ADatabase.c'; then $(CYGPATH_W) 'ADatabase.c'; else $(CYGPATH_W) '$(srcdir)/ADatabase.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ADatabase.Tpo $(DEPDIR)/Abacus-ADatabase.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ADatabase.c' object='Abacus-ADatabase.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHDatabase.obj `if test -f 'VHDatabase.c'; then $(CYGPATH_W) 'VHDatabase.c'; else $(CYGPATH_W) '$(srcdir)/VHDatabase.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ADatabase.obj `if test -f 'ADatabase.c'; then $(CYGPATH_W) 'ADatabase.c'; else $(CYGPATH_W) '$(srcdir)/ADatabase.c'; fi`
 
-Abacus-VHPreedit.o: VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPreedit.o -MD -MP -MF $(DEPDIR)/Abacus-VHPreedit.Tpo -c -o Abacus-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPreedit.Tpo $(DEPDIR)/Abacus-VHPreedit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='Abacus-VHPreedit.o' libtool=no @AMDEPBACKSLASH@
+Abacus-APreedit.o: APreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APreedit.o -MD -MP -MF $(DEPDIR)/Abacus-APreedit.Tpo -c -o Abacus-APreedit.o `test -f 'APreedit.c' || echo '$(srcdir)/'`APreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APreedit.Tpo $(DEPDIR)/Abacus-APreedit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APreedit.c' object='Abacus-APreedit.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPreedit.o `test -f 'VHPreedit.c' || echo '$(srcdir)/'`VHPreedit.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APreedit.o `test -f 'APreedit.c' || echo '$(srcdir)/'`APreedit.c
 
-Abacus-VHPreedit.obj: VHPreedit.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPreedit.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPreedit.Tpo -c -o Abacus-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPreedit.Tpo $(DEPDIR)/Abacus-VHPreedit.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPreedit.c' object='Abacus-VHPreedit.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-APreedit.obj: APreedit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APreedit.obj -MD -MP -MF $(DEPDIR)/Abacus-APreedit.Tpo -c -o Abacus-APreedit.obj `if test -f 'APreedit.c'; then $(CYGPATH_W) 'APreedit.c'; else $(CYGPATH_W) '$(srcdir)/APreedit.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APreedit.Tpo $(DEPDIR)/Abacus-APreedit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APreedit.c' object='Abacus-APreedit.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPreedit.obj `if test -f 'VHPreedit.c'; then $(CYGPATH_W) 'VHPreedit.c'; else $(CYGPATH_W) '$(srcdir)/VHPreedit.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APreedit.obj `if test -f 'APreedit.c'; then $(CYGPATH_W) 'APreedit.c'; else $(CYGPATH_W) '$(srcdir)/APreedit.c'; fi`
 
-Abacus-VHPinyinTable.o: VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinTable.Tpo -c -o Abacus-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinTable.Tpo $(DEPDIR)/Abacus-VHPinyinTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='Abacus-VHPinyinTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-APinyinTable.o: APinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APinyinTable.o -MD -MP -MF $(DEPDIR)/Abacus-APinyinTable.Tpo -c -o Abacus-APinyinTable.o `test -f 'APinyinTable.c' || echo '$(srcdir)/'`APinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APinyinTable.Tpo $(DEPDIR)/Abacus-APinyinTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APinyinTable.c' object='Abacus-APinyinTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinTable.o `test -f 'VHPinyinTable.c' || echo '$(srcdir)/'`VHPinyinTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APinyinTable.o `test -f 'APinyinTable.c' || echo '$(srcdir)/'`APinyinTable.c
 
-Abacus-VHPinyinTable.obj: VHPinyinTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinTable.Tpo -c -o Abacus-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinTable.Tpo $(DEPDIR)/Abacus-VHPinyinTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinTable.c' object='Abacus-VHPinyinTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-APinyinTable.obj: APinyinTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APinyinTable.obj -MD -MP -MF $(DEPDIR)/Abacus-APinyinTable.Tpo -c -o Abacus-APinyinTable.obj `if test -f 'APinyinTable.c'; then $(CYGPATH_W) 'APinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/APinyinTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APinyinTable.Tpo $(DEPDIR)/Abacus-APinyinTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APinyinTable.c' object='Abacus-APinyinTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinTable.obj `if test -f 'VHPinyinTable.c'; then $(CYGPATH_W) 'VHPinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APinyinTable.obj `if test -f 'APinyinTable.c'; then $(CYGPATH_W) 'APinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/APinyinTable.c'; fi`
 
-Abacus-VHPinyinEditor.o: VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinEditor.o -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinEditor.Tpo -c -o Abacus-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinEditor.Tpo $(DEPDIR)/Abacus-VHPinyinEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='Abacus-VHPinyinEditor.o' libtool=no @AMDEPBACKSLASH@
+Abacus-APinyinEditor.o: APinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APinyinEditor.o -MD -MP -MF $(DEPDIR)/Abacus-APinyinEditor.Tpo -c -o Abacus-APinyinEditor.o `test -f 'APinyinEditor.c' || echo '$(srcdir)/'`APinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APinyinEditor.Tpo $(DEPDIR)/Abacus-APinyinEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APinyinEditor.c' object='Abacus-APinyinEditor.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinEditor.o `test -f 'VHPinyinEditor.c' || echo '$(srcdir)/'`VHPinyinEditor.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APinyinEditor.o `test -f 'APinyinEditor.c' || echo '$(srcdir)/'`APinyinEditor.c
 
-Abacus-VHPinyinEditor.obj: VHPinyinEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHPinyinEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-VHPinyinEditor.Tpo -c -o Abacus-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHPinyinEditor.Tpo $(DEPDIR)/Abacus-VHPinyinEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHPinyinEditor.c' object='Abacus-VHPinyinEditor.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-APinyinEditor.obj: APinyinEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-APinyinEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-APinyinEditor.Tpo -c -o Abacus-APinyinEditor.obj `if test -f 'APinyinEditor.c'; then $(CYGPATH_W) 'APinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/APinyinEditor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-APinyinEditor.Tpo $(DEPDIR)/Abacus-APinyinEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='APinyinEditor.c' object='Abacus-APinyinEditor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHPinyinEditor.obj `if test -f 'VHPinyinEditor.c'; then $(CYGPATH_W) 'VHPinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHPinyinEditor.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-APinyinEditor.obj `if test -f 'APinyinEditor.c'; then $(CYGPATH_W) 'APinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/APinyinEditor.c'; fi`
 
-Abacus-VHChineseTable.o: VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHChineseTable.Tpo -c -o Abacus-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseTable.Tpo $(DEPDIR)/Abacus-VHChineseTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='Abacus-VHChineseTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AChineseTable.o: AChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AChineseTable.o -MD -MP -MF $(DEPDIR)/Abacus-AChineseTable.Tpo -c -o Abacus-AChineseTable.o `test -f 'AChineseTable.c' || echo '$(srcdir)/'`AChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AChineseTable.Tpo $(DEPDIR)/Abacus-AChineseTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AChineseTable.c' object='Abacus-AChineseTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseTable.o `test -f 'VHChineseTable.c' || echo '$(srcdir)/'`VHChineseTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AChineseTable.o `test -f 'AChineseTable.c' || echo '$(srcdir)/'`AChineseTable.c
 
-Abacus-VHChineseTable.obj: VHChineseTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHChineseTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHChineseTable.Tpo -c -o Abacus-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHChineseTable.Tpo $(DEPDIR)/Abacus-VHChineseTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHChineseTable.c' object='Abacus-VHChineseTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AChineseTable.obj: AChineseTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AChineseTable.obj -MD -MP -MF $(DEPDIR)/Abacus-AChineseTable.Tpo -c -o Abacus-AChineseTable.obj `if test -f 'AChineseTable.c'; then $(CYGPATH_W) 'AChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/AChineseTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AChineseTable.Tpo $(DEPDIR)/Abacus-AChineseTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AChineseTable.c' object='Abacus-AChineseTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHChineseTable.obj `if test -f 'VHChineseTable.c'; then $(CYGPATH_W) 'VHChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/VHChineseTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AChineseTable.obj `if test -f 'AChineseTable.c'; then $(CYGPATH_W) 'AChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/AChineseTable.c'; fi`
 
-Abacus-VHLTelexTable.o: VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLTelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHLTelexTable.Tpo -c -o Abacus-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLTelexTable.Tpo $(DEPDIR)/Abacus-VHLTelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='Abacus-VHLTelexTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ALTelexTable.o: ALTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ALTelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-ALTelexTable.Tpo -c -o Abacus-ALTelexTable.o `test -f 'ALTelexTable.c' || echo '$(srcdir)/'`ALTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ALTelexTable.Tpo $(DEPDIR)/Abacus-ALTelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ALTelexTable.c' object='Abacus-ALTelexTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLTelexTable.o `test -f 'VHLTelexTable.c' || echo '$(srcdir)/'`VHLTelexTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ALTelexTable.o `test -f 'ALTelexTable.c' || echo '$(srcdir)/'`ALTelexTable.c
 
-Abacus-VHLTelexTable.obj: VHLTelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHLTelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHLTelexTable.Tpo -c -o Abacus-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHLTelexTable.Tpo $(DEPDIR)/Abacus-VHLTelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHLTelexTable.c' object='Abacus-VHLTelexTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ALTelexTable.obj: ALTelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ALTelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-ALTelexTable.Tpo -c -o Abacus-ALTelexTable.obj `if test -f 'ALTelexTable.c'; then $(CYGPATH_W) 'ALTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ALTelexTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ALTelexTable.Tpo $(DEPDIR)/Abacus-ALTelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ALTelexTable.c' object='Abacus-ALTelexTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHLTelexTable.obj `if test -f 'VHLTelexTable.c'; then $(CYGPATH_W) 'VHLTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHLTelexTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ALTelexTable.obj `if test -f 'ALTelexTable.c'; then $(CYGPATH_W) 'ALTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ALTelexTable.c'; fi`
 
-Abacus-VHETelexTable.o: VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHETelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHETelexTable.Tpo -c -o Abacus-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHETelexTable.Tpo $(DEPDIR)/Abacus-VHETelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='Abacus-VHETelexTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AETelexTable.o: AETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AETelexTable.o -MD -MP -MF $(DEPDIR)/Abacus-AETelexTable.Tpo -c -o Abacus-AETelexTable.o `test -f 'AETelexTable.c' || echo '$(srcdir)/'`AETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AETelexTable.Tpo $(DEPDIR)/Abacus-AETelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AETelexTable.c' object='Abacus-AETelexTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHETelexTable.o `test -f 'VHETelexTable.c' || echo '$(srcdir)/'`VHETelexTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AETelexTable.o `test -f 'AETelexTable.c' || echo '$(srcdir)/'`AETelexTable.c
 
-Abacus-VHETelexTable.obj: VHETelexTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHETelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHETelexTable.Tpo -c -o Abacus-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHETelexTable.Tpo $(DEPDIR)/Abacus-VHETelexTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHETelexTable.c' object='Abacus-VHETelexTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AETelexTable.obj: AETelexTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AETelexTable.obj -MD -MP -MF $(DEPDIR)/Abacus-AETelexTable.Tpo -c -o Abacus-AETelexTable.obj `if test -f 'AETelexTable.c'; then $(CYGPATH_W) 'AETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/AETelexTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AETelexTable.Tpo $(DEPDIR)/Abacus-AETelexTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AETelexTable.c' object='Abacus-AETelexTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHETelexTable.obj `if test -f 'VHETelexTable.c'; then $(CYGPATH_W) 'VHETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/VHETelexTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AETelexTable.obj `if test -f 'AETelexTable.c'; then $(CYGPATH_W) 'AETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/AETelexTable.c'; fi`
 
-Abacus-VHTeochewEditor.o: VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewEditor.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewEditor.Tpo -c -o Abacus-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewEditor.Tpo $(DEPDIR)/Abacus-VHTeochewEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='Abacus-VHTeochewEditor.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewEditor.o: ATeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewEditor.o -MD -MP -MF $(DEPDIR)/Abacus-ATeochewEditor.Tpo -c -o Abacus-ATeochewEditor.o `test -f 'ATeochewEditor.c' || echo '$(srcdir)/'`ATeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewEditor.Tpo $(DEPDIR)/Abacus-ATeochewEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewEditor.c' object='Abacus-ATeochewEditor.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewEditor.o `test -f 'VHTeochewEditor.c' || echo '$(srcdir)/'`VHTeochewEditor.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewEditor.o `test -f 'ATeochewEditor.c' || echo '$(srcdir)/'`ATeochewEditor.c
 
-Abacus-VHTeochewEditor.obj: VHTeochewEditor.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewEditor.Tpo -c -o Abacus-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewEditor.Tpo $(DEPDIR)/Abacus-VHTeochewEditor.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewEditor.c' object='Abacus-VHTeochewEditor.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewEditor.obj: ATeochewEditor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewEditor.obj -MD -MP -MF $(DEPDIR)/Abacus-ATeochewEditor.Tpo -c -o Abacus-ATeochewEditor.obj `if test -f 'ATeochewEditor.c'; then $(CYGPATH_W) 'ATeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewEditor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewEditor.Tpo $(DEPDIR)/Abacus-ATeochewEditor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewEditor.c' object='Abacus-ATeochewEditor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewEditor.obj `if test -f 'VHTeochewEditor.c'; then $(CYGPATH_W) 'VHTeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewEditor.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewEditor.obj `if test -f 'ATeochewEditor.c'; then $(CYGPATH_W) 'ATeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewEditor.c'; fi`
 
-Abacus-VHTeochewTable.o: VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewTable.o -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewTable.Tpo -c -o Abacus-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewTable.Tpo $(DEPDIR)/Abacus-VHTeochewTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='Abacus-VHTeochewTable.o' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewTable.o: ATeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewTable.o -MD -MP -MF $(DEPDIR)/Abacus-ATeochewTable.Tpo -c -o Abacus-ATeochewTable.o `test -f 'ATeochewTable.c' || echo '$(srcdir)/'`ATeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewTable.Tpo $(DEPDIR)/Abacus-ATeochewTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewTable.c' object='Abacus-ATeochewTable.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewTable.o `test -f 'VHTeochewTable.c' || echo '$(srcdir)/'`VHTeochewTable.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewTable.o `test -f 'ATeochewTable.c' || echo '$(srcdir)/'`ATeochewTable.c
 
-Abacus-VHTeochewTable.obj: VHTeochewTable.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHTeochewTable.obj -MD -MP -MF $(DEPDIR)/Abacus-VHTeochewTable.Tpo -c -o Abacus-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHTeochewTable.Tpo $(DEPDIR)/Abacus-VHTeochewTable.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHTeochewTable.c' object='Abacus-VHTeochewTable.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-ATeochewTable.obj: ATeochewTable.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-ATeochewTable.obj -MD -MP -MF $(DEPDIR)/Abacus-ATeochewTable.Tpo -c -o Abacus-ATeochewTable.obj `if test -f 'ATeochewTable.c'; then $(CYGPATH_W) 'ATeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewTable.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-ATeochewTable.Tpo $(DEPDIR)/Abacus-ATeochewTable.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ATeochewTable.c' object='Abacus-ATeochewTable.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHTeochewTable.obj `if test -f 'VHTeochewTable.c'; then $(CYGPATH_W) 'VHTeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/VHTeochewTable.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-ATeochewTable.obj `if test -f 'ATeochewTable.c'; then $(CYGPATH_W) 'ATeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/ATeochewTable.c'; fi`
 
-Abacus-VHInterchangeMode.o: VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHInterchangeMode.o -MD -MP -MF $(DEPDIR)/Abacus-VHInterchangeMode.Tpo -c -o Abacus-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHInterchangeMode.Tpo $(DEPDIR)/Abacus-VHInterchangeMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='Abacus-VHInterchangeMode.o' libtool=no @AMDEPBACKSLASH@
+Abacus-AInterchangeMode.o: AInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AInterchangeMode.o -MD -MP -MF $(DEPDIR)/Abacus-AInterchangeMode.Tpo -c -o Abacus-AInterchangeMode.o `test -f 'AInterchangeMode.c' || echo '$(srcdir)/'`AInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AInterchangeMode.Tpo $(DEPDIR)/Abacus-AInterchangeMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AInterchangeMode.c' object='Abacus-AInterchangeMode.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHInterchangeMode.o `test -f 'VHInterchangeMode.c' || echo '$(srcdir)/'`VHInterchangeMode.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AInterchangeMode.o `test -f 'AInterchangeMode.c' || echo '$(srcdir)/'`AInterchangeMode.c
 
-Abacus-VHInterchangeMode.obj: VHInterchangeMode.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-VHInterchangeMode.obj -MD -MP -MF $(DEPDIR)/Abacus-VHInterchangeMode.Tpo -c -o Abacus-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-VHInterchangeMode.Tpo $(DEPDIR)/Abacus-VHInterchangeMode.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='VHInterchangeMode.c' object='Abacus-VHInterchangeMode.obj' libtool=no @AMDEPBACKSLASH@
+Abacus-AInterchangeMode.obj: AInterchangeMode.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -MT Abacus-AInterchangeMode.obj -MD -MP -MF $(DEPDIR)/Abacus-AInterchangeMode.Tpo -c -o Abacus-AInterchangeMode.obj `if test -f 'AInterchangeMode.c'; then $(CYGPATH_W) 'AInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/AInterchangeMode.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/Abacus-AInterchangeMode.Tpo $(DEPDIR)/Abacus-AInterchangeMode.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='AInterchangeMode.c' object='Abacus-AInterchangeMode.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-VHInterchangeMode.obj `if test -f 'VHInterchangeMode.c'; then $(CYGPATH_W) 'VHInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/VHInterchangeMode.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Abacus_CFLAGS) $(CFLAGS) -c -o Abacus-AInterchangeMode.obj `if test -f 'AInterchangeMode.c'; then $(CYGPATH_W) 'AInterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/AInterchangeMode.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1201,34 +1194,34 @@ clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+		-rm -f ./$(DEPDIR)/Abacus-ACandidateArray.Po
+	-rm -f ./$(DEPDIR)/Abacus-ACandidateTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AChineseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AChineseTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-ADatabase.Po
+	-rm -f ./$(DEPDIR)/Abacus-AETelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AEnglishMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHanvietMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHanvietTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHelper.Po
+	-rm -f ./$(DEPDIR)/Abacus-AInterchangeMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-ALTelexTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-ALogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-APinyinEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-APinyinTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-APreedit.Po
+	-rm -f ./$(DEPDIR)/Abacus-APropertyList.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATelexEditor2.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AUString.Po
 	-rm -f ./$(DEPDIR)/Abacus-AUtil.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTelexEditor2.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewEditor.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHViethoaMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHViethoaTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHZTelexTable2.Po
+	-rm -f ./$(DEPDIR)/Abacus-AVietnameseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AZTelexTable2.Po
 	-rm -f ./$(DEPDIR)/Abacus-engine.Po
 	-rm -f ./$(DEPDIR)/Abacus-main.Po
-	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1274,34 +1267,34 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+		-rm -f ./$(DEPDIR)/Abacus-ACandidateArray.Po
+	-rm -f ./$(DEPDIR)/Abacus-ACandidateTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AChineseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AChineseTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AConfiguration.Po
+	-rm -f ./$(DEPDIR)/Abacus-ADatabase.Po
+	-rm -f ./$(DEPDIR)/Abacus-AETelexTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AEnglishMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHanvietMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHanvietTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AHelper.Po
+	-rm -f ./$(DEPDIR)/Abacus-AInterchangeMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-ALTelexTable.Po
 	-rm -f ./$(DEPDIR)/Abacus-ALogger.Po
+	-rm -f ./$(DEPDIR)/Abacus-APinyinEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-APinyinTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-APreedit.Po
+	-rm -f ./$(DEPDIR)/Abacus-APropertyList.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATelexEditor2.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewEditor.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-ATeochewTable.Po
+	-rm -f ./$(DEPDIR)/Abacus-AUString.Po
 	-rm -f ./$(DEPDIR)/Abacus-AUtil.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHCandidateArray.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHCandidateTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHChineseMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHChineseTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHDatabase.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHETelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHEnglishMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHHelper.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHInterchangeMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHLTelexTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPinyinEditor.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPinyinTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPreedit.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHPropertyList.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTelexEditor2.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewEditor.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHTeochewTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHViethoaMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHViethoaTable.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHVietnameseMode.Po
-	-rm -f ./$(DEPDIR)/Abacus-VHZTelexTable2.Po
+	-rm -f ./$(DEPDIR)/Abacus-AVietnameseMode.Po
+	-rm -f ./$(DEPDIR)/Abacus-AZTelexTable2.Po
 	-rm -f ./$(DEPDIR)/Abacus-engine.Po
 	-rm -f ./$(DEPDIR)/Abacus-main.Po
-	-rm -f ./$(DEPDIR)/Abacus-vhustring.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

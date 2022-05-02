@@ -16,7 +16,7 @@
 			<language>en</language>
 			<license>GPL</license>
 			<author>Peng Huang &lt;shawn.p.huang@gmail.com&gt;</author>
-			<icon>/usr/share/ibus-viethoa/icons/ibus-enchant.svg</icon>
+			<icon>/usr/share/Abacus/icons/ibus-enchant.svg</icon>
 			<layout>us</layout>
 			<longname>Enchant (Python)</longname>
 			<description>Enchant Input Method</description>

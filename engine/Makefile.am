@@ -1,5 +1,3 @@
-# vim:set noet ts=4:
-#
 # ibus-tmpl - The Input Bus template project
 #
 # Copyright (c) 2007-2014 Peng Huang <shawn.p.huang@gmail.com>

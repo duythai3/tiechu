@@ -1,8 +1,6 @@
-# vim:set noet ts=4:
+# The Abacus engine for  IBus
 #
-# ibus-tmpl - The Input Bus template project
-#
-# Copyright (c) 2007-2011 Peng Huang <shawn.p.huang@gmail.com>
+# Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

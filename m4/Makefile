@@ -14,8 +14,6 @@
 
 
 
-# vim:set noet ts=4:
-#
 # ibus-tmpl - The Input Bus template project
 #
 # Copyright (c) 2007-2011 Peng Huang <shawn.p.huang@gmail.com>
@@ -213,10 +211,10 @@ OTOOL64 =
 PACKAGE = Abacus
 PACKAGE_BUGREPORT = https://github.com/duythaiz234/Abacus
 PACKAGE_NAME = Abacus
-PACKAGE_STRING = Abacus 1.0.0.20220423
+PACKAGE_STRING = Abacus 1.0.0.20220501
 PACKAGE_TARNAME = Abacus
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.0.0.20220423
+PACKAGE_VERSION = 1.0.0.20220501
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -233,7 +231,7 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.0.0.20220423
+VERSION = 1.0.0.20220501
 XGETTEXT = :
 abs_builddir = /TC/Duy/Programming/projects/Abacus/m4
 abs_srcdir = /TC/Duy/Programming/projects/Abacus/m4

@@ -1,7 +1,7 @@
 /*
- * ibus-viethoa - The Viethoa engine for IBus
+ * The Abacus engine for IBus
  *
- * Copyright (c) 2020-2021 Duy Thai, ngocduy.thai@yahoo.com
+ * Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -97,15 +97,15 @@ gboolean a_configuration_get_remembering_mode();
 // set remembering mode
 void a_configuration_set_remembering_mode(gboolean remember_mode);
 gint a_configuration_get_super_key();
-void vh_configuration_set_super_key(_SUPER_KEY key);
+void a_configuration_set_super_key(_SUPER_KEY key);
 gint a_configuration_get_vietnamese_mode_key();
-void vh_configuration_set_vietnamese_mode_key(gint key);
+void a_configuration_set_vietnamese_mode_key(gint key);
 gint a_configuration_get_hanviet_mode_key();
-void vh_configuration_set_viethoa_mode_key(gint key);
+void a_configuration_set_hanviet_mode_key(gint key);
 gint a_configuration_get_teochew_mode_key();
-void vh_configuration_set_teochew_mode_key(gint key);
+void a_configuration_set_teochew_mode_key(gint key);
 gint a_configuration_get_chinese_mode_key();
-void vh_configuration_set_chinese_mode_key(gint key);
+void a_configuration_set_chinese_mode_key(gint key);
 gint a_configuration_get_english_mode_key();
 void a_configuration_set_english_mode_key(gint key);
 gint a_configuration_get_candidate_table_key();

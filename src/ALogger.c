@@ -1,7 +1,7 @@
 /*
- * ibus-viethoa - The Viethoa engine for IBus
+ * The Abacus engine for IBus
  *
- * Copyright (c) 2020-2021 Duy Thai, ngocduy.thai@yahoo.com
+ * Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -182,7 +182,7 @@ gboolean create_abacus_directory(){
     const gchar *user_dir = g_get_home_dir();
     gchar *abacus_dir = g_strdup_printf("%s/%s", user_dir, __ABACUS_DIRECTORY__);
 
-    // do nothing if the .viethoa directory existed
+    // do nothing if the .Abacus directory existed
     if(g_file_test(abacus_dir, G_FILE_TEST_EXISTS)){
         g_free(abacus_dir);
         return TRUE;

@@ -1,7 +1,7 @@
 /*
- * ibus-viethoa - The Viethoa engine for IBus
+ * The Abacus engine for IBus
  *
- * Copyright (c) 2020-2021 Duy Thai, ngocduy.thai@yahoo.com
+ * Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -308,35 +308,35 @@ gint a_configuration_get_super_key() {
 	return a_super_key;
 }
 
-void vh_configuration_set_super_key(_SUPER_KEY key) {
+void a_configuration_set_super_key(_SUPER_KEY key) {
     a_super_key = (gint)key;
 }
 
 gint a_configuration_get_vietnamese_mode_key() {
 	return a_vietnamese_mode_shortkey;
 }
-void vh_configuration_set_vietnamese_mode_key(gint key) {
+void a_configuration_set_vietnamese_mode_key(gint key) {
     a_vietnamese_mode_shortkey = key;
 }
 
 gint a_configuration_get_hanviet_mode_key() {
 	return a_hanviet_mode_shortkey;
 }
-void vh_configuration_set_viethoa_mode_key(gint key) {
+void a_configuration_set_hanviet_mode_key(gint key) {
     a_hanviet_mode_shortkey = key;
 }
 
 gint a_configuration_get_teochew_mode_key() {
 	return a_teochew_mode_shortkey;
 }
-void vh_configuration_set_teochew_mode_key(gint key) {
+void a_configuration_set_teochew_mode_key(gint key) {
     a_teochew_mode_shortkey = key;
 }
 
 gint a_configuration_get_chinese_mode_key() {
 	return a_chinese_mode_shortkey;
 }
-void vh_configuration_set_chinese_mode_key(gint key) {
+void a_configuration_set_chinese_mode_key(gint key) {
     a_chinese_mode_shortkey = key;
 }
 

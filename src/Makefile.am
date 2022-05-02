@@ -1,8 +1,6 @@
-# vim:set noet ts=4:
+# The Abacus engine for IBus
 #
-# ibus-anthy - The template engine for IBus
-#
-# Copyright (c) 2007-2011 Peng Huang <shawn.p.huang@gmail.com>
+# Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,57 +25,57 @@ Abacus_SOURCES = \
 	engine.h \
 	AUtil.h \
 	AUtil.c \
-	vhustring.h \
-	vhustring.c \
-    VHTelexEditor2.h \
-    VHTelexEditor2.c \
-	VHVNLetters.h \
-    VHZTelexTable2.h \
-    VHZTelexTable2.c \
-	VHPropertyList.h \
-	VHPropertyList.c \
+	AUString.h \
+	AUString.c \
+    ATelexEditor2.h \
+    ATelexEditor2.c \
+	AVNLetters.h \
+    AZTelexTable2.h \
+    AZTelexTable2.c \
+	APropertyList.h \
+	APropertyList.c \
 	AConfiguration.h \
 	AConfiguration.c \
 	ALogger.h \
 	ALogger.c \
-    VHCandidateTable.h \
-    VHCandidateTable.c \
-	VHViethoaTable.h \
-	VHViethoaTable.c \
-	VHCandidateArray.h \
-	VHCandidateArray.c \
-	VHEnglishMode.h \
-	VHEnglishMode.c \
-	VHVietnameseMode.h \
-	VHVietnameseMode.c \
-	VHViethoaMode.h \
-	VHViethoaMode.c \
-	VHTeochewMode.h \
-	VHTeochewMode.c \
-	VHChineseMode.h \
-	VHChineseMode.c \
-	VHHelper.h \
-	VHHelper.c \
-	VHDatabase.h \
-	VHDatabase.c \
-	VHPreedit.h \
-	VHPreedit.c \
-	VHPinyinTable.h \
-	VHPinyinTable.c \
-    VHPinyinEditor.c \
-	VHPinyinEditor.h \
-	VHChineseTable.h \
-	VHChineseTable.c \
-    VHLTelexTable.h \
-    VHLTelexTable.c \
-    VHETelexTable.h \
-    VHETelexTable.c \
-    VHTeochewEditor.c \
-    VHTeochewEditor.h \
-    VHTeochewTable.h \
-    VHTeochewTable.c \
-    VHInterchangeMode.h \
-    VHInterchangeMode.c \
+    ACandidateTable.h \
+    ACandidateTable.c \
+	AHanvietTable.h \
+	AHanvietTable.c \
+	ACandidateArray.h \
+	ACandidateArray.c \
+	AEnglishMode.h \
+	AEnglishMode.c \
+	AVietnameseMode.h \
+	AVietnameseMode.c \
+	AHanvietMode.h \
+	AHanvietMode.c \
+	ATeochewMode.h \
+	ATeochewMode.c \
+	AChineseMode.h \
+	AChineseMode.c \
+	AHelper.h \
+	AHelper.c \
+	ADatabase.h \
+	ADatabase.c \
+	APreedit.h \
+	APreedit.c \
+	APinyinTable.h \
+	APinyinTable.c \
+    APinyinEditor.c \
+	AHPinyinEditor.h \
+	AChineseTable.h \
+	AChineseTable.c \
+    ALTelexTable.h \
+    ALTelexTable.c \
+    AETelexTable.h \
+    AETelexTable.c \
+    ATeochewEditor.c \
+    ATeochewEditor.h \
+    ATeochewTable.h \
+    ATeochewTable.c \
+    AInterchangeMode.h \
+    AInterchangeMode.c \
     $(NULL)
 
 Abacus_CFLAGS = \
