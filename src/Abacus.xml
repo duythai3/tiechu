@@ -5,7 +5,7 @@
 	<name>org.freedesktop.IBus.Abacus</name>
 	<description>Abacus Component</description>
 	<exec>/usr/libexec/Abacus --ibus</exec>
-	<version>1.0.0.20220501</version>
+	<version>1.0.0.20230331</version>
     <author>Duy Thai &lt;duythaiz234@gmail.com&gt;</author>
 	<license>GPL</license>
     <homepage>http://github.com/duythaiz234/Abacus</homepage>
