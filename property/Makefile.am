@@ -17,19 +17,19 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-libexec_PROGRAMS = Abacus-property
+libexec_PROGRAMS = Tiechu-property
 
-Abacus_property_SOURCES = \
+Tiechu_property_SOURCES = \
 	main.c \
 	$(NULL)
 
-Abacus_property_CFLAGS = \
+Tiechu_property_CFLAGS = \
 	@LIBJSON_CFLAGS@ \
 	@LIBGTK3_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-Abacus_property_LDFLAGS = \
+Tiechu_property_LDFLAGS = \
 	@LIBJSON_LIBS@ \
 	@LIBGTK3_LIBS@ \
 	$(NULL)

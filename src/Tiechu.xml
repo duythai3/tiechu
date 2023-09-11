@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="utf-8"?> -->
+<!-- filename: Tiechu.xml -->
+<component>
+        <name>org.freedesktop.IBus.Tiechu</name>
+        <description>Tiechu Component</description>
+        <exec>/usr/libexec/Tiechu --ibus</exec>
+        <version>1.3.0</version>
+    <author>Duy Thai &lt;duythaia3@gmail.com&gt;</author>
+	<license>GPL</license>
+    <homepage>http://github.com/duythaia3/tiechu</homepage>
+        <textdomain>Tiechu</textdomain>
+
+	<engines>
+		<engine>
+                        <name>Tiechu</name>
+			<language>vi</language>
+			<license>GPL</license>
+            <author>Duy Thai &lt;duythaia3@gmail.com&gt;</author>
+                        <icon>/usr/share/Tiechu/icons/Tiechu.svg</icon>
+			<symbol>VN</symbol>
+			<layout>us</layout>
+                        <longname>Tiechu</longname>
+                        <description>Tiechu Input Method</description>
+			<rank>99</rank>
+    		<icon_prop_key>InputMode</icon_prop_key>
+                        <textdomain>Tiechu</textdomain>
+		</engine>
+	</engines>
+
+</component>

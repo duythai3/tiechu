@@ -1,18 +1,14 @@
 A. GIỚI THIỆU
 
-Abacus v1.1
+Tiechu v1.3.0
 
-Abacus là bộ gõ Tiếng Việt, Tiếng Tiều, Tiếng Hán Việt, và Tiếng Trung.
-Bộ gõ này chạy trên Linux có bộ quản lý desktop GNOME(Chỉ mới chạy thử trên Ubuntu 20.04 và Pop OS 20.04)
-
-Changes in v1.1:
-- Fixed Vietnamese mode bugs
-- Fixed Han Viet mode bugs
+Tiechu là bộ gõ Tiếng Việt, Tiếng Tiều, Tiếng Hán Việt, và Tiếng Trung.
+Tiechu chạy trên Linux có bộ quản lý desktop GNOME.
 
 B. Cài đặt
 1. Lấy mã nguồn từ GitHub.com
 
-    git clone https://github.com/duythaiz234/Abacus.git
+    git clone https://github.com/duythaiz234/tiechu.git
 
 2. Cài đặt các thư viện để biên dịch
 
@@ -20,7 +16,7 @@ B. Cài đặt
 
 3. Cấu hình trước khi biên dịch
 
-    cd ./Abacus
+    cd ./tiechu
     ./autogen.sh --prefix=/usr
 
 4. Biên dịch
@@ -35,17 +31,17 @@ B. Cài đặt
         ibus exit
         ibus-daemon &
 
-    - Thêm Abacus vào Input Source:
+    - Thêm Tiechu vào Input Source:
         + Mở hợp thoại "Settings/Keyboard" on Pop OS, hoặc "Settings/Region & Langeuage" on Ubuntu
         + Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
-        + Pop OS: Bấm mục Vietnamese (Abacus)
-        + Ubuntu: bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, bấm Vietnamese (Abacus)
+        + Pop OS: Bấm mục Vietnamese (Tiechu)
+        + Ubuntu: bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, bấm Vietnamese (Tiechu)
         + Bấm nút Add
-        + Bây giờ Abacus đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
+        + Bây giờ Tiechu đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
 
 C. HƯỚNG DẪN SỬ DỤNG
 
-   Abacus có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
+   Tiechu có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
 
    - Đổi sang mode Tiếng Việt: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+2
    - Đổi sang mode Tiếng Tiều: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+4
@@ -55,7 +51,7 @@ C. HƯỚNG DẪN SỬ DỤNG
 
 1. Gõ Tiếng Việt
 
-   Abacus sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
+   Tiechu sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
 
    Để sửa chữ trong khi gõ hãy bấm phím Ctrl, sau đó là phím Left hoặc Right để di chuyển cursor.
 

@@ -1,7 +1,7 @@
 /*
- * The Abacus engine for IBus
+ * The Tiechu engine for IBus
  *
- * Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
+ * Copyright (c) 2020-2022 Duy Thai,duythaia3@gmail.com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,22 +22,22 @@
 
 #include <ibus.h>
 
-#include "AUString.h"
+#include "UString.h"
 
-typedef struct _IBusAbacusEngine IBusAbacusEngine;
-typedef struct _IBusAbacusEngineClass IBusAbacusEngineClass;
+typedef struct _IBusTiechuEngine IBusTiechuEngine;
+typedef struct _IBusTiechuEngineClass IBusTiechuEngineClass;
 
-struct _IBusAbacusEngine {
+struct _IBusTiechuEngine {
 	IBusEngine parent;
 };
 
-struct _IBusAbacusEngineClass {
+struct _IBusTiechuEngineClass {
 	IBusEngineClass parent;
 };
 
-#define IBUS_TYPE_ABACUS_ENGINE (ibus_abacus_engine_get_type())
+#define IBUS_TYPE_TIECHU_ENGINE (ibus_tiechu_engine_get_type())
 
-GType ibus_abacus_engine_get_type(void);
+GType ibus_tiechu_engine_get_type(void);
 
 void initialize();
 void uninitialize();

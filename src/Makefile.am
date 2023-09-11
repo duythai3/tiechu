@@ -1,4 +1,4 @@
-# The Abacus engine for IBus
+# The Tiechu engine for IBus
 #
 # Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
 #
@@ -17,92 +17,92 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-libexec_PROGRAMS = Abacus
+libexec_PROGRAMS = Tiechu
 
-Abacus_SOURCES = \
+Tiechu_SOURCES = \
 	main.c \
 	engine.c \
 	engine.h \
-	AUtil.h \
-	AUtil.c \
-	AUString.h \
-	AUString.c \
-    ATelexEditor2.h \
-    ATelexEditor2.c \
-	AVNLetters.h \
-    AZTelexTable2.h \
-    AZTelexTable2.c \
-	APropertyList.h \
-	APropertyList.c \
-	AConfiguration.h \
-	AConfiguration.c \
-	ALogger.h \
-	ALogger.c \
-    ACandidateTable.h \
-    ACandidateTable.c \
-	AHanvietTable.h \
-	AHanvietTable.c \
-	ACandidateArray.h \
-	ACandidateArray.c \
-	AEnglishMode.h \
-	AEnglishMode.c \
-	AVietnameseMode.h \
-	AVietnameseMode.c \
-	AHanvietMode.h \
-	AHanvietMode.c \
-	ATeochewMode.h \
-	ATeochewMode.c \
-	AChineseMode.h \
-	AChineseMode.c \
-	AHelper.h \
-	AHelper.c \
-	ADatabase.h \
-	ADatabase.c \
-	APreedit.h \
-	APreedit.c \
-	APinyinTable.h \
-	APinyinTable.c \
-    APinyinEditor.c \
-	AHPinyinEditor.h \
-	AChineseTable.h \
-	AChineseTable.c \
-    ALTelexTable.h \
-    ALTelexTable.c \
-    AETelexTable.h \
-    AETelexTable.c \
-    ATeochewEditor.c \
-    ATeochewEditor.h \
-    ATeochewTable.h \
-    ATeochewTable.c \
-    AInterchangeMode.h \
-    AInterchangeMode.c \
+        Util.h \
+        Util.c \
+        UString.h \
+        UString.c \
+    TelexEditor2.h \
+    TelexEditor2.c \
+        VNLetters.h \
+    ZTelexTable2.h \
+    ZTelexTable2.c \
+        PropertyList.h \
+        PropertyList.c \
+        Configuration.h \
+        Configuration.c \
+        Logger.h \
+        Logger.c \
+    CandidateTable.h \
+    CandidateTable.c \
+        HanvietTable.h \
+        HanvietTable.c \
+        CandidateArray.h \
+        CandidateArray.c \
+        EnglishMode.h \
+        EnglishMode.c \
+        VietnameseMode.h \
+        VietnameseMode.c \
+        HanvietMode.h \
+        HanvietMode.c \
+        TeochewMode.h \
+        TeochewMode.c \
+        ChineseMode.h \
+        ChineseMode.c \
+        Helper.h \
+        Helper.c \
+        Database.h \
+        Database.c \
+        Preedit.h \
+        Preedit.c \
+        PinyinTable.h \
+        PinyinTable.c \
+    PinyinEditor.c \
+        PinyinEditor.h \
+        ChineseTable.h \
+        ChineseTable.c \
+    LTelexTable.h \
+    LTelexTable.c \
+    ETelexTable.h \
+    ETelexTable.c \
+    TeochewEditor.c \
+    TeochewEditor.h \
+    TeochewTable.h \
+    TeochewTable.c \
+    InterchangeMode.h \
+    InterchangeMode.c \
     $(NULL)
 
-Abacus_CFLAGS = \
+Tiechu_CFLAGS = \
 	@IBUS_CFLAGS@ \
 	@SQLITE_CFLAGS@ \
 	-DPKGDATADIR=\"$(pkgdatadir)\"\
 	$(NULL)
 
-Abacus_LDFLAGS = \
+Tiechu_LDFLAGS = \
 	@IBUS_LIBS@ \
 	@SQLITE_LIBS@ \
 	$(NULL)
 
 component_DATA = \
-	Abacus.xml \
+        Tiechu.xml \
 	$(NULL)
 componentdir = @datadir@/ibus/component
 
 EXTRA_DIST = \
-	Abacus.xml.in \
+        Tiechu.xml.in \
 	$(NULL)
 
 CLEANFILES = \
-	Abacus.xml \
+        Tiechu.xml \
 	$(NULL)
 
-Abacus.xml: Abacus.xml.in
+Tiechu.xml: Tiechu.xml.in
 	$(AM_V_GEN) \
 	( \
 		libexecdir=${libexecdir}; \
@@ -111,5 +111,5 @@ Abacus.xml: Abacus.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: Abacus
-	$(builddir)/Abacus
+test: Tiechu
+        $(builddir)/Tiechu

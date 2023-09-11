@@ -1,4 +1,4 @@
-# Copyright (c) 2020-2022 Duy Thai,duythaiz234@gmail.com
+# Copyright (c) 2020-2023 Duy Thai,duythaia3@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,16 +15,16 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 # if not 1, append datestamp to the version number.
-m4_define([package_name],[Abacus])
+m4_define([package_name],[Tiechu])
 m4_define([ibus_released],[0])
 m4_define([ibus_major_version],[1])
-m4_define([ibus_minor_version],[0])
-m4_define([ibus_micro_version],[0])
+m4_define([ibus_minor_version],[3])
+m4_define([ibus_micro_version],[2])
 m4_define(ibus_maybe_datestamp,m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
 m4_define([ibus_version],ibus_major_version.ibus_minor_version.ibus_micro_version[]ibus_maybe_datestamp)
 
-AC_INIT([package_name], [ibus_version], [https://github.com/duythaiz234/Abacus], [package_name])
+AC_INIT([package_name], [ibus_version], [https://github.com/duythaia3/tiechu], [package_name])
 AM_INIT_AUTOMAKE([1.10])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 AC_GNU_SOURCE
@@ -87,9 +87,9 @@ AM_GLIB_GNU_GETTEXT
 # OUTPUT files
 AC_CONFIG_FILES(Makefile
 property/Makefile
-Abacus.spec
+Tiechu.spec
 src/Makefile
-src/Abacus.xml.in
+src/Tiechu.xml.in
 icons/Makefile
 config/Makefile
 csdl/Makefile

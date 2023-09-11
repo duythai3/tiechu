@@ -19,11 +19,11 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 icons_DATA = \
-	Abacus.svg \
+        Tiechu.svg \
 	$(NULL)
 
 iconsdir = $(pkgdatadir)/icons
 
 EXTRA_DIST = \
-	Abacus.svg \
+        Tiechu.svg \
 	$(NULL)
