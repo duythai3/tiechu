@@ -178,7 +178,7 @@ DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Tiechu.spec.in \
 	$(srcdir)/config.h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
 	INSTALL NEWS README compile config.guess config.rpath \
-	config.sub install-sh ltmain.sh missing py-compile
+	config.sub depcomp install-sh ltmain.sh missing py-compile
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)

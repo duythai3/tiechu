@@ -28,7 +28,7 @@ static sqlite3 *_connection = NULL;
 
 
 // initialize
-gboolean database_init(){
+gboolean database_open(){
 	//
 	if (_connection) {
 		return TRUE;
@@ -52,7 +52,7 @@ gboolean database_init(){
 
 
 // destroy
-void database_destroy(){
+void database_close(){
 	//
 	if (!_connection) {
 		return;

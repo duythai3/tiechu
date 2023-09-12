@@ -118,7 +118,7 @@ void initialize(){
     configuration_load();
 
     //
-    database_init();
+    database_open();
 
     // create property list, and show it
     property_list_init();
@@ -157,7 +157,7 @@ void uninitialize(){
     candidate_table_destroy();
 
     //
-    database_destroy();
+    database_close();
 }
 
 static void ibus_tiechu_engine_init(IBusTiechuEngine *tiechu){

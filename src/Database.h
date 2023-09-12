@@ -24,8 +24,8 @@
 #include <sqlite3.h>
 #include <glib.h>
 
-gboolean database_init();
-void database_destroy();
+gboolean database_open();
+void database_close();
 sqlite3* database_get_connection();
 
 #endif
