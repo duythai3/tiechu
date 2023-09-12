@@ -205,14 +205,14 @@ AWK = mawk
 CATALOGS = 
 CATOBJEXT = NONE
 CC = gcc
-CCDEPMODE = depmode=none
+CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O0
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=none
+CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O0
 CYGPATH_W = echo
 DATADIRNAME = 
@@ -267,10 +267,10 @@ OTOOL64 =
 PACKAGE = Tiechu
 PACKAGE_BUGREPORT = https://github.com/duythaia3/tiechu
 PACKAGE_NAME = Tiechu
-PACKAGE_STRING = Tiechu 1.3.2.20230911
+PACKAGE_STRING = Tiechu 1.3.2.20230912
 PACKAGE_TARNAME = Tiechu
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.3.2.20230911
+PACKAGE_VERSION = 1.3.2.20230912
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -287,7 +287,7 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.3.2.20230911
+VERSION = 1.3.2.20230912
 XGETTEXT = :
 abs_builddir = /3/Abacus/property
 abs_srcdir = /3/Abacus/property
@@ -451,7 +451,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-#include ./$(DEPDIR)/Tiechu_property-main.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu_property-main.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -460,39 +460,39 @@ $(am__depfiles_remade):
 am--depfiles: $(am__depfiles_remade)
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c -o $@ $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 Tiechu_property-main.o: main.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -MT Tiechu_property-main.o -MD -MP -MF $(DEPDIR)/Tiechu_property-main.Tpo -c -o Tiechu_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu_property-main.Tpo $(DEPDIR)/Tiechu_property-main.Po
-#	$(AM_V_CC)source='main.c' object='Tiechu_property-main.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -c -o Tiechu_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -MT Tiechu_property-main.o -MD -MP -MF $(DEPDIR)/Tiechu_property-main.Tpo -c -o Tiechu_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu_property-main.Tpo $(DEPDIR)/Tiechu_property-main.Po
+#	$(AM_V_CC)source='main.c' object='Tiechu_property-main.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -c -o Tiechu_property-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
 Tiechu_property-main.obj: main.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -MT Tiechu_property-main.obj -MD -MP -MF $(DEPDIR)/Tiechu_property-main.Tpo -c -o Tiechu_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu_property-main.Tpo $(DEPDIR)/Tiechu_property-main.Po
-#	$(AM_V_CC)source='main.c' object='Tiechu_property-main.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -c -o Tiechu_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -MT Tiechu_property-main.obj -MD -MP -MF $(DEPDIR)/Tiechu_property-main.Tpo -c -o Tiechu_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu_property-main.Tpo $(DEPDIR)/Tiechu_property-main.Po
+#	$(AM_V_CC)source='main.c' object='Tiechu_property-main.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_property_CFLAGS) $(CFLAGS) -c -o Tiechu_property-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

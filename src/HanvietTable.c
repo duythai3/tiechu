@@ -25,9 +25,9 @@
 
 #include "CandidateArray.h"
 #include "Logger.h"
-#include "ATelexEditor.h"
+#include "TelexEditor.h"
 #include "Database.h"
-#include "APreedit.h"
+#include "Preedit.h"
 
 struct _EXPAND_CHAR{
 	gchar *ch;
@@ -138,7 +138,7 @@ gboolean hanviet_table_find(){
 	}
 
 	//
-	guint preedit_len =a_preedit_get_length();
+    guint preedit_len =preedit_get_length();
 	if (preedit_len < 1) {
 		// clear candidate list
         candidate_array_clear();
@@ -149,7 +149,7 @@ gboolean hanviet_table_find(){
    guint index = 0;
    guint len = 0;
    guint target_word_len;
-   const gunichar *preedit_str =a_preedit_get_preedit_string();
+   const gunichar *preedit_str =preedit_get_preedit_string();
    if(preedit_len <= 7)
 	  target_word_len = preedit_len;
    else

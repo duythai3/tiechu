@@ -260,7 +260,7 @@ static gboolean deliver_key(IBusTiechuEngine *tiechu, guint keyval, guint keycod
         case __A_ENGLISH_MODE_2__:
             return english_mode_process_key_event(tiechu, keyval, keycode, modifiers);
         case __A_VIETNAMESE_MODE_2__:
-            return a_vietnamese_mode_process_key_event(tiechu, keyval, keycode, modifiers);
+            return vietnamese_mode_process_key_event(tiechu, keyval, keycode, modifiers);
         case __A_HANVIET_MODE_2__:
             return hanviet_mode_process_key_event(tiechu, keyval, keycode, modifiers);
         case __A_TEOCHEW_MODE_2__:

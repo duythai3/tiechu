@@ -24,7 +24,7 @@
 #include "CandidateTable.h"
 #include "CandidateArray.h"
 #include "Logger.h"
-#include "AHanvietTable.h"
+#include "HanvietTable.h"
 
 
 static IBusLookupTable *a_candidate_table = NULL;

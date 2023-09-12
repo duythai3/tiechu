@@ -60,7 +60,7 @@ gchar a_buffer[1022];
 // check if the configuration file exists in the user configuration directory
 gboolean a_is_config_file_existing(){
     const gchar *user_dir = g_get_home_dir();
-    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, ___ABACUS_DIRECTORY__ __CONFIG_FILE__);
+    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
     const gchar *config_file = a_buffer;
     if(g_file_test(config_file, G_FILE_TEST_EXISTS)){
         logger_log("Configuration file exists");
@@ -75,7 +75,7 @@ gboolean a_copy_config_file(){
     const gchar *user_dir = g_get_home_dir();
 
     // if configuration directory does not exists, create it
-    gint len = g_sprintf(a_buffer, "%s/%s", user_dir, ___ABACUS_DIRECTORY__;
+    gint len = g_sprintf(a_buffer, "%s/%s", user_dir, __TIECHU_DIRECTORY__);
     const gchar *config_dir = a_buffer;
     if(!g_file_test(config_dir, G_FILE_TEST_EXISTS)){
          g_mkdir(config_dir, 0744);
@@ -83,7 +83,7 @@ gboolean a_copy_config_file(){
     }
 
     // create configuration file
-    len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, ___ABACUS_DIRECTORY__ __CONFIG_FILE__);
+    len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
     const gchar *config_file = a_buffer;
     GIOChannel *config_channel = g_io_channel_new_file(config_file, "w", NULL);
 
@@ -126,7 +126,7 @@ gboolean a_load_config_file(){
 
 	// calculate path to the configuration file
 	const gchar *user_dir = g_get_home_dir();
-	gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, ___ABACUS_DIRECTORY__ __CONFIG_FILE__);
+    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
 	const gchar *config_file = a_buffer;
 	GError *error = NULL;
 	if (!g_key_file_load_from_file(a_key_file, config_file, G_KEY_FILE_KEEP_COMMENTS , &error)) {
@@ -252,7 +252,7 @@ void configuration_save(){
 
 	//
 	const gchar *user_dir = g_get_home_dir();
-	gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, ___ABACUS_DIRECTORY__ __CONFIG_FILE__);
+    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
 	const gchar *config_file = a_buffer;
 	GError *error = NULL;
 	if (!g_key_file_save_to_file(a_key_file, config_file, &error)) {

@@ -16,7 +16,7 @@
 
 # The Tiechu engine for IBus
 #
-# Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
+# Copyright (c) 2020-2022 Duy Thai, duythaia3@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -272,14 +272,14 @@ AWK = mawk
 CATALOGS = 
 CATOBJEXT = NONE
 CC = gcc
-CCDEPMODE = depmode=none
+CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O0
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=none
+CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O0
 CYGPATH_W = echo
 DATADIRNAME = 
@@ -334,10 +334,10 @@ OTOOL64 =
 PACKAGE = Tiechu
 PACKAGE_BUGREPORT = https://github.com/duythaia3/tiechu
 PACKAGE_NAME = Tiechu
-PACKAGE_STRING = Tiechu 1.3.2.20230911
+PACKAGE_STRING = Tiechu 1.3.2.20230912
 PACKAGE_TARNAME = Tiechu
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.3.2.20230911
+PACKAGE_VERSION = 1.3.2.20230912
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -354,7 +354,7 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.3.2.20230911
+VERSION = 1.3.2.20230912
 XGETTEXT = :
 abs_builddir = /3/Abacus/src
 abs_srcdir = /3/Abacus/src
@@ -411,9 +411,9 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 Tiechu_SOURCES = \
-	main.c \
-	engine.c \
-	engine.h \
+        main.c \
+        engine.c \
+        engine.h \
         Util.h \
         Util.c \
         UString.h \
@@ -588,34 +588,34 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-#include ./$(DEPDIR)/Tiechu-CandidateArray.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-CandidateTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-ChineseMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-ChineseTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Configuration.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Database.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-ETelexTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-EnglishMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-HanvietMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-HanvietTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Helper.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-InterchangeMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-LTelexTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Logger.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-PinyinEditor.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-PinyinTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Preedit.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-PropertyList.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-TelexEditor2.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-TeochewEditor.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-TeochewMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-TeochewTable.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-UString.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-Util.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-VietnameseMode.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-ZTelexTable2.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-engine.Po # am--include-marker
-#include ./$(DEPDIR)/Tiechu-main.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-CandidateArray.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-CandidateTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-ChineseMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-ChineseTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Configuration.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Database.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-ETelexTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-EnglishMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-HanvietMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-HanvietTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Helper.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-InterchangeMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-LTelexTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Logger.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-PinyinEditor.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-PinyinTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Preedit.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-PropertyList.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-TelexEditor2.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-TeochewEditor.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-TeochewMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-TeochewTable.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-UString.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-Util.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-VietnameseMode.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-ZTelexTable2.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-engine.Po # am--include-marker
+include ./$(DEPDIR)/Tiechu-main.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -624,417 +624,417 @@ $(am__depfiles_remade):
 am--depfiles: $(am__depfiles_remade)
 
 .c.o:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c -o $@ $<
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ $<
 
 .c.obj:
-#	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	$(AM_V_CC)source='$<' object='$@' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	$(AM_V_CC)source='$<' object='$@' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .c.lo:
-#	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-#	$(AM_V_CC)source='$<' object='$@' libtool=yes 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(LTCOMPILE) -c -o $@ $<
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
 
 Tiechu-main.o: main.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-main.o -MD -MP -MF $(DEPDIR)/Tiechu-main.Tpo -c -o Tiechu-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-main.Tpo $(DEPDIR)/Tiechu-main.Po
-#	$(AM_V_CC)source='main.c' object='Tiechu-main.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-main.o -MD -MP -MF $(DEPDIR)/Tiechu-main.Tpo -c -o Tiechu-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-main.Tpo $(DEPDIR)/Tiechu-main.Po
+#	$(AM_V_CC)source='main.c' object='Tiechu-main.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
 Tiechu-main.obj: main.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-main.obj -MD -MP -MF $(DEPDIR)/Tiechu-main.Tpo -c -o Tiechu-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-main.Tpo $(DEPDIR)/Tiechu-main.Po
-#	$(AM_V_CC)source='main.c' object='Tiechu-main.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-main.obj -MD -MP -MF $(DEPDIR)/Tiechu-main.Tpo -c -o Tiechu-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-main.Tpo $(DEPDIR)/Tiechu-main.Po
+#	$(AM_V_CC)source='main.c' object='Tiechu-main.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
 Tiechu-engine.o: engine.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-engine.o -MD -MP -MF $(DEPDIR)/Tiechu-engine.Tpo -c -o Tiechu-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-engine.Tpo $(DEPDIR)/Tiechu-engine.Po
-#	$(AM_V_CC)source='engine.c' object='Tiechu-engine.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-engine.o -MD -MP -MF $(DEPDIR)/Tiechu-engine.Tpo -c -o Tiechu-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-engine.Tpo $(DEPDIR)/Tiechu-engine.Po
+#	$(AM_V_CC)source='engine.c' object='Tiechu-engine.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-engine.o `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
 
 Tiechu-engine.obj: engine.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-engine.obj -MD -MP -MF $(DEPDIR)/Tiechu-engine.Tpo -c -o Tiechu-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-engine.Tpo $(DEPDIR)/Tiechu-engine.Po
-#	$(AM_V_CC)source='engine.c' object='Tiechu-engine.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-engine.obj -MD -MP -MF $(DEPDIR)/Tiechu-engine.Tpo -c -o Tiechu-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-engine.Tpo $(DEPDIR)/Tiechu-engine.Po
+#	$(AM_V_CC)source='engine.c' object='Tiechu-engine.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-engine.obj `if test -f 'engine.c'; then $(CYGPATH_W) 'engine.c'; else $(CYGPATH_W) '$(srcdir)/engine.c'; fi`
 
 Tiechu-Util.o: Util.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Util.o -MD -MP -MF $(DEPDIR)/Tiechu-Util.Tpo -c -o Tiechu-Util.o `test -f 'Util.c' || echo '$(srcdir)/'`Util.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Util.Tpo $(DEPDIR)/Tiechu-Util.Po
-#	$(AM_V_CC)source='Util.c' object='Tiechu-Util.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Util.o `test -f 'Util.c' || echo '$(srcdir)/'`Util.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Util.o -MD -MP -MF $(DEPDIR)/Tiechu-Util.Tpo -c -o Tiechu-Util.o `test -f 'Util.c' || echo '$(srcdir)/'`Util.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Util.Tpo $(DEPDIR)/Tiechu-Util.Po
+#	$(AM_V_CC)source='Util.c' object='Tiechu-Util.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Util.o `test -f 'Util.c' || echo '$(srcdir)/'`Util.c
 
 Tiechu-Util.obj: Util.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Util.obj -MD -MP -MF $(DEPDIR)/Tiechu-Util.Tpo -c -o Tiechu-Util.obj `if test -f 'Util.c'; then $(CYGPATH_W) 'Util.c'; else $(CYGPATH_W) '$(srcdir)/Util.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Util.Tpo $(DEPDIR)/Tiechu-Util.Po
-#	$(AM_V_CC)source='Util.c' object='Tiechu-Util.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Util.obj `if test -f 'Util.c'; then $(CYGPATH_W) 'Util.c'; else $(CYGPATH_W) '$(srcdir)/Util.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Util.obj -MD -MP -MF $(DEPDIR)/Tiechu-Util.Tpo -c -o Tiechu-Util.obj `if test -f 'Util.c'; then $(CYGPATH_W) 'Util.c'; else $(CYGPATH_W) '$(srcdir)/Util.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Util.Tpo $(DEPDIR)/Tiechu-Util.Po
+#	$(AM_V_CC)source='Util.c' object='Tiechu-Util.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Util.obj `if test -f 'Util.c'; then $(CYGPATH_W) 'Util.c'; else $(CYGPATH_W) '$(srcdir)/Util.c'; fi`
 
 Tiechu-UString.o: UString.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-UString.o -MD -MP -MF $(DEPDIR)/Tiechu-UString.Tpo -c -o Tiechu-UString.o `test -f 'UString.c' || echo '$(srcdir)/'`UString.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-UString.Tpo $(DEPDIR)/Tiechu-UString.Po
-#	$(AM_V_CC)source='UString.c' object='Tiechu-UString.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-UString.o `test -f 'UString.c' || echo '$(srcdir)/'`UString.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-UString.o -MD -MP -MF $(DEPDIR)/Tiechu-UString.Tpo -c -o Tiechu-UString.o `test -f 'UString.c' || echo '$(srcdir)/'`UString.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-UString.Tpo $(DEPDIR)/Tiechu-UString.Po
+#	$(AM_V_CC)source='UString.c' object='Tiechu-UString.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-UString.o `test -f 'UString.c' || echo '$(srcdir)/'`UString.c
 
 Tiechu-UString.obj: UString.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-UString.obj -MD -MP -MF $(DEPDIR)/Tiechu-UString.Tpo -c -o Tiechu-UString.obj `if test -f 'UString.c'; then $(CYGPATH_W) 'UString.c'; else $(CYGPATH_W) '$(srcdir)/UString.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-UString.Tpo $(DEPDIR)/Tiechu-UString.Po
-#	$(AM_V_CC)source='UString.c' object='Tiechu-UString.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-UString.obj `if test -f 'UString.c'; then $(CYGPATH_W) 'UString.c'; else $(CYGPATH_W) '$(srcdir)/UString.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-UString.obj -MD -MP -MF $(DEPDIR)/Tiechu-UString.Tpo -c -o Tiechu-UString.obj `if test -f 'UString.c'; then $(CYGPATH_W) 'UString.c'; else $(CYGPATH_W) '$(srcdir)/UString.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-UString.Tpo $(DEPDIR)/Tiechu-UString.Po
+#	$(AM_V_CC)source='UString.c' object='Tiechu-UString.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-UString.obj `if test -f 'UString.c'; then $(CYGPATH_W) 'UString.c'; else $(CYGPATH_W) '$(srcdir)/UString.c'; fi`
 
 Tiechu-TelexEditor2.o: TelexEditor2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TelexEditor2.o -MD -MP -MF $(DEPDIR)/Tiechu-TelexEditor2.Tpo -c -o Tiechu-TelexEditor2.o `test -f 'TelexEditor2.c' || echo '$(srcdir)/'`TelexEditor2.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TelexEditor2.Tpo $(DEPDIR)/Tiechu-TelexEditor2.Po
-#	$(AM_V_CC)source='TelexEditor2.c' object='Tiechu-TelexEditor2.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TelexEditor2.o `test -f 'TelexEditor2.c' || echo '$(srcdir)/'`TelexEditor2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TelexEditor2.o -MD -MP -MF $(DEPDIR)/Tiechu-TelexEditor2.Tpo -c -o Tiechu-TelexEditor2.o `test -f 'TelexEditor2.c' || echo '$(srcdir)/'`TelexEditor2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TelexEditor2.Tpo $(DEPDIR)/Tiechu-TelexEditor2.Po
+#	$(AM_V_CC)source='TelexEditor2.c' object='Tiechu-TelexEditor2.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TelexEditor2.o `test -f 'TelexEditor2.c' || echo '$(srcdir)/'`TelexEditor2.c
 
 Tiechu-TelexEditor2.obj: TelexEditor2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TelexEditor2.obj -MD -MP -MF $(DEPDIR)/Tiechu-TelexEditor2.Tpo -c -o Tiechu-TelexEditor2.obj `if test -f 'TelexEditor2.c'; then $(CYGPATH_W) 'TelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/TelexEditor2.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TelexEditor2.Tpo $(DEPDIR)/Tiechu-TelexEditor2.Po
-#	$(AM_V_CC)source='TelexEditor2.c' object='Tiechu-TelexEditor2.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TelexEditor2.obj `if test -f 'TelexEditor2.c'; then $(CYGPATH_W) 'TelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/TelexEditor2.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TelexEditor2.obj -MD -MP -MF $(DEPDIR)/Tiechu-TelexEditor2.Tpo -c -o Tiechu-TelexEditor2.obj `if test -f 'TelexEditor2.c'; then $(CYGPATH_W) 'TelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/TelexEditor2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TelexEditor2.Tpo $(DEPDIR)/Tiechu-TelexEditor2.Po
+#	$(AM_V_CC)source='TelexEditor2.c' object='Tiechu-TelexEditor2.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TelexEditor2.obj `if test -f 'TelexEditor2.c'; then $(CYGPATH_W) 'TelexEditor2.c'; else $(CYGPATH_W) '$(srcdir)/TelexEditor2.c'; fi`
 
 Tiechu-ZTelexTable2.o: ZTelexTable2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ZTelexTable2.o -MD -MP -MF $(DEPDIR)/Tiechu-ZTelexTable2.Tpo -c -o Tiechu-ZTelexTable2.o `test -f 'ZTelexTable2.c' || echo '$(srcdir)/'`ZTelexTable2.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ZTelexTable2.Tpo $(DEPDIR)/Tiechu-ZTelexTable2.Po
-#	$(AM_V_CC)source='ZTelexTable2.c' object='Tiechu-ZTelexTable2.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ZTelexTable2.o `test -f 'ZTelexTable2.c' || echo '$(srcdir)/'`ZTelexTable2.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ZTelexTable2.o -MD -MP -MF $(DEPDIR)/Tiechu-ZTelexTable2.Tpo -c -o Tiechu-ZTelexTable2.o `test -f 'ZTelexTable2.c' || echo '$(srcdir)/'`ZTelexTable2.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ZTelexTable2.Tpo $(DEPDIR)/Tiechu-ZTelexTable2.Po
+#	$(AM_V_CC)source='ZTelexTable2.c' object='Tiechu-ZTelexTable2.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ZTelexTable2.o `test -f 'ZTelexTable2.c' || echo '$(srcdir)/'`ZTelexTable2.c
 
 Tiechu-ZTelexTable2.obj: ZTelexTable2.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ZTelexTable2.obj -MD -MP -MF $(DEPDIR)/Tiechu-ZTelexTable2.Tpo -c -o Tiechu-ZTelexTable2.obj `if test -f 'ZTelexTable2.c'; then $(CYGPATH_W) 'ZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/ZTelexTable2.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ZTelexTable2.Tpo $(DEPDIR)/Tiechu-ZTelexTable2.Po
-#	$(AM_V_CC)source='ZTelexTable2.c' object='Tiechu-ZTelexTable2.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ZTelexTable2.obj `if test -f 'ZTelexTable2.c'; then $(CYGPATH_W) 'ZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/ZTelexTable2.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ZTelexTable2.obj -MD -MP -MF $(DEPDIR)/Tiechu-ZTelexTable2.Tpo -c -o Tiechu-ZTelexTable2.obj `if test -f 'ZTelexTable2.c'; then $(CYGPATH_W) 'ZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/ZTelexTable2.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ZTelexTable2.Tpo $(DEPDIR)/Tiechu-ZTelexTable2.Po
+#	$(AM_V_CC)source='ZTelexTable2.c' object='Tiechu-ZTelexTable2.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ZTelexTable2.obj `if test -f 'ZTelexTable2.c'; then $(CYGPATH_W) 'ZTelexTable2.c'; else $(CYGPATH_W) '$(srcdir)/ZTelexTable2.c'; fi`
 
 Tiechu-PropertyList.o: PropertyList.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PropertyList.o -MD -MP -MF $(DEPDIR)/Tiechu-PropertyList.Tpo -c -o Tiechu-PropertyList.o `test -f 'PropertyList.c' || echo '$(srcdir)/'`PropertyList.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PropertyList.Tpo $(DEPDIR)/Tiechu-PropertyList.Po
-#	$(AM_V_CC)source='PropertyList.c' object='Tiechu-PropertyList.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PropertyList.o `test -f 'PropertyList.c' || echo '$(srcdir)/'`PropertyList.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PropertyList.o -MD -MP -MF $(DEPDIR)/Tiechu-PropertyList.Tpo -c -o Tiechu-PropertyList.o `test -f 'PropertyList.c' || echo '$(srcdir)/'`PropertyList.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PropertyList.Tpo $(DEPDIR)/Tiechu-PropertyList.Po
+#	$(AM_V_CC)source='PropertyList.c' object='Tiechu-PropertyList.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PropertyList.o `test -f 'PropertyList.c' || echo '$(srcdir)/'`PropertyList.c
 
 Tiechu-PropertyList.obj: PropertyList.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PropertyList.obj -MD -MP -MF $(DEPDIR)/Tiechu-PropertyList.Tpo -c -o Tiechu-PropertyList.obj `if test -f 'PropertyList.c'; then $(CYGPATH_W) 'PropertyList.c'; else $(CYGPATH_W) '$(srcdir)/PropertyList.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PropertyList.Tpo $(DEPDIR)/Tiechu-PropertyList.Po
-#	$(AM_V_CC)source='PropertyList.c' object='Tiechu-PropertyList.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PropertyList.obj `if test -f 'PropertyList.c'; then $(CYGPATH_W) 'PropertyList.c'; else $(CYGPATH_W) '$(srcdir)/PropertyList.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PropertyList.obj -MD -MP -MF $(DEPDIR)/Tiechu-PropertyList.Tpo -c -o Tiechu-PropertyList.obj `if test -f 'PropertyList.c'; then $(CYGPATH_W) 'PropertyList.c'; else $(CYGPATH_W) '$(srcdir)/PropertyList.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PropertyList.Tpo $(DEPDIR)/Tiechu-PropertyList.Po
+#	$(AM_V_CC)source='PropertyList.c' object='Tiechu-PropertyList.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PropertyList.obj `if test -f 'PropertyList.c'; then $(CYGPATH_W) 'PropertyList.c'; else $(CYGPATH_W) '$(srcdir)/PropertyList.c'; fi`
 
 Tiechu-Configuration.o: Configuration.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Configuration.o -MD -MP -MF $(DEPDIR)/Tiechu-Configuration.Tpo -c -o Tiechu-Configuration.o `test -f 'Configuration.c' || echo '$(srcdir)/'`Configuration.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Configuration.Tpo $(DEPDIR)/Tiechu-Configuration.Po
-#	$(AM_V_CC)source='Configuration.c' object='Tiechu-Configuration.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Configuration.o `test -f 'Configuration.c' || echo '$(srcdir)/'`Configuration.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Configuration.o -MD -MP -MF $(DEPDIR)/Tiechu-Configuration.Tpo -c -o Tiechu-Configuration.o `test -f 'Configuration.c' || echo '$(srcdir)/'`Configuration.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Configuration.Tpo $(DEPDIR)/Tiechu-Configuration.Po
+#	$(AM_V_CC)source='Configuration.c' object='Tiechu-Configuration.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Configuration.o `test -f 'Configuration.c' || echo '$(srcdir)/'`Configuration.c
 
 Tiechu-Configuration.obj: Configuration.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Configuration.obj -MD -MP -MF $(DEPDIR)/Tiechu-Configuration.Tpo -c -o Tiechu-Configuration.obj `if test -f 'Configuration.c'; then $(CYGPATH_W) 'Configuration.c'; else $(CYGPATH_W) '$(srcdir)/Configuration.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Configuration.Tpo $(DEPDIR)/Tiechu-Configuration.Po
-#	$(AM_V_CC)source='Configuration.c' object='Tiechu-Configuration.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Configuration.obj `if test -f 'Configuration.c'; then $(CYGPATH_W) 'Configuration.c'; else $(CYGPATH_W) '$(srcdir)/Configuration.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Configuration.obj -MD -MP -MF $(DEPDIR)/Tiechu-Configuration.Tpo -c -o Tiechu-Configuration.obj `if test -f 'Configuration.c'; then $(CYGPATH_W) 'Configuration.c'; else $(CYGPATH_W) '$(srcdir)/Configuration.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Configuration.Tpo $(DEPDIR)/Tiechu-Configuration.Po
+#	$(AM_V_CC)source='Configuration.c' object='Tiechu-Configuration.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Configuration.obj `if test -f 'Configuration.c'; then $(CYGPATH_W) 'Configuration.c'; else $(CYGPATH_W) '$(srcdir)/Configuration.c'; fi`
 
 Tiechu-Logger.o: Logger.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Logger.o -MD -MP -MF $(DEPDIR)/Tiechu-Logger.Tpo -c -o Tiechu-Logger.o `test -f 'Logger.c' || echo '$(srcdir)/'`Logger.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Logger.Tpo $(DEPDIR)/Tiechu-Logger.Po
-#	$(AM_V_CC)source='Logger.c' object='Tiechu-Logger.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Logger.o `test -f 'Logger.c' || echo '$(srcdir)/'`Logger.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Logger.o -MD -MP -MF $(DEPDIR)/Tiechu-Logger.Tpo -c -o Tiechu-Logger.o `test -f 'Logger.c' || echo '$(srcdir)/'`Logger.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Logger.Tpo $(DEPDIR)/Tiechu-Logger.Po
+#	$(AM_V_CC)source='Logger.c' object='Tiechu-Logger.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Logger.o `test -f 'Logger.c' || echo '$(srcdir)/'`Logger.c
 
 Tiechu-Logger.obj: Logger.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Logger.obj -MD -MP -MF $(DEPDIR)/Tiechu-Logger.Tpo -c -o Tiechu-Logger.obj `if test -f 'Logger.c'; then $(CYGPATH_W) 'Logger.c'; else $(CYGPATH_W) '$(srcdir)/Logger.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Logger.Tpo $(DEPDIR)/Tiechu-Logger.Po
-#	$(AM_V_CC)source='Logger.c' object='Tiechu-Logger.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Logger.obj `if test -f 'Logger.c'; then $(CYGPATH_W) 'Logger.c'; else $(CYGPATH_W) '$(srcdir)/Logger.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Logger.obj -MD -MP -MF $(DEPDIR)/Tiechu-Logger.Tpo -c -o Tiechu-Logger.obj `if test -f 'Logger.c'; then $(CYGPATH_W) 'Logger.c'; else $(CYGPATH_W) '$(srcdir)/Logger.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Logger.Tpo $(DEPDIR)/Tiechu-Logger.Po
+#	$(AM_V_CC)source='Logger.c' object='Tiechu-Logger.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Logger.obj `if test -f 'Logger.c'; then $(CYGPATH_W) 'Logger.c'; else $(CYGPATH_W) '$(srcdir)/Logger.c'; fi`
 
 Tiechu-CandidateTable.o: CandidateTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateTable.o -MD -MP -MF $(DEPDIR)/Tiechu-CandidateTable.Tpo -c -o Tiechu-CandidateTable.o `test -f 'CandidateTable.c' || echo '$(srcdir)/'`CandidateTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateTable.Tpo $(DEPDIR)/Tiechu-CandidateTable.Po
-#	$(AM_V_CC)source='CandidateTable.c' object='Tiechu-CandidateTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateTable.o `test -f 'CandidateTable.c' || echo '$(srcdir)/'`CandidateTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateTable.o -MD -MP -MF $(DEPDIR)/Tiechu-CandidateTable.Tpo -c -o Tiechu-CandidateTable.o `test -f 'CandidateTable.c' || echo '$(srcdir)/'`CandidateTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateTable.Tpo $(DEPDIR)/Tiechu-CandidateTable.Po
+#	$(AM_V_CC)source='CandidateTable.c' object='Tiechu-CandidateTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateTable.o `test -f 'CandidateTable.c' || echo '$(srcdir)/'`CandidateTable.c
 
 Tiechu-CandidateTable.obj: CandidateTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-CandidateTable.Tpo -c -o Tiechu-CandidateTable.obj `if test -f 'CandidateTable.c'; then $(CYGPATH_W) 'CandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/CandidateTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateTable.Tpo $(DEPDIR)/Tiechu-CandidateTable.Po
-#	$(AM_V_CC)source='CandidateTable.c' object='Tiechu-CandidateTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateTable.obj `if test -f 'CandidateTable.c'; then $(CYGPATH_W) 'CandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/CandidateTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-CandidateTable.Tpo -c -o Tiechu-CandidateTable.obj `if test -f 'CandidateTable.c'; then $(CYGPATH_W) 'CandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/CandidateTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateTable.Tpo $(DEPDIR)/Tiechu-CandidateTable.Po
+#	$(AM_V_CC)source='CandidateTable.c' object='Tiechu-CandidateTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateTable.obj `if test -f 'CandidateTable.c'; then $(CYGPATH_W) 'CandidateTable.c'; else $(CYGPATH_W) '$(srcdir)/CandidateTable.c'; fi`
 
 Tiechu-HanvietTable.o: HanvietTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietTable.o -MD -MP -MF $(DEPDIR)/Tiechu-HanvietTable.Tpo -c -o Tiechu-HanvietTable.o `test -f 'HanvietTable.c' || echo '$(srcdir)/'`HanvietTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietTable.Tpo $(DEPDIR)/Tiechu-HanvietTable.Po
-#	$(AM_V_CC)source='HanvietTable.c' object='Tiechu-HanvietTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietTable.o `test -f 'HanvietTable.c' || echo '$(srcdir)/'`HanvietTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietTable.o -MD -MP -MF $(DEPDIR)/Tiechu-HanvietTable.Tpo -c -o Tiechu-HanvietTable.o `test -f 'HanvietTable.c' || echo '$(srcdir)/'`HanvietTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietTable.Tpo $(DEPDIR)/Tiechu-HanvietTable.Po
+#	$(AM_V_CC)source='HanvietTable.c' object='Tiechu-HanvietTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietTable.o `test -f 'HanvietTable.c' || echo '$(srcdir)/'`HanvietTable.c
 
 Tiechu-HanvietTable.obj: HanvietTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-HanvietTable.Tpo -c -o Tiechu-HanvietTable.obj `if test -f 'HanvietTable.c'; then $(CYGPATH_W) 'HanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/HanvietTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietTable.Tpo $(DEPDIR)/Tiechu-HanvietTable.Po
-#	$(AM_V_CC)source='HanvietTable.c' object='Tiechu-HanvietTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietTable.obj `if test -f 'HanvietTable.c'; then $(CYGPATH_W) 'HanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/HanvietTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-HanvietTable.Tpo -c -o Tiechu-HanvietTable.obj `if test -f 'HanvietTable.c'; then $(CYGPATH_W) 'HanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/HanvietTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietTable.Tpo $(DEPDIR)/Tiechu-HanvietTable.Po
+#	$(AM_V_CC)source='HanvietTable.c' object='Tiechu-HanvietTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietTable.obj `if test -f 'HanvietTable.c'; then $(CYGPATH_W) 'HanvietTable.c'; else $(CYGPATH_W) '$(srcdir)/HanvietTable.c'; fi`
 
 Tiechu-CandidateArray.o: CandidateArray.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateArray.o -MD -MP -MF $(DEPDIR)/Tiechu-CandidateArray.Tpo -c -o Tiechu-CandidateArray.o `test -f 'CandidateArray.c' || echo '$(srcdir)/'`CandidateArray.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateArray.Tpo $(DEPDIR)/Tiechu-CandidateArray.Po
-#	$(AM_V_CC)source='CandidateArray.c' object='Tiechu-CandidateArray.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateArray.o `test -f 'CandidateArray.c' || echo '$(srcdir)/'`CandidateArray.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateArray.o -MD -MP -MF $(DEPDIR)/Tiechu-CandidateArray.Tpo -c -o Tiechu-CandidateArray.o `test -f 'CandidateArray.c' || echo '$(srcdir)/'`CandidateArray.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateArray.Tpo $(DEPDIR)/Tiechu-CandidateArray.Po
+#	$(AM_V_CC)source='CandidateArray.c' object='Tiechu-CandidateArray.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateArray.o `test -f 'CandidateArray.c' || echo '$(srcdir)/'`CandidateArray.c
 
 Tiechu-CandidateArray.obj: CandidateArray.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateArray.obj -MD -MP -MF $(DEPDIR)/Tiechu-CandidateArray.Tpo -c -o Tiechu-CandidateArray.obj `if test -f 'CandidateArray.c'; then $(CYGPATH_W) 'CandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/CandidateArray.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateArray.Tpo $(DEPDIR)/Tiechu-CandidateArray.Po
-#	$(AM_V_CC)source='CandidateArray.c' object='Tiechu-CandidateArray.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateArray.obj `if test -f 'CandidateArray.c'; then $(CYGPATH_W) 'CandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/CandidateArray.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-CandidateArray.obj -MD -MP -MF $(DEPDIR)/Tiechu-CandidateArray.Tpo -c -o Tiechu-CandidateArray.obj `if test -f 'CandidateArray.c'; then $(CYGPATH_W) 'CandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/CandidateArray.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-CandidateArray.Tpo $(DEPDIR)/Tiechu-CandidateArray.Po
+#	$(AM_V_CC)source='CandidateArray.c' object='Tiechu-CandidateArray.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-CandidateArray.obj `if test -f 'CandidateArray.c'; then $(CYGPATH_W) 'CandidateArray.c'; else $(CYGPATH_W) '$(srcdir)/CandidateArray.c'; fi`
 
 Tiechu-EnglishMode.o: EnglishMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-EnglishMode.o -MD -MP -MF $(DEPDIR)/Tiechu-EnglishMode.Tpo -c -o Tiechu-EnglishMode.o `test -f 'EnglishMode.c' || echo '$(srcdir)/'`EnglishMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-EnglishMode.Tpo $(DEPDIR)/Tiechu-EnglishMode.Po
-#	$(AM_V_CC)source='EnglishMode.c' object='Tiechu-EnglishMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-EnglishMode.o `test -f 'EnglishMode.c' || echo '$(srcdir)/'`EnglishMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-EnglishMode.o -MD -MP -MF $(DEPDIR)/Tiechu-EnglishMode.Tpo -c -o Tiechu-EnglishMode.o `test -f 'EnglishMode.c' || echo '$(srcdir)/'`EnglishMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-EnglishMode.Tpo $(DEPDIR)/Tiechu-EnglishMode.Po
+#	$(AM_V_CC)source='EnglishMode.c' object='Tiechu-EnglishMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-EnglishMode.o `test -f 'EnglishMode.c' || echo '$(srcdir)/'`EnglishMode.c
 
 Tiechu-EnglishMode.obj: EnglishMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-EnglishMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-EnglishMode.Tpo -c -o Tiechu-EnglishMode.obj `if test -f 'EnglishMode.c'; then $(CYGPATH_W) 'EnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/EnglishMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-EnglishMode.Tpo $(DEPDIR)/Tiechu-EnglishMode.Po
-#	$(AM_V_CC)source='EnglishMode.c' object='Tiechu-EnglishMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-EnglishMode.obj `if test -f 'EnglishMode.c'; then $(CYGPATH_W) 'EnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/EnglishMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-EnglishMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-EnglishMode.Tpo -c -o Tiechu-EnglishMode.obj `if test -f 'EnglishMode.c'; then $(CYGPATH_W) 'EnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/EnglishMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-EnglishMode.Tpo $(DEPDIR)/Tiechu-EnglishMode.Po
+#	$(AM_V_CC)source='EnglishMode.c' object='Tiechu-EnglishMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-EnglishMode.obj `if test -f 'EnglishMode.c'; then $(CYGPATH_W) 'EnglishMode.c'; else $(CYGPATH_W) '$(srcdir)/EnglishMode.c'; fi`
 
 Tiechu-VietnameseMode.o: VietnameseMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-VietnameseMode.o -MD -MP -MF $(DEPDIR)/Tiechu-VietnameseMode.Tpo -c -o Tiechu-VietnameseMode.o `test -f 'VietnameseMode.c' || echo '$(srcdir)/'`VietnameseMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-VietnameseMode.Tpo $(DEPDIR)/Tiechu-VietnameseMode.Po
-#	$(AM_V_CC)source='VietnameseMode.c' object='Tiechu-VietnameseMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-VietnameseMode.o `test -f 'VietnameseMode.c' || echo '$(srcdir)/'`VietnameseMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-VietnameseMode.o -MD -MP -MF $(DEPDIR)/Tiechu-VietnameseMode.Tpo -c -o Tiechu-VietnameseMode.o `test -f 'VietnameseMode.c' || echo '$(srcdir)/'`VietnameseMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-VietnameseMode.Tpo $(DEPDIR)/Tiechu-VietnameseMode.Po
+#	$(AM_V_CC)source='VietnameseMode.c' object='Tiechu-VietnameseMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-VietnameseMode.o `test -f 'VietnameseMode.c' || echo '$(srcdir)/'`VietnameseMode.c
 
 Tiechu-VietnameseMode.obj: VietnameseMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-VietnameseMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-VietnameseMode.Tpo -c -o Tiechu-VietnameseMode.obj `if test -f 'VietnameseMode.c'; then $(CYGPATH_W) 'VietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VietnameseMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-VietnameseMode.Tpo $(DEPDIR)/Tiechu-VietnameseMode.Po
-#	$(AM_V_CC)source='VietnameseMode.c' object='Tiechu-VietnameseMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-VietnameseMode.obj `if test -f 'VietnameseMode.c'; then $(CYGPATH_W) 'VietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VietnameseMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-VietnameseMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-VietnameseMode.Tpo -c -o Tiechu-VietnameseMode.obj `if test -f 'VietnameseMode.c'; then $(CYGPATH_W) 'VietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VietnameseMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-VietnameseMode.Tpo $(DEPDIR)/Tiechu-VietnameseMode.Po
+#	$(AM_V_CC)source='VietnameseMode.c' object='Tiechu-VietnameseMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-VietnameseMode.obj `if test -f 'VietnameseMode.c'; then $(CYGPATH_W) 'VietnameseMode.c'; else $(CYGPATH_W) '$(srcdir)/VietnameseMode.c'; fi`
 
 Tiechu-HanvietMode.o: HanvietMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietMode.o -MD -MP -MF $(DEPDIR)/Tiechu-HanvietMode.Tpo -c -o Tiechu-HanvietMode.o `test -f 'HanvietMode.c' || echo '$(srcdir)/'`HanvietMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietMode.Tpo $(DEPDIR)/Tiechu-HanvietMode.Po
-#	$(AM_V_CC)source='HanvietMode.c' object='Tiechu-HanvietMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietMode.o `test -f 'HanvietMode.c' || echo '$(srcdir)/'`HanvietMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietMode.o -MD -MP -MF $(DEPDIR)/Tiechu-HanvietMode.Tpo -c -o Tiechu-HanvietMode.o `test -f 'HanvietMode.c' || echo '$(srcdir)/'`HanvietMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietMode.Tpo $(DEPDIR)/Tiechu-HanvietMode.Po
+#	$(AM_V_CC)source='HanvietMode.c' object='Tiechu-HanvietMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietMode.o `test -f 'HanvietMode.c' || echo '$(srcdir)/'`HanvietMode.c
 
 Tiechu-HanvietMode.obj: HanvietMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-HanvietMode.Tpo -c -o Tiechu-HanvietMode.obj `if test -f 'HanvietMode.c'; then $(CYGPATH_W) 'HanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/HanvietMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietMode.Tpo $(DEPDIR)/Tiechu-HanvietMode.Po
-#	$(AM_V_CC)source='HanvietMode.c' object='Tiechu-HanvietMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietMode.obj `if test -f 'HanvietMode.c'; then $(CYGPATH_W) 'HanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/HanvietMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-HanvietMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-HanvietMode.Tpo -c -o Tiechu-HanvietMode.obj `if test -f 'HanvietMode.c'; then $(CYGPATH_W) 'HanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/HanvietMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-HanvietMode.Tpo $(DEPDIR)/Tiechu-HanvietMode.Po
+#	$(AM_V_CC)source='HanvietMode.c' object='Tiechu-HanvietMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-HanvietMode.obj `if test -f 'HanvietMode.c'; then $(CYGPATH_W) 'HanvietMode.c'; else $(CYGPATH_W) '$(srcdir)/HanvietMode.c'; fi`
 
 Tiechu-TeochewMode.o: TeochewMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewMode.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewMode.Tpo -c -o Tiechu-TeochewMode.o `test -f 'TeochewMode.c' || echo '$(srcdir)/'`TeochewMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewMode.Tpo $(DEPDIR)/Tiechu-TeochewMode.Po
-#	$(AM_V_CC)source='TeochewMode.c' object='Tiechu-TeochewMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewMode.o `test -f 'TeochewMode.c' || echo '$(srcdir)/'`TeochewMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewMode.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewMode.Tpo -c -o Tiechu-TeochewMode.o `test -f 'TeochewMode.c' || echo '$(srcdir)/'`TeochewMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewMode.Tpo $(DEPDIR)/Tiechu-TeochewMode.Po
+#	$(AM_V_CC)source='TeochewMode.c' object='Tiechu-TeochewMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewMode.o `test -f 'TeochewMode.c' || echo '$(srcdir)/'`TeochewMode.c
 
 Tiechu-TeochewMode.obj: TeochewMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewMode.Tpo -c -o Tiechu-TeochewMode.obj `if test -f 'TeochewMode.c'; then $(CYGPATH_W) 'TeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/TeochewMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewMode.Tpo $(DEPDIR)/Tiechu-TeochewMode.Po
-#	$(AM_V_CC)source='TeochewMode.c' object='Tiechu-TeochewMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewMode.obj `if test -f 'TeochewMode.c'; then $(CYGPATH_W) 'TeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/TeochewMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewMode.Tpo -c -o Tiechu-TeochewMode.obj `if test -f 'TeochewMode.c'; then $(CYGPATH_W) 'TeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/TeochewMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewMode.Tpo $(DEPDIR)/Tiechu-TeochewMode.Po
+#	$(AM_V_CC)source='TeochewMode.c' object='Tiechu-TeochewMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewMode.obj `if test -f 'TeochewMode.c'; then $(CYGPATH_W) 'TeochewMode.c'; else $(CYGPATH_W) '$(srcdir)/TeochewMode.c'; fi`
 
 Tiechu-ChineseMode.o: ChineseMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseMode.o -MD -MP -MF $(DEPDIR)/Tiechu-ChineseMode.Tpo -c -o Tiechu-ChineseMode.o `test -f 'ChineseMode.c' || echo '$(srcdir)/'`ChineseMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseMode.Tpo $(DEPDIR)/Tiechu-ChineseMode.Po
-#	$(AM_V_CC)source='ChineseMode.c' object='Tiechu-ChineseMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseMode.o `test -f 'ChineseMode.c' || echo '$(srcdir)/'`ChineseMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseMode.o -MD -MP -MF $(DEPDIR)/Tiechu-ChineseMode.Tpo -c -o Tiechu-ChineseMode.o `test -f 'ChineseMode.c' || echo '$(srcdir)/'`ChineseMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseMode.Tpo $(DEPDIR)/Tiechu-ChineseMode.Po
+#	$(AM_V_CC)source='ChineseMode.c' object='Tiechu-ChineseMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseMode.o `test -f 'ChineseMode.c' || echo '$(srcdir)/'`ChineseMode.c
 
 Tiechu-ChineseMode.obj: ChineseMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-ChineseMode.Tpo -c -o Tiechu-ChineseMode.obj `if test -f 'ChineseMode.c'; then $(CYGPATH_W) 'ChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/ChineseMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseMode.Tpo $(DEPDIR)/Tiechu-ChineseMode.Po
-#	$(AM_V_CC)source='ChineseMode.c' object='Tiechu-ChineseMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseMode.obj `if test -f 'ChineseMode.c'; then $(CYGPATH_W) 'ChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/ChineseMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-ChineseMode.Tpo -c -o Tiechu-ChineseMode.obj `if test -f 'ChineseMode.c'; then $(CYGPATH_W) 'ChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/ChineseMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseMode.Tpo $(DEPDIR)/Tiechu-ChineseMode.Po
+#	$(AM_V_CC)source='ChineseMode.c' object='Tiechu-ChineseMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseMode.obj `if test -f 'ChineseMode.c'; then $(CYGPATH_W) 'ChineseMode.c'; else $(CYGPATH_W) '$(srcdir)/ChineseMode.c'; fi`
 
 Tiechu-Helper.o: Helper.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Helper.o -MD -MP -MF $(DEPDIR)/Tiechu-Helper.Tpo -c -o Tiechu-Helper.o `test -f 'Helper.c' || echo '$(srcdir)/'`Helper.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Helper.Tpo $(DEPDIR)/Tiechu-Helper.Po
-#	$(AM_V_CC)source='Helper.c' object='Tiechu-Helper.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Helper.o `test -f 'Helper.c' || echo '$(srcdir)/'`Helper.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Helper.o -MD -MP -MF $(DEPDIR)/Tiechu-Helper.Tpo -c -o Tiechu-Helper.o `test -f 'Helper.c' || echo '$(srcdir)/'`Helper.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Helper.Tpo $(DEPDIR)/Tiechu-Helper.Po
+#	$(AM_V_CC)source='Helper.c' object='Tiechu-Helper.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Helper.o `test -f 'Helper.c' || echo '$(srcdir)/'`Helper.c
 
 Tiechu-Helper.obj: Helper.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Helper.obj -MD -MP -MF $(DEPDIR)/Tiechu-Helper.Tpo -c -o Tiechu-Helper.obj `if test -f 'Helper.c'; then $(CYGPATH_W) 'Helper.c'; else $(CYGPATH_W) '$(srcdir)/Helper.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Helper.Tpo $(DEPDIR)/Tiechu-Helper.Po
-#	$(AM_V_CC)source='Helper.c' object='Tiechu-Helper.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Helper.obj `if test -f 'Helper.c'; then $(CYGPATH_W) 'Helper.c'; else $(CYGPATH_W) '$(srcdir)/Helper.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Helper.obj -MD -MP -MF $(DEPDIR)/Tiechu-Helper.Tpo -c -o Tiechu-Helper.obj `if test -f 'Helper.c'; then $(CYGPATH_W) 'Helper.c'; else $(CYGPATH_W) '$(srcdir)/Helper.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Helper.Tpo $(DEPDIR)/Tiechu-Helper.Po
+#	$(AM_V_CC)source='Helper.c' object='Tiechu-Helper.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Helper.obj `if test -f 'Helper.c'; then $(CYGPATH_W) 'Helper.c'; else $(CYGPATH_W) '$(srcdir)/Helper.c'; fi`
 
 Tiechu-Database.o: Database.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Database.o -MD -MP -MF $(DEPDIR)/Tiechu-Database.Tpo -c -o Tiechu-Database.o `test -f 'Database.c' || echo '$(srcdir)/'`Database.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Database.Tpo $(DEPDIR)/Tiechu-Database.Po
-#	$(AM_V_CC)source='Database.c' object='Tiechu-Database.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Database.o `test -f 'Database.c' || echo '$(srcdir)/'`Database.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Database.o -MD -MP -MF $(DEPDIR)/Tiechu-Database.Tpo -c -o Tiechu-Database.o `test -f 'Database.c' || echo '$(srcdir)/'`Database.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Database.Tpo $(DEPDIR)/Tiechu-Database.Po
+#	$(AM_V_CC)source='Database.c' object='Tiechu-Database.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Database.o `test -f 'Database.c' || echo '$(srcdir)/'`Database.c
 
 Tiechu-Database.obj: Database.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Database.obj -MD -MP -MF $(DEPDIR)/Tiechu-Database.Tpo -c -o Tiechu-Database.obj `if test -f 'Database.c'; then $(CYGPATH_W) 'Database.c'; else $(CYGPATH_W) '$(srcdir)/Database.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Database.Tpo $(DEPDIR)/Tiechu-Database.Po
-#	$(AM_V_CC)source='Database.c' object='Tiechu-Database.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Database.obj `if test -f 'Database.c'; then $(CYGPATH_W) 'Database.c'; else $(CYGPATH_W) '$(srcdir)/Database.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Database.obj -MD -MP -MF $(DEPDIR)/Tiechu-Database.Tpo -c -o Tiechu-Database.obj `if test -f 'Database.c'; then $(CYGPATH_W) 'Database.c'; else $(CYGPATH_W) '$(srcdir)/Database.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Database.Tpo $(DEPDIR)/Tiechu-Database.Po
+#	$(AM_V_CC)source='Database.c' object='Tiechu-Database.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Database.obj `if test -f 'Database.c'; then $(CYGPATH_W) 'Database.c'; else $(CYGPATH_W) '$(srcdir)/Database.c'; fi`
 
 Tiechu-Preedit.o: Preedit.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Preedit.o -MD -MP -MF $(DEPDIR)/Tiechu-Preedit.Tpo -c -o Tiechu-Preedit.o `test -f 'Preedit.c' || echo '$(srcdir)/'`Preedit.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Preedit.Tpo $(DEPDIR)/Tiechu-Preedit.Po
-#	$(AM_V_CC)source='Preedit.c' object='Tiechu-Preedit.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Preedit.o `test -f 'Preedit.c' || echo '$(srcdir)/'`Preedit.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Preedit.o -MD -MP -MF $(DEPDIR)/Tiechu-Preedit.Tpo -c -o Tiechu-Preedit.o `test -f 'Preedit.c' || echo '$(srcdir)/'`Preedit.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Preedit.Tpo $(DEPDIR)/Tiechu-Preedit.Po
+#	$(AM_V_CC)source='Preedit.c' object='Tiechu-Preedit.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Preedit.o `test -f 'Preedit.c' || echo '$(srcdir)/'`Preedit.c
 
 Tiechu-Preedit.obj: Preedit.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Preedit.obj -MD -MP -MF $(DEPDIR)/Tiechu-Preedit.Tpo -c -o Tiechu-Preedit.obj `if test -f 'Preedit.c'; then $(CYGPATH_W) 'Preedit.c'; else $(CYGPATH_W) '$(srcdir)/Preedit.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Preedit.Tpo $(DEPDIR)/Tiechu-Preedit.Po
-#	$(AM_V_CC)source='Preedit.c' object='Tiechu-Preedit.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Preedit.obj `if test -f 'Preedit.c'; then $(CYGPATH_W) 'Preedit.c'; else $(CYGPATH_W) '$(srcdir)/Preedit.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-Preedit.obj -MD -MP -MF $(DEPDIR)/Tiechu-Preedit.Tpo -c -o Tiechu-Preedit.obj `if test -f 'Preedit.c'; then $(CYGPATH_W) 'Preedit.c'; else $(CYGPATH_W) '$(srcdir)/Preedit.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-Preedit.Tpo $(DEPDIR)/Tiechu-Preedit.Po
+#	$(AM_V_CC)source='Preedit.c' object='Tiechu-Preedit.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-Preedit.obj `if test -f 'Preedit.c'; then $(CYGPATH_W) 'Preedit.c'; else $(CYGPATH_W) '$(srcdir)/Preedit.c'; fi`
 
 Tiechu-PinyinTable.o: PinyinTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinTable.o -MD -MP -MF $(DEPDIR)/Tiechu-PinyinTable.Tpo -c -o Tiechu-PinyinTable.o `test -f 'PinyinTable.c' || echo '$(srcdir)/'`PinyinTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinTable.Tpo $(DEPDIR)/Tiechu-PinyinTable.Po
-#	$(AM_V_CC)source='PinyinTable.c' object='Tiechu-PinyinTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinTable.o `test -f 'PinyinTable.c' || echo '$(srcdir)/'`PinyinTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinTable.o -MD -MP -MF $(DEPDIR)/Tiechu-PinyinTable.Tpo -c -o Tiechu-PinyinTable.o `test -f 'PinyinTable.c' || echo '$(srcdir)/'`PinyinTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinTable.Tpo $(DEPDIR)/Tiechu-PinyinTable.Po
+#	$(AM_V_CC)source='PinyinTable.c' object='Tiechu-PinyinTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinTable.o `test -f 'PinyinTable.c' || echo '$(srcdir)/'`PinyinTable.c
 
 Tiechu-PinyinTable.obj: PinyinTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-PinyinTable.Tpo -c -o Tiechu-PinyinTable.obj `if test -f 'PinyinTable.c'; then $(CYGPATH_W) 'PinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/PinyinTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinTable.Tpo $(DEPDIR)/Tiechu-PinyinTable.Po
-#	$(AM_V_CC)source='PinyinTable.c' object='Tiechu-PinyinTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinTable.obj `if test -f 'PinyinTable.c'; then $(CYGPATH_W) 'PinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/PinyinTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-PinyinTable.Tpo -c -o Tiechu-PinyinTable.obj `if test -f 'PinyinTable.c'; then $(CYGPATH_W) 'PinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/PinyinTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinTable.Tpo $(DEPDIR)/Tiechu-PinyinTable.Po
+#	$(AM_V_CC)source='PinyinTable.c' object='Tiechu-PinyinTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinTable.obj `if test -f 'PinyinTable.c'; then $(CYGPATH_W) 'PinyinTable.c'; else $(CYGPATH_W) '$(srcdir)/PinyinTable.c'; fi`
 
 Tiechu-PinyinEditor.o: PinyinEditor.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinEditor.o -MD -MP -MF $(DEPDIR)/Tiechu-PinyinEditor.Tpo -c -o Tiechu-PinyinEditor.o `test -f 'PinyinEditor.c' || echo '$(srcdir)/'`PinyinEditor.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinEditor.Tpo $(DEPDIR)/Tiechu-PinyinEditor.Po
-#	$(AM_V_CC)source='PinyinEditor.c' object='Tiechu-PinyinEditor.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinEditor.o `test -f 'PinyinEditor.c' || echo '$(srcdir)/'`PinyinEditor.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinEditor.o -MD -MP -MF $(DEPDIR)/Tiechu-PinyinEditor.Tpo -c -o Tiechu-PinyinEditor.o `test -f 'PinyinEditor.c' || echo '$(srcdir)/'`PinyinEditor.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinEditor.Tpo $(DEPDIR)/Tiechu-PinyinEditor.Po
+#	$(AM_V_CC)source='PinyinEditor.c' object='Tiechu-PinyinEditor.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinEditor.o `test -f 'PinyinEditor.c' || echo '$(srcdir)/'`PinyinEditor.c
 
 Tiechu-PinyinEditor.obj: PinyinEditor.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinEditor.obj -MD -MP -MF $(DEPDIR)/Tiechu-PinyinEditor.Tpo -c -o Tiechu-PinyinEditor.obj `if test -f 'PinyinEditor.c'; then $(CYGPATH_W) 'PinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/PinyinEditor.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinEditor.Tpo $(DEPDIR)/Tiechu-PinyinEditor.Po
-#	$(AM_V_CC)source='PinyinEditor.c' object='Tiechu-PinyinEditor.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinEditor.obj `if test -f 'PinyinEditor.c'; then $(CYGPATH_W) 'PinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/PinyinEditor.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-PinyinEditor.obj -MD -MP -MF $(DEPDIR)/Tiechu-PinyinEditor.Tpo -c -o Tiechu-PinyinEditor.obj `if test -f 'PinyinEditor.c'; then $(CYGPATH_W) 'PinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/PinyinEditor.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-PinyinEditor.Tpo $(DEPDIR)/Tiechu-PinyinEditor.Po
+#	$(AM_V_CC)source='PinyinEditor.c' object='Tiechu-PinyinEditor.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-PinyinEditor.obj `if test -f 'PinyinEditor.c'; then $(CYGPATH_W) 'PinyinEditor.c'; else $(CYGPATH_W) '$(srcdir)/PinyinEditor.c'; fi`
 
 Tiechu-ChineseTable.o: ChineseTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseTable.o -MD -MP -MF $(DEPDIR)/Tiechu-ChineseTable.Tpo -c -o Tiechu-ChineseTable.o `test -f 'ChineseTable.c' || echo '$(srcdir)/'`ChineseTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseTable.Tpo $(DEPDIR)/Tiechu-ChineseTable.Po
-#	$(AM_V_CC)source='ChineseTable.c' object='Tiechu-ChineseTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseTable.o `test -f 'ChineseTable.c' || echo '$(srcdir)/'`ChineseTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseTable.o -MD -MP -MF $(DEPDIR)/Tiechu-ChineseTable.Tpo -c -o Tiechu-ChineseTable.o `test -f 'ChineseTable.c' || echo '$(srcdir)/'`ChineseTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseTable.Tpo $(DEPDIR)/Tiechu-ChineseTable.Po
+#	$(AM_V_CC)source='ChineseTable.c' object='Tiechu-ChineseTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseTable.o `test -f 'ChineseTable.c' || echo '$(srcdir)/'`ChineseTable.c
 
 Tiechu-ChineseTable.obj: ChineseTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-ChineseTable.Tpo -c -o Tiechu-ChineseTable.obj `if test -f 'ChineseTable.c'; then $(CYGPATH_W) 'ChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/ChineseTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseTable.Tpo $(DEPDIR)/Tiechu-ChineseTable.Po
-#	$(AM_V_CC)source='ChineseTable.c' object='Tiechu-ChineseTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseTable.obj `if test -f 'ChineseTable.c'; then $(CYGPATH_W) 'ChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/ChineseTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ChineseTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-ChineseTable.Tpo -c -o Tiechu-ChineseTable.obj `if test -f 'ChineseTable.c'; then $(CYGPATH_W) 'ChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/ChineseTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ChineseTable.Tpo $(DEPDIR)/Tiechu-ChineseTable.Po
+#	$(AM_V_CC)source='ChineseTable.c' object='Tiechu-ChineseTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ChineseTable.obj `if test -f 'ChineseTable.c'; then $(CYGPATH_W) 'ChineseTable.c'; else $(CYGPATH_W) '$(srcdir)/ChineseTable.c'; fi`
 
 Tiechu-LTelexTable.o: LTelexTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-LTelexTable.o -MD -MP -MF $(DEPDIR)/Tiechu-LTelexTable.Tpo -c -o Tiechu-LTelexTable.o `test -f 'LTelexTable.c' || echo '$(srcdir)/'`LTelexTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-LTelexTable.Tpo $(DEPDIR)/Tiechu-LTelexTable.Po
-#	$(AM_V_CC)source='LTelexTable.c' object='Tiechu-LTelexTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-LTelexTable.o `test -f 'LTelexTable.c' || echo '$(srcdir)/'`LTelexTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-LTelexTable.o -MD -MP -MF $(DEPDIR)/Tiechu-LTelexTable.Tpo -c -o Tiechu-LTelexTable.o `test -f 'LTelexTable.c' || echo '$(srcdir)/'`LTelexTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-LTelexTable.Tpo $(DEPDIR)/Tiechu-LTelexTable.Po
+#	$(AM_V_CC)source='LTelexTable.c' object='Tiechu-LTelexTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-LTelexTable.o `test -f 'LTelexTable.c' || echo '$(srcdir)/'`LTelexTable.c
 
 Tiechu-LTelexTable.obj: LTelexTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-LTelexTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-LTelexTable.Tpo -c -o Tiechu-LTelexTable.obj `if test -f 'LTelexTable.c'; then $(CYGPATH_W) 'LTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/LTelexTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-LTelexTable.Tpo $(DEPDIR)/Tiechu-LTelexTable.Po
-#	$(AM_V_CC)source='LTelexTable.c' object='Tiechu-LTelexTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-LTelexTable.obj `if test -f 'LTelexTable.c'; then $(CYGPATH_W) 'LTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/LTelexTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-LTelexTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-LTelexTable.Tpo -c -o Tiechu-LTelexTable.obj `if test -f 'LTelexTable.c'; then $(CYGPATH_W) 'LTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/LTelexTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-LTelexTable.Tpo $(DEPDIR)/Tiechu-LTelexTable.Po
+#	$(AM_V_CC)source='LTelexTable.c' object='Tiechu-LTelexTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-LTelexTable.obj `if test -f 'LTelexTable.c'; then $(CYGPATH_W) 'LTelexTable.c'; else $(CYGPATH_W) '$(srcdir)/LTelexTable.c'; fi`
 
 Tiechu-ETelexTable.o: ETelexTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ETelexTable.o -MD -MP -MF $(DEPDIR)/Tiechu-ETelexTable.Tpo -c -o Tiechu-ETelexTable.o `test -f 'ETelexTable.c' || echo '$(srcdir)/'`ETelexTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ETelexTable.Tpo $(DEPDIR)/Tiechu-ETelexTable.Po
-#	$(AM_V_CC)source='ETelexTable.c' object='Tiechu-ETelexTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ETelexTable.o `test -f 'ETelexTable.c' || echo '$(srcdir)/'`ETelexTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ETelexTable.o -MD -MP -MF $(DEPDIR)/Tiechu-ETelexTable.Tpo -c -o Tiechu-ETelexTable.o `test -f 'ETelexTable.c' || echo '$(srcdir)/'`ETelexTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ETelexTable.Tpo $(DEPDIR)/Tiechu-ETelexTable.Po
+#	$(AM_V_CC)source='ETelexTable.c' object='Tiechu-ETelexTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ETelexTable.o `test -f 'ETelexTable.c' || echo '$(srcdir)/'`ETelexTable.c
 
 Tiechu-ETelexTable.obj: ETelexTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ETelexTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-ETelexTable.Tpo -c -o Tiechu-ETelexTable.obj `if test -f 'ETelexTable.c'; then $(CYGPATH_W) 'ETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ETelexTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ETelexTable.Tpo $(DEPDIR)/Tiechu-ETelexTable.Po
-#	$(AM_V_CC)source='ETelexTable.c' object='Tiechu-ETelexTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ETelexTable.obj `if test -f 'ETelexTable.c'; then $(CYGPATH_W) 'ETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ETelexTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-ETelexTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-ETelexTable.Tpo -c -o Tiechu-ETelexTable.obj `if test -f 'ETelexTable.c'; then $(CYGPATH_W) 'ETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ETelexTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-ETelexTable.Tpo $(DEPDIR)/Tiechu-ETelexTable.Po
+#	$(AM_V_CC)source='ETelexTable.c' object='Tiechu-ETelexTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-ETelexTable.obj `if test -f 'ETelexTable.c'; then $(CYGPATH_W) 'ETelexTable.c'; else $(CYGPATH_W) '$(srcdir)/ETelexTable.c'; fi`
 
 Tiechu-TeochewEditor.o: TeochewEditor.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewEditor.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewEditor.Tpo -c -o Tiechu-TeochewEditor.o `test -f 'TeochewEditor.c' || echo '$(srcdir)/'`TeochewEditor.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewEditor.Tpo $(DEPDIR)/Tiechu-TeochewEditor.Po
-#	$(AM_V_CC)source='TeochewEditor.c' object='Tiechu-TeochewEditor.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewEditor.o `test -f 'TeochewEditor.c' || echo '$(srcdir)/'`TeochewEditor.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewEditor.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewEditor.Tpo -c -o Tiechu-TeochewEditor.o `test -f 'TeochewEditor.c' || echo '$(srcdir)/'`TeochewEditor.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewEditor.Tpo $(DEPDIR)/Tiechu-TeochewEditor.Po
+#	$(AM_V_CC)source='TeochewEditor.c' object='Tiechu-TeochewEditor.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewEditor.o `test -f 'TeochewEditor.c' || echo '$(srcdir)/'`TeochewEditor.c
 
 Tiechu-TeochewEditor.obj: TeochewEditor.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewEditor.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewEditor.Tpo -c -o Tiechu-TeochewEditor.obj `if test -f 'TeochewEditor.c'; then $(CYGPATH_W) 'TeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/TeochewEditor.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewEditor.Tpo $(DEPDIR)/Tiechu-TeochewEditor.Po
-#	$(AM_V_CC)source='TeochewEditor.c' object='Tiechu-TeochewEditor.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewEditor.obj `if test -f 'TeochewEditor.c'; then $(CYGPATH_W) 'TeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/TeochewEditor.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewEditor.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewEditor.Tpo -c -o Tiechu-TeochewEditor.obj `if test -f 'TeochewEditor.c'; then $(CYGPATH_W) 'TeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/TeochewEditor.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewEditor.Tpo $(DEPDIR)/Tiechu-TeochewEditor.Po
+#	$(AM_V_CC)source='TeochewEditor.c' object='Tiechu-TeochewEditor.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewEditor.obj `if test -f 'TeochewEditor.c'; then $(CYGPATH_W) 'TeochewEditor.c'; else $(CYGPATH_W) '$(srcdir)/TeochewEditor.c'; fi`
 
 Tiechu-TeochewTable.o: TeochewTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewTable.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewTable.Tpo -c -o Tiechu-TeochewTable.o `test -f 'TeochewTable.c' || echo '$(srcdir)/'`TeochewTable.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewTable.Tpo $(DEPDIR)/Tiechu-TeochewTable.Po
-#	$(AM_V_CC)source='TeochewTable.c' object='Tiechu-TeochewTable.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewTable.o `test -f 'TeochewTable.c' || echo '$(srcdir)/'`TeochewTable.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewTable.o -MD -MP -MF $(DEPDIR)/Tiechu-TeochewTable.Tpo -c -o Tiechu-TeochewTable.o `test -f 'TeochewTable.c' || echo '$(srcdir)/'`TeochewTable.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewTable.Tpo $(DEPDIR)/Tiechu-TeochewTable.Po
+#	$(AM_V_CC)source='TeochewTable.c' object='Tiechu-TeochewTable.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewTable.o `test -f 'TeochewTable.c' || echo '$(srcdir)/'`TeochewTable.c
 
 Tiechu-TeochewTable.obj: TeochewTable.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewTable.Tpo -c -o Tiechu-TeochewTable.obj `if test -f 'TeochewTable.c'; then $(CYGPATH_W) 'TeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/TeochewTable.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewTable.Tpo $(DEPDIR)/Tiechu-TeochewTable.Po
-#	$(AM_V_CC)source='TeochewTable.c' object='Tiechu-TeochewTable.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewTable.obj `if test -f 'TeochewTable.c'; then $(CYGPATH_W) 'TeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/TeochewTable.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-TeochewTable.obj -MD -MP -MF $(DEPDIR)/Tiechu-TeochewTable.Tpo -c -o Tiechu-TeochewTable.obj `if test -f 'TeochewTable.c'; then $(CYGPATH_W) 'TeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/TeochewTable.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-TeochewTable.Tpo $(DEPDIR)/Tiechu-TeochewTable.Po
+#	$(AM_V_CC)source='TeochewTable.c' object='Tiechu-TeochewTable.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-TeochewTable.obj `if test -f 'TeochewTable.c'; then $(CYGPATH_W) 'TeochewTable.c'; else $(CYGPATH_W) '$(srcdir)/TeochewTable.c'; fi`
 
 Tiechu-InterchangeMode.o: InterchangeMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-InterchangeMode.o -MD -MP -MF $(DEPDIR)/Tiechu-InterchangeMode.Tpo -c -o Tiechu-InterchangeMode.o `test -f 'InterchangeMode.c' || echo '$(srcdir)/'`InterchangeMode.c
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-InterchangeMode.Tpo $(DEPDIR)/Tiechu-InterchangeMode.Po
-#	$(AM_V_CC)source='InterchangeMode.c' object='Tiechu-InterchangeMode.o' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-InterchangeMode.o `test -f 'InterchangeMode.c' || echo '$(srcdir)/'`InterchangeMode.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-InterchangeMode.o -MD -MP -MF $(DEPDIR)/Tiechu-InterchangeMode.Tpo -c -o Tiechu-InterchangeMode.o `test -f 'InterchangeMode.c' || echo '$(srcdir)/'`InterchangeMode.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-InterchangeMode.Tpo $(DEPDIR)/Tiechu-InterchangeMode.Po
+#	$(AM_V_CC)source='InterchangeMode.c' object='Tiechu-InterchangeMode.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-InterchangeMode.o `test -f 'InterchangeMode.c' || echo '$(srcdir)/'`InterchangeMode.c
 
 Tiechu-InterchangeMode.obj: InterchangeMode.c
-#	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-InterchangeMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-InterchangeMode.Tpo -c -o Tiechu-InterchangeMode.obj `if test -f 'InterchangeMode.c'; then $(CYGPATH_W) 'InterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/InterchangeMode.c'; fi`
-#	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-InterchangeMode.Tpo $(DEPDIR)/Tiechu-InterchangeMode.Po
-#	$(AM_V_CC)source='InterchangeMode.c' object='Tiechu-InterchangeMode.obj' libtool=no 
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
-	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-InterchangeMode.obj `if test -f 'InterchangeMode.c'; then $(CYGPATH_W) 'InterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/InterchangeMode.c'; fi`
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -MT Tiechu-InterchangeMode.obj -MD -MP -MF $(DEPDIR)/Tiechu-InterchangeMode.Tpo -c -o Tiechu-InterchangeMode.obj `if test -f 'InterchangeMode.c'; then $(CYGPATH_W) 'InterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/InterchangeMode.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/Tiechu-InterchangeMode.Tpo $(DEPDIR)/Tiechu-InterchangeMode.Po
+#	$(AM_V_CC)source='InterchangeMode.c' object='Tiechu-InterchangeMode.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(Tiechu_CFLAGS) $(CFLAGS) -c -o Tiechu-InterchangeMode.obj `if test -f 'InterchangeMode.c'; then $(CYGPATH_W) 'InterchangeMode.c'; else $(CYGPATH_W) '$(srcdir)/InterchangeMode.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1340,8 +1340,8 @@ Tiechu.xml: Tiechu.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: Tiechu
-        $(builddir)/Tiechu
+#test: Tiechu
+#        $(builddir)/Tiechu
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

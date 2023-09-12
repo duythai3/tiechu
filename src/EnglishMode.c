@@ -23,11 +23,11 @@
 #include "engine.h"
 #include "Configuration.h"
 #include "EnglishMode.h"
-#include "APropertyList.h"
+#include "PropertyList.h"
 #include "CandidateTable.h"
 #include "Logger.h"
 #include "HanvietTable.h"
-#include "AHelper.h"
+#include "Helper.h"
 
 gboolean english_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers) {
     logger_log("manage_mode: keyval: %d, keycode: %d, modifiers: %d", keyval, keycode, modifiers);

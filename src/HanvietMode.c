@@ -23,39 +23,39 @@
 #include "engine.h"
 #include "Configuration.h"
 #include "HanvietMode.h"
-#include "ATelexEditor2.h"
-#include "APropertyList.h"
+#include "TelexEditor2.h"
+#include "PropertyList.h"
 #include "CandidateTable.h"
 #include "Logger.h"
 #include "HanvietTable.h"
-#include "AHelper.h"
-#include "APreedit.h"
+#include "Helper.h"
+#include "Preedit.h"
 
 gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers) {
 
     // don't process release key events
-    if (a_helper_is_event_released(modifiers)) {
+    if (helper_is_event_released(modifiers)) {
         return FALSE;
     }
 
     // ctr key pressed
-    if (a_helper_is_control_pressed(modifiers)&&(keyval!=IBUS_Left)&&(keyval!=IBUS_Right)) {
+    if (helper_is_control_pressed(modifiers)&&(keyval!=IBUS_Left)&&(keyval!=IBUS_Right)) {
         return FALSE;
     }
 
     // alt pressed
-    if (a_helper_is_alt_pressed(modifiers)) {
+    if (helper_is_alt_pressed(modifiers)) {
         return FALSE;
     }
 
     //
-    if (a_helper_is_escape_pressed(keyval)) {
-        return a_helper_process_escape(tiechu, keyval, keycode, modifiers);
+    if (helper_is_escape_pressed(keyval)) {
+        return helper_process_escape(tiechu, keyval, keycode, modifiers);
     }
 
     // get length of current processing string (preedit string)
-    guint len =a_preedit_get_text_len();
-    guint pos =a_preedit_get_cursor_pos();
+    guint len =preedit_get_text_len();
+    guint pos =preedit_get_cursor_pos();
     gboolean ctb_showing =candidate_table_showing();
     gboolean is_control_down = modifiers & IBUS_CONTROL_MASK;
 
@@ -64,8 +64,8 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
         //
         if (is_control_down) {
             if (pos > 0) {
-                a_preedit_move_cursor_left();
-                a_helper_update_preedit(tiechu);
+                preedit_move_cursor_left();
+                helper_update_preedit(tiechu);
             }
             return TRUE;
         }
@@ -77,14 +77,14 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
         }
 
         //
-            a_helper_commit_preedit(tiechu);
+            helper_commit_preedit(tiechu);
         return FALSE;
     case IBUS_Right:
         //
         if(is_control_down){
             if (pos < len) {
-                a_preedit_move_cursor_right();
-                a_helper_update_preedit(tiechu);
+                preedit_move_cursor_right();
+                helper_update_preedit(tiechu);
             }
             return TRUE;
         }
@@ -92,15 +92,15 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
             candidate_table_cursor_down(tiechu);
             return TRUE;
         }
-            a_helper_commit_preedit(tiechu);
+            helper_commit_preedit(tiechu);
         return FALSE;
     case IBUS_Return:
     case IBUS_KP_Enter:
         if (ctb_showing) {
-            a_helper_commit_current_candidate(tiechu);
+            helper_commit_current_candidate(tiechu);
             return TRUE;
         }
-            a_helper_commit_preedit(tiechu);
+            helper_commit_preedit(tiechu);
         return FALSE;
     case IBUS_BackSpace:
         //
@@ -109,12 +109,12 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
         }
 
         //
-            a_preedit_delete_before_cursor();
-        len =a_preedit_get_length();
+            preedit_delete_before_cursor();
+        len =preedit_get_length();
         if (len == 0) {
-            a_helper_hide_preedit(tiechu);
+            helper_hide_preedit(tiechu);
         } else {
-            a_helper_update_preedit(tiechu);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
 
@@ -124,12 +124,12 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
         }
 
         //
-            a_preedit_delete_after_cursor();
-        len =a_preedit_get_length();
+            preedit_delete_after_cursor();
+        len =preedit_get_length();
         if (len == 0) {
-            a_helper_hide_preedit(tiechu);
+            helper_hide_preedit(tiechu);
         } else {
-            a_helper_update_preedit(tiechu);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     case IBUS_Page_Up:
@@ -150,11 +150,11 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
 
     // process letter keys
     if (is_alpha(keyval)) {
-        if(a_telex_2_process(tiechu, keyval, keycode, modifiers)){
-            a_helper_update_preedit(tiechu);
+        if(telex_2_process(tiechu, keyval, keycode, modifiers)){
+            helper_update_preedit(tiechu);
         }else{
-            a_preedit_insert(keyval);
-            a_helper_update_preedit(tiechu);
+            preedit_insert(keyval);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     }
@@ -168,23 +168,23 @@ gboolean hanviet_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, 
     if(is_digit(keyval)){
         if (ctb_showing) {
             guint index = keyval - IBUS_1;
-            a_helper_commit_candidate_in_page(tiechu, index);
+            helper_commit_candidate_in_page(tiechu, index);
         } else {
-            a_preedit_insert(keyval);
-            a_helper_update_preedit(tiechu);
+            preedit_insert(keyval);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     }
 
     //
-    if (a_helper_is_ignore_key(keyval)) {
+    if (helper_is_ignore_key(keyval)) {
         ibus_engine_forward_key_event((IBusEngine*)tiechu, keyval, keycode, modifiers);
         return TRUE;
     }
 
     //
     if(len > 0){
-        a_helper_commit_preedit(tiechu);
+        helper_commit_preedit(tiechu);
     }
     ibus_engine_forward_key_event((IBusEngine*)tiechu, keyval, keycode, modifiers);
     return TRUE;

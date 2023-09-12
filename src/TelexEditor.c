@@ -362,7 +362,7 @@ static gboolean process_telex(guint keyval){
 	gchar *down_telex_clutter = g_utf8_strdown(telex_clutter, -1);
 
 	//
-    gunichar *vn_clutter = a_z_telex_table_convert_to_vietnamese(down_telex_clutter, end_consonant, &vn_len);
+    gunichar *vn_clutter = z_telex_table_convert_to_vietnamese(down_telex_clutter, end_consonant, &vn_len);
 	g_free(down_telex_clutter);
 
 	//

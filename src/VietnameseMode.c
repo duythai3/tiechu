@@ -141,7 +141,7 @@ static void check_modifiers(guint modifiers) {
     }
 }
 
-gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint keyval, guint keycode, guint modifiers) {
+gboolean vietnamese_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers) {
 
     //check_modifiers(modifiers);
     logger_log("key_event: keyval=%d, keycode=%d, modifiers=%d", keyval, keycode, modifiers);
@@ -163,7 +163,7 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
 
     //
     if (helper_is_escape_pressed(keyval)) {
-        return helper_process_escape(abacus, keyval, keycode, modifiers);
+        return helper_process_escape(tiechu, keyval, keycode, modifiers);
     }
 
     // get length of current processing string (preedit string)
@@ -177,14 +177,14 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
         if(modifiers & IBUS_CONTROL_MASK){
             if (pos > 0) {
                 preedit_move_cursor_left();
-                helper_update_preedit(abacus);
+                helper_update_preedit(tiechu);
             }
             return TRUE;
         }
 
         //
         if (len > 0) {
-            helper_commit_preedit(abacus);
+            helper_commit_preedit(tiechu);
         }
         return FALSE;
     case IBUS_Right:
@@ -192,14 +192,14 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
         if(modifiers & IBUS_CONTROL_MASK){
             if (pos < len) {
                 preedit_move_cursor_right();
-                helper_update_preedit(abacus);
+                helper_update_preedit(tiechu);
             }
             return TRUE;
         }
 
         //
         if (len > 0) {
-            helper_commit_preedit(abacus);
+            helper_commit_preedit(tiechu);
         }
         return FALSE;
     case IBUS_BackSpace:
@@ -212,9 +212,9 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
             preedit_delete_before_cursor();
         len =preedit_get_length();
         if (len == 0) {
-            helper_hide_preedit(abacus);
+            helper_hide_preedit(tiechu);
         } else {
-            helper_update_preedit(abacus);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     case IBUS_Delete:
@@ -226,20 +226,20 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
             preedit_delete_after_cursor();
         len =preedit_get_length();
         if (len == 0) {
-            helper_hide_preedit(abacus);
+            helper_hide_preedit(tiechu);
         } else {
-            helper_update_preedit(abacus);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     }
 
     // process letter keys
     if (is_alpha(keyval)) {
-        if(telex_2_process(abacus, keyval, keycode, modifiers)){
-            helper_update_preedit(abacus);
+        if(telex_2_process(tiechu, keyval, keycode, modifiers)){
+            helper_update_preedit(tiechu);
         }else{
             preedit_insert(keyval);
-            helper_update_preedit(abacus);
+            helper_update_preedit(tiechu);
         }
         return TRUE;
     }
@@ -247,27 +247,27 @@ gboolean a_vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint key
     //
     if(is_kp_digit(keyval)){
         preedit_insert(convert_kp_digit_to_digit(keyval));
-        helper_update_preedit(abacus);
+        helper_update_preedit(tiechu);
         return TRUE;
     }
 
     //
     if(is_digit(keyval)){
         preedit_insert(keyval);
-        helper_update_preedit(abacus);
+        helper_update_preedit(tiechu);
 		return TRUE;
 	}
 
     //
     if (helper_is_ignore_key(keyval)) {
-        ibus_engine_forward_key_event((IBusEngine*)abacus, keyval, keycode, modifiers);
+        ibus_engine_forward_key_event((IBusEngine*)tiechu, keyval, keycode, modifiers);
         return TRUE;
     }
 
     //
     if (len > 0) {
-        helper_commit_preedit(abacus);
+        helper_commit_preedit(tiechu);
     }
-    ibus_engine_forward_key_event((IBusEngine*)abacus, keyval, keycode, modifiers);
+    ibus_engine_forward_key_event((IBusEngine*)tiechu, keyval, keycode, modifiers);
     return TRUE;
 }

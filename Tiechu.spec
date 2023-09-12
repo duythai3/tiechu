@@ -2,7 +2,7 @@
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 %define mod_path ibus-@PACKAGE_VERSION_MAJOR@.@PACKAGE_VERSION_MINOR@
 Name:       Tiechu
-Version:    1.3.2.20230911
+Version:    1.3.2.20230912
 Release:    1%{?dist}
 Summary:    IBus template project
 License:    GPLv2+

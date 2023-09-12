@@ -54,7 +54,7 @@ IBusProperty* create_toggle_property(const gchar* lb, const gchar* vl, gboolean 
 
 void update_symbol(IBusProperty* prop) {
     gint current_mode =configuration_get_current_mode();
-    IBusText* sm;
+    IBusText* sm=NULL;
     IBusPropState state = PROP_STATE_UNCHECKED;
     if (current_mode==__A_VIETNAMESE_MODE_2__) {
     	sm = ibus_text_new_from_static_string("VN");
@@ -122,7 +122,7 @@ void property_list_load(){
     gboolean as =configuration_get_auto_show_candidate_table();
 
     //
-    IBusProperty* vn_prop = create_radio_property(__VIETNAMESE_MODE_LABEL__ __VIETNAMESE_MODE_VALUE__, cm==__A_VIETNAMESE_MODE_2__,
+    IBusProperty* vn_prop = create_radio_property(__VIETNAMESE_MODE_LABEL__, __VIETNAMESE_MODE_VALUE__, cm==__A_VIETNAMESE_MODE_2__,
                                                   configuration_get_vietnamese_mode_key());
     IBusProperty* vh_prop = create_radio_property(__HANVIET_MODE_LABEL__, __HANVIET_MODE_VALUE__, cm==__A_HANVIET_MODE_2__,
                                                   configuration_get_hanviet_mode_key());

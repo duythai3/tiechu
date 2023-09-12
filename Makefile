@@ -234,14 +234,14 @@ AWK = mawk
 CATALOGS = 
 CATOBJEXT = NONE
 CC = gcc
-CCDEPMODE = depmode=none
+CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O0
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=none
+CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O0
 CYGPATH_W = echo
 DATADIRNAME = 
@@ -296,10 +296,10 @@ OTOOL64 =
 PACKAGE = Tiechu
 PACKAGE_BUGREPORT = https://github.com/duythaia3/tiechu
 PACKAGE_NAME = Tiechu
-PACKAGE_STRING = Tiechu 1.3.2.20230911
+PACKAGE_STRING = Tiechu 1.3.2.20230912
 PACKAGE_TARNAME = Tiechu
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.3.2.20230911
+PACKAGE_VERSION = 1.3.2.20230912
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
@@ -316,7 +316,7 @@ SQLITE_CFLAGS =
 SQLITE_LIBS = -lsqlite3
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.3.2.20230911
+VERSION = 1.3.2.20230912
 XGETTEXT = :
 abs_builddir = /3/Abacus
 abs_srcdir = /3/Abacus

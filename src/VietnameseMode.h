@@ -21,6 +21,6 @@
 #ifndef __VIETNAMESE_MODE_H_
 #define __VIETNAMESE_MODE_H_
 
-gboolean a_vietnamese_mode_process_key_event(IBustiechuEngine* abacus, guint keyval, guint keycode, guint modifiers);
+gboolean vietnamese_mode_process_key_event(IBusTiechuEngine* abacus, guint keyval, guint keycode, guint modifiers);
 
 #endif /* SRC_VHENGLISHMODE_H_ */

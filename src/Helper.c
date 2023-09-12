@@ -24,19 +24,19 @@
 #include "Helper.h"
 #include "Configuration.h"
 #include "HanvietMode.h"
-#include "ATelexEditor.h"
-#include "APropertyList.h"
+#include "TelexEditor.h"
+#include "PropertyList.h"
 #include "CandidateTable.h"
 #include "Logger.h"
 #include "HanvietTable.h"
-#include "APreedit.h"
+#include "Preedit.h"
 #include "ChineseTable.h"
-#include "ATeochewTable.h"
+#include "TeochewTable.h"
 
 
 void helper_clear_preedit(IBusTiechuEngine* tiechu) {
     logger_log("Clear preedit...\n");
-    a_preedit_clear();
+    preedit_clear();
 	IBusText *text;
 	text = ibus_text_new_from_string ("");
     ibus_engine_update_preedit_text_with_mode((IBusEngine *)tiechu, text, 0, FALSE, IBUS_ENGINE_PREEDIT_CLEAR);
@@ -53,7 +53,7 @@ void helper_hide_preedit(IBusTiechuEngine* tiechu) {
 
 void helper_commit_preedit(IBusTiechuEngine* tiechu) {
 	// commit preedit
-    gchar *utf8_preedit =a_preedit_get_utf8_string();
+    gchar *utf8_preedit =preedit_get_utf8_string();
     IBusText *text;
     text = ibus_text_new_from_string (utf8_preedit);
     ibus_engine_commit_text ((IBusEngine *)tiechu, text);
@@ -63,7 +63,7 @@ void helper_commit_preedit(IBusTiechuEngine* tiechu) {
     ibus_engine_hide_preedit_text ((IBusEngine*)tiechu);
 
     // clear telex editor's preedit
-    a_preedit_clear();
+    preedit_clear();
 
     //
     if (candidate_table_showing()) {
@@ -73,9 +73,9 @@ void helper_commit_preedit(IBusTiechuEngine* tiechu) {
 
 void helper_update_preedit(IBusTiechuEngine* tiechu) {
 	// commit preedit
-    gchar *utf8_preedit =a_preedit_get_utf8_string();
-    guint cursor_pos =a_preedit_get_cursor_pos();
-    guint preedit_len =a_preedit_get_length();
+    gchar *utf8_preedit =preedit_get_utf8_string();
+    guint cursor_pos =preedit_get_cursor_pos();
+    guint preedit_len =preedit_get_length();
     IBusText *text;
     text = ibus_text_new_from_string (utf8_preedit);
     text->attrs = ibus_attr_list_new ();
@@ -115,7 +115,7 @@ void helper_update_preedit(IBusTiechuEngine* tiechu) {
         }
     } else if (current_mode==__A_TEOCHEW_MODE_2__) {
         //
-        if(!a_teochew_table_find())
+        if(!teochew_table_find())
             return;
 
         //
@@ -150,7 +150,7 @@ gboolean helper_commit_candidate_in_page(IBusTiechuEngine *tiechu, guint index) 
     if (current_mode==__A_HANVIET_MODE_2__) {
         hanviet_table_increase_frequency(candidate->text);
     } else if (current_mode==__A_TEOCHEW_MODE_2__) {
-        a_teochew_table_increase_frequency(candidate->text);
+        teochew_table_increase_frequency(candidate->text);
     } else if (current_mode==__A_CHINESE_MODE_2__){
         chinese_table_increase_frequency(candidate->text);
     }
@@ -159,8 +159,8 @@ gboolean helper_commit_candidate_in_page(IBusTiechuEngine *tiechu, guint index) 
     ibus_engine_commit_text ((IBusEngine *)tiechu, candidate);
 
     //
-    if (a_preedit_get_length()>0) {
-        a_preedit_clear();
+    if (preedit_get_length()>0) {
+        preedit_clear();
         ibus_engine_hide_preedit_text ((IBusEngine*)tiechu);
     }
     candidate_table_hide(tiechu);
@@ -191,8 +191,8 @@ gboolean helper_commit_current_candidate(IBusTiechuEngine *tiechu) {
     ibus_engine_commit_text ((IBusEngine *)tiechu, candidate);
 
     //
-    if (a_preedit_get_length()>0) {
-        a_preedit_clear();
+    if (preedit_get_length()>0) {
+        preedit_clear();
         ibus_engine_hide_preedit_text ((IBusEngine*)tiechu);
     }
     candidate_table_hide(tiechu);
@@ -207,7 +207,7 @@ gboolean helper_commit_current_candidate(IBusTiechuEngine *tiechu) {
 gboolean helper_process_escape(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers) {
     //a_logger_log("Change to English mode using Escape key");
     configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
-    a_property_list_update(tiechu);
+    property_list_update(tiechu);
     configuration_save();
     //
     helper_clear_preedit(tiechu);

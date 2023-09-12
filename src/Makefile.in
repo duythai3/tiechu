@@ -16,7 +16,7 @@
 
 # The Tiechu engine for IBus
 #
-# Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
+# Copyright (c) 2020-2022 Duy Thai, duythaia3@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -411,9 +411,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 Tiechu_SOURCES = \
-	main.c \
-	engine.c \
-	engine.h \
+        main.c \
+        engine.c \
+        engine.h \
         Util.h \
         Util.c \
         UString.h \
@@ -1340,8 +1340,8 @@ Tiechu.xml: Tiechu.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: Tiechu
-        $(builddir)/Tiechu
+#test: Tiechu
+#        $(builddir)/Tiechu
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

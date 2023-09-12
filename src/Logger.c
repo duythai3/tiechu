@@ -23,7 +23,7 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 #include "Logger.h"
-#include "AUtil.h"
+#include "Util.h"
 #include "Configuration.h"
 
 #define __LOGGER_FILE__ "Tiechu.log"
@@ -121,7 +121,7 @@ void logger_log(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str =a_util_get_us_timestamp();
+    gchar *timestamp_str =util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "info", str);
 
     logger_write(str_written);
@@ -144,7 +144,7 @@ void logger_warn(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str =a_util_get_us_timestamp();
+    gchar *timestamp_str =util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "warning", str);
 
     logger_write(str_written);
@@ -168,7 +168,7 @@ void logger_error(const gchar* format_str, ...){
     str = g_strdup_vprintf(format_str, args);
     va_end(args);
 
-    gchar *timestamp_str =a_util_get_us_timestamp();
+    gchar *timestamp_str =util_get_us_timestamp();
     gchar *str_written = g_strdup_printf("%s: %s, %s\n", timestamp_str, "error", str);
 
     logger_write(str_written);

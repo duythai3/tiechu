@@ -1,6 +1,6 @@
 # The Tiechu engine for IBus
 #
-# Copyright (c) 2020-2022 Duy Thai, duythaiz234@gmail.com
+# Copyright (c) 2020-2022 Duy Thai, duythaia3@gmail.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,9 +20,9 @@
 libexec_PROGRAMS = Tiechu
 
 Tiechu_SOURCES = \
-	main.c \
-	engine.c \
-	engine.h \
+        main.c \
+        engine.c \
+        engine.h \
         Util.h \
         Util.c \
         UString.h \
@@ -111,5 +111,5 @@ Tiechu.xml: Tiechu.xml.in
 		eval "echo \"$${s}\""; \
 	) > $@
 
-test: Tiechu
-        $(builddir)/Tiechu
+#test: Tiechu
+#        $(builddir)/Tiechu

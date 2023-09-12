@@ -79,7 +79,7 @@
 #define PACKAGE_NAME "Tiechu"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Tiechu 1.3.2.20230911"
+#define PACKAGE_STRING "Tiechu 1.3.2.20230912"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "Tiechu"
@@ -88,7 +88,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.3.2.20230911"
+#define PACKAGE_VERSION "1.3.2.20230912"
 
 /* Define to 1 if all of the C90 standard headers exist (not just the ones
    required in a freestanding environment). This macro is provided for
@@ -184,4 +184,4 @@
 
 
 /* Version number of package */
-#define VERSION "1.3.2.20230911"
+#define VERSION "1.3.2.20230912"

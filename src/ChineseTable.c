@@ -21,13 +21,13 @@
 #include <glib.h>
 #include <glib/gprintf.h>
 #include <sqlite3.h>
-#include "AHanvietTable.h"
+#include "HanvietTable.h"
 
 #include "CandidateArray.h"
 #include "Logger.h"
-#include "ATelexEditor.h"
-#include "ADatabase.h"
-#include "APreedit.h"
+#include "TelexEditor.h"
+#include "Database.h"
+#include "Preedit.h"
 #include "ChineseTable.h"
 
 struct _EXPAND_CHAR{
@@ -137,13 +137,13 @@ void chinese_table_destroy(){
 
 gboolean chinese_table_find(){
 	//
-	sqlite3* cnn =a_database_get_connection();
+    sqlite3* cnn =database_get_connection();
 	if (!cnn) {
 		return FALSE;
 	}
 
 	//
-	guint preedit_len =a_preedit_get_length();
+    guint preedit_len =preedit_get_length();
 	if (preedit_len < 1) {
 		// clear candidate list
         candidate_array_clear();
@@ -154,7 +154,7 @@ gboolean chinese_table_find(){
    guint index = 0;
    guint len = 0;
    guint target_word_len;
-   const gunichar *preedit_str =a_preedit_get_preedit_string();
+   const gunichar *preedit_str =preedit_get_preedit_string();
    if(preedit_len <= 7)
 	  target_word_len = preedit_len;
    else
@@ -261,7 +261,7 @@ static int _add_word(void *NotUsed, int argc, char **argv, char **azColName){
 void chinese_table_increase_frequency(const gchar *chinese_char){
 	//
 
-	sqlite3* cnn =a_database_get_connection();
+    sqlite3* cnn =database_get_connection();
 	if (!cnn || !chinese_char) {
 		return;
 	}

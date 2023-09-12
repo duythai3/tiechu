@@ -21,10 +21,10 @@
 #include <glib.h>
 #include <ibus.h>
 #include "Logger.h"
-#include "AUString.h"
+#include "UString.h"
 #include "PinyinEditor.h"
-#include "AVNLetters.h"
-#include "APreedit.h"
+#include "VNLetters.h"
+#include "Preedit.h"
 #include "LTelexTable.h"
 
 #define CN_LETTER_a     0x0061
@@ -140,7 +140,7 @@ static gboolean is_cn_vowel(gunichar ch){
  * scan the preedit buffer from the right to left to find a phrase of vowel that need to to translate to pinyin
  * */
 static guint find_begin_index(){
-	gint len =a_preedit_get_length();
+    gint len =preedit_get_length();
     gint index = 0;
     gint found_index = 0;
     gint status = 0;
@@ -153,7 +153,7 @@ static guint find_begin_index(){
 
     //
 	for(index = len - 1; index >= 0; index--){
-		ch =a_preedit_get_char(index);
+        ch =preedit_get_char(index);
 		if(is_cn_vowel(ch)){
 			if(status == 0){
 				status = 1;
@@ -221,7 +221,7 @@ static gint get_open_degree(gunichar ch) {
 static gchar* calc_ascii_clutter(gint keyval, glong* clutter_len, glong* start_pos){
 
 	//
-	gint preedit_len =a_preedit_get_length();
+    gint preedit_len =preedit_get_length();
 	if (preedit_len < 1) {
 		return NULL;
 	}
@@ -241,7 +241,7 @@ static gchar* calc_ascii_clutter(gint keyval, glong* clutter_len, glong* start_p
 
 	//
 	for(index = begin_index; index < preedit_len; index++){
-	   gunichar ch =a_preedit_get_char(index);
+       gunichar ch =preedit_get_char(index);
        if (len > 18) {
             return NULL;
        }
@@ -359,7 +359,7 @@ static gboolean process_pinyin(guint keyval){
 	//
 
 	correct_letter_case(unichar_pinyin_clutter, ascii_clutter, clutter_len);
-    a_preedit_replace(start_pos, clutter_len, unichar_pinyin_clutter, pinyin_len);
+    preedit_replace(start_pos, clutter_len, unichar_pinyin_clutter, pinyin_len);
 	g_free(ascii_clutter);
 	g_free(unichar_pinyin_clutter);
 	return TRUE;
@@ -367,7 +367,7 @@ static gboolean process_pinyin(guint keyval){
 
 /////////////////////////
 gboolean pinyin_editor_process(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers){
-    guint len =a_preedit_get_text_len();
+    guint len =preedit_get_text_len();
     //a_logger_log("preedit len: %d", len);
     if(len > 0){
         return process_pinyin(keyval);

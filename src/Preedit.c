@@ -32,13 +32,13 @@ guint _cursor_pos = 0;
 
 void preedit_init(){
     if(_preedit == NULL){
-        _preedit =a_ustring_new();
+        _preedit =ustring_new();
         _cursor_pos = 0;
     }
 }
 void preedit_destroy(){
     if(_preedit){
-        a_ustring_free(_preedit);
+        ustring_free(_preedit);
         _cursor_pos = 0;
         _preedit = NULL;
     }
@@ -51,7 +51,7 @@ void preedit_clear(){
 }
 void preedit_insert(guint keyval){
     if(_preedit){
-        a_ustring_insert(_preedit, _cursor_pos, keyval);
+        ustring_insert(_preedit, _cursor_pos, keyval);
         _cursor_pos ++;
     }
 }
@@ -86,7 +86,7 @@ void preedit_delete_before_cursor(){
     if(_preedit){
         if(_cursor_pos > 0){
             _cursor_pos --;
-            a_ustring_delete(_preedit, _cursor_pos);
+            ustring_delete(_preedit, _cursor_pos);
         }
     }
 }
@@ -94,7 +94,7 @@ void preedit_delete_before_cursor(){
 void preedit_delete_after_cursor(){
     if(_preedit){
         if(_cursor_pos < _preedit->len){
-            a_ustring_delete(_preedit, _cursor_pos);
+            ustring_delete(_preedit, _cursor_pos);
         }
     }
 }
@@ -102,14 +102,14 @@ void preedit_delete_after_cursor(){
 void vh_preedit_delete_at_cursor(){
     if(_preedit){
         if(_cursor_pos < _preedit->len){
-            a_ustring_delete(_preedit, _cursor_pos);
+            ustring_delete(_preedit, _cursor_pos);
         }
     }
 }
 
 gchar *preedit_get_utf8_string(){
     if(_preedit){
-        return a_ustring_to_utf8(_preedit);
+        return ustring_to_utf8(_preedit);
     }else{
         return NULL;
     } 
@@ -129,6 +129,7 @@ guint preedit_get_cursor_pos(){
 
 guint preedit_set_cursor_pos(guint cursor_pos){
     _cursor_pos = cursor_pos;
+    return 0;
 }
 
 guint preedit_get_before_cursor_char(){
@@ -149,11 +150,12 @@ guint preedit_set_before_cursor_char(guint keyval){
             _preedit->str[_cursor_pos - 1] = keyval;
         }
     }
+    return 0;
 }
 
 void preedit_replace(guint index, guint len, gunichar* replace_str, guint replace_len){
     if(_preedit){
-        a_ustring_replace(_preedit, index, len, replace_str, replace_len);
+        ustring_replace(_preedit, index, len, replace_str, replace_len);
     }
 }
  
