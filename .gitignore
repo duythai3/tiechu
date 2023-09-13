@@ -4,3 +4,15 @@
 autom4te.cache
 *.tgz
 *-pak
+*~
+Makefile
+Makefile.in
+Tiechu.spec
+config.h
+config.log
+config.status
+configure
+libtool
+Tiechu
+Tiechu.xml
+Tiechu.xml.in
