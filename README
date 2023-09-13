@@ -1,45 +1,43 @@
-A. GIỚI THIỆU
+1. GIỚI THIỆU
 
 Tiechu v1.3.0
 
-Tiechu là bộ gõ Tiếng Việt, Tiếng Tiều, Tiếng Hán Việt, và Tiếng Trung.
-Tiechu chạy trên Linux có bộ quản lý desktop GNOME.
+Tiechu là bộ gõ chữ Việt và chữ Tàu. Database có hơn 4000 chữ Tàu thông dụng.
+Tiechu chạy trên Ubuntu.
 
-B. Cài đặt
-1. Lấy mã nguồn từ GitHub.com
+2. Cài đặt
+- Lấy mã nguồn từ GitHub.com
 
-    git clone https://github.com/duythaiz234/tiechu.git
+    git clone https://github.com/duythai3/tiechu.git
 
-2. Cài đặt các thư viện để biên dịch
+- Cài đặt các thư viện để biên dịch
 
     sudo apt install build-essential pkg-config libibus-1.0-dev libsqlite3-dev ibus-gtk autopoint libtool
 
-3. Cấu hình trước khi biên dịch
+- Cấu hình trước khi biên dịch
 
     cd ./tiechu
     ./autogen.sh --prefix=/usr
 
-4. Biên dịch
+- Biên dịch
 
     make
 
-5. Cài đặt
+- Install
 
     sudo make install
 
-    - Sau khi cài đặt xong thì phải restart ibus engine, hoặc restart computer, chạy 2 lịnh sau để restart ibus engine:
+    - Sau khi install thì phải restart ibus engine, hoặc restart computer, chạy 2 lịnh sau để restart ibus engine:
         ibus exit
         ibus-daemon &
 
     - Thêm Tiechu vào Input Source:
-        + Mở hợp thoại "Settings/Keyboard" on Pop OS, hoặc "Settings/Region & Langeuage" on Ubuntu
+        + Mở trang "Settings/Keyboard" on Ubuntu
         + Bấm nút đấu cộng (+) ở dưới danh sách Input Sources
-        + Pop OS: Bấm mục Vietnamese (Tiechu)
-        + Ubuntu: bấm vào Vietnamse: danh sách các bộ gõ Tiếng Việt sẽ hiện ra, bấm Vietnamese (Tiechu)
+        + Lựa mục Vietnamese (Tiechu)
         + Bấm nút Add
-        + Bây giờ Tiechu đã được thêm vào danh sách các bộ gõ đang chạy (Tìm ở góc trên bên phải màn hình)
 
-C. HƯỚNG DẪN SỬ DỤNG
+3. HƯỚNG DẪN SỬ DỤNG
 
    Tiechu có 5 mode, để đổi mode có thể sài chuột hoặc phím tắt. Để đổi mode bằng phím tắt thì cursor phải đang activated.
 
@@ -49,34 +47,28 @@ C. HƯỚNG DẪN SỬ DỤNG
    - Đổi sang mode Tiếng Trung: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+5
    - Đổi sang mode Tiếng Anh: bấm và buông phím Shift, trong vòng 2 giây bấm Ctrl+7. Hoăc bấm Escape.
 
-1. Gõ Tiếng Việt
+3.1. Gõ chữ Việt
 
-   Tiechu sài kiểu gõ ZTelex, kiểu gõ này dựa theo kiểu gõ Telex, điểm khác nhau duy nhất là sài chữ "z" để đặt dấu sắc.
+   Tiechu sài kiểu gõ TelexZ, kiểu gõ này dựa theo kiểu gõ Telex nhưng sài chữ "z" để đặt dấu sắc.
 
    Để sửa chữ trong khi gõ hãy bấm phím Ctrl, sau đó là phím Left hoặc Right để di chuyển cursor.
 
-2. Gõ Tiếng Tiều
+3.2. Gõ chữ Tàu bằng tiếng Tiều
 
-      Database có tất cả các chữ của https://mogher.com
-
-      Sài kiểu gõ ETelex để gõ phiên âm Tiếng Tiều. Trong phiên âm Tiếng Tiều chỉ có chữ ê là không thể gõ trực tiếp từ bàn phím, hãy gõ ee để có được chữ ê.
-      Tất cả phiên âm Tiếng Tiều đều kết thúc bằng số từ 1 tới 8. Do vậy hãy gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
+      Sài kiểu gõ TelexE để gõ phiên âm Tiếng Tiều. Gõ ee để có được chữ ê.
+      Gõ đầy đủ phiên âm Tiếng Tiều sau đó sài số từ 1 tới 8 để lựa chữ. Ví du: gõ diê51 sẽ có được chữ 潮.
       Nếu muốn lựa một chữ mà không cần gõ đầy đủ phiên âm Tiếng Tiều, hay gõ ":" và số tù 1 tới 8. Ví dụ: gõ ziu:3 để có được chữ 州
 
 
-3 Gõ Tiếng Hán Việt
+3.3 Gõ chữ Tàu bằng tiếng Hán Việt
 
-   Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
-
-   Sài kiểu gõ ZTelex để gõ âm Việthoa, khi đó một bảng chữ sẽ hiện lên, sài phím từ 1 đến 8 để lựa chữ. Hoặc sài phím Left hoặc Right để lựa chữ, và bấm Enter hoặc bấm chuột.
+   Sài kiểu gõ TelexZ để gõ âm Hán Việt và sài phím từ 1 đến 8 để lựa chữ. Hoặc sài phím Left hoặc Right để lựa chữ, và gõ Enter hoặc bấm chuột.
    Sài phím Page Up và Page Down để đổi trang của bảng lựa chữ.
 
 
-4. Gõ Tiếng Trung
+3.4. Gõ chữ Tàu bằng tiếng Trung
 
-   Database chỉ mới có khoảng 4000 chữ Hoa thông dụng.
-
-   Sài kiểu gõ LTelex để gõ phiên âm Pinyin Tiếng Trung:
+   Sài kiểu gõ TelexL để gõ phiên âm Pinyin:
 
    - Sài chữ "l' để đặt dấu thanh 1
    - Sài chữ "z" để đặt dấu thanh 2
