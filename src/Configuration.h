@@ -55,7 +55,7 @@ enum __MODE{
     __A_VIETNAMESE_MODE_2__ = 1,
     __A_HANVIET_MODE_2__ = 2,
     __A_TEOCHEW_MODE_2__ = 3,
-    __A_CHINESE_MODE_2__ = 4,
+    __A_CHINESE_MODE_2__ = 5,
     __A_ENGLISH_MODE_2__ = 7
 };
 

@@ -34,6 +34,7 @@ gint a_default_mode = 1;
 gint a_selected_mode = 1;
 gboolean a_remember_mode = TRUE;
 gint a_super_key = 1;
+gint a_super_key2 = 1;
 gint a_vietnamese_mode_shortkey = 1;
 gint a_hanviet_mode_shortkey = 2;
 gint a_teochew_mode_shortkey = 3;
@@ -139,63 +140,67 @@ gboolean a_load_config_file(){
 
 	//
     const gchar *group = "tiechu";
-	if ((a_default_mode = g_key_file_get_integer(a_key_file, group, "a_default_mode", &error))==0) {
+	if ((a_default_mode = g_key_file_get_integer(a_key_file, group, "t_default_mode", &error))==0) {
         logger_error("Loading a_default_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_selected_mode = g_key_file_get_integer(a_key_file, group, "a_selected_mode", &error))==0) {
+	if ((a_selected_mode = g_key_file_get_integer(a_key_file, group, "t_selected_mode", &error))==0) {
         logger_error("Loading a_selected_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_remember_mode = g_key_file_get_boolean(a_key_file, group, "a_remember_mode", &error))==0) {
+	if ((a_remember_mode = g_key_file_get_boolean(a_key_file, group, "t_remember_mode", &error))==0) {
         logger_error("Loading a_remember_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_super_key = g_key_file_get_integer(a_key_file, group, "a_super_key", &error))==0) {
-        logger_error("Loading a_super_key failed: %s", error->message);
+	if ((a_super_key = g_key_file_get_integer(a_key_file, group, "t_super_key1", &error))==0) {
+        logger_error("Loading a_super_key1 failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_vietnamese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "a_vietnamese_mode_shortkey", &error))==0) {
+    if ((a_super_key2 = g_key_file_get_integer(a_key_file, group, "t_super_key2", &error))==0) {
+        logger_error("Loading a_super_key2 failed: %s", error->message);
+        g_error_free(error);
+    }
+
+	if ((a_vietnamese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_vietnamese_mode_shortkey", &error))==0) {
         logger_error("Loading a_vietnamese_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_hanviet_mode_shortkey = g_key_file_get_integer(a_key_file, group, "a_hanviet_mode_shortkey", &error))==0) {
+	if ((a_hanviet_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_hanviet_mode_shortkey", &error))==0) {
         logger_error("Loading a_hanviet_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_teochew_mode_shortkey = g_key_file_get_integer(a_key_file, group, "a_teochew_mode_shortkey", &error))==0) {
+	if ((a_teochew_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_teochew_mode_shortkey", &error))==0) {
         logger_error("Loading a_teochew_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_chinese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "a_chinese_mode_shortkey", &error))==0) {
+	if ((a_chinese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_chinese_mode_shortkey", &error))==0) {
         logger_error("Loading a_chinese_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_english_mode_shortkey = g_key_file_get_integer(a_key_file, group, "a_english_mode_shortkey", &error))==0) {
+	if ((a_english_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_english_mode_shortkey", &error))==0) {
         logger_error("Loading a_english_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_candidate_table_shortkey = g_key_file_get_integer(a_key_file, group, "a_candidate_table_shortkey", &error))==0) {
+	if ((a_candidate_table_shortkey = g_key_file_get_integer(a_key_file, group, "t_candidate_table_shortkey", &error))==0) {
         logger_error("Loading a_english_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_auto_show_candidate_table = g_key_file_get_boolean(a_key_file, group, "a_auto_show_candidate_table", &error))==0) {
+	if ((a_auto_show_candidate_table = g_key_file_get_boolean(a_key_file, group, "t_auto_show_candidate_table", &error))==0) {
         logger_error("Loading a_auto_show_candidate_table failed: %s", error->message);
 		g_error_free(error);
 	}
 
-
-	if ((a_chinese_form = g_key_file_get_integer(a_key_file, group, "a_chinese_form", &error))==0) {
+	if ((a_chinese_form = g_key_file_get_integer(a_key_file, group, "t_chinese_form", &error))==0) {
         logger_error("Loading a_chinese_form failed: %s", error->message);
 		g_error_free(error);
 	}
@@ -237,18 +242,19 @@ void configuration_save(){
 
 	//
     const gchar *group = "tiechu";
-	g_key_file_set_integer(a_key_file, group, "a_default_mode", a_default_mode);
-	g_key_file_set_integer(a_key_file, group, "a_selected_mode", a_selected_mode);
-	g_key_file_set_boolean(a_key_file, group, "a_remember_mode", a_remember_mode);
-	g_key_file_set_integer(a_key_file, group, "a_super_key", a_super_key);
-	g_key_file_set_integer(a_key_file, group, "a_vietnamese_mode_shortkey", a_vietnamese_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "a_hanviet_mode_shortkey", a_hanviet_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "a_teochew_mode_shortkey", a_teochew_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "a_chinese_mode_shortkey", a_chinese_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "a_english_mode_shortkey", a_english_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "a_candidate_table_shortkey", a_candidate_table_shortkey);
-	g_key_file_set_boolean(a_key_file, group, "a_auto_show_candidate_table", a_auto_show_candidate_table);
-	g_key_file_set_integer(a_key_file, group, "a_chinese_form", a_chinese_form);
+	g_key_file_set_integer(a_key_file, group, "t_default_mode", a_default_mode);
+	g_key_file_set_integer(a_key_file, group, "t_selected_mode", a_selected_mode);
+	g_key_file_set_boolean(a_key_file, group, "t_remember_mode", a_remember_mode);
+	g_key_file_set_integer(a_key_file, group, "t_super_key1", a_super_key);
+	g_key_file_set_integer(a_key_file, group, "t_super_key2", a_super_key2);
+	g_key_file_set_integer(a_key_file, group, "t_vietnamese_mode_shortkey", a_vietnamese_mode_shortkey);
+	g_key_file_set_integer(a_key_file, group, "t_hanviet_mode_shortkey", a_hanviet_mode_shortkey);
+	g_key_file_set_integer(a_key_file, group, "t_teochew_mode_shortkey", a_teochew_mode_shortkey);
+	g_key_file_set_integer(a_key_file, group, "t_chinese_mode_shortkey", a_chinese_mode_shortkey);
+	g_key_file_set_integer(a_key_file, group, "t_english_mode_shortkey", a_english_mode_shortkey);
+	g_key_file_set_integer(a_key_file, group, "t_candidate_table_shortkey", a_candidate_table_shortkey);
+	g_key_file_set_boolean(a_key_file, group, "t_auto_show_candidate_table", a_auto_show_candidate_table);
+	g_key_file_set_integer(a_key_file, group, "t_chinese_form", a_chinese_form);
 
 	//
 	const gchar *user_dir = g_get_home_dir();
