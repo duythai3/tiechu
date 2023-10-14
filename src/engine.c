@@ -293,12 +293,12 @@ static gboolean manage_mode(IBusTiechuEngine *tiechu, guint keyval, guint keycod
         return TRUE;
     }
 
-    // Han Viet mode
-    if((helper_is_control_pressed(modifiers))&&(keyval==hanviet_mode_key)){
-        if(current_mode == THANVIET_MODE){
+    // teochew mode
+    if((helper_is_control_pressed(modifiers))&&(keyval==teochew_mode_key || keyval==54 || keyval==57)){
+        if(current_mode == TTEOCHEW_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(THANVIET_MODE);
+        configuration_set_selected_mode(TTEOCHEW_MODE);
         property_list_update(tiechu);
         configuration_save();
         //helper_clear_preedit(tiechu);
@@ -306,12 +306,12 @@ static gboolean manage_mode(IBusTiechuEngine *tiechu, guint keyval, guint keycod
         return TRUE;
     }
 
-    // teochew mode
-    if((helper_is_control_pressed(modifiers))&&(keyval==teochew_mode_key)){
-        if(current_mode == TTEOCHEW_MODE){
+    // Han Viet mode
+    if((helper_is_control_pressed(modifiers))&&(keyval==hanviet_mode_key)){
+        if(current_mode == THANVIET_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(TTEOCHEW_MODE);
+        configuration_set_selected_mode(THANVIET_MODE);
         property_list_update(tiechu);
         configuration_save();
         //helper_clear_preedit(tiechu);

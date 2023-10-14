@@ -57,16 +57,16 @@ void update_symbol(IBusProperty* prop) {
     IBusText* sm=NULL;
     IBusPropState state = PROP_STATE_UNCHECKED;
     if (current_mode == TVIETNAMESE_MODE) {
-    	sm = ibus_text_new_from_static_string("VN");
+    	sm = ibus_text_new_from_static_string("TV");
     	state = PROP_STATE_CHECKED;
     } else if (current_mode == THANVIET_MODE) {
-    	sm = ibus_text_new_from_static_string("VH");
+    	sm = ibus_text_new_from_static_string("TH");
     } else if (current_mode == TTEOCHEW_MODE) {
-    	sm = ibus_text_new_from_static_string("TC");
+    	sm = ibus_text_new_from_static_string("TT");
     } else if (current_mode == TCHINESE_MODE) {
-    	sm = ibus_text_new_from_static_string("CN");
+    	sm = ibus_text_new_from_static_string("TC");
     } else if (current_mode == TENGLISH_MODE) {
-    	sm = ibus_text_new_from_static_string("EN");
+    	sm = ibus_text_new_from_static_string("TE");
     }
     ibus_property_set_state(prop, state);
     ibus_property_set_symbol(prop, sm);
