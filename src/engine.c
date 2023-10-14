@@ -214,40 +214,40 @@ static void ibus_tiechu_engine_candidate_clicked(IBusEngine *engine, guint index
 
 static void property_activated(IBusEngine *engine, const gchar *property_ten, guint property_status){
     logger_log("Property %s changed to %d", property_ten, property_status);
-    if(g_strcmp0(property_ten, __VIETNAMESE_MODE_VALUE__)==0){
+    if(g_strcmp0(property_ten, TVIETNAMESE_MODE_VALUE) == 0){
         if(property_status==PROP_STATE_CHECKED){
-            configuration_set_selected_mode(__A_VIETNAMESE_MODE_2__);
+            configuration_set_selected_mode(TVIETNAMESE_MODE);
             property_list_update_symbol((IBusTiechuEngine *) engine);
             configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __HANVIET_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, THANVIET_MODE_VALUE) == 0){
         if(property_status==PROP_STATE_CHECKED){
-            configuration_set_selected_mode(__A_HANVIET_MODE_2__);
+            configuration_set_selected_mode(THANVIET_MODE);
             property_list_update_symbol((IBusTiechuEngine *) engine);
             configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __TEOCHEW_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, TTEOCHEW_MODE_VALUE) == 0){
         if(property_status==PROP_STATE_CHECKED){
-            configuration_set_selected_mode(__A_TEOCHEW_MODE_2__);
+            configuration_set_selected_mode(TTEOCHEW_MODE);
             property_list_update_symbol((IBusTiechuEngine *) engine);
             configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __CHINESE_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, TCHINESE_MODE_VALUE) == 0){
         if(property_status==PROP_STATE_CHECKED){
-            configuration_set_selected_mode(__A_CHINESE_MODE_2__);
+            configuration_set_selected_mode(TCHINESE_MODE);
             property_list_update_symbol((IBusTiechuEngine *) engine);
             configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __ENGLISH_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, TENGLISH_MODE_VALUE) == 0){
         if(property_status==PROP_STATE_CHECKED){
-            configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
+            configuration_set_selected_mode(TENGLISH_MODE);
             property_list_update_symbol((IBusTiechuEngine *) engine);
             configuration_save();
         }
-    }else if(g_strcmp0(property_ten, __REMEMBER_MODE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, TREMEMBER_MODE_VALUE) == 0){
         configuration_set_remembering_mode(property_status);
         configuration_save();
-    }else if(g_strcmp0(property_ten, __AUTO_SHOW_CANDIDATE_TABLE_VALUE__)==0){
+    }else if(g_strcmp0(property_ten, TAUTO_SHOW_CANDIDATE_TABLE_VALUE) == 0){
         configuration_set_auto_show_candidate_table(property_status);
         configuration_save();
     }
@@ -257,88 +257,91 @@ static gboolean deliver_key(IBusTiechuEngine *tiechu, guint keyval, guint keycod
     //
     gint current_mode=configuration_get_current_mode();
     switch(current_mode){
-        case __A_ENGLISH_MODE_2__:
-            return english_mode_process_key_event(tiechu, keyval, keycode, modifiers);
-        case __A_VIETNAMESE_MODE_2__:
+        case TVIETNAMESE_MODE:
             return vietnamese_mode_process_key_event(tiechu, keyval, keycode, modifiers);
-        case __A_HANVIET_MODE_2__:
-            return hanviet_mode_process_key_event(tiechu, keyval, keycode, modifiers);
-        case __A_TEOCHEW_MODE_2__:
+        case TTEOCHEW_MODE:
             return teochew_mode_process_key_event(tiechu, keyval, keycode, modifiers);
-        case __A_CHINESE_MODE_2__:
+        case THANVIET_MODE:
+            return hanviet_mode_process_key_event(tiechu, keyval, keycode, modifiers);
+        case TCHINESE_MODE:
             return chinese_mode_process_key_event(tiechu, keyval, keycode, modifiers);
+        case TENGLISH_MODE:
+            return english_mode_process_key_event(tiechu, keyval, keycode, modifiers);
         default:
             return FALSE;
     }
 }
 
 static gboolean manage_mode(IBusTiechuEngine *tiechu, guint keyval, guint keycode, guint modifiers){
-
-
     gint current_mode=configuration_get_current_mode(); //current mode
     guint mode_vietnamese_key=(guint) configuration_get_vietnamese_mode_key();
-    guint hanviet_mode_key=(guint) configuration_get_hanviet_mode_key();
     guint teochew_mode_key=(guint) configuration_get_teochew_mode_key();
+    guint hanviet_mode_key=(guint) configuration_get_hanviet_mode_key();
     guint chinese_mode_key=(guint) configuration_get_chinese_mode_key();
     guint english_mode_key=(guint) configuration_get_english_mode_key();
 
     // vietnamese mode
     if((helper_is_control_pressed(modifiers))&&(keyval==mode_vietnamese_key)){
-        if(current_mode==__A_VIETNAMESE_MODE_2__){
+        if(current_mode == TVIETNAMESE_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(__A_VIETNAMESE_MODE_2__);
+        configuration_set_selected_mode(TVIETNAMESE_MODE);
         property_list_update(tiechu);
         configuration_save();
-        helper_clear_preedit(tiechu);
+        //helper_clear_preedit(tiechu);
+        helper_commit_preedit(tiechu);
         return TRUE;
     }
 
     // Han Viet mode
     if((helper_is_control_pressed(modifiers))&&(keyval==hanviet_mode_key)){
-        if(current_mode==__A_HANVIET_MODE_2__){
+        if(current_mode == THANVIET_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(__A_HANVIET_MODE_2__);
+        configuration_set_selected_mode(THANVIET_MODE);
         property_list_update(tiechu);
         configuration_save();
-        helper_clear_preedit(tiechu);
+        //helper_clear_preedit(tiechu);
+        helper_commit_preedit(tiechu);
         return TRUE;
     }
 
     // teochew mode
     if((helper_is_control_pressed(modifiers))&&(keyval==teochew_mode_key)){
-        if(current_mode==__A_TEOCHEW_MODE_2__){
+        if(current_mode == TTEOCHEW_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(__A_TEOCHEW_MODE_2__);
+        configuration_set_selected_mode(TTEOCHEW_MODE);
         property_list_update(tiechu);
         configuration_save();
-        helper_clear_preedit(tiechu);
+        //helper_clear_preedit(tiechu);
+        helper_commit_preedit(tiechu);
         return TRUE;
     }
 
     // chinese mode
     if((helper_is_control_pressed(modifiers))&&(keyval==chinese_mode_key)){
-        if(current_mode==__A_CHINESE_MODE_2__){
+        if(current_mode == TCHINESE_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(__A_CHINESE_MODE_2__);
+        configuration_set_selected_mode(TCHINESE_MODE);
         property_list_update(tiechu);
         configuration_save();
-        helper_clear_preedit(tiechu);
+        //helper_clear_preedit(tiechu);
+        helper_commit_preedit(tiechu);
         return TRUE;
     }
 
     // english mode
     if((helper_is_control_pressed(modifiers))&&(keyval==english_mode_key)){
-        if(current_mode==__A_ENGLISH_MODE_2__){
+        if(current_mode == TENGLISH_MODE){
             return TRUE;
         }
-        configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
+        configuration_set_selected_mode(TENGLISH_MODE);
         property_list_update(tiechu);
         configuration_save();
-        helper_clear_preedit(tiechu);
+        //helper_clear_preedit(tiechu);
+        helper_commit_preedit(tiechu);
         return TRUE;
     }
 
@@ -349,7 +352,7 @@ static gboolean manage_mode(IBusTiechuEngine *tiechu, guint keyval, guint keycod
     }
 
     //
-    if(keyval==IBUS_KEY_Shift_L){
+    if(keyval==IBUS_KEY_Shift_L || keyval==IBUS_KEY_Shift_R){
         interchange_mode_save_begin_interchange_mode_time();
         return FALSE;
     }
@@ -376,7 +379,7 @@ static gboolean ibus_tiechu_engine_process_key_event(IBusEngine *engine,guint ke
     }
 
     //
-    if(keyval==IBUS_KEY_Shift_L){
+    if(keyval==IBUS_KEY_Shift_L || keyval==IBUS_KEY_Shift_R){
         if(helper_is_event_released(modifiers)){
             if(!interchange_mode_is_shift_pressed_on()){
                 return FALSE;
@@ -396,6 +399,12 @@ static gboolean ibus_tiechu_engine_process_key_event(IBusEngine *engine,guint ke
         logger_log("Leave interchange mode");
         interchange_mode_turn_shift_pressed_off();
     }
-    return deliver_key(tiechu, keyval, keycode, modifiers);
+
+    //
+    if (!helper_is_escape_pressed(keyval)) {
+        return deliver_key(tiechu, keyval, keycode, modifiers);
+    } else {
+        return FALSE;
+    }
 
 }

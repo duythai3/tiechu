@@ -69,7 +69,7 @@ gboolean candidate_table_init(){
 	}
 
 	//
-    a_candidate_table = ibus_lookup_table_new(__CANDIDATE_TABLE_PAGE_SIZE__, 0, TRUE, FALSE);
+    a_candidate_table = ibus_lookup_table_new(TCANDIDATE_TABLE_PAGE_SIZE, 0, TRUE, FALSE);
     if (!a_candidate_table) {
         logger_log("Creating Lookup table failed");
 		return FALSE;

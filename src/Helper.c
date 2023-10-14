@@ -85,7 +85,7 @@ void helper_update_preedit(IBusTiechuEngine* tiechu) {
 
     //
     gint current_mode =configuration_get_current_mode();
-    if(current_mode==__A_HANVIET_MODE_2__){
+    if(current_mode == THANVIET_MODE){
     	//
         if(!hanviet_table_find())
         	return;
@@ -99,7 +99,7 @@ void helper_update_preedit(IBusTiechuEngine* tiechu) {
                 candidate_table_show(tiechu);
 			}
 		}
-    } else if (current_mode==__A_CHINESE_MODE_2__) {
+    } else if (current_mode == TCHINESE_MODE) {
         //
         if(!chinese_table_find())
             return;
@@ -113,7 +113,7 @@ void helper_update_preedit(IBusTiechuEngine* tiechu) {
                 candidate_table_show(tiechu);
             }
         }
-    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
+    } else if (current_mode == TTEOCHEW_MODE) {
         //
         if(!teochew_table_find())
             return;
@@ -147,11 +147,11 @@ gboolean helper_commit_candidate_in_page(IBusTiechuEngine *tiechu, guint index) 
 
 	// increase frequency of selected word
     gint current_mode =configuration_get_current_mode(); //current mode
-    if (current_mode==__A_HANVIET_MODE_2__) {
+    if (current_mode == THANVIET_MODE) {
         hanviet_table_increase_frequency(candidate->text);
-    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
+    } else if (current_mode == TTEOCHEW_MODE) {
         teochew_table_increase_frequency(candidate->text);
-    } else if (current_mode==__A_CHINESE_MODE_2__){
+    } else if (current_mode == TCHINESE_MODE){
         chinese_table_increase_frequency(candidate->text);
     }
 
@@ -206,7 +206,7 @@ gboolean helper_commit_current_candidate(IBusTiechuEngine *tiechu) {
 
 gboolean helper_process_escape(IBusTiechuEngine* tiechu, guint keyval, guint keycode, guint modifiers) {
     //a_logger_log("Change to English mode using Escape key");
-    configuration_set_selected_mode(__A_ENGLISH_MODE_2__);
+    configuration_set_selected_mode(TENGLISH_MODE);
     property_list_update(tiechu);
     configuration_save();
     //

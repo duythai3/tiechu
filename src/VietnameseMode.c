@@ -163,7 +163,8 @@ gboolean vietnamese_mode_process_key_event(IBusTiechuEngine* tiechu, guint keyva
 
     //
     if (helper_is_escape_pressed(keyval)) {
-        return helper_process_escape(tiechu, keyval, keycode, modifiers);
+        //return helper_process_escape(tiechu, keyval, keycode, modifiers);
+        return FALSE;
     }
 
     // get length of current processing string (preedit string)

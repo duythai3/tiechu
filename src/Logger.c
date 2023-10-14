@@ -51,7 +51,7 @@ gboolean logger_open(){
 
 	// open the log file
 	const gchar *user_dir = g_get_home_dir();
-    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __LOGGER_FILE__);
+    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, TTIECHU_DIRECTORY, __LOGGER_FILE__);
     logger_channel = g_io_channel_new_file(logger_file, "a", NULL);
 	g_free(logger_file);
 	if(logger_channel==NULL){
@@ -180,7 +180,7 @@ void logger_error(const gchar* format_str, ...){
 
 gboolean create_abacus_directory(){
     const gchar *user_dir = g_get_home_dir();
-    gchar *abacus_dir = g_strdup_printf("%s/%s", user_dir, __TIECHU_DIRECTORY__);
+    gchar *abacus_dir = g_strdup_printf("%s/%s", user_dir, TTIECHU_DIRECTORY);
 
     // do nothing if the .Tiechu directory existed
     if(g_file_test(abacus_dir, G_FILE_TEST_EXISTS)){
@@ -204,7 +204,7 @@ glong get_logger_file_size(){
     GStatBuf *st = g_new(GStatBuf, 1);
     st->st_size = 0;
     const gchar *user_dir = g_get_home_dir();
-    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __LOGGER_FILE__);
+    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, TTIECHU_DIRECTORY, __LOGGER_FILE__);
 
     // if the log file does not exist
     if(!g_file_test(logger_file, G_FILE_TEST_EXISTS)){
@@ -243,11 +243,11 @@ void logger_backup(){
 
 	// Rename the main log file to the backup file's name
 	const gchar *user_dir = g_get_home_dir();
-    gchar *logger_file_2 = g_strdup_printf("%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __LOGGER_FILE_2__);
+    gchar *logger_file_2 = g_strdup_printf("%s/%s/%s", user_dir, TTIECHU_DIRECTORY, __LOGGER_FILE_2__);
 	if(g_file_test(logger_file_2, G_FILE_TEST_EXISTS)){
 		g_remove(logger_file_2);
 	}
-    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __LOGGER_FILE__);
+    gchar *logger_file = g_strdup_printf("%s/%s/%s", user_dir, TTIECHU_DIRECTORY, __LOGGER_FILE__);
 	g_rename(logger_file, logger_file_2);
 	g_free(logger_file);
 	g_free(logger_file_2);

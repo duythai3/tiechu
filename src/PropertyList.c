@@ -29,7 +29,7 @@ static IBusPropList *_property_list = NULL;
 
 const gchar* get_super_key_name() {
 	gint super_key =configuration_get_super_key();
-	if (super_key==__A_CTRL_SUPER_KEY__) {
+	if (super_key == TCTRL_SUPER_KEY) {
 		return "Ctrl";
 	} else {
 		return "Shift";
@@ -56,16 +56,16 @@ void update_symbol(IBusProperty* prop) {
     gint current_mode =configuration_get_current_mode();
     IBusText* sm=NULL;
     IBusPropState state = PROP_STATE_UNCHECKED;
-    if (current_mode==__A_VIETNAMESE_MODE_2__) {
+    if (current_mode == TVIETNAMESE_MODE) {
     	sm = ibus_text_new_from_static_string("VN");
     	state = PROP_STATE_CHECKED;
-    } else if (current_mode==__A_HANVIET_MODE_2__) {
+    } else if (current_mode == THANVIET_MODE) {
     	sm = ibus_text_new_from_static_string("VH");
-    } else if (current_mode==__A_TEOCHEW_MODE_2__) {
+    } else if (current_mode == TTEOCHEW_MODE) {
     	sm = ibus_text_new_from_static_string("TC");
-    } else if (current_mode==__A_CHINESE_MODE_2__) {
+    } else if (current_mode == TCHINESE_MODE) {
     	sm = ibus_text_new_from_static_string("CN");
-    } else if (current_mode==__A_ENGLISH_MODE_2__) {
+    } else if (current_mode == TENGLISH_MODE) {
     	sm = ibus_text_new_from_static_string("EN");
     }
     ibus_property_set_state(prop, state);
@@ -122,17 +122,12 @@ void property_list_load(){
     gboolean as =configuration_get_auto_show_candidate_table();
 
     //
-    IBusProperty* vn_prop = create_radio_property(__VIETNAMESE_MODE_LABEL__, __VIETNAMESE_MODE_VALUE__, cm==__A_VIETNAMESE_MODE_2__,
-                                                  configuration_get_vietnamese_mode_key());
-    IBusProperty* vh_prop = create_radio_property(__HANVIET_MODE_LABEL__, __HANVIET_MODE_VALUE__, cm==__A_HANVIET_MODE_2__,
-                                                  configuration_get_hanviet_mode_key());
-    IBusProperty* tc_prop = create_radio_property(__TEOCHEW_MODE_LABEL__, __TEOCHEW_MODE_VALUE__, cm==__A_TEOCHEW_MODE_2__,
-                                                  configuration_get_teochew_mode_key());
-    IBusProperty* cn_prop = create_radio_property(__CHINESE_MODE_LABEL__, __CHINESE_MODE_VALUE__, cm==__A_CHINESE_MODE_2__,
-                                                  configuration_get_chinese_mode_key());
-    IBusProperty* en_prop = create_radio_property(__ENGLISH_MODE_LABEL__, __ENGLISH_MODE_VALUE__, cm==__A_ENGLISH_MODE_2__,
-                                                  configuration_get_english_mode_key());
-    IBusProperty* rmm_prop = create_toggle_property(__REMEMBER_MODE_LABEL__, __REMEMBER_MODE_VALUE__, rm);
+    IBusProperty* vn_prop = create_radio_property(TVIETNAMESE_MODE_LABEL, TVIETNAMESE_MODE_VALUE, cm == TVIETNAMESE_MODE, configuration_get_vietnamese_mode_key());
+    IBusProperty* tc_prop = create_radio_property(TTEOCHEW_MODE_LABEL, TTEOCHEW_MODE_VALUE, cm == TTEOCHEW_MODE, configuration_get_teochew_mode_key());
+    IBusProperty* vh_prop = create_radio_property(THANVIET_MODE_LABEL, THANVIET_MODE_VALUE, cm == THANVIET_MODE, configuration_get_hanviet_mode_key());
+    IBusProperty* cn_prop = create_radio_property(TCHINESE_MODE_LABEL, TCHINESE_MODE_VALUE, cm == TCHINESE_MODE, configuration_get_chinese_mode_key());
+    IBusProperty* en_prop = create_radio_property(TENGLISH_MODE_LABEL, TENGLISH_MODE_VALUE, cm == TENGLISH_MODE, configuration_get_english_mode_key());
+    IBusProperty* rmm_prop = create_toggle_property(TREMEMBER_MODE_LABEL, TREMEMBER_MODE_VALUE, rm);
 
     // uncomment to allow not display candidate table
     //IBusProperty* as_prop = create_toggle_property(__A_AUTO_SHOW_CANDIDATE_TABLE_LABEL__, __A_AUTO_SHOW_CANDIDATE_TABLE_VALUE__, as);
@@ -183,26 +178,26 @@ void property_list_update(IBusTiechuEngine* tiechu){
 
 	//
 	prop = ibus_prop_list_get(_property_list, 0);
-	update_state(prop, cm==__A_VIETNAMESE_MODE_2__);
+	update_state(prop, cm == TVIETNAMESE_MODE);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 1);
-	update_state(prop, cm==__A_HANVIET_MODE_2__);
+	update_state(prop, cm == THANVIET_MODE);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 2);
-	update_state(prop, cm==__A_TEOCHEW_MODE_2__);
+	update_state(prop, cm == TTEOCHEW_MODE);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 3);
-	update_state(prop, cm==__A_CHINESE_MODE_2__);
+	update_state(prop, cm == TCHINESE_MODE);
 	ibus_engine_update_property(engine, prop);
 
 	//
 	prop = ibus_prop_list_get(_property_list, 4);
-	update_state(prop, cm==__A_ENGLISH_MODE_2__);
+	update_state(prop, cm == TENGLISH_MODE);
 	ibus_engine_update_property(engine, prop);
 }

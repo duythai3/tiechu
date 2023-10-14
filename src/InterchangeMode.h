@@ -21,8 +21,8 @@
 #define __INTERCHANGE_MODE_H__
 #include <glib.h>
 
-//Length of interchange mode in microsecond
-#define __INTERCHANGE_MODE_PERIOD__ 3000000
+//Length of interchange mode in seconds
+#define __INTERCHANGE_MODE_PERIOD__ 3
 
 void interchange_mode_turn_shift_pressed_on();
 void interchange_mode_turn_shift_pressed_off();

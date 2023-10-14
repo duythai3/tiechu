@@ -27,42 +27,41 @@
 #include "Configuration.h"
 #include "Logger.h"
 
-#define __CONFIG_FILE__ "Tiechu.conf"
+#define TCONFIG_FILE "Tiechu.conf"
 
-GKeyFile* a_key_file = NULL;
-gint a_default_mode = 1;
-gint a_selected_mode = 1;
-gboolean a_remember_mode = TRUE;
-gint a_super_key = 1;
-gint a_super_key2 = 1;
-gint a_vietnamese_mode_shortkey = 1;
-gint a_hanviet_mode_shortkey = 2;
-gint a_teochew_mode_shortkey = 3;
-gint a_chinese_mode_shortkey = 4;
-gint a_english_mode_shortkey = 7;
-gint a_candidate_table_shortkey = 5;
-gint a_auto_show_candidate_table = TRUE;
-gint a_chinese_form = 2;
-gint a_current_mode = 0;
+GKeyFile* Tkey_file = NULL;
+gint Tdefault_mode = 2;
+gint Tselected_mode = 2;
+gboolean Tremember_mode = TRUE;
+gint Tsuper_key = 3;
+gint Tvietnamese_mode_shortkey = 50;
+gint Tteochew_mode_shortkey = 51;
+gint Thanviet_mode_shortkey = 52;
+gint Tchinese_mode_shortkey = 53;
+gint Tenglish_mode_shortkey = 55;
+gint Tcandidate_table_shortkey = 54;
+gint Tauto_show_candidate_table = TRUE;
+gint Tchinese_form = 3;
+gint Tcurrent_mode = 0;
 
 // check if the configuration file exists in the user configuration directory
-gboolean a_is_config_file_existing();
+gboolean Tis_config_file_existing();
 
 // copy the original configuration file to the user configuration diectory
-gboolean a_copy_config_file();
+gboolean Tcopy_config_file();
 
 // load user configuration file
-gboolean a_load_config_file();
+gboolean Tload_config_file();
 
 
-gchar a_buffer[1022];
+gchar Tbuffer[993];
 
 
 // check if the configuration file exists in the user configuration directory
-gboolean a_is_config_file_existing(){
+gboolean Tis_config_file_existing(){
     const gchar *user_dir = g_get_home_dir();
-    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
-    const gchar *config_file = a_buffer;
+    gint len = g_sprintf(Tbuffer, "%s/%s/%s", user_dir, TTIECHU_DIRECTORY, TCONFIG_FILE);
+    const gchar *config_file = Tbuffer;
     if(g_file_test(config_file, G_FILE_TEST_EXISTS)){
         logger_log("Configuration file exists");
         return TRUE;
@@ -72,20 +71,20 @@ gboolean a_is_config_file_existing(){
     }
 }
 
-gboolean a_copy_config_file(){
+gboolean Tcopy_config_file(){
     const gchar *user_dir = g_get_home_dir();
 
     // if configuration directory does not exists, create it
-    gint len = g_sprintf(a_buffer, "%s/%s", user_dir, __TIECHU_DIRECTORY__);
-    const gchar *config_dir = a_buffer;
+    gint len = g_sprintf(Tbuffer, "%s/%s", user_dir, TTIECHU_DIRECTORY);
+    const gchar *config_dir = Tbuffer;
     if(!g_file_test(config_dir, G_FILE_TEST_EXISTS)){
          g_mkdir(config_dir, 0744);
         logger_log("Created configuration directory");
     }
 
     // create configuration file
-    len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
-    const gchar *config_file = a_buffer;
+    len = g_sprintf(Tbuffer, "%s/%s/%s", user_dir, TTIECHU_DIRECTORY, TCONFIG_FILE);
+    const gchar *config_file = Tbuffer;
     GIOChannel *config_channel = g_io_channel_new_file(config_file, "w", NULL);
 
     //
@@ -97,8 +96,8 @@ gboolean a_copy_config_file(){
 	// get content of original configuration file
 	gchar *config_file_content = NULL;
 	gsize content_len = 0;
-	len = g_sprintf(a_buffer, "%s/config/%s", PKGDATADIR, __CONFIG_FILE__);
-	const gchar *original_file = a_buffer;
+	len = g_sprintf(Tbuffer, "%s/config/%s", PKGDATADIR, TCONFIG_FILE);
+	const gchar *original_file = Tbuffer;
 	g_file_get_contents(original_file, &config_file_content, &content_len, NULL);
     logger_log("Read original configuration file");
 
@@ -112,25 +111,25 @@ gboolean a_copy_config_file(){
 }
 
 
-gboolean a_load_config_file(){
+gboolean Tload_config_file(){
 	//
-	if (a_key_file) {
+	if (Tkey_file) {
 		return TRUE;
 	}
 
 	//
-	a_key_file = g_key_file_new();
-	if (!a_key_file) {
+	Tkey_file = g_key_file_new();
+	if (!Tkey_file) {
         logger_log("Can't create key file object");
 		return FALSE;
 	}
 
 	// calculate path to the configuration file
 	const gchar *user_dir = g_get_home_dir();
-    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
-	const gchar *config_file = a_buffer;
+    gint len = g_sprintf(Tbuffer, "%s/%s/%s", user_dir, TTIECHU_DIRECTORY, TCONFIG_FILE);
+	const gchar *config_file = Tbuffer;
 	GError *error = NULL;
-	if (!g_key_file_load_from_file(a_key_file, config_file, G_KEY_FILE_KEEP_COMMENTS , &error)) {
+	if (!g_key_file_load_from_file(Tkey_file, config_file, G_KEY_FILE_KEEP_COMMENTS , &error)) {
 		if (error) {
             logger_error("Loading configuration file failed: %s", error->message);
 		}
@@ -139,77 +138,72 @@ gboolean a_load_config_file(){
 	}
 
 	//
-    const gchar *group = "tiechu";
-	if ((a_default_mode = g_key_file_get_integer(a_key_file, group, "t_default_mode", &error))==0) {
-        logger_error("Loading a_default_mode failed: %s", error->message);
+    const gchar *group = "Tiechu";
+	if ((Tdefault_mode = g_key_file_get_integer(Tkey_file, group, "Tdefault_mode", &error)) == 0) {
+        logger_error("Loading Tdefault_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_selected_mode = g_key_file_get_integer(a_key_file, group, "t_selected_mode", &error))==0) {
-        logger_error("Loading a_selected_mode failed: %s", error->message);
+	if ((Tselected_mode = g_key_file_get_integer(Tkey_file, group, "Tselected_mode", &error)) == 0) {
+        logger_error("Loading Tselected_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_remember_mode = g_key_file_get_boolean(a_key_file, group, "t_remember_mode", &error))==0) {
-        logger_error("Loading a_remember_mode failed: %s", error->message);
+	if ((Tremember_mode = g_key_file_get_boolean(Tkey_file, group, "Tremember_mode", &error)) == 0) {
+        logger_error("Loading Tremember_mode failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_super_key = g_key_file_get_integer(a_key_file, group, "t_super_key1", &error))==0) {
-        logger_error("Loading a_super_key1 failed: %s", error->message);
+	if ((Tsuper_key = g_key_file_get_integer(Tkey_file, group, "Tsuper_key", &error)) == 0) {
+        logger_error("Loading Tsuper_key failed: %s", error->message);
 		g_error_free(error);
 	}
 
-    if ((a_super_key2 = g_key_file_get_integer(a_key_file, group, "t_super_key2", &error))==0) {
-        logger_error("Loading a_super_key2 failed: %s", error->message);
+	if ((Tvietnamese_mode_shortkey = g_key_file_get_integer(Tkey_file, group, "Tvietnamese_mode_shortkey", &error)) == 0) {
+        logger_error("Loading Tvietnamese_mode_shortkey failed: %s", error->message);
+		g_error_free(error);
+	}
+
+    if ((Tteochew_mode_shortkey = g_key_file_get_integer(Tkey_file, group, "Tteochew_mode_shortkey", &error)) == 0) {
+        logger_error("Loading Tteochew_mode_shortkey failed: %s", error->message);
         g_error_free(error);
     }
 
-	if ((a_vietnamese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_vietnamese_mode_shortkey", &error))==0) {
-        logger_error("Loading a_vietnamese_mode_shortkey failed: %s", error->message);
+	if ((Thanviet_mode_shortkey = g_key_file_get_integer(Tkey_file, group, "Thanviet_mode_shortkey", &error)) == 0) {
+        logger_error("Loading Thanviet_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_hanviet_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_hanviet_mode_shortkey", &error))==0) {
-        logger_error("Loading a_hanviet_mode_shortkey failed: %s", error->message);
+	if ((Tchinese_mode_shortkey = g_key_file_get_integer(Tkey_file, group, "Tchinese_mode_shortkey", &error)) == 0) {
+        logger_error("Loading Tchinese_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_teochew_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_teochew_mode_shortkey", &error))==0) {
-        logger_error("Loading a_teochew_mode_shortkey failed: %s", error->message);
+	if ((Tenglish_mode_shortkey = g_key_file_get_integer(Tkey_file, group, "Tenglish_mode_shortkey", &error)) == 0) {
+        logger_error("Loading Tenglish_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_chinese_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_chinese_mode_shortkey", &error))==0) {
-        logger_error("Loading a_chinese_mode_shortkey failed: %s", error->message);
+	if ((Tcandidate_table_shortkey = g_key_file_get_integer(Tkey_file, group, "Tcandidate_table_shortkey", &error)) == 0) {
+        logger_error("Loading Tenglish_mode_shortkey failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_english_mode_shortkey = g_key_file_get_integer(a_key_file, group, "t_english_mode_shortkey", &error))==0) {
-        logger_error("Loading a_english_mode_shortkey failed: %s", error->message);
+	if ((Tauto_show_candidate_table = g_key_file_get_boolean(Tkey_file, group, "Tauto_show_candidate_table", &error)) == 0) {
+        logger_error("Loading Tauto_show_candidate_table failed: %s", error->message);
 		g_error_free(error);
 	}
 
-	if ((a_candidate_table_shortkey = g_key_file_get_integer(a_key_file, group, "t_candidate_table_shortkey", &error))==0) {
-        logger_error("Loading a_english_mode_shortkey failed: %s", error->message);
-		g_error_free(error);
-	}
-
-	if ((a_auto_show_candidate_table = g_key_file_get_boolean(a_key_file, group, "t_auto_show_candidate_table", &error))==0) {
-        logger_error("Loading a_auto_show_candidate_table failed: %s", error->message);
-		g_error_free(error);
-	}
-
-	if ((a_chinese_form = g_key_file_get_integer(a_key_file, group, "t_chinese_form", &error))==0) {
-        logger_error("Loading a_chinese_form failed: %s", error->message);
+	if ((Tchinese_form = g_key_file_get_integer(Tkey_file, group, "Tchinese_form", &error)) == 0) {
+        logger_error("Loading Tchinese_form failed: %s", error->message);
 		g_error_free(error);
 	}
 
 	// calculate current mode
-	if (a_remember_mode) {
-        a_current_mode = a_selected_mode;
+	if (Tremember_mode) {
+        Tcurrent_mode = Tselected_mode;
 	} else {
-        a_current_mode = a_default_mode;
+        Tcurrent_mode = Tdefault_mode;
 	}
 
     logger_log("Configuration file loaded");
@@ -219,49 +213,48 @@ gboolean a_load_config_file(){
 
 // load configuration
 gboolean configuration_load(){
-	if (a_key_file) {
+	if (Tkey_file) {
 		return TRUE;
 	}
 
 	//
-	if (!a_is_config_file_existing()) {
-		if (!a_copy_config_file()) {
+	if (!Tis_config_file_existing()) {
+		if (!Tcopy_config_file()) {
 			return FALSE;
 		}
 	}
 
 	//
-   return a_load_config_file();
+   return Tload_config_file();
 }
 
 // save configuration
 void configuration_save(){
-	if (!a_key_file) {
+	if (!Tkey_file) {
 		return;
 	}
 
 	//
-    const gchar *group = "tiechu";
-	g_key_file_set_integer(a_key_file, group, "t_default_mode", a_default_mode);
-	g_key_file_set_integer(a_key_file, group, "t_selected_mode", a_selected_mode);
-	g_key_file_set_boolean(a_key_file, group, "t_remember_mode", a_remember_mode);
-	g_key_file_set_integer(a_key_file, group, "t_super_key1", a_super_key);
-	g_key_file_set_integer(a_key_file, group, "t_super_key2", a_super_key2);
-	g_key_file_set_integer(a_key_file, group, "t_vietnamese_mode_shortkey", a_vietnamese_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "t_hanviet_mode_shortkey", a_hanviet_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "t_teochew_mode_shortkey", a_teochew_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "t_chinese_mode_shortkey", a_chinese_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "t_english_mode_shortkey", a_english_mode_shortkey);
-	g_key_file_set_integer(a_key_file, group, "t_candidate_table_shortkey", a_candidate_table_shortkey);
-	g_key_file_set_boolean(a_key_file, group, "t_auto_show_candidate_table", a_auto_show_candidate_table);
-	g_key_file_set_integer(a_key_file, group, "t_chinese_form", a_chinese_form);
+    const gchar *group = "Tiechu";
+	g_key_file_set_integer(Tkey_file, group, "Tdefault_mode", Tdefault_mode);
+	g_key_file_set_integer(Tkey_file, group, "Tselected_mode", Tselected_mode);
+	g_key_file_set_boolean(Tkey_file, group, "Tremember_mode", Tremember_mode);
+	g_key_file_set_integer(Tkey_file, group, "Tsuper_key", Tsuper_key);
+	g_key_file_set_integer(Tkey_file, group, "Tvietnamese_mode_shortkey", Tvietnamese_mode_shortkey);
+    g_key_file_set_integer(Tkey_file, group, "Tteochew_mode_shortkey", Tteochew_mode_shortkey);
+	g_key_file_set_integer(Tkey_file, group, "Thanviet_mode_shortkey", Thanviet_mode_shortkey);
+	g_key_file_set_integer(Tkey_file, group, "Tchinese_mode_shortkey", Tchinese_mode_shortkey);
+	g_key_file_set_integer(Tkey_file, group, "Tenglish_mode_shortkey", Tenglish_mode_shortkey);
+	g_key_file_set_integer(Tkey_file, group, "Tcandidate_table_shortkey", Tcandidate_table_shortkey);
+	g_key_file_set_boolean(Tkey_file, group, "Tauto_show_candidate_table", Tauto_show_candidate_table);
+	g_key_file_set_integer(Tkey_file, group, "Tchinese_form", Tchinese_form);
 
 	//
 	const gchar *user_dir = g_get_home_dir();
-    gint len = g_sprintf(a_buffer, "%s/%s/%s", user_dir, __TIECHU_DIRECTORY__, __CONFIG_FILE__);
-	const gchar *config_file = a_buffer;
+    gint len = g_sprintf(Tbuffer, "%s/%s/%s", user_dir, TTIECHU_DIRECTORY, TCONFIG_FILE);
+	const gchar *config_file = Tbuffer;
 	GError *error = NULL;
-	if (!g_key_file_save_to_file(a_key_file, config_file, &error)) {
+	if (!g_key_file_save_to_file(Tkey_file, config_file, &error)) {
         logger_error("Saving configuration failed");
 	} else {
         logger_log("Configuration saved");
@@ -270,112 +263,112 @@ void configuration_save(){
 }
 
 void configuration_destroy() {
-	if (!a_key_file) {
+	if (!Tkey_file) {
 		return;
 	}
-	g_key_file_free(a_key_file);
-    a_key_file = NULL;
+	g_key_file_free(Tkey_file);
+    Tkey_file = NULL;
 }
 
 // get default mode
 gint configuration_get_default_mode(){
-	return a_default_mode;
+	return Tdefault_mode;
 }
 
 
 // set default mode
-void configuration_set_default_mode(_MODE mode){
-    a_default_mode = (gint)mode;
+void configuration_set_default_mode(MODE mode){
+    Tdefault_mode = (gint)mode;
 }
 
 // get selected mode
 gint configuration_get_selected_mode(){
-	return a_selected_mode;
+	return Tselected_mode;
 }
 
 // set selected mode
-void configuration_set_selected_mode(_MODE mode){
-    a_selected_mode = (gint)mode;
-    a_current_mode = a_selected_mode;
-    logger_log("Changed to mode %d", a_current_mode);
+void configuration_set_selected_mode(MODE mode){
+    Tselected_mode = (gint)mode;
+    Tcurrent_mode = Tselected_mode;
+    logger_log("Changed to mode %d", Tcurrent_mode);
 }
 
 // get remembering mode
 gboolean configuration_get_remembering_mode(){
-	return a_remember_mode;
+	return Tremember_mode;
 }
 
 // set remembering mode
 void configuration_set_remembering_mode(gboolean remember_mode){
-    a_remember_mode = remember_mode;
+    Tremember_mode = remember_mode;
 }
 
 gint configuration_get_super_key() {
-	return a_super_key;
+	return Tsuper_key;
 }
 
-void configuration_set_super_key(_SUPER_KEY key) {
-    a_super_key = (gint)key;
+void configuration_set_super_key(SUPER_KEY key) {
+    Tsuper_key = (gint)key;
 }
 
 gint configuration_get_vietnamese_mode_key() {
-	return a_vietnamese_mode_shortkey;
+	return Tvietnamese_mode_shortkey;
 }
 void configuration_set_vietnamese_mode_key(gint key) {
-    a_vietnamese_mode_shortkey = key;
-}
-
-gint configuration_get_hanviet_mode_key() {
-	return a_hanviet_mode_shortkey;
-}
-void configuration_set_hanviet_mode_key(gint key) {
-    a_hanviet_mode_shortkey = key;
+    Tvietnamese_mode_shortkey = key;
 }
 
 gint configuration_get_teochew_mode_key() {
-	return a_teochew_mode_shortkey;
+    return Tteochew_mode_shortkey;
 }
 void configuration_set_teochew_mode_key(gint key) {
-    a_teochew_mode_shortkey = key;
+    Tteochew_mode_shortkey = key;
+}
+
+gint configuration_get_hanviet_mode_key() {
+	return Thanviet_mode_shortkey;
+}
+void configuration_set_hanviet_mode_key(gint key) {
+    Thanviet_mode_shortkey = key;
 }
 
 gint configuration_get_chinese_mode_key() {
-	return a_chinese_mode_shortkey;
+	return Tchinese_mode_shortkey;
 }
 void configuration_set_chinese_mode_key(gint key) {
-    a_chinese_mode_shortkey = key;
+    Tchinese_mode_shortkey = key;
 }
 
 gint configuration_get_english_mode_key() {
-	return a_english_mode_shortkey;
+	return Tenglish_mode_shortkey;
 }
 void configuration_set_english_mode_key(gint key) {
-    a_english_mode_shortkey = key;
+    Tenglish_mode_shortkey = key;
 }
 
 gint configuration_get_candidate_table_key() {
-	return a_candidate_table_shortkey;
+	return Tcandidate_table_shortkey;
 }
 void configuration_set_candidate_table_key(gint key) {
-    a_candidate_table_shortkey = key;
+    Tcandidate_table_shortkey = key;
 }
 
 gboolean configuration_get_auto_show_candidate_table(){
-	return a_auto_show_candidate_table;
+	return Tauto_show_candidate_table;
 }
 
 // set remembering mode
 void configuration_set_auto_show_candidate_table(gboolean show){
-    a_auto_show_candidate_table = show;
+    Tauto_show_candidate_table = show;
 }
 
 gint configuration_get_chinese_form() {
-	return a_chinese_form;
+	return Tchinese_form;
 }
 void configuration_set_chinese_form(gint form) {
-    a_chinese_form = form;
+    Tchinese_form = form;
 }
 
 gint configuration_get_current_mode () {
-	return a_current_mode;
+	return Tcurrent_mode;
 }

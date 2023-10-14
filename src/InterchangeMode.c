@@ -49,7 +49,7 @@ gboolean interchange_mode_is_in_interchange_mode() {
     gint64 current_time = g_get_real_time();
     gint64 diff = current_time - _begin_interchange_mode_time;
     logger_log("diff: %d", diff);
-    if (diff > __INTERCHANGE_MODE_PERIOD__) {
+    if (diff > __INTERCHANGE_MODE_PERIOD__ * 1000000) {
         return FALSE;
     }
     return TRUE;
