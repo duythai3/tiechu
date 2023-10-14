@@ -143,8 +143,8 @@ void property_list_load(){
     
     //
     ibus_prop_list_append(_property_list, vn_prop);
-    ibus_prop_list_append(_property_list, vh_prop);
     ibus_prop_list_append(_property_list, tc_prop);
+    ibus_prop_list_append(_property_list, vh_prop);
     ibus_prop_list_append(_property_list, cn_prop);
     ibus_prop_list_append(_property_list, en_prop);
     ibus_prop_list_append(_property_list, rmm_prop);

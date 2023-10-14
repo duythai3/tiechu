@@ -29,11 +29,11 @@
 #define __VIETNAMESE_MODE_LABEL__ "Mode Tiếng Việt"
 #define __VIETNAMESE_MODE_VALUE__ "InputMode"
 
-#define __HANVIET_MODE_LABEL__  "Mode Tiếng Hán Việt"
-#define __HANVIET_MODE_VALUE__ "a_hanviet_mode"
-
 #define __TEOCHEW_MODE_LABEL__  "Mode Tiếng Tiều"
 #define __TEOCHEW_MODE_VALUE__ "a_teochew_mode"
+
+#define __HANVIET_MODE_LABEL__  "Mode Tiếng Hán Việt"
+#define __HANVIET_MODE_VALUE__ "a_hanviet_mode"
 
 #define __CHINESE_MODE_LABEL__  "Mode Tiếng Trung"
 #define __CHINESE_MODE_VALUE__ "a_chinese_mode"
