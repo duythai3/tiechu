@@ -71,6 +71,23 @@ void helper_commit_preedit(IBusTiechuEngine* tiechu) {
 	}
 }
 
+void helper_commit_preedit2(IBusTiechuEngine* tiechu) {
+    // commit preedit
+    gchar *utf8_preedit =preedit_get_utf8_string();
+    IBusText *text;
+    text = ibus_text_new_from_string (utf8_preedit);
+    ibus_engine_commit_text ((IBusEngine *)tiechu, text);
+    g_free(utf8_preedit);
+
+    // clear telex editor's preedit
+    preedit_clear();
+
+    //
+    if (candidate_table_showing()) {
+        candidate_table_hide(tiechu);
+    }
+}
+
 void helper_update_preedit(IBusTiechuEngine* tiechu) {
 	// commit preedit
     gchar *utf8_preedit =preedit_get_utf8_string();
@@ -80,7 +97,8 @@ void helper_update_preedit(IBusTiechuEngine* tiechu) {
     text = ibus_text_new_from_string (utf8_preedit);
     text->attrs = ibus_attr_list_new ();
     ibus_attr_list_append (text->attrs, ibus_attr_underline_new (IBUS_ATTR_UNDERLINE_SINGLE, 0, preedit_len));
-    ibus_engine_update_preedit_text((IBusEngine *)tiechu, text, cursor_pos, TRUE);
+    //ibus_engine_update_preedit_text((IBusEngine *)tiechu, text, cursor_pos, TRUE);
+    ibus_engine_update_preedit_text_with_mode((IBusEngine *)tiechu, text, preedit_len, TRUE, IBUS_ENGINE_PREEDIT_COMMIT);
     g_free(utf8_preedit);
 
     //

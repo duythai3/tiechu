@@ -35,6 +35,8 @@ void helper_clear_preedit(IBusTiechuEngine* tiechu);
 
 void helper_commit_preedit(IBusTiechuEngine* tiechu);
 
+void helper_commit_preedit2(IBusTiechuEngine* tiechu);
+
 void helper_update_preedit(IBusTiechuEngine* tiechu);
 
 gboolean helper_commit_candidate_in_page(IBusTiechuEngine *tiechu, guint index);

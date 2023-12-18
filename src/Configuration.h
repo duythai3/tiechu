@@ -26,19 +26,19 @@
 
 #define TTIECHU_DIRECTORY ".Tiechu"
 
-#define TVIETNAMESE_MODE_LABEL "Mode Tiếng Việt"
+#define TVIETNAMESE_MODE_LABEL "Tiếng Việt"
 #define TVIETNAMESE_MODE_VALUE "InputMode"
 
-#define TTEOCHEW_MODE_LABEL  "Mode Tiếng Tiều"
+#define TTEOCHEW_MODE_LABEL  "Tiếng Tiều"
 #define TTEOCHEW_MODE_VALUE "Tteochew_mode"
 
-#define THANVIET_MODE_LABEL  "Mode Tiếng Hán Việt"
+#define THANVIET_MODE_LABEL  "Tiếng Hán Việt"
 #define THANVIET_MODE_VALUE "Thanviet_mode"
 
-#define TCHINESE_MODE_LABEL  "Mode Tiếng Trung"
+#define TCHINESE_MODE_LABEL  "Tiếng Trung"
 #define TCHINESE_MODE_VALUE "Tchinese_mode"
 
-#define TENGLISH_MODE_LABEL  "Mode Tiếng Anh"
+#define TENGLISH_MODE_LABEL  "Tiếng Anh"
 #define TENGLISH_MODE_VALUE "Tenglish_mode"
 
 #define TREMEMBER_MODE_LABEL "Ghi nhớ mode"

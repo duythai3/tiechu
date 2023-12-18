@@ -47,6 +47,8 @@ static void ibus_tiechu_engine_init(IBusTiechuEngine *tiechu);
 
 static void ibus_tiechu_engine_destroy(IBusTiechuEngine *tiechu);
 
+static void ibus_tiechu_engine_reset(IBusEngine* engine);
+
 static gboolean ibus_tiechu_engine_process_key_event(IBusEngine *engine, guint keyval, guint keycode, guint modifiers);
 
 static void ibus_tiechu_engine_focus_in(IBusEngine *engine);
@@ -86,14 +88,18 @@ static void property_activated(IBusEngine *engine, const gchar *property_ten, gu
 G_DEFINE_TYPE (IBusTiechuEngine, ibus_tiechu_engine, IBUS_TYPE_ENGINE)
 
 //
+static IBusEngineClass* parent_class = NULL;
 
+//
 static void ibus_tiechu_engine_class_init(IBusTiechuEngineClass *klass){
     logger_log("engine class init...\n");
     IBusObjectClass *ibus_object_class=IBUS_OBJECT_CLASS (klass);
     IBusEngineClass *engine_class=IBUS_ENGINE_CLASS (klass);
+    parent_class = (IBusEngineClass* )g_type_class_peek_parent(klass);
 
     //
     ibus_object_class->destroy=(IBusObjectDestroyFunc) ibus_tiechu_engine_destroy;
+    engine_class->reset=ibus_tiechu_engine_reset;
     engine_class->process_key_event=ibus_tiechu_engine_process_key_event;
     engine_class->focus_out=ibus_tiechu_engine_focus_out;
     engine_class->focus_in=ibus_tiechu_engine_focus_in;
@@ -169,14 +175,19 @@ static void ibus_tiechu_engine_destroy(IBusTiechuEngine *tiechu){
     ((IBusObjectClass *) ibus_tiechu_engine_parent_class)->destroy((IBusObject *) tiechu);
 }
 
+static void ibus_tiechu_engine_reset(IBusEngine* engine) {
+    helper_clear_preedit(engine);
+    parent_class->reset(engine);
+}
+
 static void ibus_tiechu_engine_focus_out(IBusEngine *engine){
-    helper_clear_preedit((IBusTiechuEngine *) engine);
+    parent_class->focus_out(engine);
 }
 
 static void ibus_tiechu_engine_focus_in(IBusEngine *engine){
-    logger_log("Tiechu received focus_in event");
     logger_backup();
     property_list_register((IBusTiechuEngine *) engine);
+    parent_class->focus_in(engine);
 }
 
 static void ibus_tiechu_engine_page_up(IBusEngine *engine){
@@ -367,6 +378,7 @@ static gboolean manage_mode(IBusTiechuEngine *tiechu, guint keyval, guint keycod
 
 
 static gboolean ibus_tiechu_engine_process_key_event(IBusEngine *engine,guint keyval,guint keycode,guint modifiers){
+    logger_log("ibus_tiechu_engine_process_key_event, keyval=%d, keycode=%d, modifiers=%d", keyval, keycode, modifiers);
     //IBusText *text;
     IBusTiechuEngine *tiechu=(IBusTiechuEngine *) engine;
 
